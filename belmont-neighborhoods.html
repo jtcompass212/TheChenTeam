@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belmont Neighborhoods</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      background: #111;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+      min-height: 500px;
+    }
+
+    .neighborhood-label {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
+      text-shadow:
+        0 1px 2px rgba(0,0,0,.95),
+        0 0 5px rgba(0,0,0,.95),
+        0 0 9px rgba(0,0,0,.8);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .leaflet-tooltip.neighborhood-label::before {
+      display: none;
+    }
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: #1d1f20;
+      color: #fff;
+    }
+
+    .leaflet-popup-content a {
+      color: #8fe3ed;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .map-title {
+      background: rgba(17,17,17,.88);
+      color: #fff;
+      padding: 9px 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.45);
+      font-size: 15px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const neighborhoods = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.26833211,37.51346825],[-122.2730101,37.5102023],[-122.2736027,37.5108698],[-122.2756294,37.5118006],[-122.2768857,37.5127783],[-122.27829607,37.51315517],[-122.27907307,37.51245116],[-122.27802307,37.51149117],[-122.28078907,37.51072015],[-122.28091607,37.51114415],[-122.28032607,37.51128215],[-122.28041707,37.51156815],[-122.28022707,37.51215315],[-122.27996907,37.51240315],[-122.28102507,37.51334414],[-122.28298906,37.51595412],[-122.2822888,37.5165531],[-122.27919207,37.51687215],[-122.27856107,37.51709116],[-122.27806508,37.51754216],[-122.27743708,37.51911916],[-122.27599608,37.52038817],[-122.2694051,37.51498723],[-122.26813611,37.51360625],[-122.26833211,37.51346825]]]]},"properties":{"id":555942,"name":"Downtown Belmont","slug":"downtown-belmont-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.51545669393793,"center_longitude":-122.27556258317601}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28078907,37.51072015],[-122.28432105,37.50978812],[-122.28658105,37.5105931],[-122.28857504,37.50745109],[-122.29231103,37.50873506],[-122.29328502,37.50975305],[-122.29433012,37.51211303],[-122.28402806,37.51504411],[-122.28348516,37.51534632],[-122.28298906,37.51595412],[-122.28102507,37.51334414],[-122.27996907,37.51240315],[-122.28022707,37.51215315],[-122.28041707,37.51156815],[-122.28032607,37.51128215],[-122.28091607,37.51114415],[-122.28078907,37.51072015]]]]},"properties":{"id":555882,"name":"McDougal","slug":"mcdougal-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.511702605456136,"center_longitude":-122.287149594854}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3133014,37.5106387],[-122.31312596,37.50815088],[-122.30642998,37.50851194],[-122.30524598,37.50820695],[-122.30236599,37.50620397],[-122.301696,37.50514098],[-122.301382,37.50217699],[-122.300883,37.50098899],[-122.300149,37.500461],[-122.30264758,37.49841207],[-122.30498298,37.50005596],[-122.3078807,37.5020996],[-122.3088519,37.5019731],[-122.3088519,37.5012889],[-122.3095491,37.500965],[-122.3101941,37.5010743],[-122.3105058,37.5020977],[-122.31402895,37.50302787],[-122.31862674,37.50289003],[-122.320443,37.503629],[-122.3201142,37.5043368],[-122.32455192,37.51049578],[-122.3262211,37.5116741],[-122.32177793,37.5110888],[-122.3136756,37.5122957],[-122.3133014,37.5106387]]]]},"properties":{"id":556094,"name":"Belmont Heights","slug":"belmont-heights-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.505331972351215,"center_longitude":-122.31306445844135}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3101306,37.5234791],[-122.3099552,37.5231156],[-122.309469,37.523248],[-122.308826,37.522782],[-122.308387,37.5219813],[-122.3077246,37.5213883],[-122.306861,37.521653],[-122.3067637,37.5214188],[-122.3019624,37.5233784],[-122.301292,37.5225787],[-122.3008691,37.5223645],[-122.2992106,37.5219508],[-122.298164,37.521135],[-122.2961784,37.5176933],[-122.29616,37.51623],[-122.294803,37.513555],[-122.2943311,37.512114],[-122.2972553,37.5113169],[-122.3012588,37.5111975],[-122.3026002,37.5114721],[-122.304104,37.5123528],[-122.30403,37.51298],[-122.304703,37.513221],[-122.305878,37.513201],[-122.307119,37.513398],[-122.309646,37.515018],[-122.310423,37.515235],[-122.311186,37.515194],[-122.312372,37.515725],[-122.312895,37.516619],[-122.31387,37.517368],[-122.314437,37.518576],[-122.31494,37.519198],[-122.31452,37.52082],[-122.314257,37.521262],[-122.313371,37.52152],[-122.31294,37.522024],[-122.312444,37.522731],[-122.311749,37.5243854],[-122.310721,37.524064],[-122.3101306,37.5234791]]]]},"properties":{"id":44829,"name":"Cipriani","slug":"cipriani-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.51779749990476,"center_longitude":-122.30463555019045}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.267934,37.513753],[-122.268137,37.513607],[-122.269677,37.515224],[-122.275997,37.520389],[-122.273767,37.522303],[-122.272121,37.524683],[-122.270132,37.526298],[-122.264727,37.521518],[-122.2701769,37.5168144],[-122.2672525,37.5143228],[-122.267934,37.513753]]]]},"properties":{"id":491210,"name":"Homeview","slug":"homeview-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.5199525,"center_longitude":-122.270362}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3231503,37.5212146],[-122.3213773,37.5203285],[-122.3210372,37.5190185],[-122.31494,37.519198],[-122.3144351,37.5185709],[-122.3138637,37.5173617],[-122.3128883,37.5166189],[-122.312372,37.515725],[-122.3111961,37.5151967],[-122.3104357,37.5152296],[-122.309646,37.515018],[-122.307119,37.513398],[-122.3058862,37.5132035],[-122.3046873,37.5132216],[-122.30403,37.51298],[-122.304104,37.5123528],[-122.3078391,37.5124409],[-122.310872,37.512706],[-122.3217702,37.5110868],[-122.3262221,37.5116742],[-122.32891,37.5135171],[-122.32684,37.515002],[-122.32563,37.517538],[-122.3254173,37.520163],[-122.3231503,37.5212146]]]]},"properties":{"id":44501,"name":"Plateau-Skymont","slug":"plateau-skymont-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.51654550017474,"center_longitude":-122.31702824980385}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2737484,37.5276179],[-122.2735865,37.5275757],[-122.2735269,37.5292844],[-122.270132,37.526298],[-122.272121,37.524683],[-122.273767,37.522303],[-122.275997,37.520389],[-122.282509,37.525942],[-122.287268,37.529172],[-122.2855455,37.5306919],[-122.2737484,37.5276179]]]]},"properties":{"id":45590,"name":"Sterling Downs","slug":"sterling-downs-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.5255404500318,"center_longitude":-122.27869999990503}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3077384,37.5124355],[-122.30410299,37.51235175],[-122.30260199,37.51147197],[-122.301276,37.51119698],[-122.29726401,37.51131801],[-122.29433012,37.51211303],[-122.29328502,37.50975305],[-122.29231103,37.50873506],[-122.2864323,37.5066871],[-122.2882627,37.5042332],[-122.2878479,37.5030042],[-122.2869326,37.5015672],[-122.2871443,37.5006969],[-122.2915899,37.4989105],[-122.2929657,37.4987238],[-122.2941974,37.4980367],[-122.2966959,37.4979449],[-122.300149,37.500461],[-122.300883,37.50098899],[-122.301382,37.50217699],[-122.301696,37.50514098],[-122.30236599,37.50620397],[-122.30524598,37.50820695],[-122.30642998,37.50851194],[-122.31312596,37.50815088],[-122.31328896,37.51055388],[-122.3136756,37.5122957],[-122.3108787,37.5127094],[-122.3077384,37.5124355]]]]},"properties":{"id":555796,"name":"Western Hills","slug":"western-hills-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.50622996622156,"center_longitude":-122.30011155190218}},{"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2759946,37.5203881],[-122.2774377,37.5191184],[-122.2780675,37.5175437],[-122.2785607,37.5170912],[-122.2791867,37.5168726],[-122.2822847,37.5165595],[-122.2830014,37.5159419],[-122.2834839,37.5153469],[-122.2840347,37.5150401],[-122.2943264,37.5121065],[-122.29478697,37.51346797],[-122.2961583,37.5162253],[-122.29619086,37.51771769],[-122.298161,37.5211226],[-122.29921039,37.52195313],[-122.30085222,37.52235764],[-122.3012972,37.5225826],[-122.3019634,37.5233804],[-122.29716873,37.52534294],[-122.2874273,37.5292787],[-122.28249972,37.52597434],[-122.28031954,37.52410051],[-122.2759946,37.5203881]]]]},"properties":{"id":45853,"name":"Belmont Country Club","slug":"belmont-country-club-belmont-ca","city":"Belmont","county":"San Mateo County","state":"CA","hidden":false,"center_latitude":37.52079287274293,"center_longitude":-122.28894507710359}}]};
+
+    const map = L.map("map", {
+      zoomControl: true,
+      attributionControl: true
+    });
+
+    L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+      {
+        subdomains: "abcd",
+        maxZoom: 20,
+        attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+      }
+    ).addTo(map);
+
+    const baseStyle = {
+      color: "#8fe3ed",
+      weight: 1.6,
+      opacity: 1,
+      fillColor: "#25adc2",
+      fillOpacity: 0.34
+    };
+
+    const hoverStyle = {
+      color: "#ffffff",
+      weight: 2.6,
+      opacity: 1,
+      fillColor: "#25adc2",
+      fillOpacity: 0.52
+    };
+
+    let geoLayer;
+
+    function addLabel(feature, layer) {
+      const props = feature.properties || {};
+      const name = props.name || "Neighborhood";
+
+      let latlng;
+      if (
+        Number.isFinite(props.center_latitude) &&
+        Number.isFinite(props.center_longitude)
+      ) {
+        latlng = [props.center_latitude, props.center_longitude];
+      } else {
+        latlng = layer.getBounds().getCenter();
+      }
+
+      L.tooltip({
+        permanent: true,
+        direction: "center",
+        className: "neighborhood-label",
+        opacity: 1
+      })
+      .setLatLng(latlng)
+      .setContent(name)
+      .addTo(map);
+    }
+
+    function onEachFeature(feature, layer) {
+      const props = feature.properties || {};
+      const name = props.name || "Neighborhood";
+      const slug = props.slug || "";
+
+      const url = slug ? "/neighborhoods/" + slug : "#";
+
+      layer.bindPopup(
+        "<strong>" + name + "</strong><br>" +
+        '<a href="' + url + '">View neighborhood</a>'
+      );
+
+      layer.on({
+        mouseover: function (event) {
+          event.target.setStyle(hoverStyle);
+          event.target.bringToFront();
+        },
+        mouseout: function (event) {
+          geoLayer.resetStyle(event.target);
+        }
+      });
+
+      addLabel(feature, layer);
+    }
+
+    geoLayer = L.geoJSON(neighborhoods, {
+      style: baseStyle,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+
+    const bounds = geoLayer.getBounds();
+
+    if (bounds.isValid()) {
+      map.fitBounds(bounds, {
+        padding: [24, 24]
+      });
+    } else {
+      map.setView([37.518, -122.296], 13);
+    }
+
+    const title = L.control({ position: "topright" });
+
+    title.onAdd = function () {
+      const div = L.DomUtil.create("div", "map-title");
+      div.textContent = "Belmont Neighborhoods";
+      return div;
+    };
+
+    title.addTo(map);
+
+    setTimeout(function () {
+      map.invalidateSize();
+    }, 100);
+  </script>
+</body>
+</html>
