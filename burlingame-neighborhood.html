@@ -100,7 +100,7 @@
     const props = feature.properties || {};
     const name = props.name || props.neighborhood || "Neighborhood";
     const slug = props.slug || props.seoId || "";
-    const url = slug ? "/neighborhoods/" + slug : "#";
+    const url = name ? "/burlingame/" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "#";
 
     layer.bindPopup(
       "<strong>" + name + "</strong><br>" +
