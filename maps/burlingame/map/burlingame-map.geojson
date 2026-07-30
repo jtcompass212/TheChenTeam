@@ -139,7 +139,7 @@
             "properties": {
                 "id": 44973,
                 "name": "Burlingame Hills",
-                "slug": "burlingame-hills-burlingame-ca",
+                "slug": "burlingame-hills",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -256,7 +256,7 @@
             "properties": {
                 "id": 44853,
                 "name": "Mills Estates",
-                "slug": "mills-estates-burlingame-ca",
+                "slug": "mills-estates",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -313,7 +313,7 @@
             "properties": {
                 "id": 178982,
                 "name": "Burlingables",
-                "slug": "burlingables-burlingame-ca",
+                "slug": "burlingables",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -362,7 +362,7 @@
             "properties": {
                 "id": 555937,
                 "name": "Burlingame Grove",
-                "slug": "burlingame-grove-burlingame-ca",
+                "slug": "burlingame-grove",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -503,7 +503,7 @@
             "properties": {
                 "id": 44546,
                 "name": "Burlingame Park",
-                "slug": "burlingame-park-burlingame-ca",
+                "slug": "burlingame-park",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -600,7 +600,7 @@
             "properties": {
                 "id": 45508,
                 "name": "Burlingame Terrace",
-                "slug": "burlingame-terrace-burlingame-ca",
+                "slug": "burlingame-terrace",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -665,7 +665,7 @@
             "properties": {
                 "id": 45158,
                 "name": "Burlingame Village",
-                "slug": "burlingame-village-burlingame-ca",
+                "slug": "burlingame-village",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -758,7 +758,7 @@
             "properties": {
                 "id": 45077,
                 "name": "Downtown Burlingame",
-                "slug": "downtown-burlingame-burlingame-ca",
+                "slug": "downtown-burlingame",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -971,7 +971,7 @@
             "properties": {
                 "id": 44571,
                 "name": "Easton Addition",
-                "slug": "easton-addition-burlingame-ca",
+                "slug": "easton-addition",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1040,7 +1040,7 @@
             "properties": {
                 "id": 45463,
                 "name": "Lyon Hoag",
-                "slug": "lyon-hoag-burlingame-ca",
+                "slug": "lyon-hoag",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1125,7 +1125,7 @@
             "properties": {
                 "id": 45680,
                 "name": "Burlingame Gardens",
-                "slug": "burlingame-gardens-burlingame-ca",
+                "slug": "burlingame-gardens",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1215,7 +1215,7 @@
             },
             "properties": {
                 "name": "Ingoldmilldale",
-                "slug": "Ingoldmilldale",
+                "slug": "ingoldmilldale",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA"
@@ -1373,7 +1373,7 @@
             "properties": {
                 "id": 45839,
                 "name": "Ray Park",
-                "slug": "ray-park-burlingame-ca",
+                "slug": "ray-park",
                 "city": "Burlingame",
                 "county": "San Mateo County",
                 "state": "CA",

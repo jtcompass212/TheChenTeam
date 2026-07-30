@@ -191,7 +191,7 @@
             "properties": {
                 "id": 45834,
                 "name": "Dumbarton",
-                "slug": "dumbarton-redwood-city-ca",
+                "slug": "dumbarton",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -348,7 +348,7 @@
             "properties": {
                 "id": 45856,
                 "name": "Central Park",
-                "slug": "central-park-redwood-city-ca",
+                "slug": "central-park",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -613,7 +613,7 @@
             "properties": {
                 "id": 45336,
                 "name": "Farm Hills Estates",
-                "slug": "farm-hills-estates-redwood-city-ca",
+                "slug": "farm-hills-estates",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -909,7 +909,7 @@
             "properties": {
                 "id": 44670,
                 "name": "Cordilleras Heights",
-                "slug": "cordilleras-heights-redwood-city-ca",
+                "slug": "cordilleras-heights",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1118,7 +1118,7 @@
             "properties": {
                 "id": 45594,
                 "name": "Bair Island",
-                "slug": "bair-island-redwood-city-ca",
+                "slug": "bair-island",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1227,7 +1227,7 @@
             "properties": {
                 "id": 45320,
                 "name": "Centennial",
-                "slug": "centennial-redwood-city-ca",
+                "slug": "centennial",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1324,7 +1324,7 @@
             "properties": {
                 "id": 45026,
                 "name": "Downtown Redwood City",
-                "slug": "downtown-redwood-city-redwood-city-ca",
+                "slug": "downtown-redwood-city",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1437,7 +1437,7 @@
             "properties": {
                 "id": 555858,
                 "name": "Eagle Hill",
-                "slug": "eagle-hill-redwood-city-ca",
+                "slug": "eagle-hill",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1554,7 +1554,7 @@
             "properties": {
                 "id": 556050,
                 "name": "Edgewood Park",
-                "slug": "edgewood-park-redwood-city-ca",
+                "slug": "edgewood-park",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1639,7 +1639,7 @@
             "properties": {
                 "id": 555887,
                 "name": "Mt. Carmel",
-                "slug": "mt-carmel-redwood-city-ca",
+                "slug": "mt-carmel",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -1872,7 +1872,7 @@
             "properties": {
                 "id": 45459,
                 "name": "Redwood Shores",
-                "slug": "redwood-shores-redwood-city-ca",
+                "slug": "redwood-shores",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -2021,7 +2021,7 @@
             "properties": {
                 "id": 45058,
                 "name": "Horgan Ranch",
-                "slug": "horgan-ranch-redwood-city-ca",
+                "slug": "horgan-ranch",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",
@@ -2202,7 +2202,7 @@
             "properties": {
                 "id": 44572,
                 "name": "Clifford Heights",
-                "slug": "clifford-heights-redwood-city-ca",
+                "slug": "clifford-heights",
                 "city": "Redwood City",
                 "county": "San Mateo County",
                 "state": "CA",

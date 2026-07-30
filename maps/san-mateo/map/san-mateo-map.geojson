@@ -212,7 +212,7 @@
       "properties": {
         "id": 178074,
         "name": "Lauriedale",
-        "slug": "Lauriedale",
+        "slug": "lauriedale",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -273,7 +273,7 @@
       "properties": {
         "id": 178074,
         "name": "Hillsdale \"The Lanes\"",
-        "slug": "hillsdale-san-mateo-ca",
+        "slug": "hillsdale-the-lanes",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -503,7 +503,7 @@
       "properties": {
         "id": 45193,
         "name": "North Shoreview",
-        "slug": "north-shoreview-san-mateo-ca",
+        "slug": "north-shoreview",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -580,7 +580,7 @@
       "properties": {
         "id": 45456,
         "name": "Shoreview",
-        "slug": "shoreview-san-mateo-ca",
+        "slug": "shoreview",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -633,7 +633,7 @@
       "properties": {
         "id": 44927,
         "name": "Bowie Estate",
-        "slug": "bowie-estate-san-mateo-ca",
+        "slug": "bowie-estate",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -686,7 +686,7 @@
       "properties": {
         "id": 45091,
         "name": "Eastern Addition",
-        "slug": "eastern-addition-san-mateo-ca",
+        "slug": "eastern-addition",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -755,7 +755,7 @@
       "properties": {
         "id": 44690,
         "name": "San Mateo Park",
-        "slug": "san-mateo-park-san-mateo-ca",
+        "slug": "san-mateo-park",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -816,7 +816,7 @@
       "properties": {
         "id": 44959,
         "name": "Harbor Town",
-        "slug": "harbor-town-san-mateo-ca",
+        "slug": "harbor-town",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -881,7 +881,7 @@
       "properties": {
         "id": 44888,
         "name": "Baywood",
-        "slug": "baywood-san-mateo-ca",
+        "slug": "baywood",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -926,7 +926,7 @@
       "properties": {
         "id": 45337,
         "name": "Aragon",
-        "slug": "aragon-san-mateo-ca",
+        "slug": "aragon",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -979,7 +979,7 @@
       "properties": {
         "id": 45525,
         "name": "Hayward Park",
-        "slug": "hayward-park-san-mateo-ca",
+        "slug": "hayward-park",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1036,7 +1036,7 @@
       "properties": {
         "id": 555916,
         "name": "Sunnybrae",
-        "slug": "sunnybrae-san-mateo-ca",
+        "slug": "sunnybrae",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1085,7 +1085,7 @@
       "properties": {
         "id": 44706,
         "name": "Homestead",
-        "slug": "homestead-san-mateo-ca",
+        "slug": "homestead",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1150,7 +1150,7 @@
       "properties": {
         "id": 44638,
         "name": "Fiesta Gardens",
-        "slug": "fiesta-gardens-san-mateo-ca",
+        "slug": "fiesta-gardens",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1203,7 +1203,7 @@
       "properties": {
         "id": 44713,
         "name": "Beresford Manor",
-        "slug": "beresford-manor-san-mateo-ca",
+        "slug": "beresford-manor",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1385,7 +1385,7 @@
       "properties": {
         "id": 45481,
         "name": "Lakeshore",
-        "slug": "lakeshore-san-mateo-ca",
+        "slug": "lakeshore",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1462,7 +1462,7 @@
       "properties": {
         "id": 44522,
         "name": "Los Prados",
-        "slug": "los-prados-san-mateo-ca",
+        "slug": "los-prados",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1531,7 +1531,7 @@
       "properties": {
         "id": 44540,
         "name": "Baywood Knolls",
-        "slug": "baywood-knolls-san-mateo-ca",
+        "slug": "baywood-knolls",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1660,7 +1660,7 @@
       "properties": {
         "id": 45356,
         "name": "Baywood Park",
-        "slug": "baywood-park-san-mateo-ca",
+        "slug": "baywood-park",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1729,7 +1729,7 @@
       "properties": {
         "id": 44784,
         "name": "Foothill Terrace",
-        "slug": "foothill-terrace-san-mateo-ca",
+        "slug": "foothill-terrace",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -1894,7 +1894,7 @@
       "properties": {
         "id": 45850,
         "name": "Laurelwood & sugarloaf",
-        "slug": "laurelwood-san-mateo-ca",
+        "slug": "laurelwood-sugarloaf",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -2019,7 +2019,7 @@
       "properties": {
         "id": 556085,
         "name": "San Mateo Highlands",
-        "slug": "san-mateo-highlands-san-mateo-ca",
+        "slug": "san-mateo-highlands",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -2080,7 +2080,7 @@
       "properties": {
         "id": 45496,
         "name": "Westwood Knolls",
-        "slug": "westwood-knolls-san-mateo-ca",
+        "slug": "westwood-knolls",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -2185,7 +2185,7 @@
       "properties": {
         "id": 44883,
         "name": "San Mateo Knolls",
-        "slug": "san-mateo-knolls-san-mateo-ca",
+        "slug": "san-mateo-knolls",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",
@@ -2242,7 +2242,7 @@
       "properties": {
         "id": 45119,
         "name": "San Mateo Village",
-        "slug": "san-mateo-village-san-mateo-ca",
+        "slug": "san-mateo-village",
         "city": "San Mateo",
         "county": "San Mateo County",
         "state": "CA",

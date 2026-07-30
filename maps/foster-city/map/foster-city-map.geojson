@@ -95,7 +95,7 @@
       "properties": {
         "id": 44576,
         "name": "Bay Vista",
-        "slug": "bay-vista-san-mateo-ca",
+        "slug": "bay-vista",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -238,7 +238,7 @@
       "properties": {
         "id": 45474,
         "name": "Carmel Village",
-        "slug": "carmel-village-san-mateo-ca",
+        "slug": "carmel-village",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -401,7 +401,7 @@
       "properties": {
         "id": 45212,
         "name": "Dolphin Bay",
-        "slug": "dolphin-bay-san-mateo-ca",
+        "slug": "dolphin-bay",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -504,7 +504,7 @@
       "properties": {
         "id": 45769,
         "name": "Harbor Side",
-        "slug": "harbor-side-san-mateo-ca",
+        "slug": "harbor-side",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -695,7 +695,7 @@
       "properties": {
         "id": 44626,
         "name": "Isle Cove",
-        "slug": "isle-cove-san-mateo-ca",
+        "slug": "isle-cove",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -790,7 +790,7 @@
       "properties": {
         "id": 44758,
         "name": "Marina Point",
-        "slug": "marina-point-san-mateo-ca",
+        "slug": "marina-point",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -989,7 +989,7 @@
       "properties": {
         "id": 45609,
         "name": "Sea Colony",
-        "slug": "sea-colony-san-mateo-ca",
+        "slug": "sea-colony",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -1084,7 +1084,7 @@
       "properties": {
         "id": 44495,
         "name": "The Islands",
-        "slug": "the-islands-san-mateo-ca",
+        "slug": "the-islands",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -1231,7 +1231,7 @@
       "properties": {
         "id": 44702,
         "name": "Treasure Isle",
-        "slug": "treasure-isle-san-mateo-ca",
+        "slug": "treasure-isle",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",
@@ -1410,7 +1410,7 @@
       "properties": {
         "id": 45181,
         "name": "Vintage Park",
-        "slug": "vintage-park-san-mateo-ca",
+        "slug": "vintage-park",
         "city": "Foster City",
         "county": "San Mateo County",
         "state": "CA",

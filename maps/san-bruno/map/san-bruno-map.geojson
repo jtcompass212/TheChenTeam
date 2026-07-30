@@ -63,7 +63,7 @@
       "properties": {
         "id": 179860,
         "name": "Shelter Creek",
-        "slug": "shelter-creek-san-bruno-ca",
+        "slug": "shelter-creek",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -175,7 +175,7 @@
       "properties": {
         "id": 45624,
         "name": "Mills Park",
-        "slug": "mills-park-san-bruno-ca",
+        "slug": "mills-park",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -259,7 +259,7 @@
       "properties": {
         "id": 44972,
         "name": "San Bruno Park",
-        "slug": "san-bruno-park-san-bruno-ca",
+        "slug": "san-bruno-park",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -315,7 +315,7 @@
       "properties": {
         "id": 45418,
         "name": "Lomita Park",
-        "slug": "lomita-park-san-bruno-ca",
+        "slug": "lomita-park",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -463,7 +463,7 @@
       "properties": {
         "id": 45398,
         "name": "Pacific Heights",
-        "slug": "pacific-heights-san-bruno-ca",
+        "slug": "pacific-heights",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -635,7 +635,7 @@
       "properties": {
         "id": 179346,
         "name": "Rollingwood",
-        "slug": "rollingwood-san-bruno-ca",
+        "slug": "rollingwood",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -799,7 +799,7 @@
       "properties": {
         "id": 44934,
         "name": "Portola Highlands",
-        "slug": "portola-highlands-san-bruno-ca",
+        "slug": "portola-highlands",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -883,7 +883,7 @@
       "properties": {
         "id": 45448,
         "name": "Monte Verde",
-        "slug": "monte-verde-san-bruno-ca",
+        "slug": "monte-verde",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -951,7 +951,7 @@
       "properties": {
         "id": 179850,
         "name": "Belle Air Park",
-        "slug": "belle-air-park-san-bruno-ca",
+        "slug": "belle-air-park",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -1086,7 +1086,7 @@
       "properties": {
         "id": 44978,
         "name": "Golden Gate National Cemetery",
-        "slug": "golden-gate-ntional-cemetery",
+        "slug": "golden-gate-national-cemetery",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -1101,7 +1101,7 @@
       "properties": {
         "id": 44849,
         "name": "Huntington Park",
-        "slug": "huntington-park-san-bruno-ca",
+        "slug": "huntington-park",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",
@@ -1359,7 +1359,7 @@
       "properties": {
         "id": 184492,
         "name": "Crestmoor",
-        "slug": "crestmoor-san-bruno-ca",
+        "slug": "crestmoor",
         "city": "San Bruno",
         "county": "San Mateo County",
         "state": "CA",

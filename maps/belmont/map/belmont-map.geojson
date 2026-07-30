@@ -115,7 +115,7 @@
       "properties": {
         "id": 555942,
         "name": "Downtown Belmont",
-        "slug": "downtown-belmont-belmont-ca",
+        "slug": "downtown-belmont",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -206,7 +206,7 @@
       "properties": {
         "id": 555882,
         "name": "McDougal",
-        "slug": "mcdougal-belmont-ca",
+        "slug": "mcdougal",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -333,7 +333,7 @@
       "properties": {
         "id": 556094,
         "name": "Belmont Heights",
-        "slug": "belmont-heights-belmont-ca",
+        "slug": "belmont-heights",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -520,7 +520,7 @@
       "properties": {
         "id": 44829,
         "name": "Cipriani",
-        "slug": "cipriani-belmont-ca",
+        "slug": "cipriani",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -587,7 +587,7 @@
       "properties": {
         "id": 491210,
         "name": "Homeview",
-        "slug": "homeview-belmont-ca",
+        "slug": "homeview",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -710,7 +710,7 @@
       "properties": {
         "id": 44501,
         "name": "Plateau-Skymont",
-        "slug": "plateau-skymont-belmont-ca",
+        "slug": "plateau-skymont",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -777,7 +777,7 @@
       "properties": {
         "id": 45590,
         "name": "Sterling Downs",
-        "slug": "sterling-downs-belmont-ca",
+        "slug": "sterling-downs",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -916,7 +916,7 @@
       "properties": {
         "id": 555796,
         "name": "Western Hills",
-        "slug": "western-hills-belmont-ca",
+        "slug": "western-hills",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
@@ -1031,7 +1031,7 @@
       "properties": {
         "id": 45853,
         "name": "Belmont Country Club",
-        "slug": "belmont-country-club-belmont-ca",
+        "slug": "belmont-country-club",
         "city": "Belmont",
         "county": "San Mateo County",
         "state": "CA",
