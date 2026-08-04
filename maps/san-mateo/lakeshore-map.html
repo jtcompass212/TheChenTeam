@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .lakeshore-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .lakeshore-map-wrap #lakeshore-map { width: 100%; height: 100%; }
+  .lakeshore-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .lakeshore-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .lakeshore-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .lakeshore-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="lakeshore-map-wrap">
+  <div id="lakeshore-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Lakeshore</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-mateo/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Fiesta Gardens","slug":"fiesta-gardens","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28797629,37.54453465],[-122.2895904,37.5435848],[-122.2915859,37.5410195],[-122.297439,37.5371243],[-122.298516,37.5379662],[-122.3036953,37.5425817],[-122.31201035,37.55032072],[-122.3089979,37.5522556],[-122.29602037,37.5534045],[-122.28797629,37.54453465]]]]}},{"type":"Feature","properties":{"name":"Harbor Town","slug":"harbor-town","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28528425,37.55648828],[-122.28945306,37.55471796],[-122.29222747,37.55623435],[-122.2925487,37.55698388],[-122.29194194,37.55830448],[-122.29019303,37.55966078],[-122.2880539,37.55960367],[-122.28719729,37.55785239],[-122.28528425,37.55648828]]]]}},{"type":"Feature","properties":{"name":"Los Prados","slug":"los-prados","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.27712174,37.54409198],[-122.27645874,37.53993416],[-122.27874374,37.53660774],[-122.27658653,37.53392983],[-122.2776114,37.5333963],[-122.28797629,37.54453465],[-122.28431787,37.54670591],[-122.28366089,37.54838371],[-122.28050995,37.54861641],[-122.27991295,37.54825401],[-122.27975845,37.54696846],[-122.27866936,37.54530907],[-122.27712174,37.54409198]]]]}},{"type":"Feature","properties":{"name":"Parkside","slug":"parkside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.29308875,37.57058122],[-122.29294131,37.56979728],[-122.29151363,37.56936898],[-122.29112102,37.56833391],[-122.28744476,37.56815545],[-122.2866714,37.5678058],[-122.28608846,37.56740592],[-122.28587431,37.56647793],[-122.28701645,37.5648361],[-122.29219178,37.56412227],[-122.29283424,37.56358689],[-122.29265578,37.56226629],[-122.29022873,37.56033892],[-122.29019303,37.55966078],[-122.29194194,37.55830448],[-122.2925487,37.55698388],[-122.29222747,37.55623435],[-122.28945306,37.55471796],[-122.29602037,37.5534045],[-122.30249294,37.56015579],[-122.29719959,37.56308791],[-122.29722934,37.56882836],[-122.29773497,37.56909605],[-122.29773497,37.57111859],[-122.296976,37.571745],[-122.294873,37.571445],[-122.29436,37.570599],[-122.29308875,37.57058122]]]]}},{"type":"Feature","properties":{"name":"San Mateo Village","slug":"san-mateo-village","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.278188,37.534023],[-122.288761,37.533824],[-122.2903007,37.5316356],[-122.2974351,37.5371243],[-122.291549,37.5410363],[-122.2895936,37.5435679],[-122.2879774,37.5445326],[-122.278188,37.534023]]]]}},{"type":"Feature","properties":{"name":"Sunnybrae","slug":"sunnybrae","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3140172,37.5709495],[-122.3024875,37.5601542],[-122.2960076,37.5534017],[-122.305308,37.5525961],[-122.3060246,37.5543219],[-122.319207,37.5663926],[-122.3155587,37.568976],[-122.3140172,37.5709495]]]]}},{"type":"Feature","properties":{"name":"Lakeshore","slug":"lakeshore","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28797629,37.54453465],[-122.29602037,37.5534045],[-122.28945306,37.55471796],[-122.28773854,37.55273305],[-122.28537812,37.55309473],[-122.28366661,37.55415535],[-122.28216553,37.55367851],[-122.28194237,37.55165672],[-122.28451538,37.55033684],[-122.28366089,37.54838371],[-122.2843165,37.5467076],[-122.28797629,37.54453465]]]]}}]};
+
+  var map = L.map('lakeshore-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

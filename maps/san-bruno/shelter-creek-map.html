@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .shelter-creek-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .shelter-creek-map-wrap #shelter-creek-map { width: 100%; height: 100%; }
+  .shelter-creek-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .shelter-creek-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .shelter-creek-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .shelter-creek-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="shelter-creek-map-wrap">
+  <div id="shelter-creek-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Shelter Creek</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-bruno/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayhill","slug":"bayhill","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.4285502,37.6245196],[-122.4278966,37.6248917],[-122.426736,37.6252585],[-122.4257634,37.6254219],[-122.4166649,37.6289082],[-122.4188553,37.6331468],[-122.4256046,37.630086],[-122.4314081,37.6294334],[-122.4333764,37.6294317],[-122.4348873,37.630367],[-122.4312613,37.6275721],[-122.4300851,37.6264798],[-122.4285502,37.6245196]]]}},{"type":"Feature","properties":{"name":"Crestmoor","slug":"crestmoor","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.447277,37.624387],[-122.446008,37.622532],[-122.434241,37.610355],[-122.433188,37.608988],[-122.430538,37.606181],[-122.428425,37.604391],[-122.427838,37.604514],[-122.4281652,37.6059822],[-122.4280431,37.6074632],[-122.427688,37.608807],[-122.426753,37.610911],[-122.424665,37.614098],[-122.4243251,37.6150549],[-122.424164,37.6163545],[-122.424428,37.6177392],[-122.4250934,37.61763],[-122.42651567,37.61826941],[-122.43094736,37.61774119],[-122.43092026,37.61863629],[-122.430208,37.6195242],[-122.43058266,37.6203174],[-122.42990966,37.62103241],[-122.4291155,37.6233687],[-122.4285521,37.6245176],[-122.430086,37.626481],[-122.431258,37.627571],[-122.4348866,37.630367],[-122.437995,37.629443],[-122.438523,37.629031],[-122.439626,37.627658],[-122.440779,37.626803],[-122.442643,37.62594],[-122.447277,37.624387]]]}},{"type":"Feature","properties":{"name":"Mills Park","slug":"mills-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42432621,37.61505061],[-122.42416193,37.61634941],[-122.4244287,37.6177388],[-122.424733,37.61856231],[-122.4285508,37.624518],[-122.42789699,37.62489087],[-122.42675485,37.62525255],[-122.42578403,37.62542387],[-122.41666593,37.6289074],[-122.41362022,37.62438166],[-122.41971164,37.62228774],[-122.4216628,37.62169287],[-122.42311427,37.62088386],[-122.41992421,37.6163831],[-122.42135188,37.61564547],[-122.42158983,37.61495543],[-122.42197054,37.61476507],[-122.42249403,37.61459851],[-122.42294612,37.61450333],[-122.42342202,37.61457471],[-122.4239455,37.61478887],[-122.42432621,37.61505061]]]]}},{"type":"Feature","properties":{"name":"Shelter Creek","slug":"shelter-creek","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43094736,37.61774119],[-122.43092026,37.61863629],[-122.430208,37.6195162],[-122.43058266,37.6203174],[-122.42990966,37.62103241],[-122.4291155,37.6233687],[-122.4285527,37.624518],[-122.4247333,37.6185638],[-122.4244291,37.6177393],[-122.4250934,37.61763],[-122.42651567,37.61826941],[-122.43094736,37.61774119]]]]}}]};
+
+  var map = L.map('shelter-creek-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

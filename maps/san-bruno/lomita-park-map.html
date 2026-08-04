@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .lomita-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .lomita-park-map-wrap #lomita-park-map { width: 100%; height: 100%; }
+  .lomita-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .lomita-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .lomita-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .lomita-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="lomita-park-map-wrap">
+  <div id="lomita-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Lomita Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-bruno/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Belle Air Park","slug":"belle-air-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.397034,37.614086],[-122.399757,37.6128777],[-122.407331,37.623082],[-122.4117684,37.6307433],[-122.4113614,37.6308612],[-122.4040026,37.6309664],[-122.4027437,37.6313513],[-122.402442,37.628862],[-122.402014,37.627009],[-122.39841,37.616369],[-122.397034,37.614086]]]]}},{"type":"Feature","properties":{"name":"Downtown San Bruno","slug":"downtown-san-bruno","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4117688,37.6307438],[-122.4073308,37.6230769],[-122.4048145,37.6196896],[-122.40886357,37.61773188],[-122.4136201,37.6243817],[-122.41666593,37.6289074],[-122.4117688,37.6307438]]]]}},{"type":"Feature","properties":{"name":"Huntington Park","slug":"huntington-park","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.4281652,37.6059822],[-122.42783983988096,37.604522255847286],[-122.42575785,37.60517229],[-122.4252248,37.60590948],[-122.4206051,37.6084005],[-122.4206831,37.6092023],[-122.419353,37.6098252],[-122.41833164,37.60950313],[-122.41035802076671,37.61350225350559],[-122.41036112,37.61348747],[-122.40976261053135,37.61380087813237],[-122.40926945,37.61404822],[-122.40602535,37.61222698],[-122.4065735,37.6121448],[-122.40690729,37.61194522],[-122.40925701,37.60908782],[-122.40913303,37.60796842],[-122.40757482,37.60784796],[-122.40702939,37.60802726],[-122.4039159,37.60973401],[-122.40386018,37.61014515],[-122.40625719,37.61265745],[-122.4054164,37.6143399],[-122.40886357,37.61773188],[-122.41362022,37.62438166],[-122.41971164,37.62228774],[-122.4216628,37.62169287],[-122.42311427,37.62088386],[-122.41992421,37.6163831],[-122.42135188,37.61564547],[-122.42158983,37.61495543],[-122.42197054,37.61476507],[-122.42249403,37.61459851],[-122.42294612,37.61450333],[-122.42342202,37.61457471],[-122.4239455,37.61478887],[-122.42432621,37.61505061],[-122.424665,37.614098],[-122.426753,37.610911],[-122.427688,37.608807],[-122.4280431,37.6074632],[-122.4281652,37.6059822]]]}},{"type":"Feature","properties":{"name":"Lomita Park","slug":"lomita-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40886357,37.61773188],[-122.404814,37.6196902],[-122.3997582,37.6128763],[-122.40108013,37.6121816],[-122.40040776,37.61143694],[-122.4017854,37.6107827],[-122.40620488,37.61511643],[-122.40886357,37.61773188]]]]}}]};
+
+  var map = L.map('lomita-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

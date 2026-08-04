@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .el-sereno-corte-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .el-sereno-corte-map-wrap #el-sereno-corte-map { width: 100%; height: 100%; }
+  .el-sereno-corte-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .el-sereno-corte-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .el-sereno-corte-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .el-sereno-corte-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="el-sereno-corte-map-wrap">
+  <div id="el-sereno-corte-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> El Sereno Corte</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-carlos/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Alder Manor","slug":"alder-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.268817,37.482865],[-122.271908,37.481655],[-122.2736356,37.4819206],[-122.2743652,37.4815771],[-122.275364,37.481528],[-122.2780944,37.4802168],[-122.2783443,37.479267],[-122.279487,37.478486],[-122.277257,37.476067],[-122.276712,37.474615],[-122.278342,37.474162],[-122.280351,37.474558],[-122.280169,37.4759],[-122.281989,37.47697],[-122.283151,37.47663],[-122.287024,37.47959],[-122.2896,37.482774],[-122.287951,37.4820479],[-122.285181,37.481886],[-122.283067,37.482773],[-122.281493,37.484645],[-122.279306,37.48478],[-122.273844,37.487613],[-122.269862,37.488007],[-122.265489,37.491136],[-122.2568099,37.4838469],[-122.258626,37.483194],[-122.258672,37.481908],[-122.259195,37.481631],[-122.262984,37.48166],[-122.262882,37.482834],[-122.264937,37.482958],[-122.265089,37.481892],[-122.264587,37.481117],[-122.265843,37.481223],[-122.267919,37.482714],[-122.268817,37.482865]]]]}},{"type":"Feature","properties":{"name":"Beverly Terrace","slug":"beverly-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2879545,37.4820401],[-122.2896,37.482774],[-122.291596,37.485987],[-122.28979,37.486347],[-122.293177,37.488678],[-122.29076,37.490185],[-122.296431,37.492706],[-122.298696,37.495634],[-122.3026486,37.4984131],[-122.30015,37.500462],[-122.296329,37.49974],[-122.294021,37.499802],[-122.289164,37.50098],[-122.287832,37.502696],[-122.288385,37.5044317],[-122.28775,37.5047484],[-122.2865235,37.5066089],[-122.285401,37.5069587],[-122.2840197,37.5076604],[-122.2830172,37.5075386],[-122.2822826,37.5069558],[-122.2807843,37.5052353],[-122.2794634,37.5031161],[-122.278828,37.50258],[-122.275155,37.502056],[-122.2709536,37.5023757],[-122.268829,37.499051],[-122.268412,37.4963723],[-122.265489,37.491136],[-122.269862,37.488007],[-122.273844,37.487613],[-122.279306,37.48478],[-122.281493,37.484645],[-122.283067,37.482773],[-122.285181,37.481886],[-122.2879545,37.4820401]]]]}},{"type":"Feature","properties":{"name":"Clearfield Park","slug":"clearfield-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.247929,37.511988],[-122.245225,37.508239],[-122.244972,37.507324],[-122.24594,37.50653],[-122.247251,37.506074],[-122.239612,37.499342],[-122.238375,37.498425],[-122.237881,37.497554],[-122.239111,37.497443],[-122.239363,37.497688],[-122.239879,37.497314],[-122.2410396,37.4981374],[-122.24393375,37.4959838],[-122.243283,37.495385],[-122.24436063,37.49456101],[-122.24418449,37.49373436],[-122.24664538,37.495632],[-122.2539601,37.5019852],[-122.2636825,37.5101009],[-122.26449133,37.51064164],[-122.2638803,37.51135176],[-122.2647845,37.51218457],[-122.26261919,37.51368363],[-122.25897861,37.51242252],[-122.25847893,37.51239872],[-122.25781268,37.51194663],[-122.2572892,37.51242252],[-122.25674192,37.51254149],[-122.2545167,37.5148985],[-122.2542711,37.5153673],[-122.25301933,37.51634407],[-122.25191116,37.5172329],[-122.25032997,37.51799202],[-122.24868584,37.51815987],[-122.24875,37.516547],[-122.248401,37.515578],[-122.248412,37.513723],[-122.248084,37.512565],[-122.247929,37.511988]]]]}},{"type":"Feature","properties":{"name":"Howard Park","slug":"howard-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2524618,37.5007077],[-122.2654892,37.4911361],[-122.26837085,37.49627487],[-122.26881343,37.49900887],[-122.2709503,37.5023792],[-122.270301,37.5024239],[-122.2682615,37.502116],[-122.26692126,37.50216704],[-122.26036535,37.50733895],[-122.25539704,37.50319868],[-122.2524618,37.5007077]]]]}},{"type":"Feature","properties":{"name":"El Sereno Corte","slug":"el-sereno-corte","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.24996376,37.48707008],[-122.2505855,37.486879],[-122.25130463,37.48696327],[-122.25192642,37.48689079],[-122.25284576,37.4865284],[-122.25330925,37.48623467],[-122.25348282,37.48591423],[-122.2537955,37.484996],[-122.2551569,37.4843052],[-122.25681114,37.48384666],[-122.2654885,37.4911366],[-122.2524618,37.5007088],[-122.24664538,37.495632],[-122.24418449,37.49373436],[-122.24429703,37.49320412],[-122.24521255,37.49297524],[-122.24578857,37.49197197],[-122.24730492,37.49110603],[-122.24781036,37.49030876],[-122.24757194,37.49004555],[-122.24784088,37.4897213],[-122.24835014,37.48959541],[-122.24928856,37.4878788],[-122.24996376,37.48707008]]]]}}]};
+
+  var map = L.map('el-sereno-corte-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

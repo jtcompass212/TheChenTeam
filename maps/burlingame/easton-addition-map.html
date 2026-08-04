@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .easton-addition-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .easton-addition-map-wrap #easton-addition-map { width: 100%; height: 100%; }
+  .easton-addition-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .easton-addition-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .easton-addition-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .easton-addition-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="easton-addition-map-wrap">
+  <div id="easton-addition-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Easton Addition</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/burlingame/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Burlingame Grove","slug":"burlingame-grove","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.375681,37.589701],[-122.366205,37.584276],[-122.363473,37.58764],[-122.373145,37.591718],[-122.375681,37.589701]]]]}},{"type":"Feature","properties":{"name":"Burlingame Hills","slug":"burlingame-hills","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.386772,37.582641],[-122.387931,37.582128],[-122.388754,37.580815],[-122.390045,37.580459],[-122.393286,37.578303],[-122.398633,37.57611],[-122.397192,37.574112],[-122.398154,37.573448],[-122.393146,37.56828],[-122.392212,37.568864],[-122.39342,37.570088],[-122.391253,37.571328],[-122.39091,37.570484],[-122.391256,37.569937],[-122.390184,37.569688],[-122.389823,37.568827],[-122.387913,37.569093],[-122.387423,37.570331],[-122.385702,37.570839],[-122.386052,37.571953],[-122.383583,37.573202],[-122.383862,37.574151],[-122.383453,37.574611],[-122.382657,37.574929],[-122.381325,37.574506],[-122.381356,37.575259],[-122.380058,37.576233],[-122.380934,37.577469],[-122.379833,37.577307],[-122.378418,37.577839],[-122.386772,37.582641]]]]}},{"type":"Feature","properties":{"name":"Burlingame Park","slug":"burlingame-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.341857,37.574274],[-122.348892,37.576086],[-122.35256,37.57709],[-122.352679,37.576704],[-122.352608,37.576059],[-122.352434,37.575661],[-122.352936,37.574773],[-122.35375,37.574488],[-122.352743,37.572821],[-122.354069,37.57203],[-122.35278,37.571],[-122.351888,37.569963],[-122.341857,37.574274]]],[[[-122.356533,37.578767],[-122.359365,37.580338],[-122.361548,37.581611],[-122.363515,37.580559],[-122.363105,37.579994],[-122.362742,37.580054],[-122.360765,37.579104],[-122.358841,37.577237],[-122.35822,37.577474],[-122.357728,37.577921],[-122.356854,37.577303],[-122.356018,37.578496],[-122.356254,37.578792],[-122.356533,37.578767]]]]}},{"type":"Feature","properties":{"name":"Burlingame Terrace","slug":"burlingame-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.356254,37.578792],[-122.355808,37.57906],[-122.352863,37.581083],[-122.351465,37.582005],[-122.350454,37.582808],[-122.355034,37.584682],[-122.357117,37.585574],[-122.359853,37.586704],[-122.361994,37.587656],[-122.363114,37.588076],[-122.363494,37.587617],[-122.366209,37.584279],[-122.361548,37.581611],[-122.359365,37.580338],[-122.358032,37.579624],[-122.356533,37.578767],[-122.356254,37.578792]]]]}},{"type":"Feature","properties":{"name":"Burlingame Village","slug":"burlingame-village","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.375682,37.589701],[-122.373143,37.591713],[-122.382157,37.595523],[-122.384721,37.597325],[-122.385698,37.596707],[-122.383272,37.594579],[-122.380655,37.592413],[-122.377847,37.590938],[-122.375682,37.589701]]]]}},{"type":"Feature","properties":{"name":"Mills Estates","slug":"mills-estates","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.388754,37.580815],[-122.387935,37.582126],[-122.386777,37.582645],[-122.386779,37.583382],[-122.387112,37.583763],[-122.388183,37.583905],[-122.38823,37.584334],[-122.387945,37.585167],[-122.387968,37.586594],[-122.388325,37.587451],[-122.38923,37.587641],[-122.390959,37.588987],[-122.39557,37.585435],[-122.399345,37.584374],[-122.403765,37.581416],[-122.400674,37.578739],[-122.400898,37.57858],[-122.399695,37.577662],[-122.398633,37.57611],[-122.393286,37.578303],[-122.390045,37.580459],[-122.388754,37.580815]]]]}},{"type":"Feature","properties":{"name":"Ray Park","slug":"ray-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.375682,37.589701],[-122.380655,37.592413],[-122.385698,37.596707],[-122.387399,37.595405],[-122.388558,37.593593],[-122.390104,37.592501],[-122.388311,37.591188],[-122.388785,37.590672],[-122.389954,37.588242],[-122.38923,37.587641],[-122.388325,37.587451],[-122.387968,37.586594],[-122.387945,37.585167],[-122.38823,37.584334],[-122.388183,37.583905],[-122.387112,37.583763],[-122.386779,37.583382],[-122.386772,37.582641],[-122.386375,37.582897],[-122.386246,37.583339],[-122.385861,37.583668],[-122.384747,37.584296],[-122.383862,37.584353],[-122.383177,37.585595],[-122.382706,37.585838],[-122.382477,37.58648],[-122.381035,37.586323],[-122.379993,37.586723],[-122.379408,37.587565],[-122.377238,37.587822],[-122.376224,37.58915],[-122.375753,37.589421],[-122.375682,37.589701]]]]}},{"type":"Feature","properties":{"name":"Easton Addition","slug":"easton-addition","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.386772,37.582641],[-122.378334,37.577797],[-122.378097,37.577429],[-122.376344,37.578626],[-122.376047,37.578581],[-122.375862,37.578727],[-122.375971,37.578949],[-122.375562,37.579178],[-122.375519,37.579401],[-122.374995,37.57954],[-122.374677,37.579803],[-122.373941,37.579444],[-122.373542,37.579595],[-122.373335,37.580079],[-122.37252,37.580169],[-122.371986,37.580849],[-122.371813,37.580745],[-122.371812,37.58017],[-122.37169,37.580102],[-122.371458,37.580461],[-122.371048,37.580231],[-122.371337,37.579905],[-122.36948,37.578864],[-122.369761,37.578647],[-122.36932,37.57804],[-122.368798,37.578282],[-122.368427,37.578075],[-122.368302,37.578206],[-122.368124,37.578107],[-122.361548,37.581611],[-122.375682,37.589701],[-122.375753,37.589421],[-122.376224,37.58915],[-122.377238,37.587822],[-122.379408,37.587565],[-122.379993,37.586723],[-122.381035,37.586323],[-122.382477,37.58648],[-122.382706,37.585838],[-122.383177,37.585595],[-122.383862,37.584353],[-122.384747,37.584296],[-122.385861,37.583668],[-122.386246,37.583339],[-122.386375,37.582897],[-122.386772,37.582641]]]]}}]};
+
+  var map = L.map('easton-addition-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .belle-air-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .belle-air-park-map-wrap #belle-air-park-map { width: 100%; height: 100%; }
+  .belle-air-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .belle-air-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .belle-air-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .belle-air-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="belle-air-park-map-wrap">
+  <div id="belle-air-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Belle Air Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-bruno/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Belle Air North","slug":"belle-air-north","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.4117685,37.6307436],[-122.4113616,37.6308611],[-122.4040052,37.6309671],[-122.402747,37.6313503],[-122.4030445,37.633749],[-122.4037358,37.6360374],[-122.4054917,37.6348111],[-122.4077276,37.6340707],[-122.4095526,37.6339612],[-122.413031,37.6342402],[-122.4127407,37.6323897],[-122.4117685,37.6307436]]]}},{"type":"Feature","properties":{"name":"Downtown San Bruno","slug":"downtown-san-bruno","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4117688,37.6307438],[-122.4073308,37.6230769],[-122.4048145,37.6196896],[-122.40886357,37.61773188],[-122.4136201,37.6243817],[-122.41666593,37.6289074],[-122.4117688,37.6307438]]]]}},{"type":"Feature","properties":{"name":"Lomita Park","slug":"lomita-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40886357,37.61773188],[-122.404814,37.6196902],[-122.3997582,37.6128763],[-122.40108013,37.6121816],[-122.40040776,37.61143694],[-122.4017854,37.6107827],[-122.40620488,37.61511643],[-122.40886357,37.61773188]]]]}},{"type":"Feature","properties":{"name":"San Bruno Park","slug":"san-bruno-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4113239,37.6355299],[-122.4055919,37.635561],[-122.4037373,37.6360307],[-122.4055036,37.6347806],[-122.4077614,37.6340523],[-122.4095491,37.6339482],[-122.4129955,37.6342414],[-122.4127324,37.632407],[-122.4117685,37.6307436],[-122.41666593,37.6289074],[-122.4188603,37.6331239],[-122.4140967,37.6343557],[-122.4169868,37.6394117],[-122.4114691,37.6411603],[-122.4113239,37.6355299]]]]}},{"type":"Feature","properties":{"name":"Belle Air Park","slug":"belle-air-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.397034,37.614086],[-122.399757,37.6128777],[-122.407331,37.623082],[-122.4117684,37.6307433],[-122.4113614,37.6308612],[-122.4040026,37.6309664],[-122.4027437,37.6313513],[-122.402442,37.628862],[-122.402014,37.627009],[-122.39841,37.616369],[-122.397034,37.614086]]]]}}]};
+
+  var map = L.map('belle-air-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

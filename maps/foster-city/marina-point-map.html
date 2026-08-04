@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .marina-point-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .marina-point-map-wrap #marina-point-map { width: 100%; height: 100%; }
+  .marina-point-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .marina-point-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .marina-point-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .marina-point-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="marina-point-map-wrap">
+  <div id="marina-point-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Marina Point</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/foster-city/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Carmel Village","slug":"carmel-village","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.247646,37.561122],[-122.247334,37.559614],[-122.246197,37.557932],[-122.245284,37.557073],[-122.24521,37.555848],[-122.246764,37.552769],[-122.248244,37.55118],[-122.249367,37.550501],[-122.252864,37.552189],[-122.25885,37.555562],[-122.257147,37.556003],[-122.256834,37.556226],[-122.256163,37.557863],[-122.256006,37.558908],[-122.256092,37.559898],[-122.256384,37.561152],[-122.2570939,37.5625959],[-122.255879,37.562937],[-122.255329,37.562069],[-122.254899,37.560985],[-122.253569,37.561202],[-122.25391,37.562266],[-122.253715,37.56265],[-122.249702,37.564284],[-122.249011,37.564142],[-122.249116,37.563716],[-122.248895,37.563062],[-122.248382,37.562578],[-122.248105,37.5617],[-122.247646,37.561122]]]]}},{"type":"Feature","properties":{"name":"Harbor Side","slug":"harbor-side","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2606,37.5470596],[-122.261687,37.546975],[-122.2627,37.546279],[-122.262736,37.545799],[-122.261388,37.544526],[-122.261299,37.5440473],[-122.263135,37.542635],[-122.2640828,37.5421238],[-122.264575,37.541547],[-122.265691,37.541225],[-122.268993,37.5414152],[-122.269475,37.541759],[-122.269753,37.542194],[-122.269949,37.546397],[-122.268181,37.546821],[-122.267479,37.547179],[-122.266214,37.548167],[-122.264677,37.548614],[-122.260604,37.548628],[-122.2606,37.5470596]]]]}},{"type":"Feature","properties":{"name":"Sea Colony","slug":"sea-colony","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.256991,37.547013],[-122.256728,37.546624],[-122.25659,37.545878],[-122.252545,37.54587],[-122.252658,37.54418],[-122.2508215,37.5414484],[-122.250844,37.5409571],[-122.2511836,37.5403812],[-122.2517807,37.5401668],[-122.2528453,37.5404214],[-122.253736,37.540964],[-122.2545344,37.5413104],[-122.2558425,37.5415391],[-122.2572957,37.5415749],[-122.2588651,37.5411863],[-122.259756,37.540595],[-122.260328,37.53991],[-122.260581,37.538742],[-122.260755,37.537292],[-122.260502,37.534808],[-122.260613,37.533842],[-122.260951,37.53347],[-122.261509,37.533215],[-122.262723,37.533256],[-122.26469,37.534056],[-122.26402,37.535175],[-122.26337,37.535901],[-122.265589,37.536581],[-122.266105,37.537044],[-122.266645,37.5378723],[-122.2673471,37.5384322],[-122.268082,37.538695],[-122.2690228,37.5387653],[-122.268993,37.5414152],[-122.265691,37.541225],[-122.264575,37.541547],[-122.2640828,37.5421238],[-122.263135,37.542635],[-122.261299,37.5440473],[-122.261388,37.544526],[-122.262736,37.545799],[-122.2627,37.546279],[-122.2616888,37.5469748],[-122.260606,37.5470596],[-122.256991,37.547013]]]]}},{"type":"Feature","properties":{"name":"The Islands","slug":"the-islands","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.264285,37.55376],[-122.2637,37.552601],[-122.263533,37.551576],[-122.2640779,37.5486156],[-122.2646755,37.5486151],[-122.2662215,37.5481644],[-122.2674586,37.5471867],[-122.2681923,37.5468154],[-122.269949,37.546397],[-122.270488,37.5484654],[-122.273254,37.552358],[-122.2736179,37.5537332],[-122.2735442,37.5543626],[-122.273381,37.554708],[-122.272772,37.555156],[-122.272114,37.555371],[-122.270677,37.555414],[-122.269328,37.555247],[-122.265868,37.553934],[-122.264285,37.55376]]]]}},{"type":"Feature","properties":{"name":"Treasure Isle","slug":"treasure-isle","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2570939,37.5625959],[-122.256384,37.561152],[-122.2560936,37.5598946],[-122.2560041,37.558884],[-122.2561567,37.5578584],[-122.256834,37.556226],[-122.257147,37.556003],[-122.2588653,37.5555551],[-122.260589,37.55454],[-122.2642691,37.5537625],[-122.265868,37.553934],[-122.269328,37.555247],[-122.270677,37.555414],[-122.272114,37.555371],[-122.272772,37.555156],[-122.273381,37.554708],[-122.273546,37.554359],[-122.275001,37.553623],[-122.276391,37.555029],[-122.272016,37.557906],[-122.2690838,37.5613489],[-122.27325,37.5638439],[-122.269895,37.566789],[-122.2682763,37.5656678],[-122.266054,37.565635],[-122.265913,37.566037],[-122.263978,37.565898],[-122.261093,37.565351],[-122.258597,37.564044],[-122.2570939,37.5625959]]]]}},{"type":"Feature","properties":{"name":"Marina Point","slug":"marina-point","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.25067,37.549173],[-122.251914,37.547384],[-122.252545,37.54587],[-122.25659,37.545878],[-122.256728,37.546624],[-122.2569919,37.5470142],[-122.2606,37.5470589],[-122.260604,37.548628],[-122.2640795,37.5486169],[-122.263533,37.551576],[-122.2637,37.552601],[-122.264285,37.55376],[-122.260589,37.55454],[-122.25885,37.555562],[-122.252864,37.552189],[-122.249367,37.550501],[-122.250122,37.549941],[-122.25067,37.549173]]]]}}]};
+
+  var map = L.map('marina-point-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

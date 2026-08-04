@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .clearfield-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .clearfield-park-map-wrap #clearfield-park-map { width: 100%; height: 100%; }
+  .clearfield-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .clearfield-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .clearfield-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .clearfield-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="clearfield-park-map-wrap">
+  <div id="clearfield-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Clearfield Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-carlos/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Cordes","slug":"cordes","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.26036535,37.50733895],[-122.26692126,37.50216704],[-122.26825375,37.50211945],[-122.27034768,37.50242402],[-122.2751876,37.5020512],[-122.278821,37.5025812],[-122.27945243,37.50310008],[-122.28078493,37.50524159],[-122.28229351,37.50695956],[-122.28301211,37.50754015],[-122.284021,37.5076615],[-122.28541298,37.50694766],[-122.2865235,37.5066089],[-122.2885685,37.50749779],[-122.2865715,37.51058388],[-122.2844696,37.50972938],[-122.27797699,37.51145363],[-122.2790947,37.51242256],[-122.27827644,37.51313209],[-122.27732468,37.51293373],[-122.27654839,37.51252174],[-122.27562332,37.51182365],[-122.27359199,37.51084709],[-122.27301788,37.51020622],[-122.26811847,37.51361636],[-122.26636635,37.51187896],[-122.26371087,37.51011816],[-122.26036535,37.50733895]]]]}},{"type":"Feature","properties":{"name":"El Sereno Corte","slug":"el-sereno-corte","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.24996376,37.48707008],[-122.2505855,37.486879],[-122.25130463,37.48696327],[-122.25192642,37.48689079],[-122.25284576,37.4865284],[-122.25330925,37.48623467],[-122.25348282,37.48591423],[-122.2537955,37.484996],[-122.2551569,37.4843052],[-122.25681114,37.48384666],[-122.2654885,37.4911366],[-122.2524618,37.5007088],[-122.24664538,37.495632],[-122.24418449,37.49373436],[-122.24429703,37.49320412],[-122.24521255,37.49297524],[-122.24578857,37.49197197],[-122.24730492,37.49110603],[-122.24781036,37.49030876],[-122.24757194,37.49004555],[-122.24784088,37.4897213],[-122.24835014,37.48959541],[-122.24928856,37.4878788],[-122.24996376,37.48707008]]]]}},{"type":"Feature","properties":{"name":"Clearfield Park","slug":"clearfield-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.247929,37.511988],[-122.245225,37.508239],[-122.244972,37.507324],[-122.24594,37.50653],[-122.247251,37.506074],[-122.239612,37.499342],[-122.238375,37.498425],[-122.237881,37.497554],[-122.239111,37.497443],[-122.239363,37.497688],[-122.239879,37.497314],[-122.2410396,37.4981374],[-122.24393375,37.4959838],[-122.243283,37.495385],[-122.24436063,37.49456101],[-122.24418449,37.49373436],[-122.24664538,37.495632],[-122.2539601,37.5019852],[-122.2636825,37.5101009],[-122.26449133,37.51064164],[-122.2638803,37.51135176],[-122.2647845,37.51218457],[-122.26261919,37.51368363],[-122.25897861,37.51242252],[-122.25847893,37.51239872],[-122.25781268,37.51194663],[-122.2572892,37.51242252],[-122.25674192,37.51254149],[-122.2545167,37.5148985],[-122.2542711,37.5153673],[-122.25301933,37.51634407],[-122.25191116,37.5172329],[-122.25032997,37.51799202],[-122.24868584,37.51815987],[-122.24875,37.516547],[-122.248401,37.515578],[-122.248412,37.513723],[-122.248084,37.512565],[-122.247929,37.511988]]]]}}]};
+
+  var map = L.map('clearfield-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

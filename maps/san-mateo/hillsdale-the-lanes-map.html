@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .hillsdale-the-lanes-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .hillsdale-the-lanes-map-wrap #hillsdale-the-lanes-map { width: 100%; height: 100%; }
+  .hillsdale-the-lanes-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .hillsdale-the-lanes-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .hillsdale-the-lanes-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .hillsdale-the-lanes-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="hillsdale-the-lanes-map-wrap">
+  <div id="hillsdale-the-lanes-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Hillsdale "The Lanes"</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-mateo/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Beresford Manor","slug":"beresford-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.30366797,37.54257316],[-122.31266071,37.53867539],[-122.3153762,37.5409631],[-122.3229324,37.5471437],[-122.31880609,37.54803644],[-122.31201035,37.55032072],[-122.30366797,37.54257316]]]]}},{"type":"Feature","properties":{"name":"Fiesta Gardens","slug":"fiesta-gardens","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28797629,37.54453465],[-122.2895904,37.5435848],[-122.2915859,37.5410195],[-122.297439,37.5371243],[-122.298516,37.5379662],[-122.3036953,37.5425817],[-122.31201035,37.55032072],[-122.3089979,37.5522556],[-122.29602037,37.5534045],[-122.28797629,37.54453465]]]]}},{"type":"Feature","properties":{"name":"San Mateo Knolls","slug":"san-mateo-knolls","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.31184578,37.52453804],[-122.3133276,37.5216299],[-122.31393685,37.52354415],[-122.3166082,37.5270751],[-122.3173505,37.5268381],[-122.3186038,37.5266546],[-122.3185459,37.5271363],[-122.31574702,37.52791582],[-122.31587551,37.52841551],[-122.3151861,37.5286187],[-122.31473337,37.52910079],[-122.31489279,37.52982177],[-122.31303682,37.52989315],[-122.31032423,37.5314398],[-122.30827817,37.53191565],[-122.30470898,37.52627633],[-122.30191314,37.52337834],[-122.30729675,37.52115822],[-122.31071663,37.52415657],[-122.31184578,37.52453804]]]]}},{"type":"Feature","properties":{"name":"San Mateo Terrace/Beresford","slug":"san-mateo-terrace-beresford","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.322938,37.547129],[-122.312688,37.53871],[-122.3082821,37.5319262],[-122.3103221,37.5314445],[-122.3130361,37.5298959],[-122.3148757,37.5298224],[-122.315694,37.529663],[-122.317599,37.530027],[-122.319223,37.5291684],[-122.3203588,37.5291144],[-122.321557,37.529539],[-122.3223379,37.5304539],[-122.323065,37.53183],[-122.3252353,37.5330672],[-122.3296209,37.5327382],[-122.329108,37.535617],[-122.329864,37.5400051],[-122.3298387,37.5414471],[-122.3291567,37.542849],[-122.3240743,37.5462261],[-122.322938,37.547129]]]]}},{"type":"Feature","properties":{"name":"San Mateo Village","slug":"san-mateo-village","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.278188,37.534023],[-122.288761,37.533824],[-122.2903007,37.5316356],[-122.2974351,37.5371243],[-122.291549,37.5410363],[-122.2895936,37.5435679],[-122.2879774,37.5445326],[-122.278188,37.534023]]]]}},{"type":"Feature","properties":{"name":"Westwood Knolls","slug":"westwood-knolls","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.30827817,37.53191565],[-122.30525435,37.53359746],[-122.30147577,37.53415901],[-122.2974439,37.5371232],[-122.2903223,37.5316518],[-122.286987,37.529428],[-122.30191314,37.52337834],[-122.30470898,37.52627633],[-122.30827817,37.53191565]]]]}},{"type":"Feature","properties":{"name":"Hillsdale \"The Lanes\"","slug":"hillsdale-the-lanes","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2974332,37.5371274],[-122.3002351,37.5350267],[-122.3014718,37.534177],[-122.3052826,37.5336037],[-122.3082639,37.5319156],[-122.3126518,37.5386701],[-122.30371,37.542588],[-122.2985129,37.5379626],[-122.2974332,37.5371274]]]]}}]};
+
+  var map = L.map('hillsdale-the-lanes-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

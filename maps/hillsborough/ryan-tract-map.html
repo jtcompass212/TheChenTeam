@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .ryan-tract-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .ryan-tract-map-wrap #ryan-tract-map { width: 100%; height: 100%; }
+  .ryan-tract-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .ryan-tract-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .ryan-tract-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ryan-tract-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="ryan-tract-map-wrap">
+  <div id="ryan-tract-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Ryan Tract</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/hillsborough/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Country Club Manor","slug":"country-club-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.36698356,37.57704298],[-122.36683128,37.57650998],[-122.36732621,37.57523459],[-122.36723103,37.57494905],[-122.36683128,37.5744922],[-122.3652769,37.57414837],[-122.36480576,37.57383428],[-122.36444884,37.57324893],[-122.36413475,37.57313472],[-122.36324959,37.57296339],[-122.36286412,37.57312044],[-122.36190758,37.57430541],[-122.35966613,37.57570453],[-122.35928065,37.57513346],[-122.35856682,37.57479082],[-122.35793864,37.57530478],[-122.35678222,37.57586158],[-122.35536882,37.57551894],[-122.3543555,37.5750625],[-122.35274277,37.57282147],[-122.35406859,37.57202972],[-122.35657243,37.57146887],[-122.36049379,37.56855641],[-122.36131232,37.5671668],[-122.36262578,37.56625309],[-122.3634062,37.5652632],[-122.36551921,37.56434952],[-122.36668039,37.56339774],[-122.36732216,37.56323145],[-122.36766481,37.56408806],[-122.3701918,37.56607253],[-122.36989198,37.56666501],[-122.37044402,37.56709332],[-122.37029173,37.56865424],[-122.369635,37.57008192],[-122.36860707,37.57145249],[-122.36844527,37.57248041],[-122.36909248,37.57216633],[-122.3693685,37.57162381],[-122.3716052,37.57068154],[-122.3735297,37.57030749],[-122.3754999,37.56825164],[-122.3777699,37.56893692],[-122.37748437,37.56925101],[-122.37853873,37.57227392],[-122.37751387,37.57191762],[-122.37653234,37.5722448],[-122.37424211,37.57185814],[-122.37132727,37.57167967],[-122.37094061,37.57209608],[-122.36817448,37.57718218],[-122.36698356,37.57704298]]]]}},{"type":"Feature","properties":{"name":"Hillsborough Oaks","slug":"hillsborough-oaks","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.36698356,37.57704298],[-122.36817448,37.57718218],[-122.37094061,37.57209608],[-122.37132727,37.57167967],[-122.37424211,37.57185814],[-122.37653234,37.5722448],[-122.37751387,37.57191762],[-122.37853873,37.57227392],[-122.37824229,37.57241074],[-122.37830177,37.57291042],[-122.37787347,37.57400498],[-122.37856351,37.57426672],[-122.37840885,37.57445707],[-122.37850402,37.57470692],[-122.37911079,37.57481399],[-122.37924166,37.57501625],[-122.37912268,37.57526609],[-122.37764742,37.57588475],[-122.3777307,37.57632495],[-122.37808762,37.57646772],[-122.37809671,37.57742927],[-122.37634383,37.57862637],[-122.3760469,37.57858105],[-122.37586178,37.5787267],[-122.37597074,37.57894935],[-122.37579679,37.57914292],[-122.37477357,37.57978085],[-122.37394056,37.57944441],[-122.37354247,37.57959538],[-122.37333529,37.58007851],[-122.37252048,37.5801687],[-122.37198633,37.58084851],[-122.37181284,37.58074476],[-122.37181161,37.58017048],[-122.37168981,37.58010219],[-122.37145798,37.58046068],[-122.37104821,37.58023099],[-122.37133714,37.57990451],[-122.36948035,37.57886426],[-122.36976105,37.5786471],[-122.36931971,37.57803998],[-122.36879842,37.57828217],[-122.36842702,37.57807478],[-122.36830238,37.57820648],[-122.36812385,37.57810679],[-122.36708846,37.57866611],[-122.36650767,37.57862294],[-122.36603178,37.57795669],[-122.36664092,37.57759501],[-122.36698356,37.57704298]]]]}},{"type":"Feature","properties":{"name":"Ryan Tract","slug":"ryan-tract","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3538956,37.5744235],[-122.35435517,37.57506208],[-122.35536882,37.57551894],[-122.35678222,37.57586158],[-122.35793864,37.57530478],[-122.35856682,37.57479082],[-122.35928065,37.57513346],[-122.35966613,37.57570453],[-122.36190758,37.57430541],[-122.36286412,37.57312044],[-122.36324959,37.57296339],[-122.36413475,37.57313472],[-122.36444884,37.57324893],[-122.36480576,37.57383428],[-122.3652769,37.57414837],[-122.36683128,37.5744922],[-122.36723103,37.57494905],[-122.36732621,37.57523459],[-122.36683128,37.57650998],[-122.36698356,37.57704298],[-122.36664092,37.57759501],[-122.36603178,37.57795669],[-122.36650767,37.57862294],[-122.36708846,37.57866611],[-122.36344252,37.58060295],[-122.36304864,37.58003624],[-122.36274162,37.5800538],[-122.36076456,37.57910398],[-122.35884087,37.5772369],[-122.35822022,37.57747402],[-122.35772793,37.57792099],[-122.35685409,37.57730329],[-122.35601809,37.5784958],[-122.3542039,37.57751529],[-122.35256428,37.57705718],[-122.35267878,37.57670399],[-122.35243213,37.57637774],[-122.35264971,37.575676],[-122.3524336,37.57566063],[-122.35293558,37.57477302],[-122.3538956,37.5744235]]]]}}]};
+
+  var map = L.map('ryan-tract-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

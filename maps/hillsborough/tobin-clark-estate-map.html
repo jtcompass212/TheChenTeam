@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .tobin-clark-estate-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .tobin-clark-estate-map-wrap #tobin-clark-estate-map { width: 100%; height: 100%; }
+  .tobin-clark-estate-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .tobin-clark-estate-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .tobin-clark-estate-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tobin-clark-estate-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="tobin-clark-estate-map-wrap">
+  <div id="tobin-clark-estate-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Tobin Clark Estate</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/hillsborough/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Parrot Drive Area","slug":"parrot-drive-area","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.33841289,37.54657569],[-122.3395149,37.5454083],[-122.3418232,37.5434499],[-122.3419618,37.5427338],[-122.342631,37.5421754],[-122.3438233,37.542118],[-122.3453992,37.5409915],[-122.3458174,37.5404807],[-122.3459741,37.5397399],[-122.34938185,37.5397476],[-122.34962685,37.5401096],[-122.3496308,37.5409544],[-122.34922985,37.54156061],[-122.3490553,37.5423987],[-122.3483685,37.5429132],[-122.3476811,37.543428],[-122.3476406,37.5437208],[-122.3468971,37.5444344],[-122.3464965,37.5450997],[-122.34657836,37.54566763],[-122.34757586,37.54643162],[-122.3477001,37.5467249],[-122.3477001,37.54729],[-122.3472014,37.5479227],[-122.3467897,37.5481802],[-122.3454365,37.5484181],[-122.3436312,37.5492488],[-122.3422186,37.5500915],[-122.3410864,37.5509887],[-122.34032389,37.55039868],[-122.34061688,37.55010267],[-122.34069088,37.54967467],[-122.33927689,37.54747368],[-122.33917289,37.54701468],[-122.33841289,37.54657569]]]]}},{"type":"Feature","properties":{"name":"Tobin Clark Estate","slug":"tobin-clark-estate","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.34597406,37.53973982],[-122.3458175,37.5404807],[-122.345399,37.5409918],[-122.3438232,37.542118],[-122.34263382,37.54217767],[-122.3419617,37.5427339],[-122.3418232,37.5434499],[-122.3395157,37.5454077],[-122.3384129,37.5465757],[-122.33246268,37.55060947],[-122.3289971,37.5482233],[-122.33015442,37.54715538],[-122.33257537,37.54417255],[-122.33019144,37.54127896],[-122.33295687,37.5389242],[-122.33355522,37.53938484],[-122.33522627,37.53801553],[-122.3386097,37.54060554],[-122.3397646,37.5400596],[-122.3405123,37.5400083],[-122.3412748,37.5390273],[-122.340178,37.5372383],[-122.3398331,37.5374804],[-122.33727455,37.53534349],[-122.34159716,37.53174881],[-122.343387,37.53352497],[-122.34431114,37.53634427],[-122.34568391,37.53893459],[-122.34572791,37.53968938],[-122.34597406,37.53973982]]]]}}]};
+
+  var map = L.map('tobin-clark-estate-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

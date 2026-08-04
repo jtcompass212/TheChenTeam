@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .parrot-drive-area-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .parrot-drive-area-map-wrap #parrot-drive-area-map { width: 100%; height: 100%; }
+  .parrot-drive-area-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .parrot-drive-area-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .parrot-drive-area-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .parrot-drive-area-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="parrot-drive-area-map-wrap">
+  <div id="parrot-drive-area-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Parrot Drive Area</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/hillsborough/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Hillsborough Park","slug":"hillsborough-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.33960472,37.55274101],[-122.34079958,37.55121608],[-122.3422186,37.5500914],[-122.3436311,37.5492488],[-122.3454364,37.5484181],[-122.3467898,37.5481802],[-122.3472014,37.5479227],[-122.34770002,37.54728997],[-122.34951555,37.5477968],[-122.35037215,37.54755885],[-122.35087184,37.54870099],[-122.35144291,37.5491293],[-122.35141912,37.5500097],[-122.35158568,37.55031903],[-122.35201398,37.55048559],[-122.35170465,37.55091389],[-122.35218054,37.55098528],[-122.35313233,37.55072354],[-122.35351304,37.5508901],[-122.3532513,37.55143737],[-122.35360822,37.55234157],[-122.35365581,37.55384063],[-122.35452669,37.55471627],[-122.35252794,37.55626292],[-122.35129063,37.55588221],[-122.35088612,37.55602498],[-122.35062438,37.55640569],[-122.35031651,37.55634192],[-122.34543862,37.55750785],[-122.34522447,37.55788857],[-122.34401094,37.55767442],[-122.34379679,37.55791236],[-122.34405853,37.55812651],[-122.34415371,37.55876897],[-122.34441545,37.55898312],[-122.34408233,37.55969696],[-122.34424889,37.56019665],[-122.34412991,37.56048218],[-122.3428926,37.56098187],[-122.34205978,37.56098187],[-122.34189322,37.56091048],[-122.34217876,37.56069633],[-122.34260706,37.55993491],[-122.34267844,37.55945901],[-122.34208358,37.5568654],[-122.3418696,37.5565565],[-122.34158389,37.55622295],[-122.341108,37.55627054],[-122.34034657,37.55608018],[-122.3393234,37.55565188],[-122.33908546,37.55455732],[-122.33998965,37.55298688],[-122.33960472,37.55274101]]]]}},{"type":"Feature","properties":{"name":"Lakeview","slug":"lakeview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.35351304,37.5508901],[-122.35313233,37.55072354],[-122.35218054,37.55098528],[-122.35170465,37.55091389],[-122.35201398,37.55048559],[-122.35158568,37.55031903],[-122.35141912,37.5500097],[-122.35144291,37.5491293],[-122.35087184,37.54870099],[-122.35037215,37.54755885],[-122.34951555,37.5477968],[-122.34770002,37.54728997],[-122.34770002,37.54672485],[-122.3475757,37.5464315],[-122.3465784,37.5456676],[-122.3464966,37.5450997],[-122.34689695,37.54443462],[-122.34764053,37.54372078],[-122.3476811,37.543428],[-122.3490553,37.5423987],[-122.349231,37.5415568],[-122.3496308,37.5409544],[-122.3496267,37.5401091],[-122.349689,37.53965],[-122.35003845,37.53913874],[-122.35033707,37.53682593],[-122.3495359,37.53639314],[-122.34922979,37.53590366],[-122.34936868,37.53532025],[-122.35003703,37.53469966],[-122.3504054,37.5341241],[-122.35094632,37.53310245],[-122.35298499,37.53247495],[-122.35521731,37.53092032],[-122.35829071,37.53012749],[-122.35907895,37.53014199],[-122.36091335,37.53140972],[-122.36123577,37.53422157],[-122.36101811,37.53469673],[-122.36170782,37.53770817],[-122.36280588,37.53875076],[-122.36272686,37.54083059],[-122.36346332,37.5415493],[-122.36388027,37.54329087],[-122.36443219,37.54392751],[-122.3638054,37.54460951],[-122.36138787,37.54594201],[-122.36041705,37.54666536],[-122.36005537,37.54750294],[-122.35906551,37.54868315],[-122.35906551,37.5494065],[-122.35942719,37.55104357],[-122.35775205,37.55292811],[-122.35771517,37.55355034],[-122.35690615,37.55412141],[-122.3564251,37.5543598],[-122.35528812,37.55466868],[-122.35452669,37.55471627],[-122.35365581,37.55384063],[-122.35360822,37.55234157],[-122.3532513,37.55143737],[-122.35351304,37.5508901]]]]}},{"type":"Feature","properties":{"name":"Tobin Clark Estate","slug":"tobin-clark-estate","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.34597406,37.53973982],[-122.3458175,37.5404807],[-122.345399,37.5409918],[-122.3438232,37.542118],[-122.34263382,37.54217767],[-122.3419617,37.5427339],[-122.3418232,37.5434499],[-122.3395157,37.5454077],[-122.3384129,37.5465757],[-122.33246268,37.55060947],[-122.3289971,37.5482233],[-122.33015442,37.54715538],[-122.33257537,37.54417255],[-122.33019144,37.54127896],[-122.33295687,37.5389242],[-122.33355522,37.53938484],[-122.33522627,37.53801553],[-122.3386097,37.54060554],[-122.3397646,37.5400596],[-122.3405123,37.5400083],[-122.3412748,37.5390273],[-122.340178,37.5372383],[-122.3398331,37.5374804],[-122.33727455,37.53534349],[-122.34159716,37.53174881],[-122.343387,37.53352497],[-122.34431114,37.53634427],[-122.34568391,37.53893459],[-122.34572791,37.53968938],[-122.34597406,37.53973982]]]]}},{"type":"Feature","properties":{"name":"Parrot Drive Area","slug":"parrot-drive-area","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.33841289,37.54657569],[-122.3395149,37.5454083],[-122.3418232,37.5434499],[-122.3419618,37.5427338],[-122.342631,37.5421754],[-122.3438233,37.542118],[-122.3453992,37.5409915],[-122.3458174,37.5404807],[-122.3459741,37.5397399],[-122.34938185,37.5397476],[-122.34962685,37.5401096],[-122.3496308,37.5409544],[-122.34922985,37.54156061],[-122.3490553,37.5423987],[-122.3483685,37.5429132],[-122.3476811,37.543428],[-122.3476406,37.5437208],[-122.3468971,37.5444344],[-122.3464965,37.5450997],[-122.34657836,37.54566763],[-122.34757586,37.54643162],[-122.3477001,37.5467249],[-122.3477001,37.54729],[-122.3472014,37.5479227],[-122.3467897,37.5481802],[-122.3454365,37.5484181],[-122.3436312,37.5492488],[-122.3422186,37.5500915],[-122.3410864,37.5509887],[-122.34032389,37.55039868],[-122.34061688,37.55010267],[-122.34069088,37.54967467],[-122.33927689,37.54747368],[-122.33917289,37.54701468],[-122.33841289,37.54657569]]]]}}]};
+
+  var map = L.map('parrot-drive-area-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

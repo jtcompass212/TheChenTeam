@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .downtown-redwood-city-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .downtown-redwood-city-map-wrap #downtown-redwood-city-map { width: 100%; height: 100%; }
+  .downtown-redwood-city-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .downtown-redwood-city-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .downtown-redwood-city-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .downtown-redwood-city-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="downtown-redwood-city-map-wrap">
+  <div id="downtown-redwood-city-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Downtown Redwood City</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/redwood-city/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bair Island","slug":"bair-island","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.221605,37.501036],[-122.2208845,37.5007269],[-122.2208797,37.5005556],[-122.2204609,37.5003034],[-122.2196519,37.4991755],[-122.219847,37.4980952],[-122.2194688,37.4966383],[-122.2184835,37.498167],[-122.2187169,37.5002165],[-122.2197913,37.5012267],[-122.2219004,37.5025843],[-122.2219004,37.5037208],[-122.2205076,37.50451],[-122.2158285,37.5052103],[-122.2140948,37.5025532],[-122.2112112,37.5018327],[-122.2132728,37.4956643],[-122.2133728,37.492966],[-122.212032,37.490875],[-122.211935,37.4899079],[-122.2129493,37.488961],[-122.2163318,37.4901677],[-122.2237699,37.493463],[-122.2267516,37.4945259],[-122.2352045,37.4969285],[-122.2367685,37.4975281],[-122.238375,37.498425],[-122.238118,37.498578],[-122.236557,37.498138],[-122.236311,37.498188],[-122.232996,37.498306],[-122.232623,37.498141],[-122.231156,37.498304],[-122.229483,37.498068],[-122.228362,37.498227],[-122.225628,37.498081],[-122.224615,37.498224],[-122.224123,37.498493],[-122.223959,37.49818],[-122.223754,37.498265],[-122.22453,37.500386],[-122.223499,37.500728],[-122.222645,37.501522],[-122.222301,37.501552],[-122.221605,37.501036]]]]}},{"type":"Feature","properties":{"name":"Centennial","slug":"centennial","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2367685,37.4975281],[-122.2352045,37.4969285],[-122.2267517,37.4945257],[-122.2271562,37.4938356],[-122.227594,37.4938023],[-122.2282222,37.4931123],[-122.2283935,37.4922129],[-122.2297636,37.4919926],[-122.230445,37.4912768],[-122.2360529,37.4871741],[-122.240222,37.490827],[-122.242146,37.491899],[-122.2457111,37.49477],[-122.24156952,37.49773979],[-122.241195,37.498245],[-122.239879,37.497314],[-122.239363,37.497688],[-122.238616,37.498213],[-122.238375,37.498425],[-122.2367685,37.4975281]]]]}},{"type":"Feature","properties":{"name":"Central Park","slug":"central-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.22182466,37.47650318],[-122.22556648,37.46072973],[-122.22742462,37.4569912],[-122.22756767,37.45671272],[-122.22878075,37.45407295],[-122.2289257,37.4537487],[-122.229496,37.45260811],[-122.22961998,37.45235252],[-122.23035812,37.45086098],[-122.2315765,37.4487286],[-122.23491812,37.45111689],[-122.23443985,37.45162055],[-122.23455406,37.45200127],[-122.23493478,37.45236295],[-122.23600078,37.4528198],[-122.23740942,37.4538858],[-122.24024573,37.45637948],[-122.24066452,37.4570838],[-122.24074066,37.45856858],[-122.24121655,37.45961554],[-122.24340566,37.46170947],[-122.24509984,37.4627945],[-122.24584223,37.46368918],[-122.24605162,37.46488843],[-122.24559476,37.4659925],[-122.2462434,37.46834817],[-122.2471218,37.4697318],[-122.24114426,37.47210193],[-122.23938346,37.47460037],[-122.23790819,37.47619461],[-122.23056967,37.48278787],[-122.22182466,37.47650318]]]]}},{"type":"Feature","properties":{"name":"Dumbarton","slug":"dumbarton","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2051935,37.517376],[-122.1986981,37.5148163],[-122.1917789,37.5140766],[-122.1899061,37.5126313],[-122.1901185,37.511566],[-122.1986121,37.5110675],[-122.2011994,37.5090424],[-122.2049362,37.5095969],[-122.2071215,37.5102109],[-122.2124516,37.495561],[-122.2126084,37.4926735],[-122.211636,37.491591],[-122.2057264,37.4894512],[-122.19267273,37.48807335],[-122.19303513,37.48627281],[-122.18974304,37.48585701],[-122.18933868,37.48656273],[-122.18229866,37.48502922],[-122.18308067,37.48350716],[-122.18248367,37.48344231],[-122.18244553,37.48257256],[-122.18335152,37.48179436],[-122.18373108,37.48236275],[-122.18611717,37.4781704],[-122.18912888,37.47796822],[-122.1984787,37.48157692],[-122.20552462,37.47045954],[-122.20899535,37.46714842],[-122.2218212,37.4765022],[-122.217864,37.482906],[-122.214851,37.485047],[-122.2138125,37.4881405],[-122.211942,37.489904],[-122.212032,37.490875],[-122.2133728,37.492966],[-122.2132728,37.4956643],[-122.2111658,37.5018507],[-122.2140494,37.5025352],[-122.2132643,37.5046361],[-122.2108654,37.5081779],[-122.2112985,37.5094729],[-122.2104267,37.5123276],[-122.2063957,37.514964],[-122.2051935,37.517376]]]]}},{"type":"Feature","properties":{"name":"Horgan Ranch","slug":"horgan-ranch","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.21377085,37.46803644],[-122.21366635,37.46796103],[-122.21619152,37.46479235],[-122.21697795,37.46511667],[-122.21810178,37.46371412],[-122.21909974,37.46082116],[-122.22198415,37.45728491],[-122.2205845,37.45630692],[-122.2204308,37.45613036],[-122.22051631,37.45603246],[-122.21734129,37.4537658],[-122.22501312,37.44410058],[-122.22491465,37.44403449],[-122.22510333,37.44396034],[-122.22585124,37.444473],[-122.22824501,37.44139061],[-122.23456436,37.44462828],[-122.2315745,37.4487291],[-122.23035812,37.45086098],[-122.23010826,37.45137978],[-122.22961998,37.45235252],[-122.229496,37.45260811],[-122.2289257,37.4537487],[-122.22878075,37.45407295],[-122.22756767,37.45671272],[-122.22742462,37.4569912],[-122.22556648,37.46072973],[-122.22182466,37.47650318],[-122.2124685,37.4696843],[-122.21377085,37.46803644]]]]}},{"type":"Feature","properties":{"name":"Mt. Carmel","slug":"mt-carmel","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.23790715,37.47619269],[-122.23929334,37.47459628],[-122.24090375,37.47593998],[-122.24256427,37.47693208],[-122.24348987,37.47617028],[-122.24471387,37.47618918],[-122.24509008,37.47701228],[-122.246941,37.47854138],[-122.2461885,37.47913658],[-122.2501235,37.4822769],[-122.23977306,37.49043542],[-122.23325399,37.48470841],[-122.2305637,37.4827808],[-122.23790715,37.47619269]]]]}},{"type":"Feature","properties":{"name":"Downtown Redwood City","slug":"downtown-redwood-city","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2218225,37.4765032],[-122.233255,37.484709],[-122.2360529,37.4871741],[-122.230445,37.4912768],[-122.2297636,37.4919926],[-122.2283935,37.4922129],[-122.2282222,37.4931123],[-122.227594,37.4938023],[-122.2271562,37.4938356],[-122.2267517,37.4945257],[-122.2237782,37.493465],[-122.2163362,37.4901638],[-122.2129238,37.4889508],[-122.2138177,37.4881369],[-122.2148503,37.485045],[-122.2178611,37.4829122],[-122.2218225,37.4765032]]]]}}]};
+
+  var map = L.map('downtown-redwood-city-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

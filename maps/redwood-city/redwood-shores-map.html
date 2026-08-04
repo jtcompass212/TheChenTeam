@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .redwood-shores-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .redwood-shores-map-wrap #redwood-shores-map { width: 100%; height: 100%; }
+  .redwood-shores-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .redwood-shores-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .redwood-shores-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .redwood-shores-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="redwood-shores-map-wrap">
+  <div id="redwood-shores-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Redwood Shores</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/redwood-city/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bair Island","slug":"bair-island","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.221605,37.501036],[-122.2208845,37.5007269],[-122.2208797,37.5005556],[-122.2204609,37.5003034],[-122.2196519,37.4991755],[-122.219847,37.4980952],[-122.2194688,37.4966383],[-122.2184835,37.498167],[-122.2187169,37.5002165],[-122.2197913,37.5012267],[-122.2219004,37.5025843],[-122.2219004,37.5037208],[-122.2205076,37.50451],[-122.2158285,37.5052103],[-122.2140948,37.5025532],[-122.2112112,37.5018327],[-122.2132728,37.4956643],[-122.2133728,37.492966],[-122.212032,37.490875],[-122.211935,37.4899079],[-122.2129493,37.488961],[-122.2163318,37.4901677],[-122.2237699,37.493463],[-122.2267516,37.4945259],[-122.2352045,37.4969285],[-122.2367685,37.4975281],[-122.238375,37.498425],[-122.238118,37.498578],[-122.236557,37.498138],[-122.236311,37.498188],[-122.232996,37.498306],[-122.232623,37.498141],[-122.231156,37.498304],[-122.229483,37.498068],[-122.228362,37.498227],[-122.225628,37.498081],[-122.224615,37.498224],[-122.224123,37.498493],[-122.223959,37.49818],[-122.223754,37.498265],[-122.22453,37.500386],[-122.223499,37.500728],[-122.222645,37.501522],[-122.222301,37.501552],[-122.221605,37.501036]]]]}},{"type":"Feature","properties":{"name":"Centennial","slug":"centennial","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2367685,37.4975281],[-122.2352045,37.4969285],[-122.2267517,37.4945257],[-122.2271562,37.4938356],[-122.227594,37.4938023],[-122.2282222,37.4931123],[-122.2283935,37.4922129],[-122.2297636,37.4919926],[-122.230445,37.4912768],[-122.2360529,37.4871741],[-122.240222,37.490827],[-122.242146,37.491899],[-122.2457111,37.49477],[-122.24156952,37.49773979],[-122.241195,37.498245],[-122.239879,37.497314],[-122.239363,37.497688],[-122.238616,37.498213],[-122.238375,37.498425],[-122.2367685,37.4975281]]]]}},{"type":"Feature","properties":{"name":"Redwood Shores","slug":"redwood-shores","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.24548,37.550376],[-122.244659,37.550312],[-122.244585,37.549162],[-122.243732,37.548818],[-122.242437,37.549565],[-122.236223,37.548666],[-122.228601,37.549352],[-122.228334,37.548677],[-122.227578,37.548805],[-122.225639,37.54745],[-122.225579,37.54487],[-122.232527,37.534798],[-122.236496,37.53256],[-122.23967,37.532112],[-122.241967,37.5311708],[-122.244062,37.529627],[-122.24687,37.525028],[-122.2475338,37.5225247],[-122.2491897,37.5205847],[-122.250063,37.520445],[-122.250249,37.518494],[-122.252666,37.517075],[-122.253687,37.516973],[-122.253983,37.517093],[-122.253574,37.517576],[-122.255781,37.519262],[-122.256416,37.519607],[-122.257264,37.518986],[-122.259988,37.521382],[-122.2610866,37.5204544],[-122.263609,37.522544],[-122.265176,37.525803],[-122.269296,37.529018],[-122.267758,37.530636],[-122.266644,37.533551],[-122.264882,37.534089],[-122.261881,37.53314],[-122.260671,37.533727],[-122.260581,37.538742],[-122.259756,37.540595],[-122.258256,37.541303],[-122.255793,37.541523],[-122.252162,37.540261],[-122.251142,37.54049],[-122.250954,37.541643],[-122.252701,37.544445],[-122.251914,37.547384],[-122.249367,37.550501],[-122.247998,37.54966],[-122.246199,37.550509],[-122.24548,37.550376]]]]}}]};
+
+  var map = L.map('redwood-shores-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

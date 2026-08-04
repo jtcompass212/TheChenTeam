@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .sterling-downs-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .sterling-downs-map-wrap #sterling-downs-map { width: 100%; height: 100%; }
+  .sterling-downs-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .sterling-downs-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .sterling-downs-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sterling-downs-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="sterling-downs-map-wrap">
+  <div id="sterling-downs-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Sterling Downs</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/belmont/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Belmont Country Club","slug":"belmont-country-club","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2759946,37.5203881],[-122.2774377,37.5191184],[-122.2780675,37.5175437],[-122.2785607,37.5170912],[-122.2791867,37.5168726],[-122.2822847,37.5165595],[-122.2830014,37.5159419],[-122.2834839,37.5153469],[-122.2840347,37.5150401],[-122.2943264,37.5121065],[-122.29478697,37.51346797],[-122.2961583,37.5162253],[-122.29619086,37.51771769],[-122.298161,37.5211226],[-122.29921039,37.52195313],[-122.30085222,37.52235764],[-122.3012972,37.5225826],[-122.3019634,37.5233804],[-122.29716873,37.52534294],[-122.2874273,37.5292787],[-122.28249972,37.52597434],[-122.28031954,37.52410051],[-122.2759946,37.5203881]]]]}},{"type":"Feature","properties":{"name":"Downtown Belmont","slug":"downtown-belmont","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.26833211,37.51346825],[-122.2730101,37.5102023],[-122.2736027,37.5108698],[-122.2756294,37.5118006],[-122.2768857,37.5127783],[-122.27829607,37.51315517],[-122.27907307,37.51245116],[-122.27802307,37.51149117],[-122.28078907,37.51072015],[-122.28091607,37.51114415],[-122.28032607,37.51128215],[-122.28041707,37.51156815],[-122.28022707,37.51215315],[-122.27996907,37.51240315],[-122.28102507,37.51334414],[-122.28298906,37.51595412],[-122.2822888,37.5165531],[-122.27919207,37.51687215],[-122.27856107,37.51709116],[-122.27806508,37.51754216],[-122.27743708,37.51911916],[-122.27599608,37.52038817],[-122.2694051,37.51498723],[-122.26813611,37.51360625],[-122.26833211,37.51346825]]]]}},{"type":"Feature","properties":{"name":"Homeview","slug":"homeview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.267934,37.513753],[-122.268137,37.513607],[-122.269677,37.515224],[-122.275997,37.520389],[-122.273767,37.522303],[-122.272121,37.524683],[-122.270132,37.526298],[-122.264727,37.521518],[-122.2701769,37.5168144],[-122.2672525,37.5143228],[-122.267934,37.513753]]]]}},{"type":"Feature","properties":{"name":"Sterling Downs","slug":"sterling-downs","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2737484,37.5276179],[-122.2735865,37.5275757],[-122.2735269,37.5292844],[-122.270132,37.526298],[-122.272121,37.524683],[-122.273767,37.522303],[-122.275997,37.520389],[-122.282509,37.525942],[-122.287268,37.529172],[-122.2855455,37.5306919],[-122.2737484,37.5276179]]]]}}]};
+
+  var map = L.map('sterling-downs-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

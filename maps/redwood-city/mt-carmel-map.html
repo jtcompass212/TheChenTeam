@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .mt-carmel-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .mt-carmel-map-wrap #mt-carmel-map { width: 100%; height: 100%; }
+  .mt-carmel-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .mt-carmel-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .mt-carmel-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .mt-carmel-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="mt-carmel-map-wrap">
+  <div id="mt-carmel-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Mt. Carmel</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/redwood-city/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Central Park","slug":"central-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.22182466,37.47650318],[-122.22556648,37.46072973],[-122.22742462,37.4569912],[-122.22756767,37.45671272],[-122.22878075,37.45407295],[-122.2289257,37.4537487],[-122.229496,37.45260811],[-122.22961998,37.45235252],[-122.23035812,37.45086098],[-122.2315765,37.4487286],[-122.23491812,37.45111689],[-122.23443985,37.45162055],[-122.23455406,37.45200127],[-122.23493478,37.45236295],[-122.23600078,37.4528198],[-122.23740942,37.4538858],[-122.24024573,37.45637948],[-122.24066452,37.4570838],[-122.24074066,37.45856858],[-122.24121655,37.45961554],[-122.24340566,37.46170947],[-122.24509984,37.4627945],[-122.24584223,37.46368918],[-122.24605162,37.46488843],[-122.24559476,37.4659925],[-122.2462434,37.46834817],[-122.2471218,37.4697318],[-122.24114426,37.47210193],[-122.23938346,37.47460037],[-122.23790819,37.47619461],[-122.23056967,37.48278787],[-122.22182466,37.47650318]]]]}},{"type":"Feature","properties":{"name":"Downtown Redwood City","slug":"downtown-redwood-city","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.2218225,37.4765032],[-122.233255,37.484709],[-122.2360529,37.4871741],[-122.230445,37.4912768],[-122.2297636,37.4919926],[-122.2283935,37.4922129],[-122.2282222,37.4931123],[-122.227594,37.4938023],[-122.2271562,37.4938356],[-122.2267517,37.4945257],[-122.2237782,37.493465],[-122.2163362,37.4901638],[-122.2129238,37.4889508],[-122.2138177,37.4881369],[-122.2148503,37.485045],[-122.2178611,37.4829122],[-122.2218225,37.4765032]]]]}},{"type":"Feature","properties":{"name":"Eagle Hill","slug":"eagle-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.24509008,37.47701228],[-122.24471387,37.47618918],[-122.24348987,37.47617028],[-122.24256427,37.47693208],[-122.24090375,37.47593998],[-122.23929334,37.47459628],[-122.24082283,37.47242247],[-122.24141773,37.47191327],[-122.2471207,37.4697329],[-122.25043496,37.47249435],[-122.25077497,37.47358336],[-122.25079797,37.47443036],[-122.25139398,37.47505635],[-122.25062518,37.47566926],[-122.2511539,37.4765785],[-122.2513303,37.4787723],[-122.2524646,37.4804426],[-122.250129,37.4822769],[-122.2461885,37.47913658],[-122.246941,37.47854138],[-122.24509008,37.47701228]]]]}},{"type":"Feature","properties":{"name":"Edgewood Park","slug":"edgewood-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.24240655,37.48834042],[-122.2524648,37.4804414],[-122.25690502,37.48391733],[-122.25511403,37.48423335],[-122.25450404,37.48470536],[-122.25390504,37.48487436],[-122.25305306,37.48649538],[-122.25186506,37.48690939],[-122.25049807,37.4868364],[-122.25008207,37.4870974],[-122.24931107,37.48794541],[-122.24879908,37.48911141],[-122.24758908,37.49010642],[-122.24770309,37.49059342],[-122.24741009,37.49102642],[-122.24587709,37.49196642],[-122.2453371,37.49294043],[-122.2441961,37.49355143],[-122.24214508,37.49189843],[-122.2402162,37.4908248],[-122.23977306,37.49043542],[-122.24240655,37.48834042]]]]}},{"type":"Feature","properties":{"name":"Mt. Carmel","slug":"mt-carmel","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.23790715,37.47619269],[-122.23929334,37.47459628],[-122.24090375,37.47593998],[-122.24256427,37.47693208],[-122.24348987,37.47617028],[-122.24471387,37.47618918],[-122.24509008,37.47701228],[-122.246941,37.47854138],[-122.2461885,37.47913658],[-122.2501235,37.4822769],[-122.23977306,37.49043542],[-122.23325399,37.48470841],[-122.2305637,37.4827808],[-122.23790715,37.47619269]]]]}}]};
+
+  var map = L.map('mt-carmel-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

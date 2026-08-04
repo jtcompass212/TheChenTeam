@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .baywood-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .baywood-map-wrap #baywood-map { width: 100%; height: 100%; }
+  .baywood-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .baywood-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .baywood-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .baywood-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="baywood-map-wrap">
+  <div id="baywood-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Baywood</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-mateo/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Aragon","slug":"aragon","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.33038445,37.55245008],[-122.32202253,37.55941527],[-122.31830902,37.55604682],[-122.32614425,37.55006586],[-122.33038445,37.55245008]]]]}},{"type":"Feature","properties":{"name":"Baywood Knolls","slug":"baywood-knolls","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.33038445,37.55245008],[-122.33768162,37.54622008],[-122.34004559,37.54788976],[-122.34060872,37.54989103],[-122.3400284,37.5505346],[-122.3402751,37.5515531],[-122.3398829,37.552451],[-122.3364041,37.55559265],[-122.33479835,37.55364338],[-122.3325213,37.5533043],[-122.33038445,37.55245008]]]]}},{"type":"Feature","properties":{"name":"Baywood","slug":"baywood","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.32202253,37.55941527],[-122.33038445,37.55245008],[-122.3325015,37.5532965],[-122.33479835,37.55364338],[-122.3364041,37.55559265],[-122.3298911,37.561391],[-122.3294461,37.5625178],[-122.3281871,37.5638371],[-122.3273691,37.5644215],[-122.32202253,37.55941527]]]]}}]};
+
+  var map = L.map('baywood-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .hayward-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .hayward-park-map-wrap #hayward-park-map { width: 100%; height: 100%; }
+  .hayward-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .hayward-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .hayward-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .hayward-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="hayward-park-map-wrap">
+  <div id="hayward-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Hayward Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-mateo/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Beresford Manor","slug":"beresford-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.30366797,37.54257316],[-122.31266071,37.53867539],[-122.3153762,37.5409631],[-122.3229324,37.5471437],[-122.31880609,37.54803644],[-122.31201035,37.55032072],[-122.30366797,37.54257316]]]]}},{"type":"Feature","properties":{"name":"Bowie Estate","slug":"bowie-estate","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.31920882,37.56640171],[-122.33448438,37.58046102],[-122.33083991,37.58299012],[-122.3288771,37.5842786],[-122.31403765,37.57093637],[-122.31556824,37.56897153],[-122.31920882,37.56640171]]]]}},{"type":"Feature","properties":{"name":"Eastern Addition","slug":"eastern-addition","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.31920882,37.56640171],[-122.32517829,37.56228227],[-122.32996101,37.5669936],[-122.33763477,37.57116956],[-122.34276772,37.57471275],[-122.33448438,37.58046102],[-122.31920882,37.56640171]]]]}},{"type":"Feature","properties":{"name":"Fiesta Gardens","slug":"fiesta-gardens","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.28797629,37.54453465],[-122.2895904,37.5435848],[-122.2915859,37.5410195],[-122.297439,37.5371243],[-122.298516,37.5379662],[-122.3036953,37.5425817],[-122.31201035,37.55032072],[-122.3089979,37.5522556],[-122.29602037,37.5534045],[-122.28797629,37.54453465]]]]}},{"type":"Feature","properties":{"name":"Homestead","slug":"homestead","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3229132,37.5471437],[-122.32614425,37.55006586],[-122.31830902,37.55604682],[-122.31201035,37.55032072],[-122.31880609,37.54803644],[-122.3229132,37.5471437]]]]}},{"type":"Feature","properties":{"name":"Sunnybrae","slug":"sunnybrae","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3140172,37.5709495],[-122.3024875,37.5601542],[-122.2960076,37.5534017],[-122.305308,37.5525961],[-122.3060246,37.5543219],[-122.319207,37.5663926],[-122.3155587,37.568976],[-122.3140172,37.5709495]]]]}},{"type":"Feature","properties":{"name":"Hayward Park","slug":"hayward-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.305308,37.5525856],[-122.3090211,37.5522558],[-122.31201035,37.55032072],[-122.32517829,37.56228227],[-122.31920882,37.56640171],[-122.30604722,37.5543434],[-122.305308,37.5525856]]]]}}]};
+
+  var map = L.map('hayward-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>
