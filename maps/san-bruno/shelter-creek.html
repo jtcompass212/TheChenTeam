@@ -8,19 +8,15 @@
   .shelter-creek-nb-page a { color: #a8823d; text-decoration: none; }
   .shelter-creek-nb-page a:hover { color: #8c6930; text-decoration: underline; }
   .shelter-creek-nb-page ::selection { background: #eee6d8; }
-
   .shelter-creek-nb-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
   .shelter-creek-nb-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
-
   .shelter-creek-nb-page .nb-card-link { transition: transform 220ms ease, box-shadow 220ms ease; }
   .shelter-creek-nb-page .nb-card-link:hover { transform: translateY(-5px); box-shadow: 0 12px 22px -10px rgba(22,35,63,0.16); }
-
   .shelter-creek-nb-page .fade-in { opacity: 0; transform: translateY(16px); animation: pknbFadeIn 700ms ease forwards; }
   .shelter-creek-nb-page .fade-in.d1 { animation-delay: 80ms; }
   .shelter-creek-nb-page .fade-in.d2 { animation-delay: 160ms; }
   .shelter-creek-nb-page .fade-in.d3 { animation-delay: 240ms; }
   @keyframes pknbFadeIn { to { opacity: 1; transform: translateY(0); } }
-
   .shelter-creek-nb-page .scroll-reveal { opacity: 1; }
   @supports (animation-timeline: view()) {
     .shelter-creek-nb-page .scroll-reveal { opacity: 0; animation: pknbScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
@@ -66,25 +62,25 @@
       <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
         <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tree.svg" alt=""></div>
         <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Parks</div>
-        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ Park name ]</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ name ]</div>
         <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">[ short description ]</p>
       </div>
       <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
         <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/shopping-cart.svg" alt=""></div>
         <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Grocery</div>
-        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ Grocery/market ]</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ name ]</div>
         <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">[ short description ]</p>
       </div>
       <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
         <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tools-kitchen-2.svg" alt=""></div>
         <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Dining</div>
-        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ Restaurant ]</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ name ]</div>
         <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">[ short description ]</p>
       </div>
       <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
         <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/book.svg" alt=""></div>
         <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Library</div>
-        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ Library ]</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">[ name ]</div>
         <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">[ short description ]</p>
       </div>
     </div>
@@ -108,7 +104,7 @@
       </div>
     </div>
   </section>
-  <!-- 5. SIMILAR NEIGHBORHOODS (auto-filled: 3 nearest in San Bruno) -->
+  <!-- 5. SIMILAR NEIGHBORHOODS (auto-filled: 3 nearest) -->
   <section id="similar-neighborhoods" class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
     <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore Nearby</p>
     <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Similar Neighborhoods</h2>
