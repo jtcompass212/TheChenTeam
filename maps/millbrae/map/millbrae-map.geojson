@@ -103,7 +103,7 @@
       "properties": {
         "id": 45669,
         "name": "Bayside Manor",
-        "slug": "bayside-manor-millbrae-ca",
+        "slug": "bayside-manor",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -214,7 +214,7 @@
       "properties": {
         "id": 45765,
         "name": "Capuchino Village",
-        "slug": "capuchino-village-millbrae-ca",
+        "slug": "capuchino-village",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -313,7 +313,7 @@
       "properties": {
         "id": 178530,
         "name": "Downtown Millbrea",
-        "slug": "downtown-millbrea-millbrae-ca",
+        "slug": "downtown-millbrea",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -380,7 +380,7 @@
       "properties": {
         "id": 44819,
         "name": "Green Hills",
-        "slug": "green-hills-millbrae-ca",
+        "slug": "green-hills",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -519,7 +519,7 @@
       "properties": {
         "id": 45595,
         "name": "Highlands",
-        "slug": "highlands-millbrae-ca",
+        "slug": "highlands",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -674,7 +674,7 @@
       "properties": {
         "id": 44955,
         "name": "Mills Estates",
-        "slug": "mills-estates-millbrae-ca",
+        "slug": "mills-estates",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -821,7 +821,7 @@
       "properties": {
         "id": 179447,
         "name": "Millbrae Meadows",
-        "slug": "millbrae-meadows-millbrae-ca",
+        "slug": "millbrae-meadows",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -956,7 +956,7 @@
       "properties": {
         "id": 45771,
         "name": "Millwood",
-        "slug": "millwood-millbrae-ca",
+        "slug": "millwood",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -1107,7 +1107,7 @@
       "properties": {
         "id": 45695,
         "name": "Meadow Glen",
-        "slug": "meadow-glen-millbrae-ca",
+        "slug": "meadow-glen",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -1198,7 +1198,7 @@
       "properties": {
         "id": 179423,
         "name": "Telescope Hills",
-        "slug": "telescope-hills-millbrae-ca",
+        "slug": "telescope-hills",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -1341,7 +1341,7 @@
       "properties": {
         "id": 44762,
         "name": "Glenview Highlands",
-        "slug": "glenview-highlands-millbrae-ca",
+        "slug": "glenview-highlands",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -1480,7 +1480,7 @@
       "properties": {
         "id": 45235,
         "name": "Capuchino",
-        "slug": "capuchino-millbrae-ca",
+        "slug": "capuchino",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
@@ -1579,7 +1579,7 @@
       "properties": {
         "id": 44721,
         "name": "Lomita Hills",
-        "slug": "lomita-hills-millbrae-ca",
+        "slug": "lomita-hills",
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",

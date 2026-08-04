@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .green-hills-country-club-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .green-hills-country-club-map-wrap #green-hills-country-club-map { width: 100%; height: 100%; }
+  .green-hills-country-club-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .green-hills-country-club-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .green-hills-country-club-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .green-hills-country-club-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="green-hills-country-club-map-wrap">
+  <div id="green-hills-country-club-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Green Hills Country Club</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/millbrae/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Green Hills","slug":"green-hills","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39783927,37.60667555],[-122.39929956,37.60567063],[-122.39906796,37.60537875],[-122.4042076,37.60244725],[-122.40443364,37.60273041],[-122.40647046,37.60503372],[-122.40464304,37.60602358],[-122.4019019,37.60745126],[-122.39967915,37.60856816],[-122.39783927,37.60667555]]]]}},{"type":"Feature","properties":{"name":"Meadow Glen","slug":"meadow-glen","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40443364,37.60273041],[-122.4042076,37.60244725],[-122.39906796,37.60537875],[-122.39929956,37.60567063],[-122.39783927,37.60667555],[-122.39292806,37.60316347],[-122.3945989,37.6021087],[-122.3962667,37.6032072],[-122.3973962,37.6025859],[-122.39805342,37.60314919],[-122.40568197,37.5988852],[-122.4061121,37.5988117],[-122.40645034,37.59904978],[-122.40844908,37.59931152],[-122.40862754,37.59988259],[-122.4090257,37.6004349],[-122.4082015,37.6005512],[-122.40443364,37.60273041]]]]}},{"type":"Feature","properties":{"name":"Millbrae Meadows","slug":"millbrae-meadows","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4139732,37.6043308],[-122.4144492,37.6040717],[-122.4140132,37.6015953],[-122.4133578,37.6005316],[-122.4124347,37.5999609],[-122.4115003,37.6000912],[-122.411528,37.599424],[-122.41309,37.599152],[-122.4133607,37.5983072],[-122.414408,37.597874],[-122.4163023,37.5981776],[-122.416978,37.59738],[-122.417721,37.597465],[-122.41817077,37.59688962],[-122.4192092,37.5961994],[-122.423474,37.599561],[-122.419971,37.601851],[-122.42492732,37.60606586],[-122.4206732,37.6084399],[-122.4204841,37.6093714],[-122.419159,37.60989],[-122.417996,37.609645],[-122.417734,37.609806],[-122.4139732,37.6043308]]]]}},{"type":"Feature","properties":{"name":"Millwood","slug":"millwood","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39967915,37.60856816],[-122.4019019,37.60745126],[-122.40464304,37.60602358],[-122.40647046,37.60503372],[-122.4084262,37.607314],[-122.40421333,37.60956594],[-122.4039159,37.60973401],[-122.40386018,37.61014515],[-122.4058751,37.6122533],[-122.40602586,37.61242006],[-122.40625719,37.61265745],[-122.40565935,37.61390262],[-122.40645263,37.61469792],[-122.4058868,37.61506108],[-122.40122286,37.61018764],[-122.39967915,37.60856816]]]]}},{"type":"Feature","properties":{"name":"Green Hills Country Club","slug":"green-hills-country-club","primary":true},"geometry":{"type":"Polygon","coordinates":[[[-122.4044519,37.6027362],[-122.4082062,37.6005479],[-122.4124323,37.5999606],[-122.4133609,37.6005358],[-122.4140127,37.6015959],[-122.4144482,37.6040737],[-122.4084272,37.6073151],[-122.4044519,37.6027362]]]}}]};
+
+  var map = L.map('green-hills-country-club-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>

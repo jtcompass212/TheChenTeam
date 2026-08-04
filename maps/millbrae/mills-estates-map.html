@@ -1,0 +1,60 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .mills-estates-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .mills-estates-map-wrap #mills-estates-map { width: 100%; height: 100%; }
+  .mills-estates-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); }
+  .mills-estates-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .mills-estates-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .mills-estates-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="mills-estates-map-wrap">
+  <div id="mills-estates-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Mills Estates</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/millbrae/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayside Manor","slug":"bayside-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3933238,37.6063596],[-122.3905475,37.6084257],[-122.38377962,37.60434908],[-122.377271,37.6056578],[-122.37332915,37.60421181],[-122.3784328,37.6012951],[-122.38569771,37.59670744],[-122.38749902,37.5985255],[-122.3861292,37.5992604],[-122.3933238,37.6063596]]]]}},{"type":"Feature","properties":{"name":"Downtown Millbrea","slug":"downtown-millbrea","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.401823,37.610802],[-122.400484,37.611518],[-122.3997109,37.6106301],[-122.3996954,37.610224],[-122.398494,37.6084672],[-122.3954515,37.611087],[-122.3905493,37.6084221],[-122.3933214,37.6063568],[-122.3861303,37.5992596],[-122.3874994,37.5985268],[-122.3922083,37.6027379],[-122.3929287,37.6031638],[-122.3977809,37.6066283],[-122.3996649,37.608551],[-122.401823,37.610802]]]]}},{"type":"Feature","properties":{"name":"Highlands","slug":"highlands","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41174577,37.58713776],[-122.4146173,37.5913303],[-122.40470014,37.59683132],[-122.39842432,37.60057898],[-122.39729407,37.59932976],[-122.39562845,37.60147127],[-122.39292806,37.60316347],[-122.39221035,37.60273715],[-122.38749902,37.5985255],[-122.39423052,37.59462081],[-122.39518706,37.59454942],[-122.39758556,37.59364999],[-122.3981709,37.59269344],[-122.40084066,37.59283621],[-122.40170619,37.59242902],[-122.40221182,37.59180442],[-122.40349078,37.59171519],[-122.40375847,37.59153673],[-122.40506718,37.5896629],[-122.40503942,37.58876466],[-122.40542013,37.58821738],[-122.4059912,37.58805082],[-122.40668124,37.58820548],[-122.40757354,37.58790805],[-122.40890604,37.58807461],[-122.40966747,37.58838394],[-122.41174577,37.58713776]]]]}},{"type":"Feature","properties":{"name":"Mills Estates","slug":"mills-estates","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38569771,37.59670744],[-122.38739928,37.59540453],[-122.3885585,37.59359306],[-122.39010435,37.59250071],[-122.3883111,37.59118751],[-122.38878495,37.59067172],[-122.3899543,37.58824242],[-122.39095918,37.58898654],[-122.39557035,37.5854353],[-122.39934532,37.58437384],[-122.40376468,37.58141582],[-122.41174577,37.58713776],[-122.40966747,37.58838394],[-122.40890604,37.58807461],[-122.40757354,37.58790805],[-122.40668124,37.58820548],[-122.4059912,37.58805082],[-122.40542013,37.58821738],[-122.40503942,37.58876466],[-122.40506718,37.5896629],[-122.40375847,37.59153673],[-122.40349078,37.59171519],[-122.40221182,37.59180442],[-122.40170619,37.59242902],[-122.40084066,37.59283621],[-122.3981709,37.59269344],[-122.39758556,37.59364999],[-122.39518706,37.59454942],[-122.39423052,37.59462081],[-122.38749902,37.5985255],[-122.38569771,37.59670744]]]]}}]};
+
+  var map = L.map('mills-estates-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same colorful, labeled basemap as the citywide neighborhoods map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (!feature.properties.primary) {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  map.fitBounds(geoLayer.getBounds(), { padding: [24, 24] });
+})();
+</script>
