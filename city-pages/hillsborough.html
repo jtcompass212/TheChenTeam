@@ -1,0 +1,279 @@
+<!-- Paste everything below into TinyMCE's Source Code view (the "<>" icon in the toolbar), not the WYSIWYG pane. -->
+<style>
+  .hillsborough-page, .hillsborough-page * { box-sizing: border-box; }
+  .hillsborough-page a { color: #a8823d; text-decoration: none; }
+  .hillsborough-page a:hover { color: #8c6930; text-decoration: underline; }
+  .hillsborough-page ::selection { background: #eee6d8; }
+
+  .hillsborough-page .life-card { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .hillsborough-page .life-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 24px -8px rgba(22,35,63,0.15); z-index: 2; position: relative; }
+
+  .hillsborough-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .hillsborough-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+
+  .hillsborough-page .nb-thumb { overflow: hidden; }
+  .hillsborough-page .nb-thumb-inner { transition: transform 400ms ease; }
+  .hillsborough-page .nb-card:hover .nb-thumb-inner { transform: scale(1.08); }
+
+  .hillsborough-page .fade-in { opacity: 0; transform: translateY(16px); animation: hbFadeIn 700ms ease forwards; }
+  .hillsborough-page .fade-in.d1 { animation-delay: 80ms; }
+  .hillsborough-page .fade-in.d2 { animation-delay: 160ms; }
+  .hillsborough-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes hbFadeIn { to { opacity: 1; transform: translateY(0); } }
+
+  .hillsborough-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .hillsborough-page .scroll-reveal { opacity: 0; animation: hbScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes hbScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+
+  .hillsborough-page .bar-wrap { display: flex; align-items: flex-end; gap: 14px; height: 190px; padding-top: 34px; }
+  .hillsborough-page .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .hillsborough-page .bar { width: 100%; background: #a8823d; border-radius: 3px 3px 0 0; position: relative; transform-origin: bottom; animation: hbBarGrow 700ms ease forwards; transition: background 200ms ease, transform 200ms ease; cursor: default; }
+  .hillsborough-page .bar:hover { background: #16233f; transform: scaleY(1.04); }
+  .hillsborough-page .bar::after { content: attr(data-value); position: absolute; top: -30px; left: 50%; transform: translateX(-50%) translateY(4px); font-size: 12px; font-weight: 600; color: #16233f; background: #ffffff; border: 1px solid #dde1e9; padding: 2px 9px; border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; }
+  .hillsborough-page .bar:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .hillsborough-page .bar-col:nth-child(1) .bar { animation-delay: 0ms; }
+  .hillsborough-page .bar-col:nth-child(2) .bar { animation-delay: 90ms; }
+  .hillsborough-page .bar-col:nth-child(3) .bar { animation-delay: 180ms; }
+  .hillsborough-page .bar-col:nth-child(4) .bar { animation-delay: 270ms; }
+  @keyframes hbBarGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+</style>
+<div class="hillsborough-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;">
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">San Mateo County &middot; The Peninsula</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 62px; line-height: 1.04; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 15ch; text-wrap: balance;">Hillsborough Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">Incorporated in 1910 specifically to <strong style="color: #16233f; font-weight: 600;">preserve its estate character</strong>, Hillsborough remains one of the most exclusive residential towns in the country &mdash; no sidewalks, no commercial zoning, and a half-acre minimum lot size that has never wavered. Below you'll find current homes for sale and real estate listings in Hillsborough, updated throughout the day, whether you're buying your first estate here or preparing to sell into today's market.</p>
+        <p style="margin: 0px 0px 18px;">If you'd like more information on any of these Hillsborough listings, just reach out &mdash; we're happy to share disclosures, recent nearby sales, and pricing history, and to walk you through anything you're curious about.</p>
+        <p style="margin: 0px;">And for your convenience, feel free to <a href="#contact">register for a free account</a> to receive alerts whenever new Hillsborough listings hit the market that match your criteria.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 320px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><img src="../city-images/hillsborough.jpeg" alt="Hillsborough" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 56px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">Hillsborough</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; Single-Family Homes, April 2026</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">17</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Homes Listed</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">7</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Days on Market</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$1,643</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median $ / Sq. Ft.</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center;">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$8.0M</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Sale Price</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px; font-family: ui-monospace, monospace;">// Source: MLSListings, single-family homes, April 2026 &mdash; with only 17 active listings across a town of large, individually distinct estates, a single high-end sale can move this median by millions; connect to your live Sierra feed for real-time figures</p>
+  </section>
+  <section style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;" class="scroll-reveal">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div style="min-height: 380px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 12px; color: #98a0b3; text-align: center; padding: 16px; line-height: 1.6;">[ IMAGE ]<br>The Tobin Clark Estate's Tudor mansion or a hillside vineyard lot<br>~800&times;800</span></div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">About the Community</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 22px; letter-spacing: -0.01em;">An estate town, by design and by law</h2>
+        <p style="font-size: 16.5px; line-height: 1.75; color: #4b5468; margin: 0px 0px 28px;">Hillsborough's zoning has stayed remarkably consistent since incorporation: a half-acre minimum lot size, a 2,500-square-foot minimum home size, and no commercial zoning of any kind &mdash; there are no stores, restaurants, or office buildings within town limits, only homes, schools, a golf course, a country club, and small parks. That consistency, paired with winding, hilly, largely unmarked streets, has made Hillsborough one of the most private and consistently wealthy small towns in the country.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 6px; overflow: hidden;">
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">~11,400</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Population</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">94010</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Primary ZIP</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">1910</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Incorporated</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">6.17 sq mi</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;" class="scroll-reveal">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px; text-align: center;">Why People Love It Here</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 48px; text-align: center; letter-spacing: -0.01em;">Life in Hillsborough</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 8px; overflow: hidden;">
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">01</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Unmatched Privacy</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">No sidewalks or streetlights on most roads &mdash; a deliberate choice preserved for over a century.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">02</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Some of the Nation's Top Public Schools</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Crocker Middle School is consistently ranked among the strongest public middle schools in the country.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">03</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Historic Estates</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Carolands, built in 1915, remains one of the grandest privately built residences in the United States.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">04</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Genuine Acreage</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">A half-acre minimum lot size, codified for decades, means real land, not just a larger yard.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">05</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Central Peninsula Location</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Bordered by Burlingame and San Mateo, with I-280 access and SFO minutes away.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">06</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Enduring Value</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Ranked among the wealthiest towns in the country, with values that have held firm across decades.</p>
+      </div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;" class="scroll-reveal">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 36px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore the Area</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Hillsborough Neighborhoods</h2>
+      </div>
+      <a style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border-bottom: 1px solid rgb(168, 130, 61); padding-bottom: 2px;" href="#contact">Ask about a neighborhood &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div></div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Tobin Clark Estate</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Ranch and midcentury homes around a 1931 Tudor mansion</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div></div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Carolands</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Beaux-Arts grand estates near the historic chateau</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div></div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Skyfarm</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Mediterranean revivals overlooking the bay and hills</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div></div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Lower North</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Closest to Crocker Middle School and North Hillsborough</p>
+      </div>
+    </div>
+  </section>
+  <section style="background: #f0f2f6; margin-top: 100px; padding: 80px 0px;" class="scroll-reveal">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">Education in Hillsborough</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 24px;">Hillsborough is served by its own Hillsborough City School District (K&ndash;8) &mdash; three elementary schools feeding a single, highly regarded middle school. Hillsborough has no public high school of its own; students are zoned to San Mateo Union High School District, most commonly Burlingame High.</p>
+        <div style="display: flex; flex-direction: column; gap: 0px; border-top: 1px solid rgb(221, 225, 233);">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Burlingame High School</span><span style="font-size: 13px; color: #7d8598;">Public &middot; 9&ndash;12</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">South Hillsborough Elementary</span><span style="font-size: 13px; color: #7d8598;">Public &middot; K&ndash;5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Crystal Springs Uplands School</span><span style="font-size: 13px; color: #7d8598;">Private</span></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">History</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">Incorporated to stay exactly as it was</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 18px;">Hillsborough sits on land once part of Rancho San Mateo, purchased in 1846 by William Davis Merry Howard, whose family named the area after his father's hometown of Hillsborough, New Hampshire. After the 1906 San Francisco earthquake, wealthy descendants of mining and railroad fortunes built grand estates here, drawn by the semi-rural setting so close to the city.</p>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px;">Residents voted 60 to 1 to incorporate on May 5, 1910, specifically to resist annexation by neighboring cities and protect the town's low-density, estate-oriented character &mdash; a framework of half-acre minimum lots and zero commercial zoning that has held, largely unchanged, for over a century.</p>
+      </div>
+    </div>
+  </section>
+  <section style="background: #16233f; padding: 80px 0px;" class="scroll-reveal">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #c9a567; font-weight: 600; margin: 0px 0px 16px; text-align: center;">The Chen Team in Hillsborough</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 36px; line-height: 1.14; color: #f4f6fa; margin: 0px 0px 12px; text-align: center; letter-spacing: -0.01em;">Local expertise, proven results</h2>
+      <p style="font-size: 16px; color: #9aa3b8; text-align: center; max-width: 52ch; margin: 0px auto 52px;">We've helped families buy and sell across Hillsborough's most sought-after streets. When you work with us, you get second-generation local knowledge and Compass's full resources.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;">
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">$48M+</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Sold in Hillsborough</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">100%</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. of List Price</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">12</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. Days to Offer</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">5.0★</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Client Rating</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #9aa3b8; margin: 36px 0px 0px; text-align: center; font-family: ui-monospace, monospace;">// Replace with your verified production figures</p>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;" class="scroll-reveal">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Market Trends</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 40px; letter-spacing: -0.01em;">How the Hillsborough market is moving</h2>
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: stretch;">
+      <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 8px; background: #ffffff; padding: 32px; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f;">Median Sale Price</span> <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">▲ 51.7% YoY</span></div>
+        <div class="bar-wrap">
+          <div class="bar-col">
+            <div class="bar" data-value="$5.6M" style="height: 76px;"></div>
+            <span style="font-size: 11px; color: #7d8598;">Q1</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" data-value="$6.4M" style="height: 87px;"></div>
+            <span style="font-size: 11px; color: #7d8598;">Q2</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" data-value="$6.0M" style="height: 82px;"></div>
+            <span style="font-size: 11px; color: #7d8598;">Q3</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" data-value="$8.0M" style="height: 130px;"></div>
+            <span style="font-size: 11px; color: #7d8598;">Q4</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #9ba3b5; margin: 18px 0px 0px; font-family: ui-monospace, monospace;">// Illustrative &mdash; connect to live market data. Hover a bar for the exact figure. Note: with fewer than 20 sales a quarter, Hillsborough's median swings sharply based on which specific estates trade.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Sale-to-List Ratio</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">97%</div>
+          </div>
+          <span style="font-size: 13px; color: #8f6b2e; font-weight: 600;">Near asking</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Avg. Days on Market</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">16 days</div>
+          </div>
+          <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">▼ Fast-moving</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Months of Inventory</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">1.9</div>
+          </div>
+          <span style="font-size: 13px; color: #8f6b2e; font-weight: 600;">Seller's market</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Available Now</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Homes for Sale in Hillsborough</h2>
+      </div>
+    </div>
+  </section>
+</div>
