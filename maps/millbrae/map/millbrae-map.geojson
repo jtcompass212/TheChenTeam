@@ -260,7 +260,9 @@
         "city": "Millbrae",
         "county": "San Mateo County",
         "state": "CA",
-        "hidden": false
+        "hidden": false,
+        "center_latitude": 37.60324569785491,
+        "center_longitude": -122.40981195534452
       },
       "geometry": {
         "type": "Polygon",
