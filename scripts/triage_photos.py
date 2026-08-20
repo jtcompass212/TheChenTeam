@@ -40,6 +40,20 @@ OFFTOPIC = re.compile(
     r"\b(map|logo|seal|coat of arms|diagram|chart|graph|plaque|sign|signage|"
     r"portrait|headshot|gravestone|tombstone|panorama of the world|flag)\b", re.I)
 
+# Scanned books and government documents dominate Commons text search and match
+# place names constantly: "West Atherton" hit a biography, "Niles Essanay" hit
+# a life of Col. Fremont, "Marina Point" hit an environmental impact statement.
+DOCUMENT = re.compile(
+    r"(the life of|history of|memoirs|annual report|environmental statement|"
+    r"information-|proceedings|catalogue|directory|bulletin|\bvol\b|"
+    r"\bpage \d|\bplate \d|title page|frontispiece|bulletin no)", re.I)
+
+# HABS/HAER architectural surveys are free and well-labelled but are interior
+# details and measured drawings, not streetscapes.
+SURVEY_INTERIOR = re.compile(
+    r"\b(first|second|third) floor\b|\binterior\b|\bdetail of\b|\bstairway detail\b|"
+    r"\bhall of mirrors\b|\bfireplace\b|\bmantel\b|\bmeasured drawing\b", re.I)
+
 
 def city_label(slug):
     return CITY_NAME.get(slug, slug.replace("-", " ").title())
@@ -55,6 +69,10 @@ def score(slot, cand):
 
     if OFFTOPIC.search(low):
         return -99, ["off-topic file type"]
+    if DOCUMENT.search(low):
+        return -99, ["scanned document or book, not a photograph"]
+    if SURVEY_INTERIOR.search(low):
+        return -99, ["architectural survey interior, not a streetscape"]
 
     if city in low:
         pts += 3
