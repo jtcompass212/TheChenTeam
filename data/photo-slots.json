@@ -1,0 +1,1115 @@
+[
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "thumb",
+  "subject": "Seacliff",
+  "blurb": "Beachfront, historic character"
+ },
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "thumb",
+  "subject": "Rio del Mar",
+  "blurb": "Coastal, family favorite"
+ },
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "thumb",
+  "subject": "Seascape",
+  "blurb": "Resort-adjacent, newer homes"
+ },
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "thumb",
+  "subject": "Aptos Village",
+  "blurb": "The community's main commercial hub"
+ },
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "feature",
+  "subject": "Cabrillo College or the SS Palo Alto cement ship",
+  "blurb": ""
+ },
+ {
+  "page": "city/atherton",
+  "city": "atherton",
+  "kind": "thumb",
+  "subject": "West Atherton",
+  "blurb": "Peak privacy, largest lots"
+ },
+ {
+  "page": "city/atherton",
+  "city": "atherton",
+  "kind": "thumb",
+  "subject": "Lindenwood",
+  "blurb": "Gated, oak-lined, historic"
+ },
+ {
+  "page": "city/atherton",
+  "city": "atherton",
+  "kind": "thumb",
+  "subject": "Lloyden Park",
+  "blurb": "Suburban feel, close-knit"
+ },
+ {
+  "page": "city/atherton",
+  "city": "atherton",
+  "kind": "thumb",
+  "subject": "Atherton Oaks",
+  "blurb": "Nearest to Caltrain & Stanford"
+ },
+ {
+  "page": "city/atherton",
+  "city": "atherton",
+  "kind": "feature",
+  "subject": "Gated estate entrance or mature oak canopy",
+  "blurb": ""
+ },
+ {
+  "page": "city/belmont",
+  "city": "belmont",
+  "kind": "thumb",
+  "subject": "Belmont Hills",
+  "blurb": "Hillside, panoramic Bay views"
+ },
+ {
+  "page": "city/belmont",
+  "city": "belmont",
+  "kind": "thumb",
+  "subject": "Sterling Downs",
+  "blurb": "Flat, established, family favorite"
+ },
+ {
+  "page": "city/belmont",
+  "city": "belmont",
+  "kind": "thumb",
+  "subject": "Cipriani",
+  "blurb": "Near Ralston Hall & the university"
+ },
+ {
+  "page": "city/belmont",
+  "city": "belmont",
+  "kind": "thumb",
+  "subject": "Hallmark",
+  "blurb": "Mid-hill, wooded & private"
+ },
+ {
+  "page": "city/belmont",
+  "city": "belmont",
+  "kind": "feature",
+  "subject": "Waterdog Lake Open Space, one of Belmont's scenic hiking spots",
+  "blurb": ""
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "thumb",
+  "subject": "Central Brisbane",
+  "blurb": "Hillside, near hiking trails"
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "thumb",
+  "subject": "Bayshore",
+  "blurb": "Borders San Francisco, diverse housing"
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "thumb",
+  "subject": "Old Town Brisbane",
+  "blurb": "Historic core, walkable"
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "thumb",
+  "subject": "Sierra Point",
+  "blurb": "Waterfront office district, newer condos"
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "feature",
+  "subject": "Illuminated stars on a Brisbane hillside at dusk",
+  "blurb": ""
+ },
+ {
+  "page": "city/burlingame",
+  "city": "burlingame",
+  "kind": "thumb",
+  "subject": "Easton Addition",
+  "blurb": "Grand homes, wide streets"
+ },
+ {
+  "page": "city/burlingame",
+  "city": "burlingame",
+  "kind": "thumb",
+  "subject": "Burlingame Park",
+  "blurb": "Historic, walk to town"
+ },
+ {
+  "page": "city/burlingame",
+  "city": "burlingame",
+  "kind": "thumb",
+  "subject": "Lyon-Hoag",
+  "blurb": "Approachable & central"
+ },
+ {
+  "page": "city/burlingame",
+  "city": "burlingame",
+  "kind": "thumb",
+  "subject": "Burlingables",
+  "blurb": "Charming cottages"
+ },
+ {
+  "page": "city/burlingame",
+  "city": "burlingame",
+  "kind": "feature",
+  "subject": "Broadway or Burlingame Ave shops",
+  "blurb": ""
+ },
+ {
+  "page": "city/cupertino",
+  "city": "cupertino",
+  "kind": "thumb",
+  "subject": "Monta Vista",
+  "blurb": "Top schools, highest price point"
+ },
+ {
+  "page": "city/cupertino",
+  "city": "cupertino",
+  "kind": "thumb",
+  "subject": "Rancho Rinconada",
+  "blurb": "Established, relative value"
+ },
+ {
+  "page": "city/cupertino",
+  "city": "cupertino",
+  "kind": "thumb",
+  "subject": "Garden Gate",
+  "blurb": "Central, walkable to shopping"
+ },
+ {
+  "page": "city/cupertino",
+  "city": "cupertino",
+  "kind": "thumb",
+  "subject": "West Cupertino",
+  "blurb": "Foothill-adjacent, larger lots"
+ },
+ {
+  "page": "city/cupertino",
+  "city": "cupertino",
+  "kind": "feature",
+  "subject": "De Anza College or the Cupertino Historical Society",
+  "blurb": ""
+ },
+ {
+  "page": "city/foster-city",
+  "city": "foster-city",
+  "kind": "thumb",
+  "subject": "Bay Vista",
+  "blurb": "Premium lagoon frontage"
+ },
+ {
+  "page": "city/foster-city",
+  "city": "foster-city",
+  "kind": "thumb",
+  "subject": "Shell Cove",
+  "blurb": "Newer construction, strong appreciation"
+ },
+ {
+  "page": "city/foster-city",
+  "city": "foster-city",
+  "kind": "thumb",
+  "subject": "Promontory Point",
+  "blurb": "Waterfront, steady demand"
+ },
+ {
+  "page": "city/foster-city",
+  "city": "foster-city",
+  "kind": "thumb",
+  "subject": "Marina Point",
+  "blurb": "Most attainable entry point"
+ },
+ {
+  "page": "city/foster-city",
+  "city": "foster-city",
+  "kind": "feature",
+  "subject": "Kayaking on the lagoon or Leo J. Ryan Park",
+  "blurb": ""
+ },
+ {
+  "page": "city/fremont",
+  "city": "fremont",
+  "kind": "thumb",
+  "subject": "Mission San Jose",
+  "blurb": "Top schools, established estates"
+ },
+ {
+  "page": "city/fremont",
+  "city": "fremont",
+  "kind": "thumb",
+  "subject": "Niles",
+  "blurb": "Historic, small-town character"
+ },
+ {
+  "page": "city/fremont",
+  "city": "fremont",
+  "kind": "thumb",
+  "subject": "Ardenwood",
+  "blurb": "Newer construction, family favorite"
+ },
+ {
+  "page": "city/fremont",
+  "city": "fremont",
+  "kind": "thumb",
+  "subject": "Warm Springs",
+  "blurb": "Fast-growing, BART-adjacent"
+ },
+ {
+  "page": "city/fremont",
+  "city": "fremont",
+  "kind": "feature",
+  "subject": "Niles Essanay Silent Film Museum or Mission Peak trail",
+  "blurb": ""
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "thumb",
+  "subject": "Eagle Ridge",
+  "blurb": "Gated, golf course community"
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "thumb",
+  "subject": "Glen Loma Ranch",
+  "blurb": "Master-planned, newer construction"
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "thumb",
+  "subject": "Downtown Gilroy",
+  "blurb": "Historic core, Craftsman bungalows"
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "thumb",
+  "subject": "Hecker Pass",
+  "blurb": "Wine country, larger lots"
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "feature",
+  "subject": "Gilroy Garlic Festival or Hecker Pass wine country",
+  "blurb": ""
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "thumb",
+  "subject": "Tobin Clark Estate",
+  "blurb": "Ranch and midcentury homes around a 1931 Tudor mansion"
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "thumb",
+  "subject": "Carolands",
+  "blurb": "Beaux-Arts grand estates near the historic chateau"
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "thumb",
+  "subject": "Skyfarm",
+  "blurb": "Mediterranean revivals overlooking the bay and hills"
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "thumb",
+  "subject": "Lower North",
+  "blurb": "Closest to Crocker Middle School and North Hillsborough"
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "feature",
+  "subject": "The Tobin Clark Estate's Tudor mansion or a hillside vineyard lot",
+  "blurb": ""
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "thumb",
+  "subject": "Downtown Mill Valley",
+  "blurb": "Walkable, historic cottages"
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "thumb",
+  "subject": "Homestead Valley",
+  "blurb": "Wooded, hillside, artistic"
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "thumb",
+  "subject": "Strawberry",
+  "blurb": "Waterfront, Tiburon-adjacent"
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "thumb",
+  "subject": "Tamalpais Valley",
+  "blurb": "Relative value, Tam High access"
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "feature",
+  "subject": "Muir Woods National Monument or a Dipsea Race runner",
+  "blurb": ""
+ },
+ {
+  "page": "city/millbrae",
+  "city": "millbrae",
+  "kind": "thumb",
+  "subject": "Mills Estates",
+  "blurb": "Hillside, near Mills High"
+ },
+ {
+  "page": "city/millbrae",
+  "city": "millbrae",
+  "kind": "thumb",
+  "subject": "Meadow Glen",
+  "blurb": "Quiet, family-friendly"
+ },
+ {
+  "page": "city/millbrae",
+  "city": "millbrae",
+  "kind": "thumb",
+  "subject": "Capuchino",
+  "blurb": "Postwar character homes"
+ },
+ {
+  "page": "city/millbrae",
+  "city": "millbrae",
+  "kind": "thumb",
+  "subject": "Green Hills",
+  "blurb": "Golf course-adjacent, upscale"
+ },
+ {
+  "page": "city/millbrae",
+  "city": "millbrae",
+  "kind": "feature",
+  "subject": "Downtown Millbrae or Mills Canyon Park",
+  "blurb": ""
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "thumb",
+  "subject": "Old Mountain View",
+  "blurb": "Walkable to Castro St., highest price point"
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "thumb",
+  "subject": "Waverly Park",
+  "blurb": "Established, tree-lined streets"
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "thumb",
+  "subject": "Shoreline West",
+  "blurb": "Near the park, newer construction"
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "thumb",
+  "subject": "North Bayshore",
+  "blurb": "Tech campuses, evolving residential mix"
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "feature",
+  "subject": "The Computer History Museum or Shoreline Amphitheatre",
+  "blurb": ""
+ },
+ {
+  "page": "city/newark",
+  "city": "newark",
+  "kind": "thumb",
+  "subject": "Bridgeway",
+  "blurb": "Newer construction, planned community"
+ },
+ {
+  "page": "city/newark",
+  "city": "newark",
+  "kind": "thumb",
+  "subject": "The Lake",
+  "blurb": "Waterfront homes on Newark Lake"
+ },
+ {
+  "page": "city/newark",
+  "city": "newark",
+  "kind": "thumb",
+  "subject": "Gateway",
+  "blurb": "West Newark, quiet and established"
+ },
+ {
+  "page": "city/newark",
+  "city": "newark",
+  "kind": "thumb",
+  "subject": "Central Newark",
+  "blurb": "Walkable to Newark Blvd. shops & dining"
+ },
+ {
+  "page": "city/newark",
+  "city": "newark",
+  "kind": "feature",
+  "subject": "Don Edwards SF Bay National Wildlife Refuge or Coyote Hills",
+  "blurb": ""
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "thumb",
+  "subject": "Rockridge",
+  "blurb": "Craftsman bungalows, BART access"
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "thumb",
+  "subject": "Temescal",
+  "blurb": "Walkable, dining-forward"
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "thumb",
+  "subject": "Grand Lake",
+  "blurb": "Lake Merritt-adjacent, historic homes"
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "thumb",
+  "subject": "Montclair",
+  "blurb": "Oakland Hills, wooded, view lots"
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "feature",
+  "subject": "The Port of Oakland or a Montclair hillside home",
+  "blurb": ""
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Rockaway Beach",
+  "blurb": "Oceanfront, shops & dining"
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Sharp Park",
+  "blurb": "Golf course, established homes"
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Linda Mar",
+  "blurb": "Family favorite, near the beach"
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Pedro Point",
+  "blurb": "Hillside, quiet, ocean views"
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "feature",
+  "subject": "S\u00e1nchez Adobe Park or a surfer at Linda Mar Beach",
+  "blurb": ""
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "thumb",
+  "subject": "Old Palo Alto",
+  "blurb": "Grand, established estates"
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "thumb",
+  "subject": "Crescent Park",
+  "blurb": "Tree-lined, riverside charm"
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "thumb",
+  "subject": "Professorville",
+  "blurb": "Historic, walk to University Ave"
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "thumb",
+  "subject": "Midtown",
+  "blurb": "Central, family-friendly"
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "feature",
+  "subject": "HP garage on Addison Avenue or Professorville Victorians",
+  "blurb": ""
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "thumb",
+  "subject": "Redwood Shores",
+  "blurb": "Lagoon-front, planned community"
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "thumb",
+  "subject": "Emerald Hills",
+  "blurb": "Wooded, hillside, spacious lots"
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "thumb",
+  "subject": "Woodside Plaza",
+  "blurb": "Central, family favorite"
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "thumb",
+  "subject": "Downtown",
+  "blurb": "Walk to Courthouse Square"
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "feature",
+  "subject": "Broadway downtown or the Sequoia High School clock tower",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-bruno",
+  "city": "san-bruno",
+  "kind": "thumb",
+  "subject": "Crestmoor",
+  "blurb": "Hillside, premium view lots"
+ },
+ {
+  "page": "city/san-bruno",
+  "city": "san-bruno",
+  "kind": "thumb",
+  "subject": "Rollingwood",
+  "blurb": "Larger lots, quiet streets"
+ },
+ {
+  "page": "city/san-bruno",
+  "city": "san-bruno",
+  "kind": "thumb",
+  "subject": "San Bruno Park",
+  "blurb": "Central, family favorite"
+ },
+ {
+  "page": "city/san-bruno",
+  "city": "san-bruno",
+  "kind": "thumb",
+  "subject": "Pacific Heights",
+  "blurb": "San Bruno's own hillside district, near Sweeney Ridge"
+ },
+ {
+  "page": "city/san-bruno",
+  "city": "san-bruno",
+  "kind": "feature",
+  "subject": "The Shops at Tanforan or Sweeney Ridge trailhead",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "thumb",
+  "subject": "White Oaks",
+  "blurb": "Downtown-adjacent, walkable"
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "thumb",
+  "subject": "Howard Park",
+  "blurb": "Classic California bungalows"
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "thumb",
+  "subject": "Cordilleras Heights",
+  "blurb": "Elevated, larger lots & views"
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "thumb",
+  "subject": "Eaton",
+  "blurb": "Quiet, established, family-friendly"
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "feature",
+  "subject": "The Hiller Aviation Museum or downtown wine tasting rooms",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "thumb",
+  "subject": "Noe Valley",
+  "blurb": "Family favorite, sunny microclimate"
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "thumb",
+  "subject": "Pacific Heights",
+  "blurb": "Grand homes, Bay views"
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "thumb",
+  "subject": "Outer Sunset",
+  "blurb": "Ocean-facing, relative value"
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "thumb",
+  "subject": "Bernal Heights",
+  "blurb": "Hilltop views, close-knit"
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "feature",
+  "subject": "Painted Ladies at Alamo Square or the Presidio",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "thumb",
+  "subject": "Willow Glen",
+  "blurb": "Historic, walkable downtown"
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "thumb",
+  "subject": "Almaden Valley",
+  "blurb": "Family homes, trails, top schools"
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "thumb",
+  "subject": "Rose Garden",
+  "blurb": "Central, tree-lined, historic"
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "thumb",
+  "subject": "Cambrian",
+  "blurb": "Quiet, established, foothill-adjacent"
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "feature",
+  "subject": "Almaden Quicksilver County Park or the Rose Garden",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "thumb",
+  "subject": "San Mateo Park",
+  "blurb": "Grand estates, winding streets"
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "thumb",
+  "subject": "Baywood",
+  "blurb": "Tree-lined, family favorite"
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "thumb",
+  "subject": "Aragon",
+  "blurb": "Pre-war character homes"
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "thumb",
+  "subject": "Hillsdale",
+  "blurb": "Walkable, shops at the door"
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "feature",
+  "subject": "Downtown San Mateo / Third Avenue",
+  "blurb": ""
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "thumb",
+  "subject": "Dominican / Forbes",
+  "blurb": "Grand Victorians, tree-lined, walkable"
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "thumb",
+  "subject": "Gerstle Park",
+  "blurb": "Family-friendly, historic, parks"
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "thumb",
+  "subject": "Sun Valley",
+  "blurb": "Hilltop estates, views, privacy"
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "thumb",
+  "subject": "Terra Linda",
+  "blurb": "Eichler homes, family favorite"
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "feature",
+  "subject": "Dominican University campus or China Camp State Park",
+  "blurb": ""
+ },
+ {
+  "page": "city/south-san-francisco",
+  "city": "south-san-francisco",
+  "kind": "thumb",
+  "subject": "Westborough",
+  "blurb": "Hillside, Bay & city views"
+ },
+ {
+  "page": "city/south-san-francisco",
+  "city": "south-san-francisco",
+  "kind": "thumb",
+  "subject": "Sign Hill",
+  "blurb": "Established, walkable to downtown"
+ },
+ {
+  "page": "city/south-san-francisco",
+  "city": "south-san-francisco",
+  "kind": "thumb",
+  "subject": "Winston Manor",
+  "blurb": "Postwar single-family homes"
+ },
+ {
+  "page": "city/south-san-francisco",
+  "city": "south-san-francisco",
+  "kind": "thumb",
+  "subject": "Buri Buri",
+  "blurb": "Family-friendly, central"
+ },
+ {
+  "page": "city/south-san-francisco",
+  "city": "south-san-francisco",
+  "kind": "feature",
+  "subject": "Genentech's campus or the Westborough hills",
+  "blurb": ""
+ },
+ {
+  "page": "city/sunnyvale",
+  "city": "sunnyvale",
+  "kind": "thumb",
+  "subject": "Heritage District",
+  "blurb": "Historic, walk to Murphy Ave"
+ },
+ {
+  "page": "city/sunnyvale",
+  "city": "sunnyvale",
+  "kind": "thumb",
+  "subject": "Cherry Chase",
+  "blurb": "Eichlers, top-rated schools"
+ },
+ {
+  "page": "city/sunnyvale",
+  "city": "sunnyvale",
+  "kind": "thumb",
+  "subject": "Birdland",
+  "blurb": "Quiet, avian-themed streets"
+ },
+ {
+  "page": "city/sunnyvale",
+  "city": "sunnyvale",
+  "kind": "thumb",
+  "subject": "Cumberland",
+  "blurb": "Family favorite, central"
+ },
+ {
+  "page": "city/sunnyvale",
+  "city": "sunnyvale",
+  "kind": "feature",
+  "subject": "Heritage Park Museum orchard or an Eichler home in Cherry Chase",
+  "blurb": ""
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "thumb",
+  "subject": "Central Woodside",
+  "blurb": "The town's grandest estates"
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "thumb",
+  "subject": "Woodside Glens",
+  "blurb": "Cottages, walkable & close-knit"
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "thumb",
+  "subject": "Woodside Hills",
+  "blurb": "Gated estates, sweeping views"
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "thumb",
+  "subject": "Mountain Home Road",
+  "blurb": "Architectural showcase estates"
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "feature",
+  "subject": "Filoli gardens or a horse trail through the redwoods",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/aragon",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Tree-lined Aragon boulevard with Tudor and Spanish Revival homes",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/baywood-knolls",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Wooded hillside street in Baywood Knolls near the Foothill Terrace border",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/baywood-park",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A wooded hillside street in Baywood Park, or a split-level ranch among mature oaks",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/baywood",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Mediterranean tile-roof estate on a Baywood cul-de-sac",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/beresford-manor",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Beresford Park's tennis courts, or a Tudor-style bungalow on a tree-lined 25th Avenue block",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/bowie-estate",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A tree-lined Bowie Estate block near Peninsula Avenue, or the B Street dining corridor downtown",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/eastern-addition",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A mixed-era block in Eastern Addition, or downtown's B Street dining corridor",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/fiesta-gardens",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A ranch home near Fiesta Gardens International School, or new construction on the former Bay Meadows grounds",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/foothill-terrace",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A hillside ranch home in upper Foothill Terrace, with a Bay-view backdrop",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/harbor-town",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A lagoon-front townhome in Harbortown, or the marina at Mariner's Isle",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/hayward-park",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A Craftsman bungalow near the Hayward Park Caltrain station, or the Japanese Garden in Central Park",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/homestead",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A well-kept mid-century home on a Homestead side street, near the Aragon border",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/lakeshore",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A postwar home near Marina Lagoon, or the international dining at Marina Plaza",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/laurelwood-sugarloaf",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A modern family home near the Laurelwood Park trailhead, or the view from Sugarloaf Mountain",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/north-shoreview",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A bay-view home in North Shoreview, or the beach at Coyote Point Recreation Area",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/parkside",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Parkside Aquatic Park or a lagoon-front ranch home",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/san-mateo-highlands",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "An Eichler-style home in San Mateo Highlands, or the pool at Highlands Recreation Center",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/san-mateo-knolls",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A wooded street in San Mateo Knolls, or a Laurelwood Park trailhead",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/san-mateo-park",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A grand early-1900s estate on a tree-canopied San Mateo Park lane",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/san-mateo-village",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A postwar cottage in San Mateo Village, near El Camino Real",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/san-mateo-woods-bayridge",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "Bayridge Way townhomes or the Laurelwood Park trailhead",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/shoreview",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A home near Shoreview's bay access, or a performance at the Bayside Performing Arts Center",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/sunnybrae",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "An Eichler-style home in 19th Avenue Park, or Sunnybrae Park",
+  "blurb": ""
+ },
+ {
+  "page": "nbhd/westwood-knolls",
+  "city": "san-mateo",
+  "kind": "hero",
+  "subject": "A hillside cottage in Westwood Knolls with a bay view, or a ranch home along Alameda de las Pulgas",
+  "blurb": ""
+ }
+]
