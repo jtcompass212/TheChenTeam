@@ -25,11 +25,17 @@ DISCLAIMER = (
     "Equal Housing Opportunity."
 )
 
-# Neighborhoods where the year-over-year figure is real arithmetic but a
-# misleading headline: at this sale volume the median tracks which specific
-# homes traded, not the direction of the market. The median and sale count
-# still publish; only the percentage arrow is withheld, and the footnote says
-# why. Keyed by slug so the reason travels with the decision.
+# A year-over-year figure can be real arithmetic and still a misleading
+# headline: below a certain sale count the median tracks which specific homes
+# traded, not the direction of the market. Quarter-over-quarter on the same
+# data swung +37% and -32%, which is what that noise looks like.
+#
+# The median, the window and the sale count always publish. Only the
+# percentage arrow is withheld, and the footnote says why.
+MIN_SALES_FOR_DELTA = 8
+
+# Pages suppressed despite clearing the threshold, with the reason attached so
+# it survives the next data refresh.
 SUPPRESS_DELTA = {
     "san-mateo-park": "a 10-sale quarter in a luxury enclave where one estate "
                       "moves the median several hundred thousand dollars",
@@ -79,7 +85,8 @@ def snapshot_html(name, rec):
 
     # Delta only when the comparison window itself cleared the sale-count bar,
     # and not where the swing is a mix effect rather than a market move.
-    if slug in SUPPRESS_DELTA:
+    thin = sales < MIN_SALES_FOR_DELTA
+    if slug in SUPPRESS_DELTA or thin:
         delta = ('<div style="font-size: 13px; color: #7d8598; margin-top: 6px;">'
                  f'{label}</div>')
     elif rec["yoyPct"]:
@@ -97,6 +104,10 @@ def snapshot_html(name, rec):
         note += (f" A year-over-year change is not shown: this is "
                  f"{SUPPRESS_DELTA[slug]}, so the figure would describe which homes "
                  f"sold rather than where the market moved.")
+    elif thin and rec["yoyPct"]:
+        note += (f" A year-over-year change is not shown: with {sales} closed sales in "
+                 f"the window, the median reflects which specific homes traded rather "
+                 f"than the direction of the market.")
     if rec["types"] != "SF":
         note = (f" {name} has effectively no detached single-family market, so these figures "
                 f"cover single-family homes, condominiums and townhouses together.")
