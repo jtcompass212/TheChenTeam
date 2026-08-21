@@ -25,6 +25,16 @@ DISCLAIMER = (
     "Equal Housing Opportunity."
 )
 
+# Neighborhoods where the year-over-year figure is real arithmetic but a
+# misleading headline: at this sale volume the median tracks which specific
+# homes traded, not the direction of the market. The median and sale count
+# still publish; only the percentage arrow is withheld, and the footnote says
+# why. Keyed by slug so the reason travels with the decision.
+SUPPRESS_DELTA = {
+    "san-mateo-park": "a 10-sale quarter in a luxury enclave where one estate "
+                      "moves the median several hundred thousand dollars",
+}
+
 
 def money(v):
     """$3.45M above a million, else $825,000 — matches the card's display width."""
@@ -61,14 +71,18 @@ def load():
 
 
 def snapshot_html(name, rec):
-    basis, period = rec["basis"], rec["period"]
+    basis, period, slug = rec["basis"], rec["period"], rec["slug"]
     label = period_label(basis, period)
     sales = int(rec["sales"])
     types = ("Single-Family Homes" if rec["types"] == "SF"
              else "All Property Types")
 
-    # Delta only when the comparison window itself cleared the sale-count bar.
-    if rec["yoyPct"]:
+    # Delta only when the comparison window itself cleared the sale-count bar,
+    # and not where the swing is a mix effect rather than a market move.
+    if slug in SUPPRESS_DELTA:
+        delta = ('<div style="font-size: 13px; color: #7d8598; margin-top: 6px;">'
+                 f'{label}</div>')
+    elif rec["yoyPct"]:
         pct = float(rec["yoyPct"])
         colour = "#3f8a5f" if pct >= 0 else "#b0433f"
         arrow = "&#9650;" if pct >= 0 else "&#9660;"
@@ -79,6 +93,10 @@ def snapshot_html(name, rec):
                  'No prior-year comparison</div>')
 
     note = ""
+    if slug in SUPPRESS_DELTA:
+        note += (f" A year-over-year change is not shown: this is "
+                 f"{SUPPRESS_DELTA[slug]}, so the figure would describe which homes "
+                 f"sold rather than where the market moved.")
     if rec["types"] != "SF":
         note = (f" {name} has effectively no detached single-family market, so these figures "
                 f"cover single-family homes, condominiums and townhouses together.")
