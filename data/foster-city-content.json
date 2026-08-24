@@ -1,0 +1,430 @@
+{
+ "_note": "Content for the 10 Foster City neighborhood pages. Prose is original; facts sourced in docs/foster-city-sources.md.",
+ "_shared": {
+  "library": [
+   "Foster City Library",
+   "San Mateo County branch beside City Hall on East Hillsdale Boulevard"
+  ],
+  "middle": [
+   "Bowditch Middle School",
+   "Public &middot; 6&ndash;8, San Mateo-Foster City School District"
+  ],
+  "high": [
+   "San Mateo Union High School District",
+   "Public &middot; 9&ndash;12 &mdash; Foster City has no high school of its own; students attend San Mateo, Hillsdale or Aragon depending on address"
+  ]
+ },
+ "treasure-isle": {
+  "intro": "The first neighborhood T. Jack Foster built, Treasure Isle went up between 1963 and 1965 and set the pattern for everything after it. Foster deliberately split the work between three builders &mdash; Kay Builders, Duc and Elliot, and Joseph Eichler &mdash; so the streets would not read as a single tract, and the result is still the most varied housing stock of the early neighborhoods. The street names run to famous ships: Niantic, Balclutha.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "The city&rsquo;s central park, on the lagoon with the amphitheater and boat rentals"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "Groceries at the Edgewater shopping center"
+   ],
+   [
+    "Edgewater Place",
+    "Foster City&rsquo;s main cluster of restaurants and cafes"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~25 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~20 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~13 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Brewer Island Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District, 1151 Polynesia Drive"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "bay-vista": {
+  "intro": "With Treasure Isle selling well, Foster started Bay Vista in 1965 as the second of his nine planned neighborhoods, and it sits near the middle of the city with the lagoon on one side and the school and park network on the other. It is one of the steadier corners of the Foster City market &mdash; consistent single-family stock, and enough turnover most years to have a genuine sense of what things trade for.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "Lagoon-front park and amphitheater, close by"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "The main grocery run"
+   ],
+   [
+    "Edgewater Place",
+    "Restaurants and cafes a short drive away"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~25 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~20 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~13 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Audubon Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "carmel-village": {
+  "intro": "Carmel Village was built alongside Bay Vista and carries the widest mix of housing types in Foster City &mdash; single-family houses, townhomes and condominiums on the same streets, which is unusual here and makes it one of the more accessible ways into the city. That mix also means the price range within a single block can be wide, so comparables matter more than the headline median.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "The city&rsquo;s main lagoon park, a short drive"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "Groceries within a few minutes"
+   ],
+   [
+    "Edgewater Place",
+    "Foster City&rsquo;s restaurant cluster"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~25 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~20 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~13 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Audubon Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "marina-point": {
+  "intro": "Numbered fourth in Foster&rsquo;s original plan, Marina Point sits south of Foster City Boulevard between Beach Park and Shell, laid out around cul-de-sacs rather than through streets so almost no traffic passes through. Despite the detached houses on those cul-de-sacs, the neighborhood is overwhelmingly attached housing in practice &mdash; roughly nine in ten sales here are condominiums or townhomes, which makes it one of the more attainable addresses in a famously expensive city.",
+  "amenities": [
+   [
+    "Boat Park",
+    "Waterfront green with a launch onto the lagoon"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "The nearest full grocery"
+   ],
+   [
+    "Edgewater Place",
+    "Dining and cafes, a short drive north"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~26 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~19 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~14 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Foster City Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "sea-colony": {
+  "intro": "The largest neighborhood in Foster City and the one most completely built around the water, Sea Colony fills the southeastern corner where the lagoon system is at its widest. Sea Cloud Park sits inside it, home to the Foster City Little League, and the combination of open space and waterfront frontage keeps it among the most sought-after addresses in the city.",
+  "amenities": [
+   [
+    "Sea Cloud Park",
+    "Playing fields and the Foster City Little League diamonds"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "Groceries a short drive north"
+   ],
+   [
+    "Edgewater Place",
+    "The city&rsquo;s restaurant cluster"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~27 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~18 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~15 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Foster City Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "isle-cove": {
+  "intro": "The last of the nine neighborhoods in Foster&rsquo;s original plan, Isle Cove closed out the build-out and leans more heavily to condominiums than anywhere else in the city. Its streets carry the best names in Foster City &mdash; they are called after the stars and constellations sailors once steered by, which is about as on-theme as a lagoon town gets.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "Lagoon-front park and amphitheater"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "The main grocery run"
+   ],
+   [
+    "Edgewater Place",
+    "Restaurants and cafes nearby"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~26 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~19 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~14 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Brewer Island Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "harbor-side": {
+  "intro": "Harbor Side is where the lagoon does the most work: back gardens end at the water, and most homes have a private dock, so a boat is a realistic way to leave the house. The housing runs to two-story plans around 2,500 square feet, much of it late 1970s, and waterfront frontage puts it consistently at the top end of the Foster City market.",
+  "amenities": [
+   [
+    "Gull Park",
+    "Small waterfront green on the lagoon edge"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "Groceries a short drive"
+   ],
+   [
+    "Edgewater Place",
+    "Foster City&rsquo;s dining cluster"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~26 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~19 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~14 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Brewer Island Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "dolphin-bay": {
+  "intro": "Dolphin Bay occupies the south end of Foster City and shares most of its character with neighboring Sea Colony &mdash; waterfront orientation, generous lots, and quiet streets that carry only their own traffic. It is a small neighborhood, which shows in the sales data: homes here come up for sale a few times a year rather than a few times a quarter.",
+  "amenities": [
+   [
+    "Sea Cloud Park",
+    "Fields and open space at the southern end of the city"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "The nearest full grocery"
+   ],
+   [
+    "Edgewater Place",
+    "Dining, a short drive north"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~27 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~18 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~15 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Foster City Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "the-islands": {
+  "intro": "One of the smallest neighborhoods in Foster City, The Islands is a handful of blocks between Shell Boulevard and the water, and it is defined by a single development: a 174-unit condominium complex that won a 1976 Award of Excellence from Architectural Record. It is a rare thing on the Peninsula &mdash; multifamily housing from the 1970s that people still single out for how it was designed rather than in spite of it.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "The main lagoon park, close by"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "Groceries within a few minutes"
+   ],
+   [
+    "Edgewater Place",
+    "Restaurants and cafes nearby"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~26 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~19 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~14 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Brewer Island Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "vintage-park": {
+  "_not_residential": true,
+  "intro": "Vintage Park is Foster City&rsquo;s office district rather than a residential neighborhood. The area around Vintage Park Drive and Chess Drive is commercial &mdash; the Gilead Sciences campus is the largest occupant &mdash; so there is no housing stock or sales history to report for it. If you are looking to live near this end of the city, the nearest residential neighborhoods are Treasure Isle and Bay Vista.",
+  "amenities": [
+   [
+    "Leo J. Ryan Park",
+    "The city&rsquo;s central lagoon park, a short drive south"
+   ],
+   [
+    "Safeway, Edgewater Place",
+    "The nearest full grocery"
+   ],
+   [
+    "Edgewater Place",
+    "Foster City&rsquo;s restaurant cluster"
+   ],
+   null
+  ],
+  "commute": [
+   [
+    "~24 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~21 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~12 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Brewer Island Elementary",
+    "Public &middot; K&ndash;5, San Mateo-Foster City School District"
+   ],
+   "middle",
+   "high"
+  ]
+ },
+ "_similar": {
+  "Treasure Isle": "The first neighborhood built, with three developers and streets named for ships",
+  "Bay Vista": "Foster&rsquo;s second planned neighborhood, central and steady",
+  "Carmel Village": "The widest mix of housing types in the city, and its most accessible entry",
+  "Marina Point": "Cul-de-sacs off Beach Park, and mostly condominiums and townhomes in practice",
+  "Sea Colony": "The largest neighborhood, built around the widest part of the lagoon",
+  "Isle Cove": "The last of the nine, condo-heavy, with streets named for constellations",
+  "Harbor Side": "Private docks at the bottom of the garden, at the top of the market",
+  "Dolphin Bay": "A small waterfront pocket at the south end, rarely on the market",
+  "The Islands": "A few blocks off Shell Boulevard, built around an award-winning 1976 complex",
+  "Vintage Park": "Foster City&rsquo;s office district rather than a residential neighborhood"
+ }
+}

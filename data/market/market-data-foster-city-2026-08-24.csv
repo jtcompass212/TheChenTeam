@@ -1,0 +1,11 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData
+treasure-isle,foster-city,"Treasure Isle",SF,quarter,2026-Q2,5,2100000,1098,9,105.5,,,
+bay-vista,foster-city,"Bay Vista",SF,quarter,2026-Q2,4,2600000,1144,19,106.9,2025-Q2,26.8,
+carmel-village,foster-city,"Carmel Village",SF,quarter,2026-Q2,4,2300000,1073,5,103.5,2025-Q2,5.5,
+marina-point,foster-city,"Marina Point",ALL,quarter,2026-Q2,8,878000,635,25,97.2,2025-Q2,6.4,
+sea-colony,foster-city,"Sea Colony",SF,year,2025,10,2750000,1250,15,104.7,2024,14.6,
+isle-cove,foster-city,"Isle Cove",ALL,quarter,2026-Q2,13,1450000,861,25,99.4,2025-Q2,5.1,
+harbor-side,foster-city,"Harbor Side",SF,year,2025,6,2800000,1341,7,107.2,2024,5.1,
+dolphin-bay,foster-city,"Dolphin Bay",SF,year,2025,17,2620000,1240,10,111.2,2024,19.1,
+the-islands,foster-city,"The Islands",ALL,quarter,2026-Q2,10,1310000,936,20,96.6,2025-Q2,-9.7,
+vintage-park,foster-city,"Vintage Park",SF,none,,,,,,,,,not-residential

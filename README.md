@@ -30,30 +30,30 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **93 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **103 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **58** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **136** | of 201 total; 65 filled so far |
+| Neighborhoods with no page | **48** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **146** | of 211 total; 65 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 66 have a written page.
+124 neighborhoods are mapped; 76 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
 | San Bruno | 0 | 17 | 17 |
 | Hillsborough | 0 | 15 | 15 |
 | Redwood City | 0 | 13 | 13 |
-| Foster City | 0 | 10 | 10 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
+| Foster City | 10 | 10 | — |
 | Millbrae | 13 | 13 | — |
 | San Carlos | 6 | 6 | — |
-| **Total** | **66** | **124** | **58** |
+| **Total** | **76** | **124** | **48** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -66,14 +66,15 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
+| Foster City | 10 |
 | San Carlos | 6 |
 | Millbrae | 5 |
 | Belmont | 5 |
 | Burlingame | 5 |
 | San Mateo | 4 |
-| **Total** | **136** |
+| **Total** | **146** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 136 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 146 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
@@ -95,6 +96,7 @@ Each states its reason on the page rather than borrowing a citywide median.
 | Page | Reason |
 |---|---|
 | `burlingame/ingoldmilldale` | No sales attributed to it in the MLS |
+| `foster-city/vintage-park` | Not a residential area |
 | `millbrae/green-hills` | Too few sales a year to support a median |
 | `millbrae/green-hills-country-club` | Not a residential area |
 
