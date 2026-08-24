@@ -30,21 +30,20 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **116 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **133 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **35** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **139** | of 224 total; 85 filled so far |
+| Neighborhoods with no page | **18** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **156** | of 241 total; 85 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 89 have a written page.
+124 neighborhoods are mapped; 106 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
-| San Bruno | 0 | 17 | 17 |
 | Hillsborough | 0 | 15 | 15 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
@@ -52,8 +51,9 @@ Market data is complete: all **116 published pages** carry verified Compass figu
 | Foster City | 10 | 10 | — |
 | Millbrae | 13 | 13 | — |
 | Redwood City | 13 | 13 | — |
+| San Bruno | 17 | 17 | — |
 | San Carlos | 6 | 6 | — |
-| **Total** | **89** | **124** | **35** |
+| **Total** | **106** | **124** | **18** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -66,20 +66,22 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
+| San Bruno | 17 |
 | Redwood City | 13 |
 | Foster City | 10 |
 | Millbrae | 2 |
 | San Mateo | 1 |
 | San Carlos | 1 |
 | Burlingame | 1 |
-| **Total** | **139** |
+| **Total** | **156** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 139 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 156 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Neighborhood hero images still needed (28)
+### Neighborhood hero images still needed (45)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
+- **San Bruno** (17): [Bayhill](neighborhood-pages/san-bruno/bayhill.html), [Belle Air North](neighborhood-pages/san-bruno/belle-air-north.html), [Belle Air Park](neighborhood-pages/san-bruno/belle-air-park.html), [Capuchino](neighborhood-pages/san-bruno/capuchino.html), [Crestmoor](neighborhood-pages/san-bruno/crestmoor.html), [Downtown San Bruno](neighborhood-pages/san-bruno/downtown-san-bruno.html), [Golden Gate National Cemetery](neighborhood-pages/san-bruno/golden-gate-national-cemetery.html), [Huntington Park](neighborhood-pages/san-bruno/huntington-park.html), [Lomita Park](neighborhood-pages/san-bruno/lomita-park.html), [Mills Park](neighborhood-pages/san-bruno/mills-park.html), [Monte Verde](neighborhood-pages/san-bruno/monte-verde.html), [Pacific Heights](neighborhood-pages/san-bruno/pacific-heights.html), [Portola Highlands](neighborhood-pages/san-bruno/portola-highlands.html), [Rollingwood](neighborhood-pages/san-bruno/rollingwood.html), [San Bruno Park](neighborhood-pages/san-bruno/san-bruno-park.html), [Shelter Creek](neighborhood-pages/san-bruno/shelter-creek.html), [Tanforan](neighborhood-pages/san-bruno/tanforan.html)
 - **Redwood City** (13): [Bair Island](neighborhood-pages/redwood-city/bair-island.html), [Centennial](neighborhood-pages/redwood-city/centennial.html), [Central Park](neighborhood-pages/redwood-city/central-park.html), [Clifford Heights](neighborhood-pages/redwood-city/clifford-heights.html), [Cordilleras Heights](neighborhood-pages/redwood-city/cordilleras-heights.html), [Downtown Redwood City](neighborhood-pages/redwood-city/downtown-redwood-city.html), [Dumbarton](neighborhood-pages/redwood-city/dumbarton.html), [Eagle Hill](neighborhood-pages/redwood-city/eagle-hill.html), [Edgewood Park](neighborhood-pages/redwood-city/edgewood-park.html), [Farm Hills Estates](neighborhood-pages/redwood-city/farm-hills-estates.html), [Horgan Ranch](neighborhood-pages/redwood-city/horgan-ranch.html), [Mt. Carmel](neighborhood-pages/redwood-city/mt-carmel.html), [Redwood Shores](neighborhood-pages/redwood-city/redwood-shores.html)
 - **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
 - **Millbrae** (2): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
@@ -112,6 +114,11 @@ Each states its reason on the page rather than borrowing a citywide median.
 | `millbrae/green-hills-country-club` | Not a residential area |
 | `redwood-city/downtown-redwood-city` | No sales attributed to it in the MLS |
 | `redwood-city/bair-island` | Not a residential area |
+| `san-bruno/belle-air-north` | No sales attributed to it in the MLS |
+| `san-bruno/downtown-san-bruno` | No sales attributed to it in the MLS |
+| `san-bruno/bayhill` | Not a residential area |
+| `san-bruno/tanforan` | Not a residential area |
+| `san-bruno/golden-gate-national-cemetery` | Not a residential area |
 
 <!-- STATUS:END -->
 

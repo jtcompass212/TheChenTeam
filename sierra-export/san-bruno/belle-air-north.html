@@ -1,0 +1,137 @@
+<!-- NOTE: The interactive neighborhood MAP is a separate Shared HTML Widget — add it as a NEW page component
+     positioned AFTER this entire Content Area block. -->
+<style>
+  .belle-air-north-nb-page, .belle-air-north-nb-page * { box-sizing: border-box; }
+  .belle-air-north-nb-page a { color: #a8823d; text-decoration: none; }
+  .belle-air-north-nb-page a:hover { color: #8c6930; text-decoration: underline; }
+  .belle-air-north-nb-page ::selection { background: #eee6d8; }
+  .belle-air-north-nb-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .belle-air-north-nb-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+  .belle-air-north-nb-page .nb-card-link { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .belle-air-north-nb-page .nb-card-link:hover { transform: translateY(-5px); box-shadow: 0 12px 22px -10px rgba(22,35,63,0.16); }
+  .belle-air-north-nb-page .fade-in { opacity: 0; transform: translateY(16px); animation: pknbFadeIn 700ms ease forwards; }
+  .belle-air-north-nb-page .fade-in.d1 { animation-delay: 80ms; }
+  .belle-air-north-nb-page .fade-in.d2 { animation-delay: 160ms; }
+  .belle-air-north-nb-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes pknbFadeIn { to { opacity: 1; transform: translateY(0); } }
+  .belle-air-north-nb-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .belle-air-north-nb-page .scroll-reveal { opacity: 0; animation: pknbScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes pknbScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+<div class="belle-air-north-nb-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;"><!-- 1. EYEBROW + H1 + INTRO -->
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">San Bruno &middot; Belle Air North</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 56px; line-height: 1.06; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 16ch; text-wrap: balance;">Belle Air North Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">Belle Air North covers the blocks at the northern end of the Belle Air area, sharing the flat ground, the compact postwar housing and the freeway-adjacent position of Belle Air Park immediately south. In practice the two are read as one neighborhood by almost everyone, including the MLS. Below you&rsquo;ll find current homes for sale in Belle Air North, updated throughout the day.</p>
+        <p style="margin: 0px;">If you'd like more information on any of these listings, just reach out &mdash; we're happy to share disclosures, recent sales, and pricing history. Looking beyond Belle Air North? Browse <a href="/san-bruno/">San Bruno real estate</a> or other <a href="#similar-neighborhoods">nearby neighborhoods</a>.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 280px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: #98a0b3; letter-spacing: 0.04em; text-align: center; padding: 16px; line-height: 1.6;">[ HERO IMAGE ]<br>A representative Belle Air North street or landmark<br>~900&times;650</span></div>
+    </div>
+  </section>
+  <!-- 2. MARKET SNAPSHOT -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 70px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">Belle Air North</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot</span></div>
+      <div style="padding: 32px 26px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; line-height: 1.4;">No separately reported sales</div>
+        <div style="font-size: 13.5px; color: #7d8598; margin-top: 10px; max-width: 60ch; margin-left: auto; margin-right: auto;">Belle Air North is small enough that closed sales are recorded under neighboring San Bruno areas rather than on its own.</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">No closed sales are attributed to Belle Air North in the MLS data behind Compass Market Insights, over any period on record. Sales on these streets are reported under adjoining San Bruno neighborhoods, so no separate Belle Air North median can be shown. For a valuation here, get in touch and we&rsquo;ll pull the specific comparables. Updated 24 August 2026. Compass is a real estate broker licensed by the State of California and makes no representation as to the accuracy or completeness of this information. Equal Housing Opportunity.</p>
+  </section>
+  <!-- 3. NEARBY AMENITIES -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Nearby Amenities</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">What's around Belle Air North</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tree.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Parks</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">San Bruno City Park</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The city&rsquo;s main park, a short drive</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/shopping-cart.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Grocery</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Safeway, El Camino Real</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Groceries close by</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tools-kitchen-2.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Dining</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">San Mateo Avenue</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The main street&rsquo;s shops and restaurants</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/book.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Library</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">San Bruno Library</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The city branch on West San Bruno Avenue</p>
+      </div>
+    </div>
+  </section>
+  <!-- 4. COMMUTE TIMES -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Commute Times</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Getting around from Belle Air North</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~19 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To San Francisco, via US-101</div>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~27 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To Palo Alto, via US-101</div>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~6 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To SFO Airport</div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. SIMILAR NEIGHBORHOODS (auto-filled: 3 nearest) -->
+  <section id="similar-neighborhoods" class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore Nearby</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Similar Neighborhoods</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;"><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/san-bruno/shelter-creek/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Shelter Creek</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The city&rsquo;s main condominium community, wooded and just off I-280</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/san-bruno/mills-park/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Mills Park</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Begun before the war, finished for returning veterans</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/san-bruno/san-bruno-park/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">San Bruno Park</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Central, flat, and built around the city&rsquo;s main park</p>
+      </a></div>
+  </section>
+  <!-- 6. SCHOOLS -->
+  <section class="scroll-reveal" style="background: #f0f2f6; margin-top: 90px; padding: 70px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Education in Belle Air North</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Belle Air Elementary</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; K&ndash;5, San Bruno Park School District</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Parkside Intermediate School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; 6&ndash;8, San Bruno Park School District</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Capuchino High School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; 9&ndash;12, San Mateo Union High School District &mdash; opened September 1950</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 7. STREETS & BOUNDARIES (heading only — map widget is the NEXT page component) -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 40px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Streets &amp; Boundaries</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Where Belle Air North sits</h2>
+  </section>
+</div>

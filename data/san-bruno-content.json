@@ -1,0 +1,235 @@
+{
+ "_note": "Content for the 17 San Bruno neighborhood pages. Prose is original; facts sourced in docs/san-bruno-sources.md.",
+ "_shared": {
+  "library": ["San Bruno Library", "The city branch on West San Bruno Avenue"],
+  "middle": ["Parkside Intermediate School", "Public &middot; 6&ndash;8, San Bruno Park School District"],
+  "high": ["Capuchino High School", "Public &middot; 9&ndash;12, San Mateo Union High School District &mdash; opened September 1950"]
+ },
+
+ "crestmoor": {
+  "intro": "Crestmoor went up on former ranch land west of I-280 from the early 1950s, and it is the clearest expression of what San Bruno built when it moved uphill: California mid-century raised ranches and split-levels, put up between 1950 and 1970 on curving streets that follow the contours rather than fight them. It is the busiest hillside market in the city.",
+  "amenities": [
+   ["Crestmoor Canyon", "Open hillside and walking paths above the neighborhood"],
+   ["Safeway, El Camino Real", "The main grocery run, downhill"],
+   ["San Mateo Avenue", "San Bruno&rsquo;s original main street, with its restaurants and shops"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~10 min", "To SFO Airport"]],
+  "schools": [["Portola Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "rollingwood": {
+  "intro": "Rollingwood carries the ranch houses of the 1950s and 1960s up San Bruno&rsquo;s hillsides on streets that have had sixty years to grow their canopy. Like the rest of the high ground here, many of the houses are raised, presenting a single story to the street and opening downhill at the back.",
+  "amenities": [
+   ["Junipero Serra County Park", "Wooded trails and picnic areas on the ridge above"],
+   ["Safeway, El Camino Real", "Groceries down the hill"],
+   ["San Mateo Avenue", "The city&rsquo;s main street for eating out"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~11 min", "To SFO Airport"]],
+  "schools": [["Rollingwood Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "mills-park": {
+  "intro": "Mills Park was conceived before the Second World War as an entry-level suburb for people leaving San Francisco, and construction had barely started when the war stopped it. Building resumed afterwards, aimed at returning veterans, which is why the neighborhood reads as two eras at once and why it has stayed one of the more attainable addresses in San Bruno.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, with the recreation center and playing fields"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "Restaurants and shops on the original main street"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~8 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "portola-highlands": {
+  "intro": "The newest of San Bruno&rsquo;s hillside tracts, Portola Highlands filled in through the 1960s and 1970s with raised ranch houses stepped into the slope. Being higher and later than the rest means larger floor plans and, on the right street, a view that runs out over the bay.",
+  "amenities": [
+   ["Junipero Serra County Park", "Ridge trails and picnic grounds nearby"],
+   ["Safeway, El Camino Real", "The main grocery run, downhill"],
+   ["San Mateo Avenue", "San Bruno&rsquo;s dining strip"],
+   null
+  ],
+  "commute": [["~22 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~12 min", "To SFO Airport"]],
+  "schools": [["Portola Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "monte-verde": {
+  "intro": "Monte Verde sits among San Bruno&rsquo;s western hills, sharing the raised-ranch housing and the rolling terrain of the neighborhoods around it. It is a small, quiet pocket where most streets carry only their own traffic, and homes come to market slowly enough that each sale tends to set the reference point for the next.",
+  "amenities": [
+   ["Junipero Serra County Park", "Wooded ridge trails above the neighborhood"],
+   ["Safeway, El Camino Real", "Groceries a short drive downhill"],
+   ["San Mateo Avenue", "The city&rsquo;s restaurants and shops"],
+   null
+  ],
+  "commute": [["~22 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~12 min", "To SFO Airport"]],
+  "schools": [["Portola Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "huntington-park": {
+  "intro": "Huntington Park belongs to San Bruno&rsquo;s flatland, one of the first suburban tracts here, built in the late 1940s and early 1950s with compact houses on modest lots. That original scale is exactly why it still works as an entry point: the houses are small enough to be reachable and the lots are large enough to extend.",
+  "amenities": [
+   ["San Bruno City Park", "Playing fields, pool and the recreation center"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "The original main street, close by"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "san-bruno-park": {
+  "intro": "San Bruno Park gives the school district its name and sits on the flat ground at the middle of the city, built out in the same late-1940s push as Huntington Park and Lomita Park. The city&rsquo;s main park and recreation center are here, which makes it one of the more convenient addresses in San Bruno for anyone with children.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s largest park, with pool, fields and recreation center"],
+   ["Safeway, El Camino Real", "Groceries within a few minutes"],
+   ["San Mateo Avenue", "Restaurants and shops on the main street"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["John Muir Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "lomita-park": {
+  "intro": "Lomita Park occupies the flat northern edge of San Bruno against the Millbrae line, built in the same postwar wave as Huntington Park with compact houses on small lots. Its position between two cities means residents tend to use services on both sides of the boundary, and its proximity to the Millbrae station makes it one of the easier parts of the city to commute from.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, a short drive south"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "San Bruno&rsquo;s restaurants, minutes away"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["John Muir Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "belle-air-park": {
+  "intro": "Belle Air Park sits on the flat eastern side of San Bruno, close to El Camino Real and the freeway, with the compact postwar housing that characterizes this half of the city. Its namesake elementary school is at the center of the neighborhood, and the position &mdash; minutes from SFO, the Caltrain platform and US-101 &mdash; is most of what people buy here for.",
+  "amenities": [
+   ["San Bruno City Park", "Fields, pool and the recreation center, a short drive"],
+   ["Safeway, El Camino Real", "Groceries close by"],
+   ["San Mateo Avenue", "The main street&rsquo;s shops and restaurants"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~6 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "capuchino": {
+  "intro": "Capuchino takes its name from the high school that opened here in September 1950, and the campus is still the anchor of the neighborhood. The housing around it is San Bruno&rsquo;s standard postwar stock, close to El Camino Real and within easy reach of both the Caltrain platform and the Millbrae station.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, close by"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "Restaurants and shops"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~8 min", "To SFO Airport"]],
+  "schools": [["John Muir Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "pacific-heights": {
+  "intro": "Not to be confused with its San Francisco namesake, San Bruno&rsquo;s Pacific Heights is a hillside pocket on the city&rsquo;s western slopes, with the raised ranch and split-level housing that fills this side of town. The elevation delivers the thing people come up here for &mdash; on a clear day the outlook runs across the bay.",
+  "amenities": [
+   ["Junipero Serra County Park", "Ridge trails and wooded picnic grounds"],
+   ["Safeway, El Camino Real", "Groceries downhill"],
+   ["San Mateo Avenue", "The city&rsquo;s dining strip"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~11 min", "To SFO Airport"]],
+  "schools": [["Portola Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "shelter-creek": {
+  "intro": "Shelter Creek is a large condominium community on San Bruno&rsquo;s western hillside, and it functions as the city&rsquo;s main entry point for buyers who want in without a detached house. Turnover is steady, the grounds are wooded, and the position just off I-280 makes the commute in either direction straightforward.",
+  "amenities": [
+   ["Junipero Serra County Park", "Wooded trails immediately west"],
+   ["Safeway, El Camino Real", "The nearest full grocery, downhill"],
+   ["San Mateo Avenue", "San Bruno&rsquo;s restaurants and shops"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via I-280"], ["~28 min", "To Palo Alto, via I-280"], ["~11 min", "To SFO Airport"]],
+  "schools": [["Portola Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "belle-air-north": {
+  "intro": "Belle Air North covers the blocks at the northern end of the Belle Air area, sharing the flat ground, the compact postwar housing and the freeway-adjacent position of Belle Air Park immediately south. In practice the two are read as one neighborhood by almost everyone, including the MLS.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, a short drive"],
+   ["Safeway, El Camino Real", "Groceries close by"],
+   ["San Mateo Avenue", "The main street&rsquo;s shops and restaurants"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~6 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "downtown-san-bruno": {
+  "intro": "Downtown San Bruno runs along San Mateo Avenue, the city&rsquo;s original main street and still its best stretch for eating out, with the Caltrain platform a block away and the Tanforan shops just across El Camino Real. Housing in the immediate downtown blocks is a mix of older cottages and apartments above the shopfronts.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, a short drive west"],
+   ["Safeway, El Camino Real", "Groceries within a few minutes"],
+   ["San Mateo Avenue", "The restaurants and shops are at the door"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "bayhill": {
+  "_not_residential": true,
+  "intro": "Bayhill is San Bruno&rsquo;s office district rather than a residential neighborhood. The office parks in the middle of the city house a number of large employers, YouTube among them, and there is no housing stock here to report on. If you are looking to live within walking distance of these offices, the nearest residential neighborhoods are Belle Air Park and San Bruno Park.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, a short drive"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "Downtown restaurants nearby"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "tanforan": {
+  "_not_residential": true,
+  "intro": "Tanforan is a retail site, not a residential neighborhood, and its history is worth stating plainly. A racetrack operated here from 1899. In 1942, under Executive Order 9066, the grounds were converted into the Tanforan Assembly Center, where thousands of Japanese Americans &mdash; most of them United States citizens &mdash; were detained before being moved to incarceration camps inland. The track burned down in 1964 and the shopping center now on the site includes a memorial to those held here.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, a short drive west"],
+   ["The Shops at Tanforan", "The shopping center on the site, off El Camino Real"],
+   ["San Mateo Avenue", "Downtown San Bruno&rsquo;s restaurants, across El Camino"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~6 min", "To SFO Airport"]],
+  "schools": [["Belle Air Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "golden-gate-national-cemetery": {
+  "_not_residential": true,
+  "intro": "Golden Gate National Cemetery is a national cemetery, not a residential neighborhood. The War Department established it in San Bruno in 1939 as space ran short at the Presidio of San Francisco, and it remains the resting place of many thousands of veterans. The residential streets nearest to it are in San Bruno Park and Huntington Park.",
+  "amenities": [
+   ["San Bruno City Park", "The city&rsquo;s main park, adjacent to the west"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["San Mateo Avenue", "Downtown restaurants, a short drive"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["John Muir Elementary", "Public &middot; K&ndash;5, San Bruno Park School District"], "middle", "high"]
+ },
+
+ "_similar": {
+  "Crestmoor": "Mid-century raised ranches on curving hillside streets west of I-280",
+  "Rollingwood": "1950s and 1960s ranch houses under a mature hillside canopy",
+  "Mills Park": "Begun before the war, finished for returning veterans",
+  "Portola Highlands": "The newest hillside tract, with the largest plans and the best views",
+  "Monte Verde": "A small, quiet pocket in the western hills",
+  "Huntington Park": "Flatland postwar housing on modest lots, one of the city&rsquo;s entry points",
+  "San Bruno Park": "Central, flat, and built around the city&rsquo;s main park",
+  "Lomita Park": "The northern edge at the Millbrae line, close to the station",
+  "Belle Air Park": "Flat and freeway-adjacent, minutes from SFO and Caltrain",
+  "Belle Air North": "The northern half of the Belle Air area, read as one neighborhood with it",
+  "Capuchino": "Named for the high school that opened here in 1950",
+  "Pacific Heights": "A western hillside pocket with bay views on a clear day",
+  "Shelter Creek": "The city&rsquo;s main condominium community, wooded and just off I-280",
+  "Downtown San Bruno": "San Mateo Avenue&rsquo;s shops and restaurants, a block from Caltrain",
+  "Bayhill": "San Bruno&rsquo;s office district rather than a residential neighborhood",
+  "Tanforan": "A retail site with a difficult history, not a neighborhood",
+  "Golden Gate National Cemetery": "A national cemetery, not a residential neighborhood"
+ }
+}

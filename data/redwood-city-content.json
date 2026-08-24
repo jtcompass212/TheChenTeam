@@ -1,167 +1,540 @@
 {
  "_note": "Content for the 13 Redwood City neighborhood pages. Prose is original; facts sourced in docs/redwood-city-sources.md.",
  "_shared": {
-  "library": ["Redwood City Downtown Library", "The main branch on Middlefield Road, beside Courthouse Square"],
-  "middle": ["Redwood City School District", "Public &middot; K&ndash;8 &mdash; the district runs the elementary and middle schools serving the city"],
-  "high": ["Sequoia High School", "Public &middot; 9&ndash;12, Sequoia Union High School District &mdash; founded 1895, downtown on Broadway"]
+  "library": [
+   "Redwood City Downtown Library",
+   "The main branch on Middlefield Road, beside Courthouse Square"
+  ],
+  "middle": [
+   "Redwood City School District",
+   "Public &middot; K&ndash;8 &mdash; the district runs the elementary and middle schools serving the city"
+  ],
+  "high": [
+   "Sequoia High School",
+   "Public &middot; 9&ndash;12, Sequoia Union High School District &mdash; founded 1895, downtown on Broadway"
+  ]
  },
-
  "mt-carmel": {
   "intro": "Mt. Carmel is the historic heart of residential Redwood City, a grid of Craftsman, Tudor and Spanish Revival houses from the 1920s and 1930s under some of the oldest street trees in the city. Lots are level and generous by Peninsula standards, and enough of the original detail survives that the neighborhood reads as a period piece rather than a collection of remodels.",
   "amenities": [
-   ["Stafford Park", "Neighborhood green with playground and picnic lawns"],
-   ["Safeway, Woodside Road", "The nearest full grocery"],
-   ["Broadway", "Downtown Redwood City&rsquo;s restaurants and the Fox Theatre, walkable"],
+   [
+    "Stafford Park",
+    "Neighborhood green with playground and picnic lawns"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The nearest full grocery"
+   ],
+   [
+    "Broadway",
+    "Downtown Redwood City&rsquo;s restaurants and the Fox Theatre, walkable"
+   ],
    null
   ],
-  "commute": [["~35 min", "To San Francisco, via US-101"], ["~13 min", "To Palo Alto, via US-101"], ["~22 min", "To SFO Airport"]],
-  "schools": [["Roosevelt Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~35 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~13 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~22 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Roosevelt Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "edgewood-park": {
   "intro": "Edgewood Park sits alongside Mt. Carmel and shares its best qualities &mdash; heritage tree canopy, 1920s and 1930s architecture, and streets laid out before anyone was designing for two cars. Together the two form the most intact pre-war residential fabric in Redwood City, and they trade accordingly.",
   "amenities": [
-   ["Edgewood County Park", "1,400 acres of oak woodland and spring wildflower trails, west of the neighborhood"],
-   ["Safeway, Woodside Road", "Groceries a short drive"],
-   ["Broadway", "Downtown dining and the Fox Theatre"],
+   [
+    "Edgewood County Park",
+    "1,400 acres of oak woodland and spring wildflower trails, west of the neighborhood"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "Groceries a short drive"
+   ],
+   [
+    "Broadway",
+    "Downtown dining and the Fox Theatre"
+   ],
    null
   ],
-  "commute": [["~35 min", "To San Francisco, via US-101"], ["~14 min", "To Palo Alto, via I-280"], ["~23 min", "To SFO Airport"]],
-  "schools": [["Roosevelt Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~35 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~14 min",
+    "To Palo Alto, via I-280"
+   ],
+   [
+    "~23 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Roosevelt Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "eagle-hill": {
   "intro": "Eagle Hill runs so directly into Mt. Carmel that the boundary is hard to find on the ground &mdash; the same period housing, the same tree cover, a school and a couple of churches and very little else. That absence of commercial frontage is the point: it is almost entirely residential, and the traffic on its streets belongs to the people who live there.",
   "amenities": [
-   ["Stafford Park", "The nearest neighborhood green"],
-   ["Safeway, Woodside Road", "The main grocery run"],
-   ["Broadway", "Downtown restaurants, a short drive or a long walk"],
+   [
+    "Stafford Park",
+    "The nearest neighborhood green"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The main grocery run"
+   ],
+   [
+    "Broadway",
+    "Downtown restaurants, a short drive or a long walk"
+   ],
    null
   ],
-  "commute": [["~35 min", "To San Francisco, via US-101"], ["~13 min", "To Palo Alto, via US-101"], ["~22 min", "To SFO Airport"]],
-  "schools": [["Roosevelt Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~35 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~13 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~22 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Roosevelt Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "farm-hills-estates": {
   "intro": "Redwood City&rsquo;s westernmost district, Farm Hills Estates climbs into the hills south of Jefferson and west of Alameda de las Pulgas, on large wooded lots that give it more in common with Emerald Hills next door than with the flatland grid below. Housing runs mostly to ranch-style single-family homes with a meaningful share of condominiums and townhomes mixed in.",
   "amenities": [
-   ["Edgewood County Park", "Oak woodland trails and wildflower meadows at the neighborhood&rsquo;s edge"],
-   ["Safeway, Woodside Road", "The nearest full grocery, downhill"],
-   ["Broadway", "Downtown Redwood City, about ten minutes by car"],
+   [
+    "Edgewood County Park",
+    "Oak woodland trails and wildflower meadows at the neighborhood&rsquo;s edge"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The nearest full grocery, downhill"
+   ],
+   [
+    "Broadway",
+    "Downtown Redwood City, about ten minutes by car"
+   ],
    null
   ],
-  "commute": [["~36 min", "To San Francisco, via I-280"], ["~15 min", "To Palo Alto, via I-280"], ["~24 min", "To SFO Airport"]],
-  "schools": [["Clifford Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~36 min",
+    "To San Francisco, via I-280"
+   ],
+   [
+    "~15 min",
+    "To Palo Alto, via I-280"
+   ],
+   [
+    "~24 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Clifford Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "cordilleras-heights": {
   "intro": "Cordilleras Heights belongs to the Emerald Hills country west of town &mdash; unincorporated, hillside, and reached by narrow winding streets that were laid out to follow the terrain rather than a grid. Houses here are larger than the city average and many are bought for the view; it is one of the busiest hillside markets on this stretch of the Peninsula.",
   "amenities": [
-   ["Edgewood County Park", "Trailheads into 1,400 acres of oak woodland"],
-   ["Safeway, Woodside Road", "Groceries down the hill"],
-   ["Broadway", "Downtown dining, about ten minutes away"],
+   [
+    "Edgewood County Park",
+    "Trailheads into 1,400 acres of oak woodland"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "Groceries down the hill"
+   ],
+   [
+    "Broadway",
+    "Downtown dining, about ten minutes away"
+   ],
    null
   ],
-  "commute": [["~36 min", "To San Francisco, via I-280"], ["~15 min", "To Palo Alto, via I-280"], ["~24 min", "To SFO Airport"]],
-  "schools": [["Clifford Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~36 min",
+    "To San Francisco, via I-280"
+   ],
+   [
+    "~15 min",
+    "To Palo Alto, via I-280"
+   ],
+   [
+    "~24 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Clifford Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "clifford-heights": {
   "intro": "One of the smallest places on this map, Clifford Heights is an unincorporated pocket of well under a thousand residents in the hills west of Redwood City. It is quieter even than Emerald Lake Hills next door, which is saying something, and homes come to market rarely enough that each sale sets the tone for the neighborhood.",
   "amenities": [
-   ["Edgewood County Park", "Oak woodland and wildflower trails nearby"],
-   ["Safeway, Woodside Road", "The nearest full grocery"],
-   ["Broadway", "Downtown Redwood City, a short drive east"],
+   [
+    "Edgewood County Park",
+    "Oak woodland and wildflower trails nearby"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The nearest full grocery"
+   ],
+   [
+    "Broadway",
+    "Downtown Redwood City, a short drive east"
+   ],
    null
   ],
-  "commute": [["~36 min", "To San Francisco, via I-280"], ["~15 min", "To Palo Alto, via I-280"], ["~24 min", "To SFO Airport"]],
-  "schools": [["Clifford Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~36 min",
+    "To San Francisco, via I-280"
+   ],
+   [
+    "~15 min",
+    "To Palo Alto, via I-280"
+   ],
+   [
+    "~24 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Clifford Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "horgan-ranch": {
   "intro": "Horgan Ranch is the Redwood City neighborhood closest to Atherton, and the proximity shows in its southern subdivisions. Streets are quiet and well kept, and the housing spans a wide range &mdash; the Redwood Oaks pocket alone runs from modest thousand-square-foot houses to custom builds three times that size, which keeps the neighborhood accessible at one end and competitive at the other.",
   "amenities": [
-   ["Red Morton Community Park", "The city&rsquo;s largest park, with fields, pool and community center"],
-   ["Safeway, Woodside Road", "Groceries a few minutes away"],
-   ["Broadway", "Downtown restaurants and the Fox Theatre"],
+   [
+    "Red Morton Community Park",
+    "The city&rsquo;s largest park, with fields, pool and community center"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "Groceries a few minutes away"
+   ],
+   [
+    "Broadway",
+    "Downtown restaurants and the Fox Theatre"
+   ],
    null
   ],
-  "commute": [["~35 min", "To San Francisco, via US-101"], ["~12 min", "To Palo Alto, via US-101"], ["~23 min", "To SFO Airport"]],
-  "schools": [["Roy Cloud Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~35 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~12 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~23 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Roy Cloud Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "redwood-shores": {
   "intro": "Redwood Shores occupies the northeastern corner of the city on filled bayfront, laid out around lagoons and separated from the rest of Redwood City by the freeway and the marsh. It is as much an employment center as a neighborhood &mdash; Oracle&rsquo;s campus, Electronic Arts and DreamWorks Animation all sit here &mdash; which makes it one of the few places on the Peninsula where a genuinely short commute is normal.",
   "amenities": [
-   ["Marlin Park", "Lagoon-front green with playground and picnic areas"],
-   ["Safeway, Redwood Shores Parkway", "The neighborhood&rsquo;s own grocery"],
-   ["Redwood Shores Parkway", "The local cluster of cafes and restaurants"],
+   [
+    "Marlin Park",
+    "Lagoon-front green with playground and picnic areas"
+   ],
+   [
+    "Safeway, Redwood Shores Parkway",
+    "The neighborhood&rsquo;s own grocery"
+   ],
+   [
+    "Redwood Shores Parkway",
+    "The local cluster of cafes and restaurants"
+   ],
    null
   ],
-  "commute": [["~30 min", "To San Francisco, via US-101"], ["~15 min", "To Palo Alto, via US-101"], ["~18 min", "To SFO Airport"]],
-  "schools": [["Sandpiper Elementary", "Public &middot; K&ndash;8, Belmont-Redwood Shores School District"], "middle", "high"]
+  "commute": [
+   [
+    "~30 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~15 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~18 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Sandpiper Elementary",
+    "Public &middot; K&ndash;8, Belmont-Redwood Shores School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "centennial": {
   "intro": "Centennial is one of three neighborhoods locals group together as the ABC streets, alongside Stambaugh-Heller and Lenolt, filling the blocks between downtown and the bayside industrial edge. It is among the more attainable parts of Redwood City and sits close enough to Broadway that the downtown revival is felt directly rather than read about.",
   "amenities": [
-   ["Red Morton Community Park", "Fields, pool and community center, a short drive"],
-   ["Safeway, Woodside Road", "The nearest full grocery"],
-   ["Courthouse Square", "Downtown&rsquo;s civic plaza, with the Fox Theatre across the street"],
+   [
+    "Red Morton Community Park",
+    "Fields, pool and community center, a short drive"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The nearest full grocery"
+   ],
+   [
+    "Courthouse Square",
+    "Downtown&rsquo;s civic plaza, with the Fox Theatre across the street"
+   ],
    null
   ],
-  "commute": [["~33 min", "To San Francisco, via US-101"], ["~14 min", "To Palo Alto, via US-101"], ["~21 min", "To SFO Airport"]],
-  "schools": [["Garfield Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~33 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~14 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~21 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Garfield Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "central-park": {
   "intro": "Central Park sits east of El Camino Real and covers several distinct pockets, Palm Park and Woodside Plaza among them, which is why the housing changes character noticeably from one end to the other. What holds across all of it is position: this is the middle of Redwood City, with the freeway, downtown and El Camino all within a few minutes.",
   "amenities": [
-   ["Red Morton Community Park", "The city&rsquo;s main park, close by"],
-   ["Safeway, Woodside Road", "Groceries within a few minutes"],
-   ["Broadway", "Downtown dining and the Fox Theatre"],
+   [
+    "Red Morton Community Park",
+    "The city&rsquo;s main park, close by"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "Groceries within a few minutes"
+   ],
+   [
+    "Broadway",
+    "Downtown dining and the Fox Theatre"
+   ],
    null
   ],
-  "commute": [["~33 min", "To San Francisco, via US-101"], ["~13 min", "To Palo Alto, via US-101"], ["~21 min", "To SFO Airport"]],
-  "schools": [["Adelante Selby Spanish Immersion", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~33 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~13 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~21 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Adelante Selby Spanish Immersion",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "dumbarton": {
   "intro": "Dumbarton is one of the larger MLS districts in Redwood City and takes in several different pockets, so its character shifts from block to block more than most neighborhoods on this map. It covers the ground between the downtown core and the bay side of the city, which means the housing ranges from older cottages to newer infill within a short walk.",
   "amenities": [
-   ["Red Morton Community Park", "Fields, pool and community center"],
-   ["Safeway, Woodside Road", "The main grocery run"],
-   ["Courthouse Square", "Downtown&rsquo;s plaza and restaurants"],
+   [
+    "Red Morton Community Park",
+    "Fields, pool and community center"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The main grocery run"
+   ],
+   [
+    "Courthouse Square",
+    "Downtown&rsquo;s plaza and restaurants"
+   ],
    null
   ],
-  "commute": [["~32 min", "To San Francisco, via US-101"], ["~15 min", "To Palo Alto, via US-101"], ["~20 min", "To SFO Airport"]],
-  "schools": [["Garfield Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~32 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~15 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~20 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Garfield Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "downtown-redwood-city": {
   "intro": "Downtown Redwood City has had the most thorough revival of any city center on this stretch of the Peninsula. Courthouse Square anchors it, the 1929 Fox Theatre &mdash; a former movie palace on the National Register &mdash; sits directly across the street, and the blocks around them now carry more restaurants than any comparable downtown between San Mateo and Palo Alto. Housing is almost entirely apartments and condominiums above the shopfronts.",
   "amenities": [
-   ["Courthouse Square", "The civic plaza at the center of downtown, with summer events"],
-   ["Safeway, Woodside Road", "The nearest full grocery"],
-   ["Broadway", "The densest restaurant strip in Redwood City, at the door"],
+   [
+    "Courthouse Square",
+    "The civic plaza at the center of downtown, with summer events"
+   ],
+   [
+    "Safeway, Woodside Road",
+    "The nearest full grocery"
+   ],
+   [
+    "Broadway",
+    "The densest restaurant strip in Redwood City, at the door"
+   ],
    null
   ],
-  "commute": [["~32 min", "To San Francisco, via US-101"], ["~14 min", "To Palo Alto, via US-101"], ["~20 min", "To SFO Airport"]],
-  "schools": [["Garfield Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~32 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~14 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~20 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Garfield Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ]
  },
-
  "bair-island": {
   "intro": "Bair Island is not a residential neighborhood. The 3,000 acres of tidal marsh off Redwood City&rsquo;s bayfront form the Bair Island Ecological Reserve, part of the Don Edwards San Francisco Bay National Wildlife Refuge, and the only structures are trails, a kayak launch and an observation deck on Middle Bair Island. Homes described as being near Bair Island are in Redwood Shores or the bayside pockets of Dumbarton.",
   "amenities": [
-   ["Bair Island Ecological Reserve", "Marsh trails, kayak access and a wildlife observation deck"],
-   ["Safeway, Redwood Shores Parkway", "The nearest full grocery, in Redwood Shores"],
-   ["Broadway", "Downtown Redwood City restaurants, a short drive inland"],
+   [
+    "Bair Island Ecological Reserve",
+    "Marsh trails, kayak access and a wildlife observation deck"
+   ],
+   [
+    "Safeway, Redwood Shores Parkway",
+    "The nearest full grocery, in Redwood Shores"
+   ],
+   [
+    "Broadway",
+    "Downtown Redwood City restaurants, a short drive inland"
+   ],
    null
   ],
-  "commute": [["~31 min", "To San Francisco, via US-101"], ["~16 min", "To Palo Alto, via US-101"], ["~19 min", "To SFO Airport"]],
-  "schools": [["Garfield Elementary", "Public &middot; K&ndash;8, Redwood City School District"], "middle", "high"]
+  "commute": [
+   [
+    "~31 min",
+    "To San Francisco, via US-101"
+   ],
+   [
+    "~16 min",
+    "To Palo Alto, via US-101"
+   ],
+   [
+    "~19 min",
+    "To SFO Airport"
+   ]
+  ],
+  "schools": [
+   [
+    "Garfield Elementary",
+    "Public &middot; K&ndash;8, Redwood City School District"
+   ],
+   "middle",
+   "high"
+  ],
+  "_not_residential": true
  },
-
  "_similar": {
   "Mt. Carmel": "The historic core, 1920s and 1930s houses under old street trees",
   "Edgewood Park": "Mt. Carmel&rsquo;s neighbor and its equal for pre-war architecture",
