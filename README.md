@@ -30,30 +30,30 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **103 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **116 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **48** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **139** | of 211 total; 72 filled so far |
+| Neighborhoods with no page | **35** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **152** | of 224 total; 72 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 76 have a written page.
+124 neighborhoods are mapped; 89 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
 | San Bruno | 0 | 17 | 17 |
 | Hillsborough | 0 | 15 | 15 |
-| Redwood City | 0 | 13 | 13 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
 | Foster City | 10 | 10 | — |
 | Millbrae | 13 | 13 | — |
+| Redwood City | 13 | 13 | — |
 | San Carlos | 6 | 6 | — |
-| **Total** | **76** | **124** | **48** |
+| **Total** | **89** | **124** | **35** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -66,20 +66,22 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
+| Redwood City | 13 |
 | Foster City | 10 |
 | Burlingame | 5 |
 | Millbrae | 4 |
 | San Mateo | 3 |
 | Belmont | 3 |
 | San Carlos | 3 |
-| **Total** | **139** |
+| **Total** | **152** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 139 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 152 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Neighborhood hero images still needed (28)
+### Neighborhood hero images still needed (41)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
+- **Redwood City** (13): [Bair Island](neighborhood-pages/redwood-city/bair-island.html), [Centennial](neighborhood-pages/redwood-city/centennial.html), [Central Park](neighborhood-pages/redwood-city/central-park.html), [Clifford Heights](neighborhood-pages/redwood-city/clifford-heights.html), [Cordilleras Heights](neighborhood-pages/redwood-city/cordilleras-heights.html), [Downtown Redwood City](neighborhood-pages/redwood-city/downtown-redwood-city.html), [Dumbarton](neighborhood-pages/redwood-city/dumbarton.html), [Eagle Hill](neighborhood-pages/redwood-city/eagle-hill.html), [Edgewood Park](neighborhood-pages/redwood-city/edgewood-park.html), [Farm Hills Estates](neighborhood-pages/redwood-city/farm-hills-estates.html), [Horgan Ranch](neighborhood-pages/redwood-city/horgan-ranch.html), [Mt. Carmel](neighborhood-pages/redwood-city/mt-carmel.html), [Redwood Shores](neighborhood-pages/redwood-city/redwood-shores.html)
 - **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
 - **Burlingame** (5): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html), [Easton Addition](neighborhood-pages/burlingame/easton-addition.html), [Ingoldmilldale](neighborhood-pages/burlingame/ingoldmilldale.html), [Lyon Hoag](neighborhood-pages/burlingame/lyon-hoag.html), [Mills Estates](neighborhood-pages/burlingame/mills-estates.html)
 - **Millbrae** (4): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Glenview Highlands](neighborhood-pages/millbrae/glenview-highlands.html), [Highlands](neighborhood-pages/millbrae/highlands.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
@@ -110,6 +112,8 @@ Each states its reason on the page rather than borrowing a citywide median.
 | `foster-city/vintage-park` | Not a residential area |
 | `millbrae/green-hills` | Too few sales a year to support a median |
 | `millbrae/green-hills-country-club` | Not a residential area |
+| `redwood-city/downtown-redwood-city` | No sales attributed to it in the MLS |
+| `redwood-city/bair-island` | Not a residential area |
 
 <!-- STATUS:END -->
 
