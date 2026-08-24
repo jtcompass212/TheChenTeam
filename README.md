@@ -35,7 +35,7 @@ Market data is complete: all **103 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **48** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **126** | of 211 total; 85 filled so far |
+| Empty photo slots | **122** | of 211 total; 89 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -67,23 +67,17 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 |---|---:|
 | City Pages | 111 |
 | Foster City | 10 |
-| Millbrae | 2 |
-| San Mateo | 1 |
-| San Carlos | 1 |
-| Burlingame | 1 |
-| **Total** | **126** |
+| Millbrae | 1 |
+| **Total** | **122** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 126 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 122 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Neighborhood hero images still needed (15)
+### Neighborhood hero images still needed (11)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
 - **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
-- **Millbrae** (2): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
-- **Burlingame** (1): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html)
-- **San Carlos** (1): [Cordes](neighborhood-pages/san-carlos/cordes.html)
-- **San Mateo** (1): [San Mateo Village](neighborhood-pages/san-mateo/san-mateo-village.html)
+- **Millbrae** (1): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html)
 
 ### Calls that need you
 
