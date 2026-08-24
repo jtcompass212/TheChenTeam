@@ -35,7 +35,7 @@ Market data is complete: all **87 published pages** carry verified Compass figur
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **64** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **161** | of 195 total; 34 filled so far |
+| Empty photo slots | **130** | of 195 total; 65 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -66,13 +66,22 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
-| San Mateo | 15 |
-| Millbrae | 13 |
-| Burlingame | 13 |
-| Belmont | 9 |
-| **Total** | **161** |
+| Millbrae | 5 |
+| Belmont | 5 |
+| Burlingame | 5 |
+| San Mateo | 4 |
+| **Total** | **130** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 161 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 130 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+
+### Neighborhood hero images still needed (19)
+
+One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
+
+- **Belmont** (5): [Belmont Country Club](neighborhood-pages/belmont/belmont-country-club.html), [Belmont Heights](neighborhood-pages/belmont/belmont-heights.html), [Plateau-Skymont](neighborhood-pages/belmont/plateau-skymont.html), [Sterling Downs](neighborhood-pages/belmont/sterling-downs.html), [Western Hills](neighborhood-pages/belmont/western-hills.html)
+- **Burlingame** (5): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html), [Easton Addition](neighborhood-pages/burlingame/easton-addition.html), [Ingoldmilldale](neighborhood-pages/burlingame/ingoldmilldale.html), [Lyon Hoag](neighborhood-pages/burlingame/lyon-hoag.html), [Mills Estates](neighborhood-pages/burlingame/mills-estates.html)
+- **Millbrae** (5): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Glenview Highlands](neighborhood-pages/millbrae/glenview-highlands.html), [Highlands](neighborhood-pages/millbrae/highlands.html), [Lomita Hills](neighborhood-pages/millbrae/lomita-hills.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
+- **San Mateo** (4): [Homestead](neighborhood-pages/san-mateo/homestead.html), [San Mateo Village](neighborhood-pages/san-mateo/san-mateo-village.html), [San Mateo Woods/Bayridge](neighborhood-pages/san-mateo/san-mateo-woods-bayridge.html), [Westwood Knolls](neighborhood-pages/san-mateo/westwood-knolls.html)
 
 ### Calls that need you
 
