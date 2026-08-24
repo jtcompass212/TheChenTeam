@@ -35,7 +35,7 @@ Market data is complete: all **148 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **3** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **171** | of 256 total; 85 filled so far |
+| Empty photo slots | **135** | of 256 total; 121 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -66,30 +66,22 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
-| San Bruno | 17 |
 | Hillsborough | 15 |
-| Redwood City | 13 |
-| Foster City | 10 |
-| Millbrae | 2 |
-| San Mateo | 1 |
-| San Carlos | 1 |
-| Burlingame | 1 |
-| **Total** | **171** |
+| Foster City | 4 |
+| Redwood City | 3 |
+| Millbrae | 1 |
+| San Bruno | 1 |
+| **Total** | **135** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 171 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
-
-### Neighborhood hero images still needed (60)
+### Neighborhood hero images still needed (24)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
-- **San Bruno** (17): [Bayhill](neighborhood-pages/san-bruno/bayhill.html), [Belle Air North](neighborhood-pages/san-bruno/belle-air-north.html), [Belle Air Park](neighborhood-pages/san-bruno/belle-air-park.html), [Capuchino](neighborhood-pages/san-bruno/capuchino.html), [Crestmoor](neighborhood-pages/san-bruno/crestmoor.html), [Downtown San Bruno](neighborhood-pages/san-bruno/downtown-san-bruno.html), [Golden Gate National Cemetery](neighborhood-pages/san-bruno/golden-gate-national-cemetery.html), [Huntington Park](neighborhood-pages/san-bruno/huntington-park.html), [Lomita Park](neighborhood-pages/san-bruno/lomita-park.html), [Mills Park](neighborhood-pages/san-bruno/mills-park.html), [Monte Verde](neighborhood-pages/san-bruno/monte-verde.html), [Pacific Heights](neighborhood-pages/san-bruno/pacific-heights.html), [Portola Highlands](neighborhood-pages/san-bruno/portola-highlands.html), [Rollingwood](neighborhood-pages/san-bruno/rollingwood.html), [San Bruno Park](neighborhood-pages/san-bruno/san-bruno-park.html), [Shelter Creek](neighborhood-pages/san-bruno/shelter-creek.html), [Tanforan](neighborhood-pages/san-bruno/tanforan.html)
 - **Hillsborough** (15): [Brewer Subdivision](neighborhood-pages/hillsborough/brewer-subdivision.html), [Burlingame Hills](neighborhood-pages/hillsborough/burlingame-hills.html), [Carolands](neighborhood-pages/hillsborough/carolands.html), [Country Club Manor](neighborhood-pages/hillsborough/country-club-manor.html), [Hillsborough Heights](neighborhood-pages/hillsborough/hillsborough-heights.html), [Hillsborough Hills](neighborhood-pages/hillsborough/hillsborough-hills.html), [Hillsborough Knolls](neighborhood-pages/hillsborough/hillsborough-knolls.html), [Hillsborough Oaks](neighborhood-pages/hillsborough/hillsborough-oaks.html), [Hillsborough Park](neighborhood-pages/hillsborough/hillsborough-park.html), [Homeplace](neighborhood-pages/hillsborough/homeplace.html), [Lakeview](neighborhood-pages/hillsborough/lakeview.html), [Parrot Drive Area](neighborhood-pages/hillsborough/parrot-drive-area.html), [Ryan Tract](neighborhood-pages/hillsborough/ryan-tract.html), [Skyfarm](neighborhood-pages/hillsborough/skyfarm.html), [Tobin Clark Estate](neighborhood-pages/hillsborough/tobin-clark-estate.html)
-- **Redwood City** (13): [Bair Island](neighborhood-pages/redwood-city/bair-island.html), [Centennial](neighborhood-pages/redwood-city/centennial.html), [Central Park](neighborhood-pages/redwood-city/central-park.html), [Clifford Heights](neighborhood-pages/redwood-city/clifford-heights.html), [Cordilleras Heights](neighborhood-pages/redwood-city/cordilleras-heights.html), [Downtown Redwood City](neighborhood-pages/redwood-city/downtown-redwood-city.html), [Dumbarton](neighborhood-pages/redwood-city/dumbarton.html), [Eagle Hill](neighborhood-pages/redwood-city/eagle-hill.html), [Edgewood Park](neighborhood-pages/redwood-city/edgewood-park.html), [Farm Hills Estates](neighborhood-pages/redwood-city/farm-hills-estates.html), [Horgan Ranch](neighborhood-pages/redwood-city/horgan-ranch.html), [Mt. Carmel](neighborhood-pages/redwood-city/mt-carmel.html), [Redwood Shores](neighborhood-pages/redwood-city/redwood-shores.html)
-- **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
-- **Millbrae** (2): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
-- **Burlingame** (1): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html)
-- **San Carlos** (1): [Cordes](neighborhood-pages/san-carlos/cordes.html)
-- **San Mateo** (1): [San Mateo Village](neighborhood-pages/san-mateo/san-mateo-village.html)
+- **Foster City** (4): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html)
+- **Redwood City** (3): [Centennial](neighborhood-pages/redwood-city/centennial.html), [Clifford Heights](neighborhood-pages/redwood-city/clifford-heights.html), [Horgan Ranch](neighborhood-pages/redwood-city/horgan-ranch.html)
+- **Millbrae** (1): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html)
+- **San Bruno** (1): [Mills Park](neighborhood-pages/san-bruno/mills-park.html)
 
 ### Calls that need you
 
