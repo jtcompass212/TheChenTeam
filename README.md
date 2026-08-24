@@ -12,9 +12,9 @@ scripts, no runtime data fetching. Paste-ready output lives in
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 46 neighborhood pages across 3 cities |
-| `maps/` | Leaflet neighborhood maps for 9 cities |
-| `sierra-export/` | 73 paste-ready files with absolute image URLs |
+| `neighborhood-pages/` | 59 neighborhood pages across 4 cities |
+| `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
+| `sierra-export/` | 86 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
 | `data/market/` | Compass market data behind the pages, and how to refresh it |
 | `docs/` | Photo shot list and design specs |
@@ -38,20 +38,28 @@ Each carries a market snapshot, a quarterly price chart, neighborhood cards
 and a schools/history block. Market figures come from Compass Market Insights
 — see `data/market/README.md`.
 
-## Neighborhood pages (46)
+## Neighborhood pages (59)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
 | San Mateo | 24 | 28 |
 | Burlingame | 13 | 13 |
+| Millbrae | 13 | 13 |
 | Belmont | 9 | 9 |
 
 San Mateo's four gaps are its three hidden entries plus **Los Prados**, the
 only visible neighborhood without a page.
 
-Six mapped cities have no neighborhood pages yet — Foster City (10),
-Hillsborough (15), Millbrae (13), Redwood City (13), San Bruno (17) and
-San Carlos (6): 74 neighborhoods mapped but not written.
+`maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
+neighborhood that has no page yet — 65 of them, across Foster City (10),
+Hillsborough (15), Redwood City (13), San Bruno (17), San Carlos (6) and the
+four remaining San Mateo entries. These are templates, not publishable pages:
+every content slot still reads `[ PLACEHOLDER ]`. **Publish from
+`neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
+
+Three pages carry no market figures, each saying why on the page: Green Hills
+(one to three sales a year), Green Hills Country Club (a golf club, not a
+residential area) and Ingoldmilldale (no sales attributed to it in the MLS).
 
 ## Maps: neighborhoods by city (124 total)
 
