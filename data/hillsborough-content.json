@@ -1,0 +1,206 @@
+{
+ "_note": "Content for the 15 Hillsborough neighborhood pages. Prose is original; facts sourced in docs/hillsborough-sources.md.",
+ "_shared": {
+  "library": ["Burlingame Public Library", "Hillsborough has no commercial or civic center of its own; the nearest library is in Burlingame"],
+  "middle": ["William H. Crocker Middle School", "Public &middot; 6&ndash;8, Hillsborough City School District, opened 1959"],
+  "high": ["San Mateo Union High School District", "Public &middot; 9&ndash;12 &mdash; Hillsborough has no high school; students attend Burlingame High or another district campus"]
+ },
+
+ "carolands": {
+  "intro": "Carolands takes its name from the 98-room chateau Harriett Pullman Carolan completed in 1916, and the estate&rsquo;s 554 acres are the reason the neighborhood exists &mdash; they were subdivided through the 1940s and 1950s as the great Hillsborough houses became impossible to staff. The chateau itself survived, restored by Charles and Ann Johnson in 1998, and the Carolands Foundation now runs free docent tours by lottery.",
+  "amenities": [
+   ["Carolands Chateau", "The 1916 Pullman house at the center of the neighborhood, open for docent tours"],
+   ["Safeway, Burlingame", "Hillsborough has no shops; groceries are in Burlingame"],
+   ["Burlingame Avenue", "The nearest restaurants and cafes, down the hill"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "tobin-clark-estate": {
+  "intro": "The Tobin Clark Estate is named for the Cotswold-style house Tobin Clark built in 1931, known locally as the House-on-Hill, which is still a private residence rather than a school or a museum &mdash; unusual among Hillsborough&rsquo;s surviving great houses. The neighborhood around it was subdivided from the estate grounds and keeps their scale.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club, founded 1893 and the first west of the Mississippi"],
+   ["Safeway, Burlingame", "Hillsborough has no commercial zoning; groceries are down the hill"],
+   ["Burlingame Avenue", "Restaurants and shops in Burlingame"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["South Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District, built 1917"], "middle", "high"]
+ },
+
+ "skyfarm": {
+  "intro": "Skyfarm began as a wedding gift from William H. Crocker to his sister-in-law, and the house eventually became the centerpiece of the Nueva School &mdash; one of two Hillsborough estates that survived by turning into a campus. The neighborhood took shape on the land around it after the war, on the half-acre minimum lots the town has required since incorporation.",
+  "amenities": [
+   ["Nueva School grounds", "The former Skyfarm estate, now a school campus at the neighborhood&rsquo;s heart"],
+   ["Safeway, Burlingame", "The nearest grocery, in Burlingame"],
+   ["Burlingame Avenue", "Restaurants and shops down the hill"],
+   null
+  ],
+  "commute": [["~25 min", "To San Francisco, via I-280"], ["~23 min", "To Palo Alto, via I-280"], ["~14 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "brewer-subdivision": {
+  "intro": "The Brewer subdivision sits alongside the Uplands estate, which outlasted the era by becoming Crystal Springs Uplands School rather than being demolished. Like most of Hillsborough, the housing here came from breaking up estate land after the Second World War, and the streets still follow the contours the original grounds were laid out on.",
+  "amenities": [
+   ["Crystal Springs Uplands School", "The former Uplands estate, adjoining the neighborhood"],
+   ["Safeway, Burlingame", "Hillsborough has no shops of its own"],
+   ["Burlingame Avenue", "The nearest dining, in Burlingame"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["South Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "country-club-manor": {
+  "intro": "Country Club Manor sits near the Burlingame Country Club, whose founding in 1893 was the reason the first buyers came to these hills at all. Houses here are among the newer and larger in Hillsborough, set in heavy tree cover, and they come to market rarely enough that a single sale can reset expectations for the street.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club that started Hillsborough, founded 1893"],
+   ["Safeway, Burlingame", "Groceries down the hill; the town has no commercial zoning"],
+   ["Burlingame Avenue", "Restaurants and shops nearby in Burlingame"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["North Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "hillsborough-park": {
+  "intro": "Hillsborough Park lies in the older, lower part of town nearest Burlingame, where the earliest subdivisions went in and where the eucalyptus John McLaren planted in the 1850s still shapes the streets. Lots meet the town&rsquo;s half-acre minimum and, as everywhere in Hillsborough, there are no sidewalks &mdash; a rule written into the town at incorporation in 1910.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club adjoining the older part of town"],
+   ["Safeway, Burlingame", "The nearest grocery"],
+   ["Burlingame Avenue", "Restaurants and shops, minutes away"],
+   null
+  ],
+  "commute": [["~23 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~12 min", "To SFO Airport"]],
+  "schools": [["South Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "hillsborough-heights": {
+  "intro": "Hillsborough Heights climbs the middle of the town, on land broken out of the estates after the war. The half-acre minimum and the absence of sidewalks give it the same character as the rest of Hillsborough &mdash; houses set well back behind mature planting, and streets that carry almost nothing but residents.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club below the neighborhood"],
+   ["Safeway, Burlingame", "Hillsborough has no shops; groceries are in Burlingame"],
+   ["Burlingame Avenue", "The nearest restaurants and cafes"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["North Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "hillsborough-hills": {
+  "intro": "Hillsborough Hills occupies the higher western ground, where the terrain is steepest and the parcels largest. It is among the quietest corners of a town that has no commerce at all, and the combination of elevation and tree cover means many houses are effectively invisible from the road.",
+  "amenities": [
+   ["Nueva School grounds", "The former Skyfarm estate, nearby"],
+   ["Safeway, Burlingame", "Groceries down the hill"],
+   ["Burlingame Avenue", "Burlingame&rsquo;s restaurants and shops"],
+   null
+  ],
+  "commute": [["~26 min", "To San Francisco, via I-280"], ["~23 min", "To Palo Alto, via I-280"], ["~15 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "hillsborough-knolls": {
+  "intro": "Hillsborough Knolls is one of the smaller pockets in a town of about eleven thousand people, on rolling ground subdivided from estate land in the postwar decades. Turnover is low even by Hillsborough standards &mdash; a handful of houses change hands in a typical year.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club, a short drive"],
+   ["Safeway, Burlingame", "The nearest grocery, down the hill"],
+   ["Burlingame Avenue", "Restaurants and shops in Burlingame"],
+   null
+  ],
+  "commute": [["~25 min", "To San Francisco, via I-280"], ["~24 min", "To Palo Alto, via I-280"], ["~14 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "hillsborough-oaks": {
+  "intro": "Named for the oaks that predate every house on it, Hillsborough Oaks is a wooded pocket on the town&rsquo;s western side. The planting here is old enough that the neighborhood reads as woodland with houses in it rather than the other way round, which is close to what the town has always been aiming for.",
+  "amenities": [
+   ["Nueva School grounds", "The former Skyfarm estate nearby"],
+   ["Safeway, Burlingame", "Hillsborough has no commercial zoning of its own"],
+   ["Burlingame Avenue", "The nearest dining, down the hill"],
+   null
+  ],
+  "commute": [["~25 min", "To San Francisco, via I-280"], ["~24 min", "To Palo Alto, via I-280"], ["~14 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "homeplace": {
+  "intro": "Homeplace is one of the fourteen designated neighborhoods the town recognizes, on ground subdivided from the estates in the middle of the last century. It has what the whole of Hillsborough has &mdash; half-acre lots, no sidewalks, no shops &mdash; and, like its neighbors, a market measured in a handful of sales a year rather than a month.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club, a short drive away"],
+   ["Safeway, Burlingame", "Groceries in Burlingame"],
+   ["Burlingame Avenue", "Restaurants and shops down the hill"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["North Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "lakeview": {
+  "intro": "Lakeview sits on the western side of Hillsborough toward the Crystal Springs watershed, and its position is the appeal &mdash; the reservoir land beyond means nothing will ever be built on that horizon. Houses are large and set on the town&rsquo;s customary half-acre minimum, in heavy tree cover.",
+  "amenities": [
+   ["Crystal Springs watershed", "Protected reservoir land forming the town&rsquo;s western horizon"],
+   ["Safeway, Burlingame", "The nearest grocery, down the hill"],
+   ["Burlingame Avenue", "Burlingame&rsquo;s restaurants and shops"],
+   null
+  ],
+  "commute": [["~26 min", "To San Francisco, via I-280"], ["~23 min", "To Palo Alto, via I-280"], ["~15 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "parrot-drive-area": {
+  "intro": "The Parrott Drive area takes its name from the estate family whose land it was, and it runs through some of the more secluded ground in the town. Even by Hillsborough standards the houses here sit far back from the road behind gates and tree rows, which is precisely what the town&rsquo;s founding rules were written to produce.",
+  "amenities": [
+   ["Crystal Springs watershed", "Protected open land on the western horizon"],
+   ["Safeway, Burlingame", "Hillsborough has no shops of its own"],
+   ["Burlingame Avenue", "The nearest restaurants, down the hill"],
+   null
+  ],
+  "commute": [["~25 min", "To San Francisco, via I-280"], ["~24 min", "To Palo Alto, via I-280"], ["~14 min", "To SFO Airport"]],
+  "schools": [["West Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "ryan-tract": {
+  "intro": "The Ryan Tract is one of the postwar subdivisions carved out of estate land, and like most of them it kept the mature planting that came with the ground. It is a small neighborhood in a small town &mdash; Hillsborough has no commercial district, no sidewalks and about eleven thousand residents &mdash; and it trades accordingly, a few houses at a time.",
+  "amenities": [
+   ["Burlingame Country Club", "The private club, a short drive"],
+   ["Safeway, Burlingame", "Groceries in Burlingame"],
+   ["Burlingame Avenue", "Restaurants and shops down the hill"],
+   null
+  ],
+  "commute": [["~24 min", "To San Francisco, via US-101"], ["~24 min", "To Palo Alto, via I-280"], ["~13 min", "To SFO Airport"]],
+  "schools": [["North Hillsborough Elementary", "Public &middot; K&ndash;5, Hillsborough City School District"], "middle", "high"]
+ },
+
+ "burlingame-hills": {
+  "intro": "Burlingame Hills is not part of Hillsborough or of Burlingame &mdash; it is unincorporated San Mateo County, wedged between the two, which means county services rather than city ones and a different set of rules from either neighbor. The housing is hillside and mid-century, and the position, minutes from Burlingame Avenue and the freeway, is what draws people to it.",
+  "amenities": [
+   ["Mills Canyon Park", "Wooded canyon trails on the Burlingame side"],
+   ["Safeway, Burlingame", "Groceries a short drive down the hill"],
+   ["Burlingame Avenue", "The restaurant and shopping street, close by"],
+   null
+  ],
+  "commute": [["~23 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~12 min", "To SFO Airport"]],
+  "schools": [["Roosevelt Elementary", "Public &middot; K&ndash;5, Burlingame School District"], "middle", "high"]
+ },
+
+ "_similar": {
+  "Carolands": "Built on the subdivided grounds of the 1916 Pullman chateau",
+  "Tobin Clark Estate": "Around the 1931 House-on-Hill, still a private residence",
+  "Skyfarm": "A Crocker wedding gift that became the Nueva School campus",
+  "Brewer Subdivision": "Beside the Uplands estate, now Crystal Springs Uplands School",
+  "Country Club Manor": "Newer, larger houses in heavy tree cover near the country club",
+  "Hillsborough Park": "The older, lower part of town nearest Burlingame",
+  "Hillsborough Heights": "Mid-town hillside on former estate land",
+  "Hillsborough Hills": "The high western ground, with the largest parcels",
+  "Hillsborough Knolls": "A small pocket where a handful of houses trade a year",
+  "Hillsborough Oaks": "Woodland with houses in it, on the western side",
+  "Homeplace": "Half-acre lots and no sidewalks, like the rest of the town",
+  "Lakeview": "Facing the Crystal Springs watershed, which will never be built on",
+  "Parrott Drive Area": "The most secluded ground in a town built for seclusion",
+  "Ryan Tract": "A small postwar subdivision that kept its mature planting",
+  "Burlingame Hills": "Unincorporated county land between Hillsborough and Burlingame"
+ }
+}

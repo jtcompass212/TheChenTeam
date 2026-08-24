@@ -37,8 +37,19 @@ DISCLAIMER = (
 # percentage arrow is withheld, and the footnote says why.
 MIN_SALES_FOR_DELTA = 8
 
-# Pages suppressed despite clearing the threshold, with the reason attached so
-# it survives the next data refresh.
+# Whole cities where the sale-count threshold is the wrong instrument. It was
+# calibrated on normally-priced neighborhoods; in an estate market a median
+# built on nine sales of $4M-$15M houses still tracks which specific properties
+# traded, not the market. Hillsborough's own figures make the case: on the same
+# quarter its neighborhoods read +57.9%, +51.7%, +32.5% and -50%.
+SUPPRESS_DELTA_CITIES = {
+    "hillsborough": "an estate market where a handful of sales spanning $4M to "
+                    "$15M set the median, so a percentage change tracks which "
+                    "houses traded rather than where the market moved",
+}
+
+# Individual pages suppressed despite clearing the threshold, with the reason
+# attached so it survives the next data refresh.
 SUPPRESS_DELTA = {
     "san-mateo-park": "a 10-sale quarter in a luxury enclave where one estate "
                       "moves the median several hundred thousand dollars",
@@ -110,7 +121,8 @@ def snapshot_html(name, rec):
     # Delta only when the comparison window itself cleared the sale-count bar,
     # and not where the swing is a mix effect rather than a market move.
     thin = sales < MIN_SALES_FOR_DELTA
-    if slug in SUPPRESS_DELTA or thin:
+    city_suppressed = rec["city"] in SUPPRESS_DELTA_CITIES
+    if slug in SUPPRESS_DELTA or city_suppressed or thin:
         delta = ('<div style="font-size: 13px; color: #7d8598; margin-top: 6px;">'
                  f'{label}</div>')
     elif rec["yoyPct"]:
@@ -128,6 +140,10 @@ def snapshot_html(name, rec):
         note += (f" A year-over-year change is not shown: this is "
                  f"{SUPPRESS_DELTA[slug]}, so the figure would describe which homes "
                  f"sold rather than where the market moved.")
+    elif city_suppressed and rec["yoyPct"]:
+        note += (f" A year-over-year change is not shown anywhere in "
+                 f"{rec['city'].replace('-', ' ').title()}: it is "
+                 f"{SUPPRESS_DELTA_CITIES[rec['city']]}.")
     elif thin and rec["yoyPct"]:
         note += (f" A year-over-year change is not shown: with {sales} closed sales in "
                  f"the window, the median reflects which specific homes traded rather "
