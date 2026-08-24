@@ -1,0 +1,134 @@
+[
+ {
+  "city": "belmont",
+  "slug": "belmont-country-club",
+  "name": "Belmont Country Club",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "belmont-heights",
+  "name": "Belmont Heights",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "cipriani",
+  "name": "Cipriani",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "downtown-belmont",
+  "name": "Downtown Belmont",
+  "types": "Condos & Townhomes"
+ },
+ {
+  "city": "belmont",
+  "slug": "homeview",
+  "name": "Homeview",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "mcdougal",
+  "name": "McDougal",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "plateau-skymont",
+  "name": "Plateau-Skymont",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "sterling-downs",
+  "name": "Sterling Downs",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "belmont",
+  "slug": "western-hills",
+  "name": "Western Hills",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingables",
+  "name": "Burlingables",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-gardens",
+  "name": "Burlingame Gardens",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-grove",
+  "name": "Burlingame Grove",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-hills",
+  "name": "Burlingame Hills",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-park",
+  "name": "Burlingame Park",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-terrace",
+  "name": "Burlingame Terrace",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "burlingame-village",
+  "name": "Burlingame Village",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "downtown-burlingame",
+  "name": "Downtown Burlingame",
+  "types": "Condos & Townhomes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "easton-addition",
+  "name": "Easton Addition",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "ingoldmilldale",
+  "name": "Ingoldmilldale",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "lyon-hoag",
+  "name": "Lyon Hoag",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "mills-estates",
+  "name": "Mills Estates",
+  "types": "Single-Family Homes"
+ },
+ {
+  "city": "burlingame",
+  "slug": "ray-park",
+  "name": "Ray Park",
+  "types": "Single-Family Homes"
+ }
+]

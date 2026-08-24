@@ -1,0 +1,286 @@
+<style>
+  .fremont-page, .fremont-page * { box-sizing: border-box; }
+  .fremont-page a { color: #a8823d; text-decoration: none; }
+  .fremont-page a:hover { color: #8c6930; text-decoration: underline; }
+  .fremont-page ::selection { background: #eee6d8; }
+  
+  .fremont-page .life-card { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .fremont-page .life-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 24px -8px rgba(22,35,63,0.15); z-index: 2; position: relative; }
+  
+  .fremont-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .fremont-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+  
+  .fremont-page .nb-thumb { overflow: hidden; }
+  .fremont-page .nb-thumb-inner { transition: transform 400ms ease; }
+  .fremont-page .nb-card:hover .nb-thumb-inner { transform: scale(1.08); }
+  
+  .fremont-page .fade-in { opacity: 0; transform: translateY(16px); animation: frFadeIn 700ms ease forwards; }
+  .fremont-page .fade-in.d1 { animation-delay: 80ms; }
+  .fremont-page .fade-in.d2 { animation-delay: 160ms; }
+  .fremont-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes frFadeIn { to { opacity: 1; transform: translateY(0); } }
+  
+  .fremont-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .fremont-page .scroll-reveal { opacity: 0; animation: frScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes frScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+  
+  .fremont-page .bar-wrap { display: flex; align-items: flex-end; gap: 14px; height: 190px; padding-top: 34px; }
+  .fremont-page .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .fremont-page .bar { width: 100%; background: #a8823d; border-radius: 3px 3px 0 0; position: relative; transform-origin: bottom; animation: frBarGrow 700ms ease forwards; transition: background 200ms ease, transform 200ms ease; cursor: default; }
+  .fremont-page .bar:hover { background: #16233f; transform: scaleY(1.04); }
+  .fremont-page .bar::after { content: attr(data-value); position: absolute; top: -30px; left: 50%; transform: translateX(-50%) translateY(4px); font-size: 12px; font-weight: 600; color: #16233f; background: #ffffff; border: 1px solid #dde1e9; padding: 2px 9px; border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; }
+  .fremont-page .bar:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .fremont-page .bar-col:nth-child(1) .bar { animation-delay: 0ms; }
+  .fremont-page .bar-col:nth-child(2) .bar { animation-delay: 90ms; }
+  .fremont-page .bar-col:nth-child(3) .bar { animation-delay: 180ms; }
+  .fremont-page .bar-col:nth-child(4) .bar { animation-delay: 270ms; }
+  @keyframes frBarGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+</style>
+<div class="fremont-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;">
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">Alameda County &middot; The East Bay</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 62px; line-height: 1.04; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 15ch; text-wrap: balance;">Fremont Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">Formed in 1956 from five distinct towns, Fremont is the <strong style="color: #16233f; font-weight: 600;">closest East Bay city to Silicon Valley</strong> &mdash; and still carries the character of its founding communities, from the historic silent-film district of Niles to the top-rated schools of Mission San Jose. Below you'll find current homes for sale and real estate listings in Fremont, updated throughout the day, whether you're buying your first Bay Area home or preparing to sell into today's competitive market.</p>
+        <p style="margin: 0px 0px 18px;">If you'd like more information on any of these Fremont listings, just reach out &mdash; we're happy to share disclosures, recent nearby sales, and pricing history, and to walk you through anything you're curious about.</p>
+        <p style="margin: 0px;">And for your convenience, feel free to <a href="#contact">register for a free account</a> to receive alerts whenever new Fremont listings hit the market that match your criteria.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 320px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><img src="https://cdn.jsdelivr.net/gh/jtcompass212/TheChenTeam@main/city-images/fremont.jpg" alt="Fremont" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 56px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">Fremont</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; Single-Family Homes, July 2026</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">81</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Homes Sold</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">12</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Days on Market</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$1,034</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median $ / Sq. Ft.</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center;">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$1.66M</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Sold Price</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px; font-family: ui-monospace, monospace;">Source: Compass Market Insights, single-family homes in Fremont, July 2026 &mdash; 81 closed sales. Updated 20 August 2026. Fremont spans distinct districts (Niles, Mission San Jose, Ardenwood, Warm Springs) with very different price levels.</p>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div style="min-height: 380px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 12px; color: #98a0b3; text-align: center; padding: 16px; line-height: 1.6;">[ IMAGE ]<br>Niles Essanay Silent Film Museum or Mission Peak trail<br>~800&times;800</span></div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">About the Community</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 22px; letter-spacing: -0.01em;">Five towns, one city, real neighborhood identity</h2>
+        <p style="font-size: 16.5px; line-height: 1.75; color: #4b5468; margin: 0px 0px 28px;">Fremont was created in 1956 by merging five independent communities &mdash; Centerville, Niles, Irvington, Mission San Jose, and Warm Springs &mdash; and each still has its own distinct character today. It's the fourth most populous city in the Bay Area and the closest East Bay city to Silicon Valley, with a growing tech and manufacturing base of its own, including Tesla's Fremont factory.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 6px; overflow: hidden;">
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">~230,500</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Population</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">94536&ndash;94539</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Primary ZIPs</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">1956</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Incorporated</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">88.5 sq mi</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px; text-align: center;">Why People Love It Here</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 48px; text-align: center; letter-spacing: -0.01em;">Life in Fremont</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 8px; overflow: hidden;">
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">01</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Silicon Valley's Nearest East Bay Neighbor</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Direct 880 and 84 access to the South Bay tech corridor, at a real discount to Peninsula prices.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">02</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Top-Rated Schools</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Mission San Jose High School consistently ranks among California's best public schools.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">03</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Silent Film History</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Charlie Chaplin filmed in Niles, home to California's earliest motion picture studios.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">04</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Mission Peak</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">A signature Bay Area hike, with sweeping views right at the edge of town.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">05</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Distinct Neighborhood Character</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Five founding towns still shape the city &mdash; buyers can choose the character that fits.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">06</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">A Real Local Economy</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Tesla's Fremont factory and a growing tech sector give the city its own employment base.</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 36px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore the Area</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Fremont Neighborhoods</h2>
+      </div>
+      <a style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border-bottom: 1px solid rgb(168, 130, 61); padding-bottom: 2px;" href="#contact">Ask about a neighborhood &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Mission San Jose</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Top schools, established estates</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Niles</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Historic, small-town character</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Ardenwood</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Newer construction, family favorite</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Warm Springs</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Fast-growing, BART-adjacent</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="background: #f0f2f6; margin-top: 100px; padding: 80px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">Education in Fremont</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 24px;">Fremont Unified School District serves the entire city, with school assignment varying by the five founding districts &mdash; Mission San Jose's schools are especially sought after.</p>
+        <div style="display: flex; flex-direction: column; gap: 0px; border-top: 1px solid rgb(221, 225, 233);">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Mission San Jose High School</span><span style="font-size: 13px; color: #7d8598;">Public &middot; 9&ndash;12</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Mission San Jose Elementary</span><span style="font-size: 13px; color: #7d8598;">Public &middot; K&ndash;5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Stratford School</span><span style="font-size: 13px; color: #7d8598;">Private</span></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">History</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">Five towns become one city</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 18px;">Fremont's roots trace to Mission San Jos&eacute;, founded by Spanish missionaries in 1797. Its Niles district became the earliest home of California's motion picture industry from 1912 to 1915, hosting Essanay Studios and several Charlie Chaplin films, including <em>The Tramp</em>.</p>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px;">On January 23, 1956, the towns of Centerville, Niles, Irvington, Mission San Jose, and Warm Springs incorporated together as Fremont, named for explorer John C. Fr&eacute;mont. The city's tech and auto-manufacturing presence, including the former NUMMI plant now run by Tesla, grew rapidly from the 1980s onward.</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="background: #16233f; padding: 80px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #c9a567; font-weight: 600; margin: 0px 0px 16px; text-align: center;">The Chen Team in Fremont</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 36px; line-height: 1.14; color: #f4f6fa; margin: 0px 0px 12px; text-align: center; letter-spacing: -0.01em;">Local expertise, proven results</h2>
+      <p style="font-size: 16px; color: #9aa3b8; text-align: center; max-width: 52ch; margin: 0px auto 52px;">We've helped families buy and sell across Fremont's most sought-after streets. When you work with us, you get second-generation local knowledge and Compass's full resources.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;">
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">$48M+</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Sold in Fremont</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">100%</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. of List Price</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">12</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. Days to Offer</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">5.0&#9733;</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Client Rating</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #9aa3b8; margin: 36px 0px 0px; text-align: center; font-family: ui-monospace, monospace;">// Replace with your verified production figures</p>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Market Trends</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 40px; letter-spacing: -0.01em;">How the Fremont market is moving</h2>
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: stretch;">
+      <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 8px; background: #ffffff; padding: 32px; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f;">Median Sold Price</span> <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">&#9650; 2.0% YoY</span></div>
+        <div class="bar-wrap">
+          <div class="bar-col">
+            <div class="bar" style="height: 151px;" data-value="$1.72M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q3 &rsquo;25</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 149px;" data-value="$1.71M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q4 &rsquo;25</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 149px;" data-value="$1.71M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q1 &rsquo;26</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 156px;" data-value="$1.78M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q2 &rsquo;26</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #9ba3b5; margin: 18px 0px 0px; font-family: ui-monospace, monospace;">Quarterly median sold price, single-family homes. Bars are drawn to scale from zero. Year-over-year compares Q2 2026 (274 closed sales) with Q2 2025 (262). Connect to live market data.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Avg. Offers per Home</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">4</div>
+          </div>
+          <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">&#9650; Competitive</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Median Days on Market</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">12 days</div>
+          </div>
+          <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">&#9660; Fast-moving</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Price per Sq. Ft. Trend</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">+0.6%</div>
+          </div>
+          <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">&#9650; Steady YoY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Available Now</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Homes for Sale in Fremont</h2>
+      </div>
+    </div>
+  </section>
+</div>
