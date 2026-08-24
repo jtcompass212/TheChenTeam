@@ -35,7 +35,7 @@ Market data is complete: all **93 published pages** carry verified Compass figur
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **58** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **167** | of 201 total; 34 filled so far |
+| Empty photo slots | **136** | of 201 total; 65 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -66,14 +66,14 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
-| San Mateo | 15 |
-| Millbrae | 13 |
-| Burlingame | 13 |
-| Belmont | 9 |
 | San Carlos | 6 |
-| **Total** | **167** |
+| Millbrae | 5 |
+| Belmont | 5 |
+| Burlingame | 5 |
+| San Mateo | 4 |
+| **Total** | **136** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 167 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 136 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
