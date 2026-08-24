@@ -1,0 +1,23 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct
+belmont-country-club,belmont,"Belmont Country Club",SF,quarter,2026-Q2,20,2375000,1349,13,103.7,2025-Q2,-1
+belmont-heights,belmont,"Belmont Heights",SF,year,2025,17,3428000,1400,11,105.3,2024,-2.1
+cipriani,belmont,"Cipriani",SF,quarter,2026-Q2,16,2250000,1370,20,104.3,2025-Q2,-19.6
+downtown-belmont,belmont,"Downtown Belmont",ALL,quarter,2026-Q2,6,3125000,1571,15,106.3,,
+homeview,belmont,"Homeview",SF,quarter,2026-Q2,3,1488000,1256,12,111.8,,
+mcdougal,belmont,"McDougal",SF,quarter,2026-Q2,3,2500000,1486,66,102.6,2025-Q2,-13.2
+plateau-skymont,belmont,"Plateau-Skymont",SF,quarter,2026-Q2,11,2610000,1221,15,103.2,2025-Q2,0.4
+sterling-downs,belmont,"Sterling Downs",SF,year,2025,9,1850000,1356,11,108.3,2024,5.1
+western-hills,belmont,"Western Hills",SF,year,2025,9,2300000,1045,15,102.6,2024,0
+burlingables,burlingame,"Burlingables",SF,year,2025,7,2900000,1640,11,113.8,2024,20.8
+burlingame-gardens,burlingame,"Burlingame Gardens",SF,quarter,2026-Q2,4,3210000,1754,7,111.5,,
+burlingame-grove,burlingame,"Burlingame Grove",SF,quarter,2026-Q2,9,2925000,1574,8,99.2,2025-Q2,1.9
+burlingame-hills,burlingame,"Burlingame Hills",SF,quarter,2026-Q2,6,4325000,1296,8,110,2025-Q2,41.8
+burlingame-park,burlingame,"Burlingame Park",SF,quarter,2026-Q2,3,4150000,1892,11,105.5,2025-Q2,-8.8
+burlingame-terrace,burlingame,"Burlingame Terrace",SF,quarter,2026-Q2,4,2925000,1583,9,114.7,2025-Q2,6.2
+burlingame-village,burlingame,"Burlingame Village",SF,year,2025,4,2945000,1700,9,115.5,2024,37.6
+downtown-burlingame,burlingame,"Downtown Burlingame",ALL,quarter,2026-Q2,6,1125000,904,31,109,2025-Q2,3.2
+easton-addition,burlingame,"Easton Addition",SF,quarter,2026-Q2,19,4050000,1500,12,107.5,2025-Q2,12.3
+lyon-hoag,burlingame,"Lyon Hoag",SF,quarter,2026-Q2,11,3000000,1655,8,102.8,2025-Q2,3.4
+mills-estates,burlingame,"Mills Estates",SF,quarter,2026-Q2,7,3500000,1277,13,107.7,2025-Q2,32.1
+ray-park,burlingame,"Ray Park",SF,quarter,2026-Q2,5,3263800,1686,9,129.8,2025-Q2,9.3
+ingoldmilldale,burlingame,"Ingold-Milldale",SF,none,,0,,,,,,

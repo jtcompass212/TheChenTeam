@@ -1,0 +1,145 @@
+<!-- NOTE: The interactive neighborhood MAP is a separate Shared HTML Widget — add it as a NEW page component
+     positioned AFTER this entire Content Area block. -->
+<style>
+  .telescope-hills-nb-page, .telescope-hills-nb-page * { box-sizing: border-box; }
+  .telescope-hills-nb-page a { color: #a8823d; text-decoration: none; }
+  .telescope-hills-nb-page a:hover { color: #8c6930; text-decoration: underline; }
+  .telescope-hills-nb-page ::selection { background: #eee6d8; }
+  .telescope-hills-nb-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .telescope-hills-nb-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+  .telescope-hills-nb-page .nb-card-link { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .telescope-hills-nb-page .nb-card-link:hover { transform: translateY(-5px); box-shadow: 0 12px 22px -10px rgba(22,35,63,0.16); }
+  .telescope-hills-nb-page .fade-in { opacity: 0; transform: translateY(16px); animation: pknbFadeIn 700ms ease forwards; }
+  .telescope-hills-nb-page .fade-in.d1 { animation-delay: 80ms; }
+  .telescope-hills-nb-page .fade-in.d2 { animation-delay: 160ms; }
+  .telescope-hills-nb-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes pknbFadeIn { to { opacity: 1; transform: translateY(0); } }
+  .telescope-hills-nb-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .telescope-hills-nb-page .scroll-reveal { opacity: 0; animation: pknbScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes pknbScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+<div class="telescope-hills-nb-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;"><!-- 1. EYEBROW + H1 + INTRO -->
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">Millbrae &middot; Telescope Hills</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 56px; line-height: 1.06; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 16ch; text-wrap: balance;">Telescope Hills Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">Millbrae's western hills stayed undeveloped longer than the rest of the city for an unusual reason: through the 1940s the Macco Pit up here was being trucked away down Richmond Drive to build a second runway at what is now SFO, crossing land the Silva family had farmed since the city's earliest days. Once the pit closed the hillside opened, and Telescope Hills filled in between the late 1950s and the 1970s with houses noticeably larger than the flatland stock, on winding streets that earn the name. Below you&rsquo;ll find current homes for sale in Telescope Hills, updated throughout the day.</p>
+        <p style="margin: 0px;">If you'd like more information on any of these listings, just reach out &mdash; we're happy to share disclosures, recent sales, and pricing history. Looking beyond Telescope Hills? Browse <a href="/millbrae/">Millbrae real estate</a> or other <a href="#similar-neighborhoods">nearby neighborhoods</a>.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 280px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: #98a0b3; letter-spacing: 0.04em; text-align: center; padding: 16px; line-height: 1.6;">[ HERO IMAGE ]<br>A representative Telescope Hills street or landmark<br>~900&times;650</span></div>
+    </div>
+  </section>
+  <!-- 2. MARKET SNAPSHOT -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 70px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">Telescope Hills</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; Single-Family Homes, 2025</span></div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+        <div style="padding: 32px 26px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">$3.00M</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Sold Price</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">2025</div>
+        </div>
+        <div style="padding: 32px 26px; text-align: center;">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">$975</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Price / Sq. Ft.</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">3 closed sales</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">Source: Compass Market Insights &mdash; single-family homes in Telescope Hills, 2025 (3 closed sales). Neighborhood figures are reported quarterly because monthly sale counts here are too small to be meaningful. A year-over-year change is not shown: with 3 closed sales in the window, the median reflects which specific homes traded rather than the direction of the market. Reported over a full year because quarterly sale counts in Telescope Hills are too small to support a median. Updated 24 August 2026. Compass is a real estate broker licensed by the State of California and makes no representation as to the accuracy or completeness of this information. Equal Housing Opportunity.</p>
+  </section>
+  <!-- 3. NEARBY AMENITIES -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Nearby Amenities</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">What's around Telescope Hills</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tree.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Parks</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Spur Trail</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Class I path linking the western hills to the parks below</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/shopping-cart.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Grocery</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Safeway, El Camino Real</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Groceries down the hill to the east</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tools-kitchen-2.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Dining</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Broadway</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Millbrae's downtown restaurants, a short drive</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/book.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Library</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Millbrae Library</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">San Mateo County branch at 1 Library Avenue</p>
+      </div>
+    </div>
+  </section>
+  <!-- 4. COMMUTE TIMES -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Commute Times</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Getting around from Telescope Hills</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~23 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To San Francisco, via I-280</div>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~24 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To Palo Alto, via I-280</div>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 30px; color: #16233f;">~11 min</div>
+        <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">To SFO Airport</div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. SIMILAR NEIGHBORHOODS (auto-filled: 3 nearest) -->
+  <section id="similar-neighborhoods" class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore Nearby</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Similar Neighborhoods</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;"><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/millbrae/highlands/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Highlands</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Pre-war Spanish Revival and Tudors under a mature street canopy</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/millbrae/green-hills-country-club/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Green Hills Country Club</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The private golf course along Millbrae's western edge</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="/millbrae/meadow-glen/">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Meadow Glen</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Postwar starter homes within walking distance of Central Park</p>
+      </a></div>
+  </section>
+  <!-- 6. SCHOOLS -->
+  <section class="scroll-reveal" style="background: #f0f2f6; margin-top: 90px; padding: 70px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Education in Telescope Hills</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Green Hills Elementary</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; TK&ndash;5, Millbrae Elementary School District</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Taylor Middle School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; 6&ndash;8, Millbrae Elementary School District</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Mills High School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public &middot; 9&ndash;12, San Mateo Union High School District, 400 Murchison Drive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 7. STREETS & BOUNDARIES (heading only — map widget is the NEXT page component) -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 40px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Streets &amp; Boundaries</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Where Telescope Hills sits</h2>
+  </section>
+</div>

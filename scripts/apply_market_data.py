@@ -2,8 +2,11 @@
 """Patch neighborhood pages with market figures from data/market/*.csv.
 
 Usage:
-    python3 scripts/apply_market_data.py            # all neighborhood pages
+    python3 scripts/apply_market_data.py            # every neighborhood page
     python3 scripts/apply_market_data.py aragon ... # just these slugs
+
+Covers every city under neighborhood-pages/ and reads every market-data CSV
+in data/market/, so adding a city is a data pull plus a re-run.
 
 Only touches the Market Snapshot block. Prose, images and every other section
 are left alone. Re-running is safe: the block is rewritten from the CSV each
@@ -15,9 +18,9 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-NBHD = ROOT / "neighborhood-pages" / "san-mateo"
-DATA = sorted((ROOT / "data" / "market").glob("market-data-*.csv"))[-1]
-UPDATED = "20 August 2026"
+PAGES = ROOT / "neighborhood-pages"
+DATA_DIR = ROOT / "data" / "market"
+UPDATED = "24 August 2026"
 
 DISCLAIMER = (
     "Compass is a real estate broker licensed by the State of California and makes no "
@@ -72,8 +75,28 @@ def prior_label(basis, period):
 
 
 def load():
-    with DATA.open() as fh:
-        return {r["slug"]: r for r in csv.DictReader(fh) if r["kind"] == "nbhd"}
+    """Merge every market-data CSV into one (city, slug) -> record map.
+
+    Keyed by city as well as slug because slugs are NOT unique: Mills Estates
+    is both a Burlingame and a Millbrae neighborhood, and Compass has a single
+    entry for it. Keying on slug alone silently dropped one of the two pages.
+
+    The files differ in shape: the original carries a `kind` column because it
+    holds city rows too and predates the `city` column (its neighborhoods are
+    all San Mateo). Normalise them here.
+    """
+    records = {}
+    for path in sorted(DATA_DIR.glob("market-data-*.csv")):
+        with path.open() as fh:
+            for r in csv.DictReader(fh):
+                if r.get("kind", "nbhd") != "nbhd":
+                    continue
+                r.setdefault("yoyPeriod", "")
+                r.setdefault("noData", "")
+                city = r.get("city") or "san-mateo"
+                r["city"] = city
+                records[(city, r["slug"])] = r
+    return records
 
 
 def snapshot_html(name, rec):
@@ -109,8 +132,8 @@ def snapshot_html(name, rec):
                  f"the window, the median reflects which specific homes traded rather "
                  f"than the direction of the market.")
     if rec["types"] != "SF":
-        note = (f" {name} has effectively no detached single-family market, so these figures "
-                f"cover single-family homes, condominiums and townhouses together.")
+        note += (f" {name} has effectively no detached single-family market, so these figures "
+                 f"cover single-family homes, condominiums and townhouses together.")
     if basis == "year":
         note += (f" Reported over a full year because quarterly sale counts in {name} "
                  f"are too small to support a median.")
@@ -122,6 +145,10 @@ def snapshot_html(name, rec):
               f"reported quarterly because monthly sale counts here are too small to be "
               f"meaningful.{note} Updated {UPDATED}. {DISCLAIMER}")
 
+    return snapshot_shell(types, label, rec, delta, sales, source)
+
+
+def snapshot_shell(types, label, rec, delta, sales, source):
     return f'''<span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; {types}, {label}</span></div>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
         <div style="padding: 32px 26px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
@@ -139,6 +166,47 @@ def snapshot_html(name, rec):
     <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">{source}</p>'''
 
 
+def no_data_html(name, reason, city):
+    """Three different reasons a stat block cannot be published. Each says
+    which one it is — publishing a borrowed citywide median under any of these
+    headings would be worse than saying nothing.
+    """
+    town = city.replace("-", " ").title()
+    if reason == "not-residential":
+        head = "Not a residential neighborhood"
+        sub = (f"{name} is a private golf club. The boundary on the city map covers the "
+               f"course and clubhouse grounds, so there is no housing stock here to report on.")
+        src = (f"{name} has no residential sales history because it is not a residential "
+               f"area. Homes near the course sit in the surrounding neighborhoods. "
+               f"Updated {UPDATED}. {DISCLAIMER}")
+    elif reason == "thin":
+        head = "Too tightly held to report"
+        sub = (f"{name} turns over roughly one to three homes a year — too few for a median "
+               f"that would mean anything. We track every sale here regardless.")
+        src = (f"Compass Market Insights records only a handful of closed sales a year in "
+               f"{name}, never enough in a quarter or a year to support a median we would "
+               f"stand behind. Rather than publish a figure resting on one or two homes, we "
+               f"show none. For a valuation here, get in touch and we&rsquo;ll pull the "
+               f"specific comparables. Updated {UPDATED}. {DISCLAIMER}")
+    else:  # unattributed
+        head = "No separately reported sales"
+        sub = (f"{name} is small enough that closed sales are recorded under neighboring "
+               f"{town} areas rather than on its own.")
+        src = (f"No closed sales are attributed to {name} in the MLS data behind Compass "
+               f"Market Insights, over any period on record. Sales on these streets are "
+               f"reported under adjoining {town} neighborhoods, so no separate {name} "
+               f"median can be shown. For a valuation here, get in touch and we&rsquo;ll "
+               f"pull the specific comparables. Updated {UPDATED}. {DISCLAIMER}")
+
+    return f'''<span style="font-size: 13px; color: #7d8598;">Market Snapshot</span></div>
+      <div style="padding: 32px 26px; text-align: center;">
+        <div style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; line-height: 1.4;">{head}</div>
+        <div style="font-size: 13.5px; color: #7d8598; margin-top: 10px; max-width: 60ch; margin-left: auto; margin-right: auto;">{sub}</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">{src}</p>'''
+
+
 # Spans from the snapshot header's trailing <span> through the placeholder footnote.
 BLOCK = re.compile(
     r'<span style="font-size: 13px; color: #7d8598;">Market Snapshot.*?'
@@ -149,17 +217,21 @@ BLOCK = re.compile(
 
 def main():
     records = load()
-    wanted = sys.argv[1:] or sorted(records)
+    # CLI args are slugs; expand each to every (city, slug) it matches.
+    if sys.argv[1:]:
+        wanted = [k for k in sorted(records) if k[1] in sys.argv[1:]]
+    else:
+        wanted = sorted(records)
     changed, skipped = [], []
 
-    for slug in wanted:
-        page = NBHD / f"{slug}.html"
-        rec = records.get(slug)
+    for city, slug in wanted:
+        rec = records.get((city, slug))
+        page = PAGES / city / f"{slug}.html"
         if not page.exists():
-            skipped.append((slug, "no page"))
+            skipped.append((f"{city}/{slug}", "no page"))
             continue
-        if not rec or rec["basis"] == "none" or not rec["medPrice"]:
-            skipped.append((slug, "no usable data"))
+        if not rec:
+            skipped.append((f"{city}/{slug}", "no data row"))
             continue
 
         html = page.read_text()
@@ -167,22 +239,36 @@ def main():
             r'font-weight: 500;">([^<]+)</span> <span style="font-size: 13px; '
             r'color: #7d8598;">Market Snapshot', html)
         if not name_match:
-            skipped.append((slug, "header not matched"))
+            skipped.append((f"{city}/{slug}", "header not matched"))
+            continue
+
+        # A neighborhood the MLS never reports separately gets an honest
+        # statement rather than a borrowed number.
+        if rec["basis"] == "none" or not rec["medPrice"]:
+            new_html, n = BLOCK.subn(
+                lambda _m: no_data_html(name_match.group(1),
+                                        rec.get("noData", ""), city), html, count=1)
+            if n:
+                page.write_text(new_html)
+                changed.append(f"{city}/{slug}: no data "
+                               f"({rec.get('noData') or 'unattributed'})")
+            else:
+                skipped.append((f"{city}/{slug}", "snapshot block not matched"))
             continue
 
         new_html, n = BLOCK.subn(
             lambda _m: snapshot_html(name_match.group(1), rec), html, count=1)
         if n != 1:
-            skipped.append((slug, "snapshot block not matched"))
+            skipped.append((f"{city}/{slug}", "snapshot block not matched"))
             continue
 
         new_html = new_html.replace("<!-- 2. MARKET SNAPSHOT (PLACEHOLDER DATA) -->",
                                     "<!-- 2. MARKET SNAPSHOT -->")
         page.write_text(new_html)
-        changed.append(f"{slug}: {money(rec['medPrice'])} / ${int(rec['medSqft']):,} "
+        changed.append(f"{city}/{slug}: {money(rec['medPrice'])} / ${int(rec['medSqft']):,} "
                        f"({period_label(rec['basis'], rec['period'])}, {rec['sales']} sales)")
 
-    print(f"source: {DATA.name}")
+    print("sources: " + ", ".join(p.name for p in sorted(DATA_DIR.glob("market-data-*.csv"))))
     print(f"\nupdated {len(changed)}:")
     for line in changed:
         print("  " + line)

@@ -1,0 +1,290 @@
+<style>
+  .san-rafael-page, .san-rafael-page * { box-sizing: border-box; }
+  .san-rafael-page a { color: #a8823d; text-decoration: none; }
+  .san-rafael-page a:hover { color: #8c6930; text-decoration: underline; }
+  .san-rafael-page ::selection { background: #eee6d8; }
+  
+  .san-rafael-page .life-card { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .san-rafael-page .life-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 24px -8px rgba(22,35,63,0.15); z-index: 2; position: relative; }
+  
+  .san-rafael-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .san-rafael-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+  
+  .san-rafael-page .nb-thumb { overflow: hidden; }
+  .san-rafael-page .nb-thumb-inner { transition: transform 400ms ease; }
+  .san-rafael-page .nb-card:hover .nb-thumb-inner { transform: scale(1.08); }
+  
+  .san-rafael-page .fade-in { opacity: 0; transform: translateY(16px); animation: srFadeIn 700ms ease forwards; }
+  .san-rafael-page .fade-in.d1 { animation-delay: 80ms; }
+  .san-rafael-page .fade-in.d2 { animation-delay: 160ms; }
+  .san-rafael-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes srFadeIn { to { opacity: 1; transform: translateY(0); } }
+  
+  .san-rafael-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .san-rafael-page .scroll-reveal { opacity: 0; animation: srScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes srScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+  
+  .san-rafael-page .bar-wrap { display: flex; align-items: flex-end; gap: 14px; height: 190px; padding-top: 34px; }
+  .san-rafael-page .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .san-rafael-page .bar { width: 100%; background: #a8823d; border-radius: 3px 3px 0 0; position: relative; transform-origin: bottom; animation: srBarGrow 700ms ease forwards; transition: background 200ms ease, transform 200ms ease; cursor: default; }
+  .san-rafael-page .bar:hover { background: #16233f; transform: scaleY(1.04); }
+  .san-rafael-page .bar::after { content: attr(data-value); position: absolute; top: -30px; left: 50%; transform: translateX(-50%) translateY(4px); font-size: 12px; font-weight: 600; color: #16233f; background: #ffffff; border: 1px solid #dde1e9; padding: 2px 9px; border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; }
+  .san-rafael-page .bar:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .san-rafael-page .bar-col:nth-child(1) .bar { animation-delay: 0ms; }
+  .san-rafael-page .bar-col:nth-child(2) .bar { animation-delay: 90ms; }
+  .san-rafael-page .bar-col:nth-child(3) .bar { animation-delay: 180ms; }
+  .san-rafael-page .bar-col:nth-child(4) .bar { animation-delay: 270ms; }
+  @keyframes srBarGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+</style>
+<div class="san-rafael-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;">
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">Marin County &middot; The North Bay</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 62px; line-height: 1.04; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 15ch; text-wrap: balance;">San Rafael Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">As the county seat and largest city in Marin, San Rafael offers <strong style="color: #16233f; font-weight: 600;">more genuine variety</strong> than any other Marin town &mdash; from the grand Victorians near Dominican University to the hillside estates of Sun Valley. Below you'll find current homes for sale and real estate listings in San Rafael, updated throughout the day, whether you're buying your first North Bay home or preparing to sell into today's market.</p>
+        <p style="margin: 0px 0px 18px;">If you'd like more information on any of these San Rafael listings, just reach out &mdash; we're happy to share disclosures, recent nearby sales, and pricing history, and to walk you through anything you're curious about.</p>
+        <p style="margin: 0px;">And for your convenience, feel free to <a href="#contact">register for a free account</a> to receive alerts whenever new San Rafael listings hit the market that match your criteria.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 320px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><img src="https://cdn.jsdelivr.net/gh/jtcompass212/TheChenTeam@main/city-images/san-rafael.jpg" alt="San Rafael" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 56px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">San Rafael</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; Single-Family Homes, July 2026</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">55</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Homes Sold</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">18</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Days on Market</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$833</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median $ / Sq. Ft.</div>
+        </div>
+        <div style="padding: 30px 20px; text-align: center;">
+          <div style="font-family: Fraunces, serif; font-size: 40px; color: #16233f; line-height: 1;">$1.77M</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Sold Price</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px; font-family: ui-monospace, monospace;">Source: Compass Market Insights, single-family homes in San Rafael, July 2026 &mdash; 55 closed sales. Updated 20 August 2026. Dominican/Forbes routinely runs $1.5M&ndash;$3.5M, well above the citywide median.</p>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div style="min-height: 380px; border-radius: 4px; overflow: hidden; background-color: #edeff3; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 14px, rgb(237, 239, 243) 14px, rgb(237, 239, 243) 28px); display: flex; align-items: center; justify-content: center;"><img src="https://cdn.jsdelivr.net/gh/jtcompass212/TheChenTeam@main/city-images/sourced/san-rafael-dominican-university-campus-or-china-camp-state-.jpg" alt="Dominican University campus" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">About the Community</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 22px; letter-spacing: -0.01em;">"The City With a Mission"</h2>
+        <p style="font-size: 16.5px; line-height: 1.75; color: #4b5468; margin: 0px 0px 28px;">San Rafael takes its name and nickname from Mission San Rafael Arc&aacute;ngel, founded in 1817 as a hospital mission for the Coast Miwok. As the largest city and county seat in Marin, it's also the most ethnically diverse community in the county, with a genuinely vibrant restaurant scene along Fourth Street unmatched anywhere else north of the Golden Gate.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 6px; overflow: hidden;">
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">~61,300</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Population</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">94901</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Primary ZIP</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">1874</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Incorporated</div>
+          </div>
+          <div style="background: #ffffff; padding: 20px 22px;">
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f;">22.5 sq mi</div>
+            <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px; text-align: center;">Why People Love It Here</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 48px; text-align: center; letter-spacing: -0.01em;">Life in San Rafael</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #dde1e9; border: 1px solid rgb(221, 225, 233); border-radius: 8px; overflow: hidden;">
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">01</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">A Real Restaurant Scene</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Fourth Street's dining is widely considered the best north of the Golden Gate Bridge.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">02</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Genuine Neighborhood Range</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">From grand Dominican Victorians to Eichler homes in Terra Linda, San Rafael offers real architectural variety.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">03</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">20 Minutes to San Francisco</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Just over the Golden Gate Bridge, with 101 and 580 access converging in town.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">04</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">Genuine Diversity</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">The most ethnically diverse community in Marin County, with a real urban energy other Marin towns lack.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">05</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">China Camp State Park</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">Bay-front trails and a preserved 19th-century Chinese shrimp fishing village.</p>
+      </div>
+      <div class="life-card" style="background: #ffffff; padding: 36px 30px;">
+        <div style="font-family: Fraunces, serif; font-size: 22px; color: #a8823d; margin-bottom: 14px;">06</div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 21px; color: #16233f; margin: 0px 0px 10px;">A Creative Legacy</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px;">George Lucas established Lucasfilm here in 1970, part of a lasting entertainment-industry presence.</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 36px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore the Area</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">San Rafael Neighborhoods</h2>
+      </div>
+      <a style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em; border-bottom: 1px solid rgb(168, 130, 61); padding-bottom: 2px;" href="#contact">Ask about a neighborhood &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Dominican / Forbes</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Grand Victorians, tree-lined, walkable</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Gerstle Park</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Family-friendly, historic, parks</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Sun Valley</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Hilltop estates, views, privacy</p>
+      </div>
+      <div class="nb-card">
+        <div class="nb-thumb" style="aspect-ratio: 4 / 3; border-radius: 4px; background-color: #edeff3; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+          <div class="nb-thumb-inner" style="width: 100%; height: 100%; background-image: repeating-linear-gradient(135deg, rgb(226, 229, 236) 0px, rgb(226, 229, 236) 12px, rgb(237, 239, 243) 12px, rgb(237, 239, 243) 24px); display: flex; align-items: center; justify-content: center;"><span style="font-family: ui-monospace, monospace; font-size: 11px; color: #98a0b3;">[ IMAGE ]</span></div>
+        </div>
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 4px;">Terra Linda</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Eichler homes, family favorite</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="background: #f0f2f6; margin-top: 100px; padding: 80px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">Education in San Rafael</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 24px;">San Rafael is served by the San Rafael City Schools district, alongside Dominican University of California and a range of respected private and parochial options.</p>
+        <div style="display: flex; flex-direction: column; gap: 0px; border-top: 1px solid rgb(221, 225, 233);">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">San Rafael High School</span><span style="font-size: 13px; color: #7d8598;">Public &middot; 9&ndash;12</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">Coleman Elementary</span><span style="font-size: 13px; color: #7d8598;">Public &middot; K&ndash;5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0px; border-bottom: 1px solid rgb(221, 225, 233);"><span style="font-size: 15px; color: #16233f;">St. Raphael School</span><span style="font-size: 13px; color: #7d8598;">Private</span></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">History</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 32px; line-height: 1.14; color: #16233f; margin: 0px 0px 20px; letter-spacing: -0.01em;">The 20th mission and the Angel of Healing</h2>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px 0px 18px;">Once home to Coast Miwok villages, San Rafael takes its name from Mission San Rafael Arc&aacute;ngel, founded in 1817 as the 20th Spanish mission &mdash; used specifically as a hospital because of the area's ideal, sunny weather. The mission was abandoned after Mexico secularized California's missions in 1834, and eventually fell into ruin; the current mission building dates to 1949.</p>
+        <p style="font-size: 16px; line-height: 1.75; color: #4b5468; margin: 0px;">San Rafael incorporated on February 18, 1874, and became Marin County's seat. Wealthy San Franciscans built grand homes near the original mission site in the 1870s and 1880s, and the arrival of the railroad in 1879 connected the city to the national rail system by 1888.</p>
+      </div>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="background: #16233f; padding: 80px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #c9a567; font-weight: 600; margin: 0px 0px 16px; text-align: center;">The Chen Team in San Rafael</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 36px; line-height: 1.14; color: #f4f6fa; margin: 0px 0px 12px; text-align: center; letter-spacing: -0.01em;">Local expertise, proven results</h2>
+      <p style="font-size: 16px; color: #9aa3b8; text-align: center; max-width: 52ch; margin: 0px auto 52px;">We've helped families buy and sell across San Rafael's most sought-after streets. When you work with us, you get second-generation local knowledge and Compass's full resources.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;">
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">$48M+</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Sold in San Rafael</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">100%</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. of List Price</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">12</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Avg. Days to Offer</div>
+        </div>
+        <div>
+          <div style="font-family: Fraunces, serif; font-size: 48px; color: #f4f6fa; line-height: 1;">5.0&#9733;</div>
+          <div style="font-size: 13.5px; color: #9aa3b8; margin-top: 12px; letter-spacing: 0.03em;">Client Rating</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #9aa3b8; margin: 36px 0px 0px; text-align: center; font-family: ui-monospace, monospace;">// Replace with your verified production figures</p>
+    </div>
+  </section>
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Market Trends</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px 0px 40px; letter-spacing: -0.01em;">How the San Rafael market is moving</h2>
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: stretch;">
+      <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 8px; background: #ffffff; padding: 32px; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f;">Median Sold Price</span> <span style="font-size: 13px; color: #3f8a5f; font-weight: 600;">&#9650; 6.0% YoY</span></div>
+        <div class="bar-wrap">
+          <div class="bar-col">
+            <div class="bar" style="height: 139px;" data-value="$1.43M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q3 &rsquo;25</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 129px;" data-value="$1.32M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q4 &rsquo;25</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 136px;" data-value="$1.40M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q1 &rsquo;26</span>
+          </div>
+          <div class="bar-col">
+            <div class="bar" style="height: 156px;" data-value="$1.60M">&nbsp;</div>
+            <span style="font-size: 11px; color: #7d8598;">Q2 &rsquo;26</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #9ba3b5; margin: 18px 0px 0px; font-family: ui-monospace, monospace;">Quarterly median sold price, single-family homes. Bars are drawn to scale from zero. Year-over-year compares Q2 2026 (153 closed sales) with Q2 2025 (127). Connect to live market data. Hover a bar for the exact figure.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Avg. Offers per Home</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">2</div>
+          </div>
+          <span style="font-size: 13px; color: #8f6b2e; font-weight: 600;">Somewhat competitive</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Median Days on Market</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">18 days</div>
+          </div>
+          <span style="font-size: 13px; color: #8f6b2e; font-weight: 600;">Balanced pace</span>
+        </div>
+        <div class="stat-card" style="border: 1px solid rgb(221, 225, 233); border-radius: 8px; background: #ffffff; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 14px; color: #7d8598;">Price per Sq. Ft. Trend</div>
+            <div style="font-family: Fraunces, serif; font-size: 26px; color: #16233f; margin-top: 2px;">-14.3%</div>
+          </div>
+          <span style="font-size: 13px; color: #8f6b2e; font-weight: 600;">Mixed vs. last year</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="max-width: 1180px; margin: 90px auto 0px; padding: 0px 32px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
+      <div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Available Now</p>
+        <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 38px; line-height: 1.12; color: #16233f; margin: 0px; letter-spacing: -0.01em;">Homes for Sale in San Rafael</h2>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 60px auto 0px; padding: 0px 32px;">
+    <p style="font-size: 11.5px; color: #9ba3b5; line-height: 1.7; margin: 0px; border-top: 1px solid rgb(237, 239, 243); padding-top: 14px;"><strong style="color: #7d8598; font-weight: 600;">Image credits:</strong> <a href="https://commons.wikimedia.org/wiki/File:Guzman_Hall,_Dominican_University,_San_Rafael,_CA_Sept_2025.jpg">Guzman Hall, Dominican University, San Rafael, CA Sept 2025.jpg</a> &mdash; CC0.</p>
+  </section>
+</div>
