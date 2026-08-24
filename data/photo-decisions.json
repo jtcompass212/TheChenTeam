@@ -1,0 +1,18 @@
+{
+ "reviewed": "2026-08-20",
+ "method": "Every candidate that passed automated scoring was then viewed as an image. Filename scoring alone let through a scanned book, a Project Blue Book PDF and a WWII-era portrait, so nothing here is accepted on a name match.",
+ "accept": [0, 1, 5, 9, 11, 12, 13, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34],
+ "reject": {
+  "2": "scanned book of portraits, not a photograph of a place",
+  "3": "archival B&W of the Linden Towers gates, demolished 1936",
+  "4": "vague B&W survey landscape, subject not identifiable",
+  "6": "the 1915 Southern Pacific depot, not the Burlingame Park neighborhood",
+  "7": "a scanned Project Blue Book PDF that happens to name Cupertino",
+  "8": "indoor political event at De Anza College, wrong subject and dates badly",
+  "10": "correct subject (Clark House) but archival B&W sits wrong on a current listing page",
+  "14": "the Mills estate, demolished in 1954 - not today's Mills Estates neighborhood",
+  "15": "Dorothea Lange portrait of a named farmer, WWII incarceration era; wrong subject and not ours to repurpose",
+  "19": "a decorated utility box on a Temescal sidewalk; right place, unusable image",
+  "27": "San Bruno Mountain, not the San Bruno Park neighborhood"
+ }
+}

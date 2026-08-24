@@ -1,0 +1,2217 @@
+[
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "thumb",
+  "subject": "Seacliff",
+  "blurb": "Beachfront, historic character",
+  "candidates": [
+   {
+    "title": "File:Aptos Creek mouth.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dicklyon",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Aptos_Creek_mouth.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Aptos_Creek_mouth.jpg/1920px-Aptos_Creek_mouth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 2209,
+    "query": "Seacliff Aptos California"
+   },
+   {
+    "title": "File:Seacliff, Aptos, CA 18 - panoramio.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Vince Migliore",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff,_Aptos,_CA_18_-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Seacliff%2C_Aptos%2C_CA_18_-_panoramio.jpg/1920px-Seacliff%2C_Aptos%2C_CA_18_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3648,
+    "height": 2736,
+    "query": "Seacliff Aptos California"
+   },
+   {
+    "title": "File:Seacliff, Aptos, CA 80 - panoramio.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Vince Migliore",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff,_Aptos,_CA_80_-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Seacliff%2C_Aptos%2C_CA_80_-_panoramio.jpg/1920px-Seacliff%2C_Aptos%2C_CA_80_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3648,
+    "height": 2736,
+    "query": "Seacliff Aptos California"
+   },
+   {
+    "title": "File:USA-Aptos-Seacliff State Beach.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Eugene Zelenko",
+    "descurl": "https://commons.wikimedia.org/wiki/File:USA-Aptos-Seacliff_State_Beach.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/USA-Aptos-Seacliff_State_Beach.jpg/1920px-USA-Aptos-Seacliff_State_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Seacliff Aptos California"
+   },
+   {
+    "title": "File:Seacliff State Beach Aug 2019.jpg",
+    "license": "CC0",
+    "artist": "Thomson200",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff_State_Beach_Aug_2019.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Seacliff_State_Beach_Aug_2019.jpg/1920px-Seacliff_State_Beach_Aug_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3456,
+    "height": 2304,
+    "query": "Seacliff California"
+   },
+   {
+    "title": "File:Seacliff State Beach Aug 2019 1.jpg",
+    "license": "CC0",
+    "artist": "Thomson200",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff_State_Beach_Aug_2019_1.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Seacliff_State_Beach_Aug_2019_1.jpg/1920px-Seacliff_State_Beach_Aug_2019_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3456,
+    "height": 2304,
+    "query": "Seacliff California"
+   },
+   {
+    "title": "File:Seacliff at sunset.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Prg",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff_at_sunset.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Seacliff_at_sunset.jpg/1920px-Seacliff_at_sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2400,
+    "height": 1800,
+    "query": "Seacliff California"
+   }
+  ],
+  "pick": {
+   "title": "File:Seacliff, Aptos, CA 18 - panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Vince Migliore",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Seacliff,_Aptos,_CA_18_-_panoramio.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Seacliff%2C_Aptos%2C_CA_18_-_panoramio.jpg/1920px-Seacliff%2C_Aptos%2C_CA_18_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3648,
+   "height": 2736,
+   "query": "Seacliff Aptos California",
+   "score": 6,
+   "why": [
+    "names Aptos",
+    "names California",
+    "names 'seacliff'"
+   ]
+  }
+ },
+ {
+  "page": "city/aptos",
+  "city": "aptos",
+  "kind": "feature",
+  "subject": "Cabrillo College or the SS Palo Alto cement ship",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Cabrillo College, Salvia garden-01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Scott Zona from Miami, Florida, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Cabrillo_College,_Salvia_garden-01.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cabrillo_College%2C_Salvia_garden-01.jpg/1920px-Cabrillo_College%2C_Salvia_garden-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2000,
+    "height": 1500,
+    "query": "Cabrillo College Aptos California"
+   },
+   {
+    "title": "File:Cabrillo College, Salvia garden-01 ArM.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Scott Zona from Miami, Florida, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Cabrillo_College,_Salvia_garden-01_ArM.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cabrillo_College%2C_Salvia_garden-01_ArM.jpg/1920px-Cabrillo_College%2C_Salvia_garden-01_ArM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2000,
+    "height": 1314,
+    "query": "Cabrillo College Aptos California"
+   },
+   {
+    "title": "File:Cabrillo College, Salvia garden-01ri.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Cabrillo_College,_Salvia_garden-01.jpg: Scott Zona from Miami, Florida, USA\nderivative work: Rob\u00a0Anybody \u2013 engage...",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Cabrillo_College,_Salvia_garden-01ri.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Cabrillo_College%2C_Salvia_garden-01ri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1817,
+    "height": 1363,
+    "query": "Cabrillo College Aptos California"
+   },
+   {
+    "title": "File:Cabrillo College2.jpg",
+    "license": "Public domain",
+    "artist": "Original uploader was John Pilge at en.wikipedia",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Cabrillo_College2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Cabrillo_College2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 400,
+    "height": 318,
+    "query": "Cabrillo College Aptos California"
+   },
+   {
+    "title": "File:Campbell Interurban Press 1918-07-19 (IA cacblm 000535).pdf",
+    "license": "Public domain",
+    "artist": "Campbell Press",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Campbell_Interurban_Press_1918-07-19_(IA_cacblm_000535).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Campbell_Interurban_Press_1918-07-19_%28IA_cacblm_000535%29.pdf/page1-1280px-Campbell_Interurban_Press_1918-07-19_%28IA_cacblm_000535%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1785,
+    "height": 2560,
+    "query": "the SS Palo Alto cement ship Aptos California"
+   },
+   {
+    "title": "File:Cement boat (4943903138).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Daniel Dionne",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Cement_boat_(4943903138).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cement_boat_%284943903138%29.jpg/1920px-Cement_boat_%284943903138%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2800,
+    "height": 536,
+    "query": "the SS Palo Alto cement ship Aptos California"
+   },
+   {
+    "title": "File:PA IMGP6195 The Fishing Pier at Seacliff Beach, Aptos, CA. (7298920844).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "David Prasad from Fresno, CA., United States",
+    "descurl": "https://commons.wikimedia.org/wiki/File:PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach,_Aptos,_CA._(7298920844).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach%2C_Aptos%2C_CA._%287298920844%29.jpg/1920px-PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach%2C_Aptos%2C_CA._%287298920844%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2464,
+    "height": 1632,
+    "query": "the SS Palo Alto cement ship Aptos California"
+   },
+   {
+    "title": "File:Sinking Ship Sunset.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mona Ruby Farley",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sinking_Ship_Sunset.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sinking_Ship_Sunset.jpg/1920px-Sinking_Ship_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2848,
+    "height": 1877,
+    "query": "the SS Palo Alto cement ship Aptos California"
+   }
+  ],
+  "pick": {
+   "title": "File:PA IMGP6195 The Fishing Pier at Seacliff Beach, Aptos, CA. (7298920844).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "David Prasad from Fresno, CA., United States",
+   "descurl": "https://commons.wikimedia.org/wiki/File:PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach,_Aptos,_CA._(7298920844).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach%2C_Aptos%2C_CA._%287298920844%29.jpg/1920px-PA_IMGP6195_The_Fishing_Pier_at_Seacliff_Beach%2C_Aptos%2C_CA._%287298920844%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2464,
+   "height": 1632,
+   "query": "the SS Palo Alto cement ship Aptos California",
+   "score": 5,
+   "why": [
+    "names Aptos",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/brisbane",
+  "city": "brisbane",
+  "kind": "thumb",
+  "subject": "Sierra Point",
+  "blurb": "Waterfront office district, newer condos",
+  "candidates": [
+   {
+    "title": "File:Bayshore Highway at Sierra Point 1929.jpg",
+    "license": "Public Domain",
+    "artist": "Unknown authorUnknown author",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Bayshore_Highway_at_Sierra_Point_1929.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Bayshore_Highway_at_Sierra_Point_1929.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 640,
+    "height": 480,
+    "query": "Sierra Point Brisbane California"
+   },
+   {
+    "title": "File:Brisbane, California (8272101370).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Sharon Hahn Darlin",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Brisbane,_California_(8272101370).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brisbane%2C_California_%288272101370%29.jpg/1920px-Brisbane%2C_California_%288272101370%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3629,
+    "height": 2410,
+    "query": "Sierra Point Brisbane California"
+   },
+   {
+    "title": "File:Brisbane aerial (279021262) (cropped).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Doc Searls from Santa Barbara, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Brisbane_aerial_(279021262)_(cropped).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/82/Brisbane_aerial_%28279021262%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1196,
+    "height": 1026,
+    "query": "Sierra Point Brisbane California"
+   },
+   {
+    "title": "File:Sierra Point aerial view, February 2018.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Pi.1415926535",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sierra_Point_aerial_view,_February_2018.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sierra_Point_aerial_view%2C_February_2018.JPG/1920px-Sierra_Point_aerial_view%2C_February_2018.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3951,
+    "height": 2973,
+    "query": "Sierra Point Brisbane California"
+   },
+   {
+    "title": "File:Barney Lake, Crown Point.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tom Hilton",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Barney_Lake,_Crown_Point.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Barney_Lake%2C_Crown_Point.jpg/1920px-Barney_Lake%2C_Crown_Point.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4928,
+    "height": 2772,
+    "query": "Sierra Point California"
+   },
+   {
+    "title": "File:Barney Lake and Crown Point.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tom Hilton",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Barney_Lake_and_Crown_Point.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Barney_Lake_and_Crown_Point.jpg/1920px-Barney_Lake_and_Crown_Point.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3501,
+    "height": 2357,
+    "query": "Sierra Point California"
+   },
+   {
+    "title": "File:Crown Point from Barney Lake.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tom Hilton",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Crown_Point_from_Barney_Lake.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Crown_Point_from_Barney_Lake.jpg/1920px-Crown_Point_from_Barney_Lake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3328,
+    "height": 2291,
+    "query": "Sierra Point California"
+   },
+   {
+    "title": "File:Crown Point with Peeler Lake.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Jonathan Fox",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Crown_Point_with_Peeler_Lake.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Crown_Point_with_Peeler_Lake.jpg/1920px-Crown_Point_with_Peeler_Lake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3182,
+    "height": 2343,
+    "query": "Sierra Point California"
+   }
+  ],
+  "pick": {
+   "title": "File:Brisbane, California (8272101370).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Sharon Hahn Darlin",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Brisbane,_California_(8272101370).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brisbane%2C_California_%288272101370%29.jpg/1920px-Brisbane%2C_California_%288272101370%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3629,
+   "height": 2410,
+   "query": "Sierra Point Brisbane California",
+   "score": 5,
+   "why": [
+    "names Brisbane",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/gilroy",
+  "city": "gilroy",
+  "kind": "thumb",
+  "subject": "Hecker Pass",
+  "blurb": "Wine country, larger lots",
+  "candidates": [
+   {
+    "title": "File:CRLA - Study and Evaluation of CRLA by California OEO, 1971 (3 of 6) - DPLA - 5f508eba074ce44ae606088fd79b89ae.pdf",
+    "license": "Public domain",
+    "artist": "Reagan, Ronald, 1911-2004",
+    "descurl": "https://commons.wikimedia.org/wiki/File:CRLA_-_Study_and_Evaluation_of_CRLA_by_California_OEO,_1971_(3_of_6)_-_DPLA_-_5f508eba074ce44ae606088fd79b89ae.pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/CRLA_-_Study_and_Evaluation_of_CRLA_by_California_OEO%2C_1971_%283_of_6%29_-_DPLA_-_5f508eba074ce44ae606088fd79b89ae.pdf/page1-960px-CRLA_-_Study_and_Evaluation_of_CRLA_by_California_OEO%2C_1971_%283_of_6%29_-_DPLA_-_5f508eba074ce44ae606088fd79b89ae.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1275,
+    "height": 1650,
+    "query": "Hecker Pass Gilroy California"
+   },
+   {
+    "title": "File:Flood plain information- Uvas-Carnadero Creek, Pajaro River to Uvas Reservoir, Santa Clara County, California - USACE-p266001coll1-9722.pdf",
+    "license": "Public domain",
+    "artist": "United States. Army. Corps of Engineers. San Francisco District; Santa Clara County Flood Control and Water District",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Flood_plain_information-_Uvas-Carnadero_Creek,_Pajaro_River_to_Uvas_Reservoir,_Santa_Clara_County,_California_-_USACE-p266001coll1-9722.pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flood_plain_information-_Uvas-Carnadero_Creek%2C_Pajaro_River_to_Uvas_Reservoir%2C_Santa_Clara_County%2C_California_-_USACE-p266001coll1-9722.pdf/page1-960px-Flood_plain_information-_Uvas-Carnadero_Creek%2C_Pajaro_River_to_Uvas_Reservoir%2C_Santa_Clara_County%2C_California_-_USACE-p266001coll1-9722.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1204,
+    "height": 1570,
+    "query": "Hecker Pass Gilroy California"
+   },
+   {
+    "title": "File:The Glendale Evening News 1924-12-05 (IA cgl 005484).pdf",
+    "license": "Public domain",
+    "artist": "Cowan, A.T.",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_Glendale_Evening_News_1924-12-05_(IA_cgl_005484).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/The_Glendale_Evening_News_1924-12-05_%28IA_cgl_005484%29.pdf/page1-1920px-The_Glendale_Evening_News_1924-12-05_%28IA_cgl_005484%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2572,
+    "height": 3506,
+    "query": "Hecker Pass Gilroy California"
+   },
+   {
+    "title": "File:View of Lions Peak near Gilroy CA, April 2018.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wahn",
+    "descurl": "https://commons.wikimedia.org/wiki/File:View_of_Lions_Peak_near_Gilroy_CA,_April_2018.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/View_of_Lions_Peak_near_Gilroy_CA%2C_April_2018.jpg/1920px-View_of_Lions_Peak_near_Gilroy_CA%2C_April_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 3024,
+    "query": "Hecker Pass Gilroy California"
+   },
+   {
+    "title": "File:A sketch of surgical history, after Hecker (IA sketchofsurgical00hund).pdf",
+    "license": "Public domain",
+    "artist": "Hund, John, b. 1853",
+    "descurl": "https://commons.wikimedia.org/wiki/File:A_sketch_of_surgical_history,_after_Hecker_(IA_sketchofsurgical00hund).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/A_sketch_of_surgical_history%2C_after_Hecker_%28IA_sketchofsurgical00hund%29.pdf/page1-500px-A_sketch_of_surgical_history%2C_after_Hecker_%28IA_sketchofsurgical00hund%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 800,
+    "height": 1252,
+    "query": "Hecker Pass California"
+   },
+   {
+    "title": "File:California Digital Library (IA condensedchronol00reesrich).pdf",
+    "license": "Public domain",
+    "artist": "Rees, E.",
+    "descurl": "https://commons.wikimedia.org/wiki/File:California_Digital_Library_(IA_condensedchronol00reesrich).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/California_Digital_Library_%28IA_condensedchronol00reesrich%29.pdf/page1-500px-California_Digital_Library_%28IA_condensedchronol00reesrich%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 822,
+    "height": 1239,
+    "query": "Hecker Pass California"
+   },
+   {
+    "title": "File:California Digital Library (IA gouldsrecords00joserich).pdf",
+    "license": "Public domain",
+    "artist": "Gould, Joseph, b. 1840\nSurvivors' Association of the 48th Pennsylvania Veteran Volunteer Infantry",
+    "descurl": "https://commons.wikimedia.org/wiki/File:California_Digital_Library_(IA_gouldsrecords00joserich).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/California_Digital_Library_%28IA_gouldsrecords00joserich%29.pdf/page1-500px-California_Digital_Library_%28IA_gouldsrecords00joserich%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 883,
+    "height": 1285,
+    "query": "Hecker Pass California"
+   },
+   {
+    "title": "File:California Digital Library (IA soulsprimaryph00soulrich).pdf",
+    "license": "Public domain",
+    "artist": "Soul\u00e9, George, 1834-1926",
+    "descurl": "https://commons.wikimedia.org/wiki/File:California_Digital_Library_(IA_soulsprimaryph00soulrich).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/California_Digital_Library_%28IA_soulsprimaryph00soulrich%29.pdf/page1-500px-California_Digital_Library_%28IA_soulsprimaryph00soulrich%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 679,
+    "height": 1095,
+    "query": "Hecker Pass California"
+   }
+  ],
+  "pick": {
+   "title": "File:View of Lions Peak near Gilroy CA, April 2018.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Wahn",
+   "descurl": "https://commons.wikimedia.org/wiki/File:View_of_Lions_Peak_near_Gilroy_CA,_April_2018.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/View_of_Lions_Peak_near_Gilroy_CA%2C_April_2018.jpg/1920px-View_of_Lions_Peak_near_Gilroy_CA%2C_April_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 3024,
+   "query": "Hecker Pass Gilroy California",
+   "score": 5,
+   "why": [
+    "names Gilroy",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/hillsborough",
+  "city": "hillsborough",
+  "kind": "thumb",
+  "subject": "Carolands",
+  "blurb": "Beaux-Arts grand estates near the historic chateau",
+  "candidates": [
+   {
+    "title": "File:DINING ROOM - Carolans, 565 Remillard Drive, Hillsborough, San Mateo County, CA HABS CAL,41-HILBO,1-9.tif",
+    "license": "Public domain",
+    "artist": "Related names:\n\nSaint-Saens, E\nDuchene, Achilles\nCarolan, Harriet Pullman",
+    "descurl": "https://commons.wikimedia.org/wiki/File:DINING_ROOM_-_Carolans,_565_Remillard_Drive,_Hillsborough,_San_Mateo_County,_CA_HABS_CAL,41-HILBO,1-9.tif",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/DINING_ROOM_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-9.tif/lossy-page1-1920px-DINING_ROOM_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-9.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5000,
+    "height": 3564,
+    "query": "Carolands Hillsborough California"
+   },
+   {
+    "title": "File:FOYER - Carolans, 565 Remillard Drive, Hillsborough, San Mateo County, CA HABS CAL,41-HILBO,1-11.tif",
+    "license": "Public domain",
+    "artist": "Related names:\n\nSaint-Saens, E\nDuchene, Achilles\nCarolan, Harriet Pullman",
+    "descurl": "https://commons.wikimedia.org/wiki/File:FOYER_-_Carolans,_565_Remillard_Drive,_Hillsborough,_San_Mateo_County,_CA_HABS_CAL,41-HILBO,1-11.tif",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/FOYER_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-11.tif/lossy-page1-1920px-FOYER_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-11.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5000,
+    "height": 3576,
+    "query": "Carolands Hillsborough California"
+   },
+   {
+    "title": "File:RIGHT SIDE - Carolans, 565 Remillard Drive, Hillsborough, San Mateo County, CA HABS CAL,41-HILBO,1-3.tif",
+    "license": "Public domain",
+    "artist": "",
+    "descurl": "https://commons.wikimedia.org/wiki/File:RIGHT_SIDE_-_Carolans,_565_Remillard_Drive,_Hillsborough,_San_Mateo_County,_CA_HABS_CAL,41-HILBO,1-3.tif",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/RIGHT_SIDE_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-3.tif/lossy-page1-1920px-RIGHT_SIDE_-_Carolans%2C_565_Remillard_Drive%2C_Hillsborough%2C_San_Mateo_County%2C_CA_HABS_CAL%2C41-HILBO%2C1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4993,
+    "height": 3575,
+    "query": "Carolands Hillsborough California"
+   },
+   {
+    "title": "File:The Carolands, 565 Remillard Dr., Hillsborough, CA 10-2-2011 6-09-05 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_Carolands,_565_Remillard_Dr.,_Hillsborough,_CA_10-2-2011_6-09-05_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/The_Carolands%2C_565_Remillard_Dr.%2C_Hillsborough%2C_CA_10-2-2011_6-09-05_PM.JPG/1920px-The_Carolands%2C_565_Remillard_Dr.%2C_Hillsborough%2C_CA_10-2-2011_6-09-05_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3072,
+    "height": 2304,
+    "query": "Carolands Hillsborough California"
+   },
+   {
+    "title": "File:Atriumstairs0001.jpg",
+    "license": "CC0",
+    "artist": "Lindesfarne",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Atriumstairs0001.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Atriumstairs0001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1131,
+    "height": 795,
+    "query": "Carolands California"
+   },
+   {
+    "title": "File:Carolands -West Facade 2013.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "A.R.Deer",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Carolands_-West_Facade_2013.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Carolands_-West_Facade_2013.jpg/1920px-Carolands_-West_Facade_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Carolands California"
+   },
+   {
+    "title": "File:Carolands Chateau.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Gary gary gary at en.wikipedia",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Carolands_Chateau.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/72/Carolands_Chateau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1800,
+    "height": 1640,
+    "query": "Carolands California"
+   }
+  ],
+  "pick": {
+   "title": "File:The Carolands, 565 Remillard Dr., Hillsborough, CA 10-2-2011 6-09-05 PM.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "Sanfranman59",
+   "descurl": "https://commons.wikimedia.org/wiki/File:The_Carolands,_565_Remillard_Dr.,_Hillsborough,_CA_10-2-2011_6-09-05_PM.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/The_Carolands%2C_565_Remillard_Dr.%2C_Hillsborough%2C_CA_10-2-2011_6-09-05_PM.JPG/1920px-The_Carolands%2C_565_Remillard_Dr.%2C_Hillsborough%2C_CA_10-2-2011_6-09-05_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3072,
+   "height": 2304,
+   "query": "Carolands Hillsborough California",
+   "score": 6,
+   "why": [
+    "names Hillsborough",
+    "names California",
+    "names 'carolands'"
+   ]
+  }
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "thumb",
+  "subject": "Tamalpais Valley",
+  "blurb": "Relative value, Tam High access",
+  "candidates": [
+   {
+    "title": "File:08088-Mill Valley-1906-Mt. Tamalpais from Mill Valley-Br\u00fcck & Sohn Kunstverlag.jpg",
+    "license": "CC0",
+    "artist": "Br\u00fcck &amp; Sohn Kunstverlag Mei\u00dfen",
+    "descurl": "https://commons.wikimedia.org/wiki/File:08088-Mill_Valley-1906-Mt._Tamalpais_from_Mill_Valley-Br%C3%BCck_%26_Sohn_Kunstverlag.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d8/08088-Mill_Valley-1906-Mt._Tamalpais_from_Mill_Valley-Br%C3%BCck_%26_Sohn_Kunstverlag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1277,
+    "height": 1000,
+    "query": "Tamalpais Valley Mill Valley California"
+   },
+   {
+    "title": "File:Summit of Mount Tamalpais, near Mill Valley, California.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Cheers. Trance addict - Armin van Buuren - Oceanlab",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Summit_of_Mount_Tamalpais,_near_Mill_Valley,_California.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Summit_of_Mount_Tamalpais%2C_near_Mill_Valley%2C_California.JPG/1920px-Summit_of_Mount_Tamalpais%2C_near_Mill_Valley%2C_California.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2048,
+    "height": 1536,
+    "query": "Tamalpais Valley Mill Valley California"
+   },
+   {
+    "title": "File:Tamalpais High School clock tower 2003.jpg",
+    "license": "Public domain",
+    "artist": "Bento00",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Tamalpais_High_School_clock_tower_2003.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Tamalpais_High_School_clock_tower_2003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 260,
+    "height": 238,
+    "query": "Tamalpais Valley Mill Valley California"
+   },
+   {
+    "title": "File:Zan 44 - Mt. Tamalpais Above Mill Valley, California.jpg",
+    "license": "Public domain",
+    "artist": "Zan",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Zan_44_-_Mt._Tamalpais_Above_Mill_Valley,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Zan_44_-_Mt._Tamalpais_Above_Mill_Valley%2C_California.jpg/1920px-Zan_44_-_Mt._Tamalpais_Above_Mill_Valley%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6308,
+    "height": 3988,
+    "query": "Tamalpais Valley Mill Valley California"
+   },
+   {
+    "title": "File:SE view of Summit of Mount Tamalpais near Mill Valley, California.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Hydrogen Iodide at English Wikipedia",
+    "descurl": "https://commons.wikimedia.org/wiki/File:SE_view_of_Summit_of_Mount_Tamalpais_near_Mill_Valley,_California.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/SE_view_of_Summit_of_Mount_Tamalpais_near_Mill_Valley%2C_California.JPG/1920px-SE_view_of_Summit_of_Mount_Tamalpais_near_Mill_Valley%2C_California.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2048,
+    "height": 1536,
+    "query": "Tamalpais Valley California"
+   }
+  ],
+  "pick": {
+   "title": "File:Summit of Mount Tamalpais, near Mill Valley, California.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "Cheers. Trance addict - Armin van Buuren - Oceanlab",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Summit_of_Mount_Tamalpais,_near_Mill_Valley,_California.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Summit_of_Mount_Tamalpais%2C_near_Mill_Valley%2C_California.JPG/1920px-Summit_of_Mount_Tamalpais%2C_near_Mill_Valley%2C_California.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2048,
+   "height": 1536,
+   "query": "Tamalpais Valley Mill Valley California",
+   "score": 5,
+   "why": [
+    "names Mill Valley",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/mill-valley",
+  "city": "mill-valley",
+  "kind": "feature",
+  "subject": "Muir Woods National Monument or a Dipsea Race runner",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Entrance of Muir Woods, Panoramic, Mill Valley, California (March 2011).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Jason Toff",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Entrance_of_Muir_Woods,_Panoramic,_Mill_Valley,_California_(March_2011).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Entrance_of_Muir_Woods%2C_Panoramic%2C_Mill_Valley%2C_California_%28March_2011%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1280,
+    "height": 853,
+    "query": "Muir Woods National Monument Mill Valley California"
+   },
+   {
+    "title": "File:Entrance of Muir Woods, Panoramic, Mill Valley, California (March 2011) (cropped).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Jason Toff",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Entrance_of_Muir_Woods,_Panoramic,_Mill_Valley,_California_(March_2011)_(cropped).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Entrance_of_Muir_Woods%2C_Panoramic%2C_Mill_Valley%2C_California_%28March_2011%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 725,
+    "height": 576,
+    "query": "Muir Woods National Monument Mill Valley California"
+   },
+   {
+    "title": "File:Muir Woods National Monument, Mill Valley, United States (Unsplash).jpg",
+    "license": "CC0",
+    "artist": "Corey Agopian corey_lyfe",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument,_Mill_Valley,_United_States_(Unsplash).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Muir_Woods_National_Monument%2C_Mill_Valley%2C_United_States_%28Unsplash%29.jpg/1920px-Muir_Woods_National_Monument%2C_Mill_Valley%2C_United_States_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4240,
+    "height": 2832,
+    "query": "Muir Woods National Monument Mill Valley California"
+   },
+   {
+    "title": "File:Muir Woods National Monument - panoramio (1).jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Aaron Zhu",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument_-_panoramio_(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/59/Muir_Woods_National_Monument_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1200,
+    "height": 1600,
+    "query": "Muir Woods National Monument Mill Valley California"
+   },
+   {
+    "title": "File:Muir Woods National Monument, Marin County, California.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Eddie Hernandez Photography",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument,_Marin_County,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/44/Muir_Woods_National_Monument%2C_Marin_County%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 527,
+    "height": 283,
+    "query": "Muir Woods National Monument California"
+   },
+   {
+    "title": "File:Muir Woods National Monument (34001808458).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Matthew Dillon from Hollywood, CA, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument_(34001808458).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Muir_Woods_National_Monument_%2834001808458%29.jpg/1920px-Muir_Woods_National_Monument_%2834001808458%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 2250,
+    "query": "Muir Woods National Monument California"
+   },
+   {
+    "title": "File:Muir Woods National Monument (46966706055).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Matthew Dillon from Hollywood, CA, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument_(46966706055).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Muir_Woods_National_Monument_%2846966706055%29.jpg/1920px-Muir_Woods_National_Monument_%2846966706055%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 2250,
+    "query": "Muir Woods National Monument California"
+   },
+   {
+    "title": "File:Muir Woods National Monument (47879029461).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Matthew Dillon from Hollywood, CA, USA",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument_(47879029461).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Muir_Woods_National_Monument_%2847879029461%29.jpg/1920px-Muir_Woods_National_Monument_%2847879029461%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 2250,
+    "query": "Muir Woods National Monument California"
+   },
+   {
+    "title": "File:Dipsea Race passing gravity car 2004.jpg",
+    "license": "Public domain",
+    "artist": "Bento00",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Dipsea_Race_passing_gravity_car_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Dipsea_Race_passing_gravity_car_2004.jpg/1920px-Dipsea_Race_passing_gravity_car_2004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2048,
+    "height": 1536,
+    "query": "a Dipsea Race runner Mill Valley California"
+   },
+   {
+    "title": "File:The Shuteye News Annual Number (IA cmlpl 000315).pdf",
+    "license": "Public domain",
+    "artist": "Ancient Order of the Shuteyes",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_Shuteye_News_Annual_Number_(IA_cmlpl_000315).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/The_Shuteye_News_Annual_Number_%28IA_cmlpl_000315%29.pdf/page1-1280px-The_Shuteye_News_Annual_Number_%28IA_cmlpl_000315%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1425,
+    "height": 1789,
+    "query": "a Dipsea Race runner Mill Valley California"
+   },
+   {
+    "title": "File:The Shuteye News October 13 1918 (IA cmlpl 000316).pdf",
+    "license": "Public domain",
+    "artist": "Ancient Order of the Shuteyes",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_Shuteye_News_October_13_1918_(IA_cmlpl_000316).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/The_Shuteye_News_October_13_1918_%28IA_cmlpl_000316%29.pdf/page1-1280px-The_Shuteye_News_October_13_1918_%28IA_cmlpl_000316%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1412,
+    "height": 1831,
+    "query": "a Dipsea Race runner Mill Valley California"
+   }
+  ],
+  "pick": {
+   "title": "File:Entrance of Muir Woods, Panoramic, Mill Valley, California (March 2011).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Jason Toff",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Entrance_of_Muir_Woods,_Panoramic,_Mill_Valley,_California_(March_2011).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Entrance_of_Muir_Woods%2C_Panoramic%2C_Mill_Valley%2C_California_%28March_2011%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1280,
+   "height": 853,
+   "query": "Muir Woods National Monument Mill Valley California",
+   "score": 5,
+   "why": [
+    "names Mill Valley",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "thumb",
+  "subject": "North Bayshore",
+  "blurb": "Tech campuses, evolving residential mix",
+  "candidates": [
+   {
+    "title": "File:Mountain View (CA, USA), Charleston Road, Google-Erholungsfl\u00e4che -- 2022 -- 2909.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Mountain_View_(CA,_USA),_Charleston_Road,_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg/1920px-Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6720,
+    "height": 4480,
+    "query": "North Bayshore Mountain View California"
+   },
+   {
+    "title": "File:Mountain View (CA, USA), Charleston Road, Google-Fahrr\u00e4der -- 2022 -- 2901.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Mountain_View_(CA,_USA),_Charleston_Road,_Google-Fahrr%C3%A4der_--_2022_--_2901.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2901.jpg/1920px-Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2901.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6720,
+    "height": 4480,
+    "query": "North Bayshore Mountain View California"
+   },
+   {
+    "title": "File:Mountain View (CA, USA), Charleston Road, Google-Fahrr\u00e4der -- 2022 -- 2902.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Mountain_View_(CA,_USA),_Charleston_Road,_Google-Fahrr%C3%A4der_--_2022_--_2902.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2902.jpg/1920px-Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2902.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5813,
+    "height": 4360,
+    "query": "North Bayshore Mountain View California"
+   },
+   {
+    "title": "File:Mountain View (CA, USA), Charleston Road, Google-Fahrr\u00e4der -- 2022 -- 2903.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Mountain_View_(CA,_USA),_Charleston_Road,_Google-Fahrr%C3%A4der_--_2022_--_2903.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2903.jpg/1920px-Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Fahrr%C3%A4der_--_2022_--_2903.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4480,
+    "height": 4480,
+    "query": "North Bayshore Mountain View California"
+   },
+   {
+    "title": "File:2022-03-27 13 41 06 View north along U.S. Route 101 (Bayshore Freeway) just north of Exit 426 in Brisbane, San Mateo County, California.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Famartin",
+    "descurl": "https://commons.wikimedia.org/wiki/File:2022-03-27_13_41_06_View_north_along_U.S._Route_101_(Bayshore_Freeway)_just_north_of_Exit_426_in_Brisbane,_San_Mateo_County,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/2022-03-27_13_41_06_View_north_along_U.S._Route_101_%28Bayshore_Freeway%29_just_north_of_Exit_426_in_Brisbane%2C_San_Mateo_County%2C_California.jpg/1920px-2022-03-27_13_41_06_View_north_along_U.S._Route_101_%28Bayshore_Freeway%29_just_north_of_Exit_426_in_Brisbane%2C_San_Mateo_County%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 3024,
+    "query": "North Bayshore California"
+   },
+   {
+    "title": "File:2022-03-27 15 13 35 View north along U.S. Route 101 (Bayshore Freeway) at Exit 433B (Interstate 80-Bay Bridge) in San Francisco, California.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Famartin",
+    "descurl": "https://commons.wikimedia.org/wiki/File:2022-03-27_15_13_35_View_north_along_U.S._Route_101_(Bayshore_Freeway)_at_Exit_433B_(Interstate_80-Bay_Bridge)_in_San_Francisco,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/2022-03-27_15_13_35_View_north_along_U.S._Route_101_%28Bayshore_Freeway%29_at_Exit_433B_%28Interstate_80-Bay_Bridge%29_in_San_Francisco%2C_California.jpg/1920px-2022-03-27_15_13_35_View_north_along_U.S._Route_101_%28Bayshore_Freeway%29_at_Exit_433B_%28Interstate_80-Bay_Bridge%29_in_San_Francisco%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 3024,
+    "query": "North Bayshore California"
+   },
+   {
+    "title": "File:Bayshore station industrial siding January 2026 1.jpg",
+    "license": "CC BY 4.0",
+    "artist": "4300streetcar",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Bayshore_station_industrial_siding_January_2026_1.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bayshore_station_industrial_siding_January_2026_1.jpg/1920px-Bayshore_station_industrial_siding_January_2026_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 8171,
+    "height": 5447,
+    "query": "North Bayshore California"
+   },
+   {
+    "title": "File:Bayshore station industrial siding January 2026 2.jpg",
+    "license": "CC BY 4.0",
+    "artist": "4300streetcar",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Bayshore_station_industrial_siding_January_2026_2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bayshore_station_industrial_siding_January_2026_2.jpg/1920px-Bayshore_station_industrial_siding_January_2026_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 8256,
+    "height": 5504,
+    "query": "North Bayshore California"
+   }
+  ],
+  "pick": {
+   "title": "File:Mountain View (CA, USA), Charleston Road, Google-Erholungsfl\u00e4che -- 2022 -- 2909.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Dietmar Rabich",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Mountain_View_(CA,_USA),_Charleston_Road,_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg/1920px-Mountain_View_%28CA%2C_USA%29%2C_Charleston_Road%2C_Google-Erholungsfl%C3%A4che_--_2022_--_2909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 6720,
+   "height": 4480,
+   "query": "North Bayshore Mountain View California",
+   "score": 5,
+   "why": [
+    "names Mountain View",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/mountain-view",
+  "city": "mountain-view",
+  "kind": "feature",
+  "subject": "The Computer History Museum or Shoreline Amphitheatre",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Computer History Museum, Mountain View, California April 2025 05.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Computer_History_Museum,_Mountain_View,_California_April_2025_05.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Computer_History_Museum%2C_Mountain_View%2C_California_April_2025_05.jpg/1920px-Computer_History_Museum%2C_Mountain_View%2C_California_April_2025_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Computer History Museum Mountain View California"
+   },
+   {
+    "title": "File:Computer History Museum 2024a.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antony-22",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Computer_History_Museum_2024a.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Computer_History_Museum_2024a.jpg/1920px-Computer_History_Museum_2024a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6240,
+    "height": 4160,
+    "query": "Computer History Museum Mountain View California"
+   },
+   {
+    "title": "File:Computer History Museum 2024b.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antony-22",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Computer_History_Museum_2024b.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Computer_History_Museum_2024b.jpg/1920px-Computer_History_Museum_2024b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6240,
+    "height": 4160,
+    "query": "Computer History Museum Mountain View California"
+   },
+   {
+    "title": "File:Computer History Museum 2024c.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antony-22",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Computer_History_Museum_2024c.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Computer_History_Museum_2024c.jpg/1920px-Computer_History_Museum_2024c.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6240,
+    "height": 4160,
+    "query": "Computer History Museum Mountain View California"
+   },
+   {
+    "title": "File:CHM Computer History Museum, MV, California 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:CHM_Computer_History_Museum,_MV,_California_01.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CHM_Computer_History_Museum%2C_MV%2C_California_01.jpg/1920px-CHM_Computer_History_Museum%2C_MV%2C_California_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Computer History Museum California"
+   },
+   {
+    "title": "File:CHM Computer History Museum, MV, California 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:CHM_Computer_History_Museum,_MV,_California_02.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CHM_Computer_History_Museum%2C_MV%2C_California_02.jpg/1920px-CHM_Computer_History_Museum%2C_MV%2C_California_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Computer History Museum California"
+   },
+   {
+    "title": "File:CHM Computer History Museum, MV, California 03.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:CHM_Computer_History_Museum,_MV,_California_03.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/CHM_Computer_History_Museum%2C_MV%2C_California_03.jpg/1920px-CHM_Computer_History_Museum%2C_MV%2C_California_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Computer History Museum California"
+   },
+   {
+    "title": "File:CHM Computer History Museum, MV, California 04.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:CHM_Computer_History_Museum,_MV,_California_04.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/CHM_Computer_History_Museum%2C_MV%2C_California_04.jpg/1920px-CHM_Computer_History_Museum%2C_MV%2C_California_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Computer History Museum California"
+   },
+   {
+    "title": "File:Google I-O 2016 at Shoreline Amphitheatre (27047756466).jpg",
+    "license": "CC BY 2.0",
+    "artist": "gilipollastv",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Google_I-O_2016_at_Shoreline_Amphitheatre_(27047756466).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/75/Google_I-O_2016_at_Shoreline_Amphitheatre_%2827047756466%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1080,
+    "height": 924,
+    "query": "Shoreline Amphitheatre Mountain View California"
+   },
+   {
+    "title": "File:Shoreline Amphitheatre.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Coolcaesar at English Wikipedia",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Shoreline_Amphitheatre.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/48/Shoreline_Amphitheatre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1368,
+    "height": 954,
+    "query": "Shoreline Amphitheatre Mountain View California"
+   },
+   {
+    "title": "File:Shoreline Amphitheatre Mountain View Ca. - panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Noah_Loverbear",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio.jpg/1920px-Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4320,
+    "height": 3240,
+    "query": "Shoreline Amphitheatre Mountain View California"
+   },
+   {
+    "title": "File:Shoreline Amphitheatre Mountain View Ca. - panoramio (1).jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Noah_Loverbear",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio_(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio_%281%29.jpg/1920px-Shoreline_Amphitheatre_Mountain_View_Ca._-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4320,
+    "height": 3240,
+    "query": "Shoreline Amphitheatre Mountain View California"
+   }
+  ],
+  "pick": {
+   "title": "File:Computer History Museum, Mountain View, California April 2025 05.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "GualdimG",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Computer_History_Museum,_Mountain_View,_California_April_2025_05.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Computer_History_Museum%2C_Mountain_View%2C_California_April_2025_05.jpg/1920px-Computer_History_Museum%2C_Mountain_View%2C_California_April_2025_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4000,
+   "height": 3000,
+   "query": "Computer History Museum Mountain View California",
+   "score": 5,
+   "why": [
+    "names Mountain View",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "thumb",
+  "subject": "Rockridge",
+  "blurb": "Craftsman bungalows, BART access",
+  "candidates": [
+   {
+    "title": "File:Rockridge, Oakland, CA-1.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CarmenEsparzaAmoux",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockridge,_Oakland,_CA-1.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rockridge%2C_Oakland%2C_CA-1.jpg/1920px-Rockridge%2C_Oakland%2C_CA-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3024,
+    "height": 4032,
+    "query": "Rockridge Oakland California"
+   },
+   {
+    "title": "File:Rockridge, Oakland, CA-2.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CarmenEsparzaAmoux",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockridge,_Oakland,_CA-2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Rockridge%2C_Oakland%2C_CA-2.jpg/1920px-Rockridge%2C_Oakland%2C_CA-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3024,
+    "height": 4032,
+    "query": "Rockridge Oakland California"
+   },
+   {
+    "title": "File:Rockridge, Oakland (October 20, 2013) Farmers Market.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Sharon Hahn Darlin",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockridge,_Oakland_(October_20,_2013)_Farmers_Market.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Rockridge%2C_Oakland_%28October_20%2C_2013%29_Farmers_Market.jpg/1920px-Rockridge%2C_Oakland_%28October_20%2C_2013%29_Farmers_Market.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Rockridge Oakland California"
+   },
+   {
+    "title": "File:Rockridge, Oakland (October 20, 2013) Farmers Market 2.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Sharon Hahn Darlin",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockridge,_Oakland_(October_20,_2013)_Farmers_Market_2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Rockridge%2C_Oakland_%28October_20%2C_2013%29_Farmers_Market_2.jpg/1920px-Rockridge%2C_Oakland_%28October_20%2C_2013%29_Farmers_Market_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Rockridge Oakland California"
+   }
+  ],
+  "pick": {
+   "title": "File:Rockridge, Oakland, CA-1.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "CarmenEsparzaAmoux",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Rockridge,_Oakland,_CA-1.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rockridge%2C_Oakland%2C_CA-1.jpg/1920px-Rockridge%2C_Oakland%2C_CA-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3024,
+   "height": 4032,
+   "query": "Rockridge Oakland California",
+   "score": 6,
+   "why": [
+    "names Oakland",
+    "names California",
+    "names 'rockridge'"
+   ]
+  }
+ },
+ {
+  "page": "city/oakland",
+  "city": "oakland",
+  "kind": "feature",
+  "subject": "The Port of Oakland or a Montclair hillside home",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Logo of the Port of Oakland.svg",
+    "license": "Public domain",
+    "artist": "Port of Oakland",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Logo_of_the_Port_of_Oakland.svg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_of_the_Port_of_Oakland.svg/1920px-Logo_of_the_Port_of_Oakland.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 228,
+    "height": 68,
+    "query": "Port of Oakland Oakland California"
+   },
+   {
+    "title": "File:Oakland California aerial view.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Robert Campbell",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Oakland_California_aerial_view.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Oakland_California_aerial_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1500,
+    "height": 1000,
+    "query": "Port of Oakland Oakland California"
+   },
+   {
+    "title": "File:Port of Oakland.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Daniel Parks from Berkeley, United States",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Port_of_Oakland.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Port_of_Oakland.jpg/1920px-Port_of_Oakland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 2520,
+    "query": "Port of Oakland Oakland California"
+   },
+   {
+    "title": "File:Port of Oakland and Alameda Island aerial.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dicklyon",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Port_of_Oakland_and_Alameda_Island_aerial.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Port_of_Oakland_and_Alameda_Island_aerial.jpg/1920px-Port_of_Oakland_and_Alameda_Island_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2373,
+    "height": 1512,
+    "query": "Port of Oakland Oakland California"
+   }
+  ],
+  "pick": {
+   "title": "File:Oakland California aerial view.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Robert Campbell",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Oakland_California_aerial_view.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Oakland_California_aerial_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1500,
+   "height": 1000,
+   "query": "Port of Oakland Oakland California",
+   "score": 5,
+   "why": [
+    "names Oakland",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Rockaway Beach",
+  "blurb": "Oceanfront, shops & dining",
+  "candidates": [
+   {
+    "title": "File:2018-03-10 Pacifica, Kalifornien 004 Rockaway Beach.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Allie_Caulfield",
+    "descurl": "https://commons.wikimedia.org/wiki/File:2018-03-10_Pacifica,_Kalifornien_004_Rockaway_Beach.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/2018-03-10_Pacifica%2C_Kalifornien_004_Rockaway_Beach.jpg/1920px-2018-03-10_Pacifica%2C_Kalifornien_004_Rockaway_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5472,
+    "height": 3648,
+    "query": "Rockaway Beach Pacifica California"
+   },
+   {
+    "title": "File:Rockaway Beach Pacifica California - panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Noah_Loverbear",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockaway_Beach_Pacifica_California_-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Rockaway_Beach_Pacifica_California_-_panoramio.jpg/1920px-Rockaway_Beach_Pacifica_California_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4320,
+    "height": 3240,
+    "query": "Rockaway Beach Pacifica California"
+   },
+   {
+    "title": "File:Sea Gull At Rockaway Beach Pacifica Ca. - panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Noah_Loverbear",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sea_Gull_At_Rockaway_Beach_Pacifica_Ca._-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Sea_Gull_At_Rockaway_Beach_Pacifica_Ca._-_panoramio.jpg/1920px-Sea_Gull_At_Rockaway_Beach_Pacifica_Ca._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2592,
+    "height": 1936,
+    "query": "Rockaway Beach Pacifica California"
+   },
+   {
+    "title": "File:Sunset at Rockaway Beach in Pacifica.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Brocken Inaglory",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sunset_at_Rockaway_Beach_in_Pacifica.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/49/Sunset_at_Rockaway_Beach_in_Pacifica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1841,
+    "height": 1700,
+    "query": "Rockaway Beach Pacifica California"
+   },
+   {
+    "title": "File:Rockaway Beach In Pacifica California - panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Noah_Loverbear",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Rockaway_Beach_In_Pacifica_California_-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Rockaway_Beach_In_Pacifica_California_-_panoramio.jpg/1920px-Rockaway_Beach_In_Pacifica_California_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2592,
+    "height": 1936,
+    "query": "Rockaway Beach California"
+   }
+  ],
+  "pick": {
+   "title": "File:Rockaway Beach Pacifica California - panoramio.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Noah_Loverbear",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Rockaway_Beach_Pacifica_California_-_panoramio.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Rockaway_Beach_Pacifica_California_-_panoramio.jpg/1920px-Rockaway_Beach_Pacifica_California_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4320,
+   "height": 3240,
+   "query": "Rockaway Beach Pacifica California",
+   "score": 6,
+   "why": [
+    "names Pacifica",
+    "names California",
+    "names 'rockaway beach'"
+   ]
+  }
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Sharp Park",
+  "blurb": "Golf course, established homes",
+  "candidates": [
+   {
+    "title": "File:Pacifica-Sharp Park Library, exterior (April 2024).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "BriefEdits",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pacifica-Sharp_Park_Library,_exterior_(April_2024).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pacifica-Sharp_Park_Library%2C_exterior_%28April_2024%29.jpg/1920px-Pacifica-Sharp_Park_Library%2C_exterior_%28April_2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5184,
+    "height": 3456,
+    "query": "Sharp Park Pacifica California"
+   },
+   {
+    "title": "File:Pacifica-Sharp Park Library, upper entrance (April 2024).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "BriefEdits",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pacifica-Sharp_Park_Library,_upper_entrance_(April_2024).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Pacifica-Sharp_Park_Library%2C_upper_entrance_%28April_2024%29.jpg/1920px-Pacifica-Sharp_Park_Library%2C_upper_entrance_%28April_2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5184,
+    "height": 3456,
+    "query": "Sharp Park Pacifica California"
+   },
+   {
+    "title": "File:Winter trees at Sharp Park, Pacifica, California.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Anita Hart",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Winter_trees_at_Sharp_Park,_Pacifica,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Winter_trees_at_Sharp_Park%2C_Pacifica%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1650,
+    "height": 1206,
+    "query": "Sharp Park Pacifica California"
+   },
+   {
+    "title": "File:Young man walking on railing at Sharp Park Beach, Pacifica, California.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "VirginiaBeach78",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Young_man_walking_on_railing_at_Sharp_Park_Beach,_Pacifica,_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Young_man_walking_on_railing_at_Sharp_Park_Beach%2C_Pacifica%2C_California.jpg/1920px-Young_man_walking_on_railing_at_Sharp_Park_Beach%2C_Pacifica%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2448,
+    "height": 2448,
+    "query": "Sharp Park Pacifica California"
+   },
+   {
+    "title": "File:Beach whale, Sharp Park Beach.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CarmenEsparzaAmoux",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Beach_whale,_Sharp_Park_Beach.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Beach_whale%2C_Sharp_Park_Beach.jpg/1920px-Beach_whale%2C_Sharp_Park_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2431,
+    "height": 1283,
+    "query": "Sharp Park California"
+   },
+   {
+    "title": "File:Sharp Park Golf Course, 2015.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CarmenEsparzaAmoux",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sharp_Park_Golf_Course,_2015.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sharp_Park_Golf_Course%2C_2015.jpg/1920px-Sharp_Park_Golf_Course%2C_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Sharp Park California"
+   }
+  ],
+  "pick": {
+   "title": "File:Winter trees at Sharp Park, Pacifica, California.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Anita Hart",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Winter_trees_at_Sharp_Park,_Pacifica,_California.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Winter_trees_at_Sharp_Park%2C_Pacifica%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1650,
+   "height": 1206,
+   "query": "Sharp Park Pacifica California",
+   "score": 6,
+   "why": [
+    "names Pacifica",
+    "names California",
+    "names 'sharp park'"
+   ]
+  }
+ },
+ {
+  "page": "city/pacifica",
+  "city": "pacifica",
+  "kind": "thumb",
+  "subject": "Pedro Point",
+  "blurb": "Hillside, quiet, ocean views",
+  "candidates": [
+   {
+    "title": "File:Pacifica California 13.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Carnaval.com Studios",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pacifica_California_13.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Pacifica_California_13.jpg/1920px-Pacifica_California_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4864,
+    "height": 3648,
+    "query": "Pedro Point Pacifica California"
+   },
+   {
+    "title": "File:Pedro Point, Pacifica.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "C N",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pedro_Point,_Pacifica.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pedro_Point%2C_Pacifica.jpg/1920px-Pedro_Point%2C_Pacifica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3981,
+    "height": 2561,
+    "query": "Pedro Point Pacifica California"
+   },
+   {
+    "title": "File:Pedro Point.jpg",
+    "license": "CC BY 2.0",
+    "artist": "John Loo",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pedro_Point.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pedro_Point.jpg/1920px-Pedro_Point.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6048,
+    "height": 4024,
+    "query": "Pedro Point Pacifica California"
+   },
+   {
+    "title": "File:Pedro Point neighborhood, Pacifica, September 2023.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Pi.1415926535",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pedro_Point_neighborhood,_Pacifica,_September_2023.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pedro_Point_neighborhood%2C_Pacifica%2C_September_2023.jpg/1920px-Pedro_Point_neighborhood%2C_Pacifica%2C_September_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 2689,
+    "query": "Pedro Point Pacifica California"
+   },
+   {
+    "title": "File:Pedro Point Headlands 50.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Carnaval.com Studios",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pedro_Point_Headlands_50.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pedro_Point_Headlands_50.jpg/1920px-Pedro_Point_Headlands_50.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4864,
+    "height": 3648,
+    "query": "Pedro Point California"
+   }
+  ],
+  "pick": {
+   "title": "File:Pacifica California 13.jpg",
+   "license": "CC BY 2.0",
+   "artist": "Carnaval.com Studios",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Pacifica_California_13.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Pacifica_California_13.jpg/1920px-Pacifica_California_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4864,
+   "height": 3648,
+   "query": "Pedro Point Pacifica California",
+   "score": 5,
+   "why": [
+    "names Pacifica",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "thumb",
+  "subject": "Professorville",
+  "blurb": "Historic, walk to University Ave",
+  "candidates": [
+   {
+    "title": "File:301 Addison St., Palo Alto, CA 6-3-2012 2-09-38 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:301_Addison_St.,_Palo_Alto,_CA_6-3-2012_2-09-38_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/301_Addison_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-09-38_PM.JPG/1920px-301_Addison_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-09-38_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3069,
+    "height": 2036,
+    "query": "Professorville Palo Alto California"
+   },
+   {
+    "title": "File:Frank Angell House, 1005 Bryant St., Palo Alto, CA 6-3-2012 2-10-48 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Frank_Angell_House,_1005_Bryant_St.,_Palo_Alto,_CA_6-3-2012_2-10-48_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Frank_Angell_House%2C_1005_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-10-48_PM.JPG/1920px-Frank_Angell_House%2C_1005_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-10-48_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3072,
+    "height": 2304,
+    "query": "Professorville Palo Alto California"
+   },
+   {
+    "title": "File:Sun-bonnet House, 1061 Bryant St., Palo Alto, CA 6-3-2012 2-04-57 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sun-bonnet_House,_1061_Bryant_St.,_Palo_Alto,_CA_6-3-2012_2-04-57_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sun-bonnet_House%2C_1061_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-04-57_PM.JPG/1920px-Sun-bonnet_House%2C_1061_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-04-57_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2279,
+    "height": 2906,
+    "query": "Professorville Palo Alto California"
+   },
+   {
+    "title": "File:Westminster House, 457-459 Kingsley Ave., Palo Alto, CA 6-3-2012 1-53-38 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Westminster_House,_457-459_Kingsley_Ave.,_Palo_Alto,_CA_6-3-2012_1-53-38_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Westminster_House%2C_457-459_Kingsley_Ave.%2C_Palo_Alto%2C_CA_6-3-2012_1-53-38_PM.JPG/1920px-Westminster_House%2C_457-459_Kingsley_Ave.%2C_Palo_Alto%2C_CA_6-3-2012_1-53-38_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3072,
+    "height": 1877,
+    "query": "Professorville Palo Alto California"
+   },
+   {
+    "title": "File:Varian House, 1044 Bryant St., Palo Alto, CA 6-3-2012 2-05-46 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Varian_House,_1044_Bryant_St.,_Palo_Alto,_CA_6-3-2012_2-05-46_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Varian_House%2C_1044_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-05-46_PM.JPG/1920px-Varian_House%2C_1044_Bryant_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-05-46_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3072,
+    "height": 2304,
+    "query": "Professorville California"
+   }
+  ],
+  "pick": {
+   "title": "File:301 Addison St., Palo Alto, CA 6-3-2012 2-09-38 PM.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "Sanfranman59",
+   "descurl": "https://commons.wikimedia.org/wiki/File:301_Addison_St.,_Palo_Alto,_CA_6-3-2012_2-09-38_PM.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/301_Addison_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-09-38_PM.JPG/1920px-301_Addison_St.%2C_Palo_Alto%2C_CA_6-3-2012_2-09-38_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3069,
+   "height": 2036,
+   "query": "Professorville Palo Alto California",
+   "score": 5,
+   "why": [
+    "names Palo Alto",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/palo-alto",
+  "city": "palo-alto",
+  "kind": "feature",
+  "subject": "HP garage on Addison Avenue or Professorville Victorians",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:367-369 Addison Ave., Palo Alto entrance.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:367-369_Addison_Ave.,_Palo_Alto_entrance.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/367-369_Addison_Ave.%2C_Palo_Alto_entrance.JPG/1920px-367-369_Addison_Ave.%2C_Palo_Alto_entrance.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "HP garage on Addison Avenue Palo Alto California"
+   },
+   {
+    "title": "File:367-369 Addison Ave., Palo Alto front.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:367-369_Addison_Ave.,_Palo_Alto_front.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/367-369_Addison_Ave.%2C_Palo_Alto_front.JPG/1920px-367-369_Addison_Ave.%2C_Palo_Alto_front.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "HP garage on Addison Avenue Palo Alto California"
+   },
+   {
+    "title": "File:367-369 Addison Ave., Palo Alto private residence notice.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:367-369_Addison_Ave.,_Palo_Alto_private_residence_notice.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/367-369_Addison_Ave.%2C_Palo_Alto_private_residence_notice.JPG/1920px-367-369_Addison_Ave.%2C_Palo_Alto_private_residence_notice.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "HP garage on Addison Avenue Palo Alto California"
+   },
+   {
+    "title": "File:Hewlett-Packard garage and house exterior in Palo Alto, Silicon Valley, California ( HP garage ).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Arild Finne Nyb\u00f8",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto,_Silicon_Valley,_California_(_HP_garage_).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto%2C_Silicon_Valley%2C_California_%28_HP_garage_%29.jpg/1920px-Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto%2C_Silicon_Valley%2C_California_%28_HP_garage_%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4032,
+    "height": 3024,
+    "query": "HP garage on Addison Avenue Palo Alto California"
+   },
+   {
+    "title": "File:HP garage front.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:HP_garage_front.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/HP_garage_front.JPG/1920px-HP_garage_front.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "HP garage on Addison Avenue California"
+   },
+   {
+    "title": "File:HP garage nat'l historic landmark plaque.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:HP_garage_nat%27l_historic_landmark_plaque.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/HP_garage_nat%27l_historic_landmark_plaque.JPG/1920px-HP_garage_nat%27l_historic_landmark_plaque.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2448,
+    "height": 3264,
+    "query": "HP garage on Addison Avenue California"
+   }
+  ],
+  "pick": {
+   "title": "File:Hewlett-Packard garage and house exterior in Palo Alto, Silicon Valley, California ( HP garage ).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Arild Finne Nyb\u00f8",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto,_Silicon_Valley,_California_(_HP_garage_).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto%2C_Silicon_Valley%2C_California_%28_HP_garage_%29.jpg/1920px-Hewlett-Packard_garage_and_house_exterior_in_Palo_Alto%2C_Silicon_Valley%2C_California_%28_HP_garage_%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 3024,
+   "query": "HP garage on Addison Avenue Palo Alto California",
+   "score": 5,
+   "why": [
+    "names Palo Alto",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/redwood-city",
+  "city": "redwood-city",
+  "kind": "thumb",
+  "subject": "Downtown",
+  "blurb": "Walk to Courthouse Square",
+  "candidates": [
+   {
+    "title": "File:Redwood City, California Downtown residences.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeanjung212",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Redwood_City,_California_Downtown_residences.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Redwood_City%2C_California_Downtown_residences.jpg/1920px-Redwood_City%2C_California_Downtown_residences.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Downtown Redwood City California"
+   },
+   {
+    "title": "File:Redwood City, California Main Downtown Library 05 of 08.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeanjung212",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Redwood_City,_California_Main_Downtown_Library_05_of_08.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Redwood_City%2C_California_Main_Downtown_Library_05_of_08.jpg/1920px-Redwood_City%2C_California_Main_Downtown_Library_05_of_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Downtown Redwood City California"
+   },
+   {
+    "title": "File:Redwood City, California Main Downtown Library 06 of 08.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeanjung212",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Redwood_City,_California_Main_Downtown_Library_06_of_08.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Redwood_City%2C_California_Main_Downtown_Library_06_of_08.jpg/1920px-Redwood_City%2C_California_Main_Downtown_Library_06_of_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Downtown Redwood City California"
+   },
+   {
+    "title": "File:Redwood City, California Main Downtown Library 07 of 08.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeanjung212",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Redwood_City,_California_Main_Downtown_Library_07_of_08.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Redwood_City%2C_California_Main_Downtown_Library_07_of_08.jpg/1920px-Redwood_City%2C_California_Main_Downtown_Library_07_of_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3264,
+    "height": 2448,
+    "query": "Downtown Redwood City California"
+   },
+   {
+    "title": "File:Downtown Los Angeles - February 2024 - Sarah Stierch 01.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Missvain",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Downtown_Los_Angeles_-_February_2024_-_Sarah_Stierch_01.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Downtown_Los_Angeles_-_February_2024_-_Sarah_Stierch_01.jpg/1920px-Downtown_Los_Angeles_-_February_2024_-_Sarah_Stierch_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5712,
+    "height": 4284,
+    "query": "Downtown California"
+   },
+   {
+    "title": "File:Downtown Los Angeles Through Pollution Haze 2023.jpg",
+    "license": "CC0",
+    "artist": "Elizabeth Holloway",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Downtown_Los_Angeles_Through_Pollution_Haze_2023.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Downtown_Los_Angeles_Through_Pollution_Haze_2023.jpg/1920px-Downtown_Los_Angeles_Through_Pollution_Haze_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 2250,
+    "query": "Downtown California"
+   },
+   {
+    "title": "File:Los Angeles (California, USA), South Olive Street -- 2012 -- 4847.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Los_Angeles_(California,_USA),_South_Olive_Street_--_2012_--_4847.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Los_Angeles_%28California%2C_USA%29%2C_South_Olive_Street_--_2012_--_4847.jpg/1920px-Los_Angeles_%28California%2C_USA%29%2C_South_Olive_Street_--_2012_--_4847.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5184,
+    "height": 3456,
+    "query": "Downtown California"
+   },
+   {
+    "title": "File:Panoramic of Downtown Los Angeles from California Plaza.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Downtowngal",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Panoramic_of_Downtown_Los_Angeles_from_California_Plaza.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Panoramic_of_Downtown_Los_Angeles_from_California_Plaza.jpg/1920px-Panoramic_of_Downtown_Los_Angeles_from_California_Plaza.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 8412,
+    "height": 2417,
+    "query": "Downtown California"
+   }
+  ],
+  "pick": {
+   "title": "File:Redwood City, California Downtown residences.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Jeanjung212",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Redwood_City,_California_Downtown_residences.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Redwood_City%2C_California_Downtown_residences.jpg/1920px-Redwood_City%2C_California_Downtown_residences.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3264,
+   "height": 2448,
+   "query": "Downtown Redwood City California",
+   "score": 6,
+   "why": [
+    "names Redwood City",
+    "names California",
+    "names 'downtown'"
+   ]
+  }
+ },
+ {
+  "page": "city/san-carlos",
+  "city": "san-carlos",
+  "kind": "feature",
+  "subject": "The Hiller Aviation Museum or downtown wine tasting rooms",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:General view - Hiller Aviation Museum - San Carlos, California - DSC03285.jpg",
+    "license": "CC0",
+    "artist": "Daderot",
+    "descurl": "https://commons.wikimedia.org/wiki/File:General_view_-_Hiller_Aviation_Museum_-_San_Carlos,_California_-_DSC03285.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/General_view_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03285.jpg/1920px-General_view_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5472,
+    "height": 3648,
+    "query": "Hiller Aviation Museum San Carlos California"
+   },
+   {
+    "title": "File:Grumman HU-16-RD Albatross, N44RD, 1955 - Hiller Aviation Museum - San Carlos, California - DSC03125.jpg",
+    "license": "CC0",
+    "artist": "Daderot",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Grumman_HU-16-RD_Albatross,_N44RD,_1955_-_Hiller_Aviation_Museum_-_San_Carlos,_California_-_DSC03125.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Grumman_HU-16-RD_Albatross%2C_N44RD%2C_1955_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03125.jpg/1920px-Grumman_HU-16-RD_Albatross%2C_N44RD%2C_1955_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03125.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5472,
+    "height": 3648,
+    "query": "Hiller Aviation Museum San Carlos California"
+   },
+   {
+    "title": "File:Hiller Aviation Museum front.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "BrokenSphere",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Hiller_Aviation_Museum_front.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hiller_Aviation_Museum_front.JPG/1920px-Hiller_Aviation_Museum_front.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2048,
+    "height": 1536,
+    "query": "Hiller Aviation Museum San Carlos California"
+   },
+   {
+    "title": "File:Restoration Shop - Hiller Aviation Museum - San Carlos, California - DSC03299.jpg",
+    "license": "CC0",
+    "artist": "Daderot",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Restoration_Shop_-_Hiller_Aviation_Museum_-_San_Carlos,_California_-_DSC03299.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Restoration_Shop_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03299.jpg/1920px-Restoration_Shop_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03299.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 5050,
+    "height": 3084,
+    "query": "Hiller Aviation Museum San Carlos California"
+   },
+   {
+    "title": "File:Hiller Aviation Museum.jpg",
+    "license": "CC0",
+    "artist": "Elwood P. Dowd",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Hiller_Aviation_Museum.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/92/Hiller_Aviation_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1650,
+    "height": 1237,
+    "query": "Hiller Aviation Museum California"
+   }
+  ],
+  "pick": {
+   "title": "File:General view - Hiller Aviation Museum - San Carlos, California - DSC03285.jpg",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:General_view_-_Hiller_Aviation_Museum_-_San_Carlos,_California_-_DSC03285.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/General_view_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03285.jpg/1920px-General_view_-_Hiller_Aviation_Museum_-_San_Carlos%2C_California_-_DSC03285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5472,
+   "height": 3648,
+   "query": "Hiller Aviation Museum San Carlos California",
+   "score": 5,
+   "why": [
+    "names San Carlos",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "thumb",
+  "subject": "Pacific Heights",
+  "blurb": "Grand homes, Bay views",
+  "candidates": [
+   {
+    "title": "File:Long stairway in Pacific Heights, San Francisco, California, US.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Clyde Charles Brown",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Long_stairway_in_Pacific_Heights,_San_Francisco,_California,_US.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Pacific Heights San Francisco California"
+   },
+   {
+    "title": "File:Pacific-Heights.jpg",
+    "license": "Public domain",
+    "artist": "Photographer: Christopher Beland",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pacific-Heights.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pacific-Heights.jpg/1920px-Pacific-Heights.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2032,
+    "height": 1524,
+    "query": "Pacific Heights San Francisco California"
+   },
+   {
+    "title": "File:Pacific Heights, house entrance.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Frank Schulenburg",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Pacific_Heights,_house_entrance.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pacific_Heights%2C_house_entrance.jpg/1920px-Pacific_Heights%2C_house_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3896,
+    "height": 2717,
+    "query": "Pacific Heights San Francisco California"
+   },
+   {
+    "title": "File:San Francisco, California's affluent Pacific Heights neighborhood boasts several grand homes, including this mansion LCCN2011631770.tif",
+    "license": "Public domain",
+    "artist": "Carol M. Highsmith",
+    "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco,_California%27s_affluent_Pacific_Heights_neighborhood_boasts_several_grand_homes,_including_this_mansion_LCCN2011631770.tif",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/San_Francisco%2C_California%27s_affluent_Pacific_Heights_neighborhood_boasts_several_grand_homes%2C_including_this_mansion_LCCN2011631770.tif/lossy-page1-1920px-San_Francisco%2C_California%27s_affluent_Pacific_Heights_neighborhood_boasts_several_grand_homes%2C_including_this_mansion_LCCN2011631770.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6951,
+    "height": 5492,
+    "query": "Pacific Heights San Francisco California"
+   }
+  ],
+  "pick": {
+   "title": "File:Long stairway in Pacific Heights, San Francisco, California, US.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Clyde Charles Brown",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Long_stairway_in_Pacific_Heights,_San_Francisco,_California,_US.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4000,
+   "height": 3000,
+   "query": "Pacific Heights San Francisco California",
+   "score": 6,
+   "why": [
+    "names San Francisco",
+    "names California",
+    "names 'pacific heights'"
+   ]
+  }
+ },
+ {
+  "page": "city/san-francisco",
+  "city": "san-francisco",
+  "kind": "feature",
+  "subject": "Painted Ladies at Alamo Square or the Presidio",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Painted Ladies San Francisco January 2013 panorama 2.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "King of Hearts",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg/1920px-Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 8000,
+    "height": 3200,
+    "query": "Painted Ladies at Alamo Square San Francisco California"
+   },
+   {
+    "title": "File:San Francisco (CA, USA), Painted Ladies -- 2022 -- 3055.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3055.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6055,
+    "height": 3028,
+    "query": "Painted Ladies at Alamo Square San Francisco California"
+   },
+   {
+    "title": "File:San Francisco (CA, USA), Painted Ladies -- 2022 -- 3059.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3059.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3059.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3059.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6342,
+    "height": 3567,
+    "query": "Painted Ladies at Alamo Square San Francisco California"
+   },
+   {
+    "title": "File:San Francisco (CA, USA), Painted Ladies -- 2022 -- 3063.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3063.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3063.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3063.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6197,
+    "height": 3099,
+    "query": "Painted Ladies at Alamo Square San Francisco California"
+   },
+   {
+    "title": "File:Alamo Square, San Francisco.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Bernard Gagnon",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Alamo_Square,_San_Francisco.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Alamo_Square%2C_San_Francisco.jpg/1920px-Alamo_Square%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2574,
+    "height": 1672,
+    "query": "Painted Ladies at Alamo Square California"
+   },
+   {
+    "title": "File:Painted Ladies, Alamo Square.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Bernard Gagnon",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Painted_Ladies,_Alamo_Square.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Painted_Ladies%2C_Alamo_Square.jpg/1920px-Painted_Ladies%2C_Alamo_Square.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4572,
+    "height": 1859,
+    "query": "Painted Ladies at Alamo Square California"
+   },
+   {
+    "title": "File:Chevy Bel Air in the Presidio of San Francisco.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Frank Schulenburg",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg/1920px-Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6005,
+    "height": 4460,
+    "query": "the Presidio San Francisco California"
+   },
+   {
+    "title": "File:Juvenile buteo lineatus elegans, Presidio.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Frank Schulenburg",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Juvenile_buteo_lineatus_elegans,_Presidio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Juvenile_buteo_lineatus_elegans%2C_Presidio.jpg/1920px-Juvenile_buteo_lineatus_elegans%2C_Presidio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2883,
+    "height": 4324,
+    "query": "the Presidio San Francisco California"
+   },
+   {
+    "title": "File:San Francisco (CA, USA), Golden Gate Bridge -- 2022 -- 3023 (bw).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Golden_Gate_Bridge_--_2022_--_3023_(bw).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/San_Francisco_%28CA%2C_USA%29%2C_Golden_Gate_Bridge_--_2022_--_3023_%28bw%29.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Golden_Gate_Bridge_--_2022_--_3023_%28bw%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4097,
+    "height": 2049,
+    "query": "the Presidio San Francisco California"
+   },
+   {
+    "title": "File:Victor Adam after Louis Choris - Vue du Presidio san Francisco, 1822.jpg",
+    "license": "Public domain",
+    "artist": "Victor Adam / Louis Choris / Adam Cuerden",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Victor_Adam_after_Louis_Choris_-_Vue_du_Presidio_san_Francisco,_1822.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Victor_Adam_after_Louis_Choris_-_Vue_du_Presidio_san_Francisco%2C_1822.jpg/1920px-Victor_Adam_after_Louis_Choris_-_Vue_du_Presidio_san_Francisco%2C_1822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4504,
+    "height": 2928,
+    "query": "the Presidio San Francisco California"
+   }
+  ],
+  "pick": {
+   "title": "File:San Francisco (CA, USA), Painted Ladies -- 2022 -- 3055.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Dietmar Rabich",
+   "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3055.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 6055,
+   "height": 3028,
+   "query": "Painted Ladies at Alamo Square San Francisco California",
+   "score": 5,
+   "why": [
+    "names San Francisco",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/san-jose",
+  "city": "san-jose",
+  "kind": "thumb",
+  "subject": "Willow Glen",
+  "blurb": "Historic, walkable downtown",
+  "candidates": [
+   {
+    "title": "File:Willow Glen, San Jose, California 0473.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Cristiano Tom\u00e1s",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Willow_Glen,_San_Jose,_California_0473.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Willow_Glen%2C_San_Jose%2C_California_0473.jpg/1920px-Willow_Glen%2C_San_Jose%2C_California_0473.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2650,
+    "height": 1988,
+    "query": "Willow Glen San Jose California"
+   },
+   {
+    "title": "File:Willow Glen, San Jose, California 0479.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Cristiano Tom\u00e1s",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Willow_Glen,_San_Jose,_California_0479.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Willow_Glen%2C_San_Jose%2C_California_0479.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1538,
+    "height": 1154,
+    "query": "Willow Glen San Jose California"
+   },
+   {
+    "title": "File:Willow Glen, San Jose, California 0488.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Cristiano Tom\u00e1s",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Willow_Glen,_San_Jose,_California_0488.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Willow_Glen%2C_San_Jose%2C_California_0488.jpg/1920px-Willow_Glen%2C_San_Jose%2C_California_0488.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3024,
+    "height": 4032,
+    "query": "Willow Glen San Jose California"
+   },
+   {
+    "title": "File:Willow glen night.jpg",
+    "license": "Public domain",
+    "artist": "User:Srl",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Willow_glen_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Willow_glen_night.jpg/1920px-Willow_glen_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2112,
+    "height": 1686,
+    "query": "Willow Glen San Jose California"
+   }
+  ],
+  "pick": {
+   "title": "File:Willow Glen, San Jose, California 0473.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Cristiano Tom\u00e1s",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Willow_Glen,_San_Jose,_California_0473.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Willow_Glen%2C_San_Jose%2C_California_0473.jpg/1920px-Willow_Glen%2C_San_Jose%2C_California_0473.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2650,
+   "height": 1988,
+   "query": "Willow Glen San Jose California",
+   "score": 6,
+   "why": [
+    "names San Jose",
+    "names California",
+    "names 'willow glen'"
+   ]
+  }
+ },
+ {
+  "page": "city/san-mateo",
+  "city": "san-mateo",
+  "kind": "thumb",
+  "subject": "Aragon",
+  "blurb": "Pre-war character homes",
+  "candidates": [
+   {
+    "title": "File:Aragon High School - San Mateo California.jpg",
+    "license": "CC BY-SA 2.5",
+    "artist": "user:editore Editore 16:10, 16 September 2006 (UTC)",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Aragon_High_School_-_San_Mateo_California.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Aragon_High_School_-_San_Mateo_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1236,
+    "height": 786,
+    "query": "Aragon San Mateo California"
+   },
+   {
+    "title": "File:Polestar 3, San Mateo, Calif., front qtr.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mliu92",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Polestar_3,_San_Mateo,_Calif.,_front_qtr.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Polestar_3%2C_San_Mateo%2C_Calif.%2C_front_qtr.jpg/1920px-Polestar_3%2C_San_Mateo%2C_Calif.%2C_front_qtr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4080,
+    "height": 3072,
+    "query": "Aragon San Mateo California"
+   },
+   {
+    "title": "File:Polestar 3, San Mateo, Calif..jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mliu92",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Polestar_3,_San_Mateo,_Calif..jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Polestar_3%2C_San_Mateo%2C_Calif..jpg/1920px-Polestar_3%2C_San_Mateo%2C_Calif..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4080,
+    "height": 3072,
+    "query": "Aragon San Mateo California"
+   },
+   {
+    "title": "File:Polestar 3, San Mateo, Calif. (side).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mliu92",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Polestar_3,_San_Mateo,_Calif._(side).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Polestar_3%2C_San_Mateo%2C_Calif._%28side%29.jpg/1920px-Polestar_3%2C_San_Mateo%2C_Calif._%28side%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4080,
+    "height": 3072,
+    "query": "Aragon San Mateo California"
+   },
+   {
+    "title": "File:Art Aragon and Billy Graham 1953.jpg",
+    "license": "Public domain",
+    "artist": "Neil Clemens",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Art_Aragon_and_Billy_Graham_1953.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Art_Aragon_and_Billy_Graham_1953.jpg/1920px-Art_Aragon_and_Billy_Graham_1953.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2525,
+    "height": 1776,
+    "query": "Aragon California"
+   },
+   {
+    "title": "File:Art Aragon in hospital 1954.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Art_Aragon_in_hospital_1954.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/df/Art_Aragon_in_hospital_1954.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1875,
+    "height": 2148,
+    "query": "Aragon California"
+   },
+   {
+    "title": "File:The queens of Aragon - their lives and times (IA queensofaragonth00mirorich).pdf",
+    "license": "Public domain",
+    "artist": "Miron, E. L",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_queens_of_Aragon_-_their_lives_and_times_(IA_queensofaragonth00mirorich).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_queens_of_Aragon_-_their_lives_and_times_%28IA_queensofaragonth00mirorich%29.pdf/page1-500px-The_queens_of_Aragon_-_their_lives_and_times_%28IA_queensofaragonth00mirorich%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 754,
+    "height": 1279,
+    "query": "Aragon California"
+   }
+  ],
+  "pick": {
+   "title": "File:Aragon High School - San Mateo California.jpg",
+   "license": "CC BY-SA 2.5",
+   "artist": "user:editore Editore 16:10, 16 September 2006 (UTC)",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Aragon_High_School_-_San_Mateo_California.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Aragon_High_School_-_San_Mateo_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1236,
+   "height": 786,
+   "query": "Aragon San Mateo California",
+   "score": 6,
+   "why": [
+    "names San Mateo",
+    "names California",
+    "names 'aragon'"
+   ]
+  }
+ },
+ {
+  "page": "city/san-rafael",
+  "city": "san-rafael",
+  "kind": "feature",
+  "subject": "Dominican University campus or China Camp State Park",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:California Colleges.webp",
+    "license": "CC0",
+    "artist": "Wikideas1",
+    "descurl": "https://commons.wikimedia.org/wiki/File:California_Colleges.webp",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/California_Colleges.webp/1920px-California_Colleges.webp.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3774,
+    "height": 4246,
+    "query": "Dominican University campus San Rafael California"
+   },
+   {
+    "title": "File:Dominican U Caleruega 3609.jpg",
+    "license": "Public domain",
+    "artist": "Stepheng3",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Dominican_U_Caleruega_3609.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/53/Dominican_U_Caleruega_3609.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1296,
+    "height": 1128,
+    "query": "Dominican University campus San Rafael California"
+   },
+   {
+    "title": "File:Guzman Hall, Dominican University, San Rafael, CA Sept 2025.jpg",
+    "license": "CC0",
+    "artist": "E bailey",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Guzman_Hall,_Dominican_University,_San_Rafael,_CA_Sept_2025.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Guzman_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg/1920px-Guzman_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4727,
+    "height": 3376,
+    "query": "Dominican University campus San Rafael California"
+   },
+   {
+    "title": "File:Meadowlands Hall, Dominican University, San Rafael, CA Sept 2025.jpg",
+    "license": "CC0",
+    "artist": "E bailey",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Meadowlands_Hall,_Dominican_University,_San_Rafael,_CA_Sept_2025.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Meadowlands_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg/1920px-Meadowlands_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 1834,
+    "query": "Dominican University campus San Rafael California"
+   },
+   {
+    "title": "File:China Camp 247 N San Pedro Rd San Rafael CA 3-21-2010 4-39-54 PM.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sanfranman59",
+    "descurl": "https://commons.wikimedia.org/wiki/File:China_Camp_247_N_San_Pedro_Rd_San_Rafael_CA_3-21-2010_4-39-54_PM.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/69/China_Camp_247_N_San_Pedro_Rd_San_Rafael_CA_3-21-2010_4-39-54_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 1426,
+    "height": 1020,
+    "query": "China Camp State Park San Rafael California"
+   },
+   {
+    "title": "File:China Camp Shrimp Flying A.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Marthature",
+    "descurl": "https://commons.wikimedia.org/wiki/File:China_Camp_Shrimp_Flying_A.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/China_Camp_Shrimp_Flying_A.jpg/1920px-China_Camp_Shrimp_Flying_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 6000,
+    "query": "China Camp State Park San Rafael California"
+   },
+   {
+    "title": "File:China Camp Shrimp drying.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Marthature",
+    "descurl": "https://commons.wikimedia.org/wiki/File:China_Camp_Shrimp_drying.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/China_Camp_Shrimp_drying.jpg/1920px-China_Camp_Shrimp_drying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 6000,
+    "height": 4000,
+    "query": "China Camp State Park San Rafael California"
+   },
+   {
+    "title": "File:Dan Yu picnic table at China Camp in San Rafael.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kiddo27",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Dan_Yu_picnic_table_at_China_Camp_in_San_Rafael.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dan_Yu_picnic_table_at_China_Camp_in_San_Rafael.jpg/1920px-Dan_Yu_picnic_table_at_China_Camp_in_San_Rafael.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2592,
+    "height": 1936,
+    "query": "China Camp State Park San Rafael California"
+   }
+  ],
+  "pick": {
+   "title": "File:Guzman Hall, Dominican University, San Rafael, CA Sept 2025.jpg",
+   "license": "CC0",
+   "artist": "E bailey",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Guzman_Hall,_Dominican_University,_San_Rafael,_CA_Sept_2025.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Guzman_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg/1920px-Guzman_Hall%2C_Dominican_University%2C_San_Rafael%2C_CA_Sept_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4727,
+   "height": 3376,
+   "query": "Dominican University campus San Rafael California",
+   "score": 5,
+   "why": [
+    "names San Rafael",
+    "names California"
+   ]
+  }
+ },
+ {
+  "page": "city/woodside",
+  "city": "woodside",
+  "kind": "feature",
+  "subject": "Filoli gardens or a horse trail through the redwoods",
+  "blurb": "",
+  "candidates": [
+   {
+    "title": "File:Filoli Garden, Filoli, Woodside, San Mateo County, Northern California 06.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Filoli_Garden,_Filoli,_Woodside,_San_Mateo_County,_Northern_California_06.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_06.jpg/1920px-Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 4000,
+    "query": "Filoli gardens Woodside California"
+   },
+   {
+    "title": "File:Filoli Garden, Filoli, Woodside, San Mateo County, Northern California 14.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Filoli_Garden,_Filoli,_Woodside,_San_Mateo_County,_Northern_California_14.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_14.jpg/1920px-Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Filoli gardens Woodside California"
+   },
+   {
+    "title": "File:Sundial, Filoli Garden, Filoli, Woodside, San Mateo County, Northern California 08.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sundial,_Filoli_Garden,_Filoli,_Woodside,_San_Mateo_County,_Northern_California_08.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Sundial%2C_Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_08.jpg/1920px-Sundial%2C_Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 3000,
+    "height": 4000,
+    "query": "Filoli gardens Woodside California"
+   },
+   {
+    "title": "File:Sundial, Filoli Garden, Filoli, Woodside, San Mateo County, Northern California 09.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "GualdimG",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sundial,_Filoli_Garden,_Filoli,_Woodside,_San_Mateo_County,_Northern_California_09.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Sundial%2C_Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_09.jpg/1920px-Sundial%2C_Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 4000,
+    "height": 3000,
+    "query": "Filoli gardens Woodside California"
+   },
+   {
+    "title": "File:A woodside reminiscence (IA woodsidereminisc00rydeiala).pdf",
+    "license": "Public domain",
+    "artist": "Ryder, Grizzly, 1831?-1917?\nBonestell, Cutler L",
+    "descurl": "https://commons.wikimedia.org/wiki/File:A_woodside_reminiscence_(IA_woodsidereminisc00rydeiala).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/A_woodside_reminiscence_%28IA_woodsidereminisc00rydeiala%29.pdf/page1-500px-A_woodside_reminiscence_%28IA_woodsidereminisc00rydeiala%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 772,
+    "height": 1158,
+    "query": "a horse trail through the redwoods Woodside California"
+   },
+   {
+    "title": "File:Sam McDonald & Pescadero Creek County Parks map & brochure (Nov 2018).pdf",
+    "license": "Public domain",
+    "artist": "Unknown/uncredited staff for San Mateo County Parks &amp; Recreation",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sam_McDonald_%26_Pescadero_Creek_County_Parks_map_%26_brochure_(Nov_2018).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sam_McDonald_%26_Pescadero_Creek_County_Parks_map_%26_brochure_%28Nov_2018%29.pdf/page1-1920px-Sam_McDonald_%26_Pescadero_Creek_County_Parks_map_%26_brochure_%28Nov_2018%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 2100,
+    "height": 1268,
+    "query": "a horse trail through the redwoods Woodside California"
+   },
+   {
+    "title": "File:Sam McDonald County Park map (Nov 2018) 01.pdf",
+    "license": "Public domain",
+    "artist": "Unknown/uncredited staff of San Mateo County Parks &amp; Recreation",
+    "descurl": "https://commons.wikimedia.org/wiki/File:Sam_McDonald_County_Park_map_(Nov_2018)_01.pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Sam_McDonald_County_Park_map_%28Nov_2018%29_01.pdf/page1-500px-Sam_McDonald_County_Park_map_%28Nov_2018%29_01.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 956,
+    "height": 754,
+    "query": "a horse trail through the redwoods Woodside California"
+   },
+   {
+    "title": "File:The California earthquake of April 18, 1906. Report of the State earthquake investigation commission .. (IA cu31924057825345).pdf",
+    "license": "Public domain",
+    "artist": "California. State earthquake investigation commission\nLawson, Andrew C. (Andrew Cowper), 1861-1952\nReid, Harry Fielding,",
+    "descurl": "https://commons.wikimedia.org/wiki/File:The_California_earthquake_of_April_18,_1906._Report_of_the_State_earthquake_investigation_commission_.._(IA_cu31924057825345).pdf",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_California_earthquake_of_April_18%2C_1906._Report_of_the_State_earthquake_investigation_commission_.._%28IA_cu31924057825345%29.pdf/page1-960px-The_California_earthquake_of_April_18%2C_1906._Report_of_the_State_earthquake_investigation_commission_.._%28IA_cu31924057825345%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 1172,
+    "height": 1610,
+    "query": "a horse trail through the redwoods Woodside California"
+   }
+  ],
+  "pick": {
+   "title": "File:Filoli Garden, Filoli, Woodside, San Mateo County, Northern California 06.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "GualdimG",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Filoli_Garden,_Filoli,_Woodside,_San_Mateo_County,_Northern_California_06.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_06.jpg/1920px-Filoli_Garden%2C_Filoli%2C_Woodside%2C_San_Mateo_County%2C_Northern_California_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3000,
+   "height": 4000,
+   "query": "Filoli gardens Woodside California",
+   "score": 5,
+   "why": [
+    "names Woodside",
+    "names California"
+   ]
+  }
+ }
+]
