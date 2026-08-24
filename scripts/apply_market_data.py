@@ -93,6 +93,7 @@ def load():
                     continue
                 r.setdefault("yoyPeriod", "")
                 r.setdefault("noData", "")
+                r.setdefault("noDataDetail", "")
                 city = r.get("city") or "san-mateo"
                 r["city"] = city
                 records[(city, r["slug"])] = r
@@ -166,7 +167,7 @@ def snapshot_shell(types, label, rec, delta, sales, source):
     <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">{source}</p>'''
 
 
-def no_data_html(name, reason, city):
+def no_data_html(name, reason, city, detail=""):
     """Three different reasons a stat block cannot be published. Each says
     which one it is — publishing a borrowed citywide median under any of these
     headings would be worse than saying nothing.
@@ -174,10 +175,13 @@ def no_data_html(name, reason, city):
     town = city.replace("-", " ").title()
     if reason == "not-residential":
         head = "Not a residential neighborhood"
-        sub = (f"{name} is a private golf club. The boundary on the city map covers the "
-               f"course and clubhouse grounds, so there is no housing stock here to report on.")
-        src = (f"{name} has no residential sales history because it is not a residential "
-               f"area. Homes near the course sit in the surrounding neighborhoods. "
+        # What it actually is varies — a golf course, an office park, a marsh
+        # reserve — so the page says which, from the data rather than a guess.
+        what = detail or "not a residential area"
+        sub = (f"{name} is {what}. The boundary on the city map covers it, but there is no "
+               f"housing stock here to report on.")
+        src = (f"{name} has no residential sales history because it is {what}. Homes "
+               f"described as being nearby sit in the surrounding neighborhoods. "
                f"Updated {UPDATED}. {DISCLAIMER}")
     elif reason == "thin":
         head = "Too tightly held to report"
@@ -246,8 +250,8 @@ def main():
         # statement rather than a borrowed number.
         if rec["basis"] == "none" or not rec["medPrice"]:
             new_html, n = BLOCK.subn(
-                lambda _m: no_data_html(name_match.group(1),
-                                        rec.get("noData", ""), city), html, count=1)
+                lambda _m: no_data_html(name_match.group(1), rec.get("noData", ""),
+                                        city, rec.get("noDataDetail", "")), html, count=1)
             if n:
                 page.write_text(new_html)
                 changed.append(f"{city}/{slug}: no data "

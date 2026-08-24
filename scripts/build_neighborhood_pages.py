@@ -24,12 +24,19 @@ SRC = DEST = None
 CONTENT = SHARED = SIMILAR = None
 
 
-def fill_intro(html, text):
+def fill_intro(html, text, residential=True):
     """Replace the bracketed intro placeholder, keeping the closing sentence
-    pattern the other neighborhood pages use."""
+    pattern the other neighborhood pages use.
+
+    Non-residential entries — a cemetery, a golf course, an office park, a
+    marsh reserve — get no closing line: there are no homes for sale there and
+    inviting people to browse them reads badly on a page about a WWII
+    incarceration site.
+    """
     name = re.search(r'<h1[^>]*>([^<]+?) Homes', html)
     nb = name.group(1) if name else "this neighborhood"
-    closing = (f" Below you&rsquo;ll find current homes for sale in {nb}, "
+    closing = ("" if not residential else
+               f" Below you&rsquo;ll find current homes for sale in {nb}, "
                f"updated throughout the day.")
     return re.sub(
         r'(<p style="margin: 0px 0px 18px;">)\[ PLACEHOLDER[^\]]*\](</p>)',
@@ -123,7 +130,8 @@ def main():
                 problems.append(f"{slug}: no scaffold and no written page")
             continue
         html = src.read_text()
-        html = fill_intro(html, spec["intro"])
+        html = fill_intro(html, spec["intro"],
+                          residential=not spec.get("_not_residential"))
         html = fill_amenities(html, spec["amenities"])
         html = fill_commute(html, spec["commute"])
         html = fill_similar(html)

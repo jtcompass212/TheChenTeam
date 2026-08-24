@@ -1,0 +1,14 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData,noDataDetail
+mt-carmel,redwood-city,Mt. Carmel,SF,quarter,2026-Q2,12,3200000,1491,6,111.2,2025-Q2,6.3,,
+edgewood-park,redwood-city,Edgewood Park,SF,quarter,2026-Q2,7,3840000,1465,8,109.2,2025-Q2,13.5,,
+eagle-hill,redwood-city,Eagle Hill,SF,quarter,2026-Q2,11,2100000,1474,11,108.3,2025-Q2,-19.5,,
+farm-hills-estates,redwood-city,Farm Hills Estates,SF,quarter,2026-Q2,16,2700000,1409,13,107.3,2025-Q2,8,,
+cordilleras-heights,redwood-city,Cordilleras Heights,SF,quarter,2026-Q2,24,3000000,1151,15,102.4,2025-Q2,25,,
+clifford-heights,redwood-city,Clifford Heights,SF,quarter,2026-Q2,3,4985000,1392,32,102.5,,,,
+horgan-ranch,redwood-city,Horgan Ranch,SF,quarter,2026-Q2,25,2475000,1314,12,105.6,2025-Q2,3.1,,
+redwood-shores,redwood-city,Redwood Shores,SF,quarter,2026-Q2,16,2551515,1450,15,108.1,2025-Q2,-3.3,,
+centennial,redwood-city,Centennial,ALL,quarter,2026-Q2,3,1720000,1357,7,104.2,2025-Q2,22.9,,
+central-park,redwood-city,Central Park,ALL,year,2025,16,990000,726,36,94.6,2024,-17.5,,
+dumbarton,redwood-city,Dumbarton,SF,quarter,2026-Q2,17,1535000,1209,11,110.9,2025-Q2,-4.1,,
+downtown-redwood-city,redwood-city,Downtown Redwood City,SF,none,,,,,,,,,unattributed,
+bair-island,redwood-city,Bair Island,SF,none,,,,,,,,,not-residential,"a 3,000-acre tidal marsh reserve, part of the Don Edwards San Francisco Bay National Wildlife Refuge"

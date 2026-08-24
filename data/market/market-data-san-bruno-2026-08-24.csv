@@ -1,0 +1,18 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData,noDataDetail
+crestmoor,san-bruno,Crestmoor,SF,quarter,2026-Q2,4,1800000,1123,13,105.9,2025-Q2,10.1,,
+rollingwood,san-bruno,Rollingwood,SF,quarter,2026-Q2,9,1450000,1059,14,108.4,2025-Q2,-9.4,,
+mills-park,san-bruno,Mills Park,SF,quarter,2026-Q2,10,1350000,1092,8,112.6,2025-Q2,-11.2,,
+portola-highlands,san-bruno,Portola Highlands,SF,year,2025,10,1705000,793,13,105.9,2024,3.3,,
+monte-verde,san-bruno,Monte Verde,SF,quarter,2026-Q2,4,1535000,1049,13,111,,,,
+huntington-park,san-bruno,Huntington Park,SF,quarter,2026-Q2,6,1400000,927,37,95.5,2025-Q2,1.8,,
+san-bruno-park,san-bruno,San Bruno Park,SF,year,2025,13,1080000,871,17,104.5,2024,3.8,,
+lomita-park,san-bruno,Lomita Park,SF,year,2025,4,1100000,753,22,101.1,2024,-2.7,,
+belle-air-park,san-bruno,Belle Air Park,SF,quarter,2026-Q2,4,1050000,1000,10,101.8,2025-Q2,-13.2,,
+capuchino,san-bruno,Capuchino,SF,year,2025,13,1801900,1170,12,106.5,2024,-20.4,,
+pacific-heights,san-bruno,Pacific Heights,SF,quarter,2026-Q2,9,1750000,819,12,108.9,2025-Q2,31.9,,
+shelter-creek,san-bruno,Shelter Creek,ALL,quarter,2026-Q2,11,455000,706,61,94.7,2025-Q2,0,,
+belle-air-north,san-bruno,Belle Air North,SF,none,,,,,,,,,unattributed,
+downtown-san-bruno,san-bruno,Downtown San Bruno,SF,none,,,,,,,,,unattributed,
+bayhill,san-bruno,Bayhill,SF,none,,,,,,,,,not-residential,"an office district — YouTube is among the employers based here"
+tanforan,san-bruno,Tanforan,SF,none,,,,,,,,,not-residential,"a shopping center on the site of the former Tanforan racetrack"
+golden-gate-national-cemetery,san-bruno,Golden Gate National Cemetery,SF,none,,,,,,,,,not-residential,"a national cemetery, established by the War Department in 1939"
