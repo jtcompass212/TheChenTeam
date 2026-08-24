@@ -14,6 +14,7 @@ prose and is left alone.
 import argparse
 import csv
 import glob
+import html
 import json
 import pathlib
 import re
@@ -100,6 +101,19 @@ def collect():
     m = re.search(r"\*\*(\d+) of (\d+) image slots\*\*",
                   (ROOT / "docs/photo-shot-list.md").read_text())
     d["shotlist_claim"] = int(m.group(1)) if m else None
+
+    # Neighborhood pages carry exactly one hero slot each (no thumb/feature),
+    # so every remaining "[ HERO IMAGE ]" match names a page still needed.
+    hero_missing = []
+    for p in ROOT.glob("neighborhood-pages/*/*.html"):
+        t = p.read_text()
+        if "[ HERO IMAGE ]" not in t:
+            continue
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S)
+        name = html.unescape(m.group(1)) if m else p.stem.replace("-", " ").title()
+        name = re.sub(r"\s+Homes\s+&?\s*Real Estate\s*$", "", name).strip()
+        hero_missing.append((p.parent.name, p.stem, name))
+    d["hero_missing"] = sorted(hero_missing, key=lambda r: (r[0], r[2]))
     return d
 
 
@@ -156,6 +170,21 @@ def render(d):
         L += [f"> **The shot list is out of date.** It briefs {d['shotlist_claim']} slots against "
               f"an actual {total_photos} — it predates the newer city directories. Regenerate "
               f"with `python3 scripts/write_shot_list.py`.", ""]
+
+    # hero placeholders, by neighborhood page
+    if d["hero_missing"]:
+        by_city = {}
+        for city, slug, name in d["hero_missing"]:
+            by_city.setdefault(city, []).append((slug, name))
+        L += [f"### Neighborhood hero images still needed ({len(d['hero_missing'])})", "",
+              "One hero slot per neighborhood page; these still render "
+              "`[ HERO IMAGE ]` instead of a photo.", ""]
+        for city in sorted(by_city, key=lambda c: (-len(by_city[c]), c)):
+            names = ", ".join(
+                f"[{name}](neighborhood-pages/{city}/{slug}.html)"
+                for slug, name in by_city[city])
+            L.append(f"- **{title(city)}** ({len(by_city[city])}): {names}")
+        L.append("")
 
     # decisions
     L += ["### Calls that need you", "",

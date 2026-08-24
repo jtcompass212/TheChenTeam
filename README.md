@@ -35,7 +35,7 @@ Market data is complete: all **103 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **48** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **146** | of 211 total; 65 filled so far |
+| Empty photo slots | **139** | of 211 total; 72 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -67,14 +67,25 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 |---|---:|
 | City Pages | 111 |
 | Foster City | 10 |
-| San Carlos | 6 |
-| Millbrae | 5 |
-| Belmont | 5 |
 | Burlingame | 5 |
-| San Mateo | 4 |
-| **Total** | **146** |
+| Millbrae | 4 |
+| San Mateo | 3 |
+| Belmont | 3 |
+| San Carlos | 3 |
+| **Total** | **139** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 146 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 139 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+
+### Neighborhood hero images still needed (28)
+
+One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
+
+- **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
+- **Burlingame** (5): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html), [Easton Addition](neighborhood-pages/burlingame/easton-addition.html), [Ingoldmilldale](neighborhood-pages/burlingame/ingoldmilldale.html), [Lyon Hoag](neighborhood-pages/burlingame/lyon-hoag.html), [Mills Estates](neighborhood-pages/burlingame/mills-estates.html)
+- **Millbrae** (4): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Glenview Highlands](neighborhood-pages/millbrae/glenview-highlands.html), [Highlands](neighborhood-pages/millbrae/highlands.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
+- **Belmont** (3): [Belmont Heights](neighborhood-pages/belmont/belmont-heights.html), [Sterling Downs](neighborhood-pages/belmont/sterling-downs.html), [Western Hills](neighborhood-pages/belmont/western-hills.html)
+- **San Carlos** (3): [Alder Manor](neighborhood-pages/san-carlos/alder-manor.html), [Clearfield Park](neighborhood-pages/san-carlos/clearfield-park.html), [Cordes](neighborhood-pages/san-carlos/cordes.html)
+- **San Mateo** (3): [Homestead](neighborhood-pages/san-mateo/homestead.html), [San Mateo Village](neighborhood-pages/san-mateo/san-mateo-village.html), [Westwood Knolls](neighborhood-pages/san-mateo/westwood-knolls.html)
 
 ### Calls that need you
 
