@@ -1,0 +1,181 @@
+{
+ "_note": "Content for the 13 Millbrae neighborhood pages. Prose is original; the underlying facts (build eras, boundaries, school and park names, addresses) are researched and sourced in docs/millbrae-sources.md.",
+ "_shared": {
+  "library": ["Millbrae Library", "San Mateo County branch at 1 Library Avenue"],
+  "middle": ["Taylor Middle School", "Public &middot; 6&ndash;8, Millbrae Elementary School District"],
+  "high": ["Mills High School", "Public &middot; 9&ndash;12, San Mateo Union High School District, 400 Murchison Drive"]
+ },
+
+ "bayside-manor": {
+  "intro": "Six square blocks on Millbrae's flat eastern edge, Bayside Manor went up in 1945 for returning servicemen and airport workers, and much of that first generation of building is still standing &mdash; single-story two- and three-bedroom houses, most of them between 1,000 and 1,500 square feet. It is the closest neighborhood in the city to the Millbrae station platforms, roughly a ten-minute walk, which has kept it in demand well beyond what its modest housing stock would suggest.",
+  "amenities": [
+   ["Bayside Manor Park", "Playground, courts and a fenced dog area, reopened in late 2025 after a full rebuild"],
+   ["Safeway, El Camino Real", "The main grocery run, a short drive west"],
+   ["Broadway", "Millbrae's restaurant row, about a mile southwest"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["Spring Valley Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "capuchino-village": {
+  "intro": "Flower and vegetable fields covered Millbrae's northern end until the subdivisions arrived after the Second World War, and Capuchino Village still reads that way on the ground &mdash; smaller houses on the flat eastern side, larger ones as the streets climb west toward Green Hills. Apart from downtown it is the only part of the city with a commercial strip of its own, and the 34-acre Capuchino High School campus anchors its northern boundary.",
+  "amenities": [
+   ["Green Hills Country Club", "Private golf club along the neighborhood's western edge"],
+   ["Neighborhood commercial strip", "The only shops in Millbrae outside the Broadway corridor"],
+   ["Broadway", "Downtown dining, a short drive south"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via US-101"], ["~26 min", "To Palo Alto, via US-101"], ["~8 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "downtown-millbrae": {
+  "intro": "Broadway is the reason to be here. Millbrae's downtown is a compact, low-rise stretch that has become one of the better-known places on the Peninsula to eat Chinese food &mdash; Lai Lai has held its spot at 334 Broadway since 1983, and Wonderful, at number 270, carries a Michelin listing. Housing runs mainly to condominiums and townhomes, and the BART and Caltrain platforms are close enough that a car is genuinely optional.",
+  "amenities": [
+   ["Central Park", "The city's civic green, with the recreation center and walking paths"],
+   ["Safeway and Trader Joe's", "Both within the downtown catchment off El Camino Real"],
+   ["Wonderful, 270 Broadway", "Michelin-listed Hunanese cooking, one of a dozen options on the street"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~6 min", "To SFO Airport"]],
+  "schools": [["Spring Valley Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "glenview-highlands": {
+  "intro": "Built into the hills against the I-280 corridor, Glenview Highlands holds the newest single-family housing in Millbrae &mdash; contemporary three- to five-bedroom homes, a good number of them over 2,400 square feet, on streets angled to take the Bay view. Being up against the freeway interchange makes it one of the easier addresses in the city to leave in either direction, north to San Francisco or south down the Peninsula.",
+  "amenities": [
+   ["Lion's Park", "Baseball, football and soccer fields just below the neighborhood"],
+   ["Safeway, El Camino Real", "The nearest full grocery, down the hill"],
+   ["Broadway", "Downtown restaurants, about ten minutes by car"],
+   null
+  ],
+  "commute": [["~22 min", "To San Francisco, via I-280"], ["~24 min", "To Palo Alto, via I-280"], ["~10 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "green-hills": {
+  "intro": "Millbrae's last large tract before development moved up into the hills, Green Hills filled in through the mid-1970s with pitched-roof, wood-sided houses set around cul-de-sacs &mdash; a mountain-cabin idiom that reads as unusual this far down the Peninsula flats. Two creeks still run above ground through the neighborhood, and Green Hills Elementary, open since 1948, sits near its center.",
+  "amenities": [
+   ["Green Hills Park", "Neighborhood green with playground and lawn"],
+   ["Safeway, El Camino Real", "A short drive east for groceries"],
+   ["Broadway", "Downtown dining, roughly five minutes by car"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via I-280"], ["~9 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District, open since 1948"], "middle", "high"]
+ },
+
+ "green-hills-country-club": {
+  "_not_residential": true,
+  "intro": "Green Hills Country Club is a private golf club, not a residential subdivision. The boundary drawn on Millbrae's neighborhood map covers the course and clubhouse grounds along the city's western edge, so there is no separate housing stock or sales history to report for it. Homes described as being &ldquo;at Green Hills&rdquo; sit in the neighborhoods wrapping the course &mdash; Green Hills to the south, Millwood to the north, and Capuchino Village along its eastern side.",
+  "amenities": [
+   ["Green Hills Park", "Public neighborhood park immediately south of the course"],
+   ["Safeway, El Camino Real", "The nearest full grocery, east down the hill"],
+   ["Broadway", "Millbrae's downtown restaurants, a short drive southeast"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via I-280"], ["~9 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "highlands": {
+  "intro": "Millbrae Highlands went up before the war, and the housing shows it &mdash; Spanish and Mission Revival stucco alongside English cottages and the occasional Tudor, on streets that have had the better part of a century to grow their canopy. It is one of the more architecturally varied pockets in a city otherwise defined by postwar tract building, and one of the few where the street trees are as old as the houses.",
+  "amenities": [
+   ["Central Park", "The city's main green, a short drive east"],
+   ["Safeway, El Camino Real", "The nearest full grocery"],
+   ["Broadway", "Downtown dining, minutes away"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~8 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "lomita-hills": {
+  "intro": "Lomita Hills occupies Millbrae's northern boundary, running up against San Bruno along Santa Lucia Avenue. It is a small, quiet pocket at the top of the city, close enough to the San Bruno line that residents tend to use services on both sides of it, and far enough up from El Camino Real to stay out of the through traffic.",
+  "amenities": [
+   ["Green Hills Park", "The nearest neighborhood green, a short drive south"],
+   ["Safeway, El Camino Real", "Groceries a few minutes down the hill"],
+   ["Broadway", "Millbrae's downtown restaurants, south of the neighborhood"],
+   null
+  ],
+  "commute": [["~19 min", "To San Francisco, via US-101"], ["~27 min", "To Palo Alto, via US-101"], ["~9 min", "To SFO Airport"]],
+  "schools": [["Lomita Park Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "meadow-glen": {
+  "intro": "Laid out after the war as starter housing &mdash; three bedrooms and one bath, repeated down the block &mdash; Meadow Glen has diversified a good deal since, but it remains one of the more attainable addresses in Millbrae. Its real asset is position: Central Park and the recreation center are close at hand, and the BART and Caltrain station is under a mile off, which makes it one of the genuinely walkable parts of the city.",
+  "amenities": [
+   ["Central Park", "City green and recreation center, a few minutes' walk"],
+   ["Safeway, El Camino Real", "Groceries within easy reach"],
+   ["Broadway", "Downtown restaurants, a short walk north"],
+   null
+  ],
+  "commute": [["~20 min", "To San Francisco, via US-101"], ["~25 min", "To Palo Alto, via US-101"], ["~7 min", "To SFO Airport"]],
+  "schools": [["Spring Valley Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "millbrae-meadows": {
+  "intro": "Tucked behind Capuchino at the city's north-western corner, west of I-280, Millbrae Meadows is about as intact a piece of mid-century tract building as the Peninsula still has &mdash; consistent in scale, generous in setback, and largely unaltered at the street. Meadows Elementary and Meadows Park sit inside the neighborhood, which is a large part of why families who arrive here tend to stay.",
+  "amenities": [
+   ["Meadows Park", "Neighborhood park beside the elementary school"],
+   ["Safeway, El Camino Real", "The main grocery run, east of I-280"],
+   ["Broadway", "Downtown dining, about ten minutes by car"],
+   null
+  ],
+  "commute": [["~22 min", "To San Francisco, via I-280"], ["~25 min", "To Palo Alto, via I-280"], ["~10 min", "To SFO Airport"]],
+  "schools": [["Meadows Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "mills-estates": {
+  "intro": "Millbrae's high ground, laid out from the mid-1950s along the Burlingame line, Mills Estates trades the flatland grid for larger houses on curving hillside streets with long views over the Bay. Mills High School stands at 400 Murchison Drive inside the neighborhood, and Mills Estate Park and the Spur Trail give it direct access to the city's path network &mdash; a combination that has kept it at the top of the Millbrae market for seventy years.",
+  "amenities": [
+   ["Mills Estate Park", "Hillside neighborhood park with Bay views"],
+   ["Safeway, El Camino Real", "Groceries down the hill to the east"],
+   ["Broadway", "Millbrae's downtown restaurants, a short drive north"],
+   null
+  ],
+  "commute": [["~22 min", "To San Francisco, via US-101"], ["~23 min", "To Palo Alto, via US-101"], ["~9 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "millwood": {
+  "intro": "A handful of families grew flowers here for the San Francisco and Peninsula markets until Millbrae incorporated in 1948, after which the land was sold off in pieces and subdivided into the moderate one- and two-story houses that fill it today, most of them early 1950s. Green Hills Park, the Capuchino High campus and the country club form its edges &mdash; and in 1968 the neighborhood organized successfully against a freeway proposed straight through it.",
+  "amenities": [
+   ["Green Hills Park", "Neighborhood green along the southern boundary"],
+   ["Safeway, El Camino Real", "The nearest full grocery, a short drive east"],
+   ["Broadway", "Downtown dining, minutes to the south"],
+   null
+  ],
+  "commute": [["~21 min", "To San Francisco, via US-101"], ["~26 min", "To Palo Alto, via I-280"], ["~9 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "telescope-hills": {
+  "intro": "Millbrae's western hills stayed undeveloped longer than the rest of the city for an unusual reason: through the 1940s the Macco Pit up here was being trucked away down Richmond Drive to build a second runway at what is now SFO, crossing land the Silva family had farmed since the city's earliest days. Once the pit closed the hillside opened, and Telescope Hills filled in between the late 1950s and the 1970s with houses noticeably larger than the flatland stock, on winding streets that earn the name.",
+  "amenities": [
+   ["Spur Trail", "Class I path linking the western hills to the parks below"],
+   ["Safeway, El Camino Real", "Groceries down the hill to the east"],
+   ["Broadway", "Millbrae's downtown restaurants, a short drive"],
+   null
+  ],
+  "commute": [["~23 min", "To San Francisco, via I-280"], ["~24 min", "To Palo Alto, via I-280"], ["~11 min", "To SFO Airport"]],
+  "schools": [["Green Hills Elementary", "Public &middot; TK&ndash;5, Millbrae Elementary School District"], "middle", "high"]
+ },
+
+ "_similar": {
+  "Bayside Manor": "Millbrae's most walkable pocket, six blocks from the station platforms",
+  "Capuchino Village": "The city's northern end, with its own shops and the high school campus",
+  "Downtown Millbrae": "Broadway's restaurants and condominiums, steps from BART and Caltrain",
+  "Glenview Highlands": "Millbrae's newest and largest single-family homes, up against I-280",
+  "Green Hills": "Wood-sided 1970s houses on cul-de-sacs, built around creeks and a 1948 school",
+  "Green Hills Country Club": "The private golf course along Millbrae's western edge",
+  "Highlands": "Pre-war Spanish Revival and Tudors under a mature street canopy",
+  "Lomita Hills": "A quiet pocket at the San Bruno line along Santa Lucia Avenue",
+  "Meadow Glen": "Postwar starter homes within walking distance of Central Park",
+  "Millbrae Meadows": "An unusually intact mid-century tract behind Capuchino",
+  "Mills Estates": "Millbrae's hillside address, with Bay views and Mills High School",
+  "Millwood": "Early-1950s houses on former flower fields, ringed by parks and the club",
+  "Telescope Hills": "Larger hillside homes on the ground the SFO runway was quarried from"
+ }
+}
