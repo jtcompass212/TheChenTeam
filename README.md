@@ -30,17 +30,17 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **87 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **93 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **64** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **130** | of 195 total; 65 filled so far |
+| Neighborhoods with no page | **58** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **136** | of 201 total; 65 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 60 have a written page.
+124 neighborhoods are mapped; 66 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
@@ -48,12 +48,12 @@ Market data is complete: all **87 published pages** carry verified Compass figur
 | Hillsborough | 0 | 15 | 15 |
 | Redwood City | 0 | 13 | 13 |
 | Foster City | 0 | 10 | 10 |
-| San Carlos | 0 | 6 | 6 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
 | Millbrae | 13 | 13 | — |
-| **Total** | **60** | **124** | **64** |
+| San Carlos | 6 | 6 | — |
+| **Total** | **66** | **124** | **58** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -66,18 +66,20 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
+| San Carlos | 6 |
 | Millbrae | 5 |
 | Belmont | 5 |
 | Burlingame | 5 |
 | San Mateo | 4 |
-| **Total** | **130** |
+| **Total** | **136** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 130 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 136 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Neighborhood hero images still needed (19)
+### Neighborhood hero images still needed (25)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
+- **San Carlos** (6): [Alder Manor](neighborhood-pages/san-carlos/alder-manor.html), [Beverly Terrace](neighborhood-pages/san-carlos/beverly-terrace.html), [Clearfield Park](neighborhood-pages/san-carlos/clearfield-park.html), [Cordes](neighborhood-pages/san-carlos/cordes.html), [El Sereno Corte](neighborhood-pages/san-carlos/el-sereno-corte.html), [Howard Park](neighborhood-pages/san-carlos/howard-park.html)
 - **Belmont** (5): [Belmont Country Club](neighborhood-pages/belmont/belmont-country-club.html), [Belmont Heights](neighborhood-pages/belmont/belmont-heights.html), [Plateau-Skymont](neighborhood-pages/belmont/plateau-skymont.html), [Sterling Downs](neighborhood-pages/belmont/sterling-downs.html), [Western Hills](neighborhood-pages/belmont/western-hills.html)
 - **Burlingame** (5): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html), [Easton Addition](neighborhood-pages/burlingame/easton-addition.html), [Ingoldmilldale](neighborhood-pages/burlingame/ingoldmilldale.html), [Lyon Hoag](neighborhood-pages/burlingame/lyon-hoag.html), [Mills Estates](neighborhood-pages/burlingame/mills-estates.html)
 - **Millbrae** (5): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Glenview Highlands](neighborhood-pages/millbrae/glenview-highlands.html), [Highlands](neighborhood-pages/millbrae/highlands.html), [Lomita Hills](neighborhood-pages/millbrae/lomita-hills.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)

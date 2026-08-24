@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Fill the 13 Millbrae neighborhood scaffolds from data/millbrae-content.json.
+"""Fill a city's neighborhood scaffolds from data/<city>-content.json.
 
-The scaffolds in maps/millbrae/ carry the right structure but every content
-slot reads "[ PLACEHOLDER ]". This writes the researched content into them and
-moves the result to neighborhood-pages/millbrae/, matching where every other
-written page lives.
+    python3 scripts/build_neighborhood_pages.py millbrae
+    python3 scripts/build_neighborhood_pages.py san-carlos
+
+The scaffolds in maps/<city>/ carry the right structure but every content slot
+reads "[ PLACEHOLDER ]". This writes the researched content into them and puts
+the result in neighborhood-pages/<city>/, where every written page lives.
 
 Market figures are NOT set here — run scripts/apply_market_data.py afterwards
-so Millbrae goes through the same sale-count thresholds as everywhere else.
+so the new city goes through the same sale-count thresholds as everywhere else.
+Photo slots are left alone; they are tracked separately.
 """
 import json
 import pathlib
@@ -16,11 +19,9 @@ import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SRC = ROOT / "maps" / "millbrae"
-DEST = ROOT / "neighborhood-pages" / "millbrae"
-CONTENT = json.loads((ROOT / "data" / "millbrae-content.json").read_text())
-SHARED = CONTENT["_shared"]
-SIMILAR = CONTENT["_similar"]
+CITY = None      # set from argv in main()
+SRC = DEST = None
+CONTENT = SHARED = SIMILAR = None
 
 
 def fill_intro(html, text):
@@ -44,8 +45,11 @@ def fill_amenities(html, rows):
         title, desc = next(it)
         return f"{m.group(1)}{title}{m.group(2)}{desc}{m.group(3)}"
 
+    # Scaffold generations label these slots differently — Millbrae used
+    # "[ name ]", San Carlos "[ Park name ]" / "[ Grocery/market ]" — so match
+    # any bracketed token rather than one spelling.
     return re.sub(
-        r'(margin-bottom: 4px;">)\[ name \](</p>|</div>\s*<p[^>]*>)\[ short description \](</p>)',
+        r'(margin-bottom: 4px;">)\[[^\]]*\](</p>|</div>\s*<p[^>]*>)\[[^\]]*\](</p>)',
         one, html, count=4)
 
 
@@ -86,17 +90,37 @@ def fill_schools(html, rows):
 
 
 def main():
+    global CITY, SRC, DEST, CONTENT, SHARED, SIMILAR
+    if len(sys.argv) < 2:
+        cities = sorted(p.stem.replace("-content", "")
+                        for p in (ROOT / "data").glob("*-content.json"))
+        print(f"usage: build_neighborhood_pages.py <city>\navailable: {', '.join(cities)}")
+        return 2
+    CITY = sys.argv[1]
+    SRC = ROOT / "maps" / CITY
+    DEST = ROOT / "neighborhood-pages" / CITY
+    content_file = ROOT / "data" / f"{CITY}-content.json"
+    if not content_file.exists():
+        print(f"no content file at {content_file.relative_to(ROOT)}"); return 1
+    CONTENT = json.loads(content_file.read_text())
+    SHARED, SIMILAR = CONTENT["_shared"], CONTENT["_similar"]
+
     if not SRC.exists():
-        print("no maps/millbrae/ scaffolds found"); return 1
+        print(f"no maps/{CITY}/ scaffolds found"); return 1
     DEST.mkdir(parents=True, exist_ok=True)
-    done, problems = [], []
+    done, problems, already = [], [], []
 
     for slug, spec in CONTENT.items():
         if slug.startswith("_"):
             continue
         src = SRC / f"{slug}.html"
         if not src.exists():
-            problems.append(f"{slug}: no scaffold at {src}")
+            # Scaffolds are deleted once their page is written, so a missing
+            # one usually means "already done", not "broken".
+            if (DEST / f"{slug}.html").exists():
+                already.append(slug)
+            else:
+                problems.append(f"{slug}: no scaffold and no written page")
             continue
         html = src.read_text()
         html = fill_intro(html, spec["intro"])
@@ -124,6 +148,8 @@ def main():
         (DEST / f"{slug}.html").write_text(html)
         done.append(slug)
 
+    if already:
+        print(f"{len(already)} already written (scaffold removed): {', '.join(already)}")
     print(f"wrote {len(done)} pages to {DEST.relative_to(ROOT)}/")
     for s in done:
         print("  " + s)

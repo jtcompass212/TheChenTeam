@@ -1,0 +1,7 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData
+alder-manor,san-carlos,"Alder Manor",SF,quarter,2026-Q2,16,2800000,1491,12,104.9,2025-Q2,9.6,
+beverly-terrace,san-carlos,"Beverly Terrace",SF,quarter,2026-Q2,18,2850000,1451,16,107,2025-Q2,2.5,
+clearfield-park,san-carlos,"Clearfield Park",SF,quarter,2026-Q2,6,1750000,1490,6,110.1,,,
+cordes,san-carlos,"Cordes",SF,quarter,2026-Q2,18,2600000,1372,13,102.9,2025-Q2,-9.5,
+el-sereno-corte,san-carlos,"El Sereno Corte",SF,quarter,2026-Q2,23,2975000,1735,9,103.4,2025-Q2,15.5,
+howard-park,san-carlos,"Howard Park",SF,quarter,2026-Q2,5,3050000,1663,9,109.4,2025-Q2,29.5,

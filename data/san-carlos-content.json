@@ -1,0 +1,89 @@
+{
+ "_note": "Content for the 6 San Carlos neighborhood pages. Prose is original; underlying facts are sourced in docs/san-carlos-sources.md.",
+ "_shared": {
+  "library": ["San Carlos Library", "San Mateo County branch on Elm Street, beside City Hall"],
+  "middle": ["Central Middle School", "Public &middot; 6&ndash;8, San Carlos School District"],
+  "high": ["Carlmont High School", "Public &middot; 9&ndash;12, Sequoia Union High School District &mdash; the campus straddles the San Carlos&ndash;Belmont line"]
+ },
+
+ "howard-park": {
+  "intro": "One of the original San Carlos neighborhoods, Howard Park dates to the first push by the San Carlos Park Syndicate and Frederick Drake, the developer local histories call the father of the city. The town&rsquo;s first schoolhouse opened here in 1918, and the neighborhood still sits close enough to Laurel Street that most errands are a walk rather than a drive.",
+  "amenities": [
+   ["Burton Park", "The city&rsquo;s main green, with fields, playgrounds and the community center"],
+   ["Trader Joe&rsquo;s and Safeway", "Both on El Camino Real, a few minutes away"],
+   ["Laurel Street", "San Carlos&rsquo; independent restaurants and cafes, walkable from most of the neighborhood"],
+   null
+  ],
+  "commute": [["~28 min", "To San Francisco, via US-101"], ["~16 min", "To Palo Alto, via US-101"], ["~18 min", "To SFO Airport"]],
+  "schools": [["Brittan Acres Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "beverly-terrace": {
+  "intro": "The largest of the San Carlos hill neighborhoods, Beverly Terrace runs up the canyons above town and holds the widest range of housing in the city &mdash; early cabins, mid-century moderns, and later infill on steep, winding lots. Its oddest survivor is the octagonal house at 125 Dale Avenue, built in 1872 as a party house by Nathaniel Brittan, whose name is still on half the local landmarks.",
+  "amenities": [
+   ["Big Canyon Park", "Wooded canyon trails on the neighborhood&rsquo;s upper edge"],
+   ["Safeway, El Camino Real", "The main grocery run, down the hill"],
+   ["Laurel Street", "Downtown dining, a short drive from the hills"],
+   null
+  ],
+  "commute": [["~30 min", "To San Francisco, via US-101"], ["~18 min", "To Palo Alto, via I-280"], ["~20 min", "To SFO Airport"]],
+  "schools": [["Arundel Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "clearfield-park": {
+  "intro": "Clearfield Park fills the flat ground between El Camino Real and Highway 101, and it remains one of the more attainable ways into San Carlos &mdash; largely postwar housing, a good deal of it built in cinder block. Its earlier life was louder: the Greater San Francisco Speedway, a 1.25-mile board oval, stood here from 1921 and drew crowds of 40,000 before burning down in June 1922, having hosted only four races.",
+  "amenities": [
+   ["Arguello Park", "Neighborhood park with playground and open lawn"],
+   ["Safeway, El Camino Real", "Groceries a few minutes west"],
+   ["Laurel Street", "Downtown restaurants, a short drive across El Camino"],
+   null
+  ],
+  "commute": [["~27 min", "To San Francisco, via US-101"], ["~15 min", "To Palo Alto, via US-101"], ["~17 min", "To SFO Airport"]],
+  "schools": [["Heather Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "cordes": {
+  "intro": "Cordes climbs the hills at the northern end of San Carlos, against the Belmont line, and holds some of the oldest houses in the city &mdash; several of the founders built on the streets nearest downtown. The grade means the housing varies sharply block to block, from modest early cottages low down to larger view properties further up.",
+  "amenities": [
+   ["Eaton Park", "Wooded park and creek trail along the Belmont border"],
+   ["Safeway, El Camino Real", "The nearest full grocery, downhill"],
+   ["Laurel Street", "Downtown dining, walkable from the lower streets"],
+   null
+  ],
+  "commute": [["~27 min", "To San Francisco, via US-101"], ["~18 min", "To Palo Alto, via US-101"], ["~17 min", "To SFO Airport"]],
+  "schools": [["Brittan Acres Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "el-sereno-corte": {
+  "intro": "During the 1930s downturn this was the cheap end of San Carlos, and the way developers responded still shapes it: lots were subdivided down, many to no more than 5,000 square feet, producing a denser grid of smaller houses than the hill neighborhoods above. That density is now part of the appeal &mdash; it is one of the few parts of the city where the housing stock turns over often enough to have a real entry point.",
+  "amenities": [
+   ["Highlands Park", "Playing fields, pool and playground a short drive south"],
+   ["Safeway, El Camino Real", "Groceries within a few minutes"],
+   ["Laurel Street", "San Carlos&rsquo; downtown, a short drive north"],
+   null
+  ],
+  "commute": [["~29 min", "To San Francisco, via US-101"], ["~15 min", "To Palo Alto, via US-101"], ["~19 min", "To SFO Airport"]],
+  "schools": [["White Oaks Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "alder-manor": {
+  "intro": "Alder Manor was open country later than anywhere else in San Carlos. As late as 1960, while the lower streets around De Anza Avenue were already being subdivided, the western reaches were still ranches and the odd weekend cabin. What followed is the result: some of the largest houses on the largest lots in the city, most of them built within the last sixty years.",
+  "amenities": [
+   ["Big Canyon Park", "Trailheads into the canyon at the neighborhood&rsquo;s western edge"],
+   ["Safeway, El Camino Real", "The main grocery run, down the hill"],
+   ["Laurel Street", "Downtown dining, a short drive east"],
+   null
+  ],
+  "commute": [["~31 min", "To San Francisco, via I-280"], ["~17 min", "To Palo Alto, via I-280"], ["~21 min", "To SFO Airport"]],
+  "schools": [["Arundel Elementary", "Public &middot; TK&ndash;3, San Carlos School District"], "middle", "high"]
+ },
+
+ "_similar": {
+  "Howard Park": "One of the city&rsquo;s original neighborhoods, walkable to Laurel Street",
+  "Beverly Terrace": "The largest hill neighborhood, with the widest range of housing in San Carlos",
+  "Clearfield Park": "Flat, postwar and attainable, between El Camino and Highway 101",
+  "Cordes": "Older hillside housing at the Belmont line, close to downtown",
+  "El Sereno Corte": "Smaller lots and a denser grid, one of the city&rsquo;s entry points",
+  "Alder Manor": "The last part of San Carlos to be built, with the largest lots"
+ }
+}
