@@ -80,7 +80,13 @@ def collect():
         city_pages=len(list(ROOT.glob("city-pages/*.html"))),
         nbhd_pages=sum(written.values()),
         exported=len(list(ROOT.glob("sierra-export/**/*.html"))),
-        sourced_images=len(list(ROOT.glob("city-images/sourced/*.jpg"))),
+        # Filled slots live in two places: city-images/sourced/ for the
+        # freely-licensed city photos, neighborhood-images/ for hero shots.
+        # city-images/*.jpg at the top level are the original city heroes and
+        # were never placeholder slots, so they are not counted.
+        sourced_images=(len(list(ROOT.glob("city-images/sourced/*")))
+                        + len([p for p in ROOT.glob("neighborhood-images/**/*")
+                               if p.is_file() and p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])),
         chen_stats=sum(1 for p in ROOT.glob("city-pages/*.html")
                        if "Replace with your verified production figures" in p.read_text()),
     )
@@ -110,7 +116,8 @@ def render(d):
          f"carry verified Compass figures. What is left falls into three piles.", "",
          f"| | Count | |", "|---|---:|---|",
          f"| Neighborhoods with no page | **{total_scaffold}** | blank scaffolds in `maps/`, prose included |",
-         f"| Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} total; {d['sourced_images']} sourced so far |",
+         f"| Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} "
+         f"total; {d['sourced_images']} filled so far |",
          f"| Team stat blocks | **{d['chen_stats']}** | still showing sample figures |", ""]
 
     # coverage

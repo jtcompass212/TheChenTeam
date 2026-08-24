@@ -33,12 +33,16 @@ DEFAULT_BASE = "https://cdn.jsdelivr.net/gh/jtcompass212/TheChenTeam@main"
 PASTE_BANNER = re.compile(
     r'<!--\s*Paste everything below into TinyMCE.*?-->', re.S)
 
-REL_SRC = re.compile(r'src="\.\./([^"]+)"')
+# Repo-relative sources sit at different depths: city pages reach up one level
+# (`../city-images/...`), neighborhood pages two (`../../neighborhood-images/...`).
+# Strip every leading `../` so the path is repo-root-relative before prefixing,
+# otherwise the base URL gets a `/../` glued into it and the image 404s.
+REL_SRC = re.compile(r'src="((?:\.\./)+)([^"]+)"')
 
 
 def convert(html, base):
     html = PASTE_BANNER.sub("", html, count=1).lstrip("\n")
-    html, n = REL_SRC.subn(lambda m: f'src="{base}/{m.group(1)}"', html)
+    html, n = REL_SRC.subn(lambda m: f'src="{base}/{m.group(2)}"', html)
     return html, n
 
 
@@ -67,6 +71,13 @@ def main():
         for stray in re.findall(r'(?:src|href)="(?!https?://|#|/)([^"]+)"', html):
             if not stray.startswith(("mailto:", "tel:")):
                 problems.append(f"{rel}: unresolved path {stray!r}")
+        # An absolute URL with a `/../` in it is still broken — it just looks fine.
+        for mangled in re.findall(r'(?:src|href)="(https?://[^"]*/\.\./[^"]*)"', html):
+            problems.append(f"{rel}: traversal left in URL {mangled!r}")
+        # Every rewritten image must point at a file that actually exists.
+        for url in re.findall(rf'src="{re.escape(base)}/([^"]+)"', html):
+            if not (ROOT / url).exists():
+                problems.append(f"{rel}: image not in repo {url!r}")
 
         if not args.check:
             dest = OUT / rel
