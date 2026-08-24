@@ -35,7 +35,7 @@ Market data is complete: all **148 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **3** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **135** | of 256 total; 121 filled so far |
+| Empty photo slots | **127** | of 256 total; 129 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -66,18 +66,20 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
-| Hillsborough | 15 |
+| Hillsborough | 7 |
 | Foster City | 4 |
 | Redwood City | 3 |
 | Millbrae | 1 |
 | San Bruno | 1 |
-| **Total** | **135** |
+| **Total** | **127** |
 
-### Neighborhood hero images still needed (24)
+> **The shot list is out of date.** It briefs 135 slots against an actual 127 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+
+### Neighborhood hero images still needed (16)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
-- **Hillsborough** (15): [Brewer Subdivision](neighborhood-pages/hillsborough/brewer-subdivision.html), [Burlingame Hills](neighborhood-pages/hillsborough/burlingame-hills.html), [Carolands](neighborhood-pages/hillsborough/carolands.html), [Country Club Manor](neighborhood-pages/hillsborough/country-club-manor.html), [Hillsborough Heights](neighborhood-pages/hillsborough/hillsborough-heights.html), [Hillsborough Hills](neighborhood-pages/hillsborough/hillsborough-hills.html), [Hillsborough Knolls](neighborhood-pages/hillsborough/hillsborough-knolls.html), [Hillsborough Oaks](neighborhood-pages/hillsborough/hillsborough-oaks.html), [Hillsborough Park](neighborhood-pages/hillsborough/hillsborough-park.html), [Homeplace](neighborhood-pages/hillsborough/homeplace.html), [Lakeview](neighborhood-pages/hillsborough/lakeview.html), [Parrot Drive Area](neighborhood-pages/hillsborough/parrot-drive-area.html), [Ryan Tract](neighborhood-pages/hillsborough/ryan-tract.html), [Skyfarm](neighborhood-pages/hillsborough/skyfarm.html), [Tobin Clark Estate](neighborhood-pages/hillsborough/tobin-clark-estate.html)
+- **Hillsborough** (7): [Hillsborough Heights](neighborhood-pages/hillsborough/hillsborough-heights.html), [Hillsborough Hills](neighborhood-pages/hillsborough/hillsborough-hills.html), [Hillsborough Knolls](neighborhood-pages/hillsborough/hillsborough-knolls.html), [Hillsborough Oaks](neighborhood-pages/hillsborough/hillsborough-oaks.html), [Parrot Drive Area](neighborhood-pages/hillsborough/parrot-drive-area.html), [Ryan Tract](neighborhood-pages/hillsborough/ryan-tract.html), [Tobin Clark Estate](neighborhood-pages/hillsborough/tobin-clark-estate.html)
 - **Foster City** (4): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html)
 - **Redwood City** (3): [Centennial](neighborhood-pages/redwood-city/centennial.html), [Clifford Heights](neighborhood-pages/redwood-city/clifford-heights.html), [Horgan Ranch](neighborhood-pages/redwood-city/horgan-ranch.html)
 - **Millbrae** (1): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html)
