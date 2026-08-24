@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Runs before every push. Keeps the README's "Work remaining" section honest
+# and catches the failures that have actually shipped here before.
+#
+# Enable once per clone:
+#     git config core.hooksPath .githooks
+#
+# Skip for one push (use sparingly):
+#     git push --no-verify
+
+set -u
+
+root=$(git rev-parse --show-toplevel) || exit 0
+cd "$root" || exit 0
+
+if command -v python3 >/dev/null 2>&1; then PY=python3
+elif command -v python >/dev/null 2>&1; then PY=python
+else
+  echo "pre-push: no python found — skipping project checks." >&2
+  exit 0
+fi
+
+fail=0
+
+# 1. Is the README status block current?
+if ! "$PY" scripts/update_readme_status.py --check >/dev/null 2>&1; then
+  "$PY" scripts/update_readme_status.py >/dev/null 2>&1
+  cat >&2 <<'MSG'
+
+  ✗ The README "Work remaining" section was out of date.
+
+    It has been regenerated for you. Review the diff, commit it, and push again:
+
+        git diff README.md
+        git add README.md && git commit --amend --no-edit    # or a new commit
+        git push
+
+MSG
+  fail=1
+fi
+
+# 2. Do the pages still hold together?
+if ! "$PY" scripts/verify_repo.py >/dev/null 2>&1; then
+  echo "" >&2
+  echo "  ✗ Project checks failed:" >&2
+  echo "" >&2
+  "$PY" scripts/verify_repo.py 2>&1 | sed 's/^/    /' >&2
+  echo "" >&2
+  echo "    Fix the above, or push with --no-verify if you know why it's wrong." >&2
+  echo "" >&2
+  fail=1
+fi
+
+[ "$fail" -eq 0 ] || exit 1
+
+echo "  ✓ project status current, pages verified"
+exit 0

@@ -305,8 +305,39 @@ python3 scripts/update_readme_status.py    # refresh "Work remaining" above
 
 Run the last one after anything that changes page counts. Every number in the
 [Work remaining](#work-remaining) section is read from the working tree, so it
-cannot drift the way hand-typed counts did. `--check` fails if the block is
-stale, which makes it usable as a pre-commit or CI guard.
+cannot drift the way hand-typed counts did.
+
+## Keeping the project status honest
+
+Two things guard it, so nobody has to remember.
+
+**A pre-push hook.** Enable it once per clone:
+
+```
+git config core.hooksPath .githooks
+```
+
+From then on, `git push` regenerates the status block if it is stale and stops
+so you can commit it, then runs the page checks. `git push --no-verify` skips
+it when you genuinely need to.
+
+**CI.** `.github/workflows/project-status.yml` runs the same checks on every
+push to `main` and every pull request. The hook is opt-in per clone, so this is
+the backstop that covers everyone — including edits made through the GitHub web
+interface.
+
+Both call the same two scripts, which you can also run by hand:
+
+```
+python3 scripts/update_readme_status.py --check   # is the backlog current?
+python3 scripts/verify_repo.py                    # do the pages hold together?
+```
+
+`verify_repo.py` checks what has actually broken here before: figures drifting
+from the dataset they cite, placeholder text reaching a publishable page, a
+stale scaffold in `maps/` shadowing a written page, markup left unbalanced by a
+bad substitution, and export URLs that look absolute but contain a traversal
+and 404 on paste.
 
 `data/market/README.md` documents the Compass API contract, the metric codes,
 and the rules governing which figures publish — including the sale-count
