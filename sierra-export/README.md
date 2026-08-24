@@ -26,4 +26,4 @@ Sierra's media library instead, rebuild pointing at it:
 ## Contents
 
 - 27 city pages
-- 60 neighborhood pages
+- 66 neighborhood pages

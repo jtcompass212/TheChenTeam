@@ -30,17 +30,17 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **87 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **93 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **64** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **161** | of 195 total; 34 filled so far |
+| Neighborhoods with no page | **58** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **167** | of 201 total; 34 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 60 have a written page.
+124 neighborhoods are mapped; 66 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
@@ -48,12 +48,12 @@ Market data is complete: all **87 published pages** carry verified Compass figur
 | Hillsborough | 0 | 15 | 15 |
 | Redwood City | 0 | 13 | 13 |
 | Foster City | 0 | 10 | 10 |
-| San Carlos | 0 | 6 | 6 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
 | Millbrae | 13 | 13 | — |
-| **Total** | **60** | **124** | **64** |
+| San Carlos | 6 | 6 | — |
+| **Total** | **66** | **124** | **58** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -70,9 +70,10 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Millbrae | 13 |
 | Burlingame | 13 |
 | Belmont | 9 |
-| **Total** | **161** |
+| San Carlos | 6 |
+| **Total** | **167** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 161 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 167 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
