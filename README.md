@@ -30,30 +30,30 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **93 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **103 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **58** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **116** | of 201 total; 85 filled so far |
+| Neighborhoods with no page | **48** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **126** | of 211 total; 85 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 66 have a written page.
+124 neighborhoods are mapped; 76 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
 | San Bruno | 0 | 17 | 17 |
 | Hillsborough | 0 | 15 | 15 |
 | Redwood City | 0 | 13 | 13 |
-| Foster City | 0 | 10 | 10 |
 | San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
+| Foster City | 10 | 10 | — |
 | Millbrae | 13 | 13 | — |
 | San Carlos | 6 | 6 | — |
-| **Total** | **66** | **124** | **58** |
+| **Total** | **76** | **124** | **48** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -66,18 +66,20 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | City Pages | 111 |
+| Foster City | 10 |
 | Millbrae | 2 |
 | San Mateo | 1 |
 | San Carlos | 1 |
 | Burlingame | 1 |
-| **Total** | **116** |
+| **Total** | **126** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 116 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 126 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Neighborhood hero images still needed (5)
+### Neighborhood hero images still needed (15)
 
 One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
 
+- **Foster City** (10): [Bay Vista](neighborhood-pages/foster-city/bay-vista.html), [Carmel Village](neighborhood-pages/foster-city/carmel-village.html), [Dolphin Bay](neighborhood-pages/foster-city/dolphin-bay.html), [Harbor Side](neighborhood-pages/foster-city/harbor-side.html), [Isle Cove](neighborhood-pages/foster-city/isle-cove.html), [Marina Point](neighborhood-pages/foster-city/marina-point.html), [Sea Colony](neighborhood-pages/foster-city/sea-colony.html), [The Islands](neighborhood-pages/foster-city/the-islands.html), [Treasure Isle](neighborhood-pages/foster-city/treasure-isle.html), [Vintage Park](neighborhood-pages/foster-city/vintage-park.html)
 - **Millbrae** (2): [Capuchino Village](neighborhood-pages/millbrae/capuchino-village.html), [Telescope Hills](neighborhood-pages/millbrae/telescope-hills.html)
 - **Burlingame** (1): [Burlingame Park](neighborhood-pages/burlingame/burlingame-park.html)
 - **San Carlos** (1): [Cordes](neighborhood-pages/san-carlos/cordes.html)
@@ -103,6 +105,7 @@ Each states its reason on the page rather than borrowing a citywide median.
 | Page | Reason |
 |---|---|
 | `burlingame/ingoldmilldale` | No sales attributed to it in the MLS |
+| `foster-city/vintage-park` | Not a residential area |
 | `millbrae/green-hills` | Too few sales a year to support a median |
 | `millbrae/green-hills-country-club` | Not a residential area |
 
