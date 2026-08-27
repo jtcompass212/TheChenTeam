@@ -7,14 +7,18 @@ Everything here is plain HTML with figures hardcoded at build time — no
 scripts, no runtime data fetching. Paste-ready output lives in
 `sierra-export/`.
 
+**Deployment:** all 148 pages — 121 neighborhood pages and 27 city pages —
+are published live on the Sierra Interactive site as of 2026-08-27, each with
+a photo wired into every slot.
+
 ## Contents
 
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 59 neighborhood pages across 4 cities |
+| `neighborhood-pages/` | 121 neighborhood pages across 9 cities |
 | `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
-| `sierra-export/` | 86 paste-ready files with absolute image URLs |
+| `sierra-export/` | 148 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
 | `data/market/` | Compass market data behind the pages, and how to refresh it |
 | `docs/` | Photo shot list and design specs |
@@ -115,17 +119,22 @@ Each carries a market snapshot, a quarterly price chart, neighborhood cards
 and a schools/history block. Market figures come from Compass Market Insights
 — see `data/market/README.md`.
 
-## Neighborhood pages (59)
+## Neighborhood pages (121)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
-| San Mateo | 24 | 28 |
+| San Mateo | 25 | 28 |
+| San Bruno | 17 | 17 |
+| Hillsborough | 15 | 15 |
 | Burlingame | 13 | 13 |
 | Millbrae | 13 | 13 |
+| Redwood City | 13 | 13 |
+| Foster City | 10 | 10 |
 | Belmont | 9 | 9 |
+| San Carlos | 6 | 6 |
 
-San Mateo's four gaps are its three hidden entries plus **Los Prados**, the
-only visible neighborhood without a page.
+San Mateo is the only city with unwritten entries — 3 of its 28 mapped
+neighborhoods still have no page.
 
 `maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
 neighborhood that has no page yet. See [Work remaining](#work-remaining) for
