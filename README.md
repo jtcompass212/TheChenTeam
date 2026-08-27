@@ -35,7 +35,7 @@ Market data is complete: all **148 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **3** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **4** | of 256 total; 252 filled so far |
+| Empty photo slots | **2** | of 256 total; 254 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -65,10 +65,10 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 
 | Area | Empty slots |
 |---|---:|
-| City Pages | 4 |
-| **Total** | **4** |
+| City Pages | 2 |
+| **Total** | **2** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 4 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 2 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
