@@ -83,7 +83,7 @@ function onEachNeighborhood(feature, layer) {
   const p = feature.properties || {};
   const name = p.name || "Neighborhood";
   const slug = p.slug || slugify(name);
-  const url = name ? neighborhoodBaseUrl + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "#";
+  const url = name ? neighborhoodBaseUrl + (slug || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) : "#";
 
   layer.bindTooltip(name, {
     permanent:true,

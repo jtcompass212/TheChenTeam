@@ -96,7 +96,7 @@ function onEachFeature(feature, layer) {
   const name = p.name || "Neighborhood";
   const city = p.city || "Redwood City";
   const slug = p.slug || "";
-  const href = name ? baseUrl + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "#";
+  const href = name ? baseUrl + (slug || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) : "#";
 
   layer.bindPopup(`
     <div class="popup">

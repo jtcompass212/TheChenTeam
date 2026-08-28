@@ -120,7 +120,7 @@
       const props = feature.properties || {};
       const name = props.name || "Neighborhood";
       const slug = props.slug || "";
-      const url = name ? neighborhoodBaseUrl + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "#";
+      const url = name ? neighborhoodBaseUrl + (slug || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) : "#";
 
       layer.bindTooltip(name, {
         permanent: true,

@@ -30,7 +30,7 @@ function onEachFeature(feature,layer){
   const p=feature.properties||{};
   const name=p.name||'Neighborhood';
   const slug=p.slug||'';
-  const link=name?'<br><a href="/millbrae/'+name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")+'">View neighborhood</a>':'';
+  const link=name?'<br><a href="/millbrae/'+(slug||name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,""))+'">View neighborhood</a>':'';
   layer.bindPopup('<strong>'+name+'</strong>'+link);
   layer.on({mouseover:e=>{e.target.setStyle(hoverStyle);e.target.bringToFront();},mouseout:e=>geoLayer.resetStyle(e.target)});
   const pt=(Number.isFinite(p.center_latitude)&&Number.isFinite(p.center_longitude))?[p.center_latitude,p.center_longitude]:layer.getBounds().getCenter();

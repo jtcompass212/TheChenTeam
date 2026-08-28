@@ -135,7 +135,7 @@
       const name = props.name || "Neighborhood";
       const slug = props.slug || "";
 
-      const url = name ? "/belmont/" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "#";
+      const url = name ? "/belmont/" + (slug || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) : "#";
 
       layer.bindPopup(
         "<strong>" + name + "</strong><br>" +

@@ -73,7 +73,7 @@ function onEachFeature(feature,layer){
   const slug=props.slug||'';
 
   if(name){
-    const link=name ? '<br><a href="/san-bruno/'+name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")+'">View neighborhood</a>' : '';
+    const link=name ? '<br><a href="/san-bruno/'+(slug || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""))+'">View neighborhood</a>' : '';
     layer.bindPopup('<strong>'+name+'</strong>'+link);
   }
 
