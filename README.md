@@ -16,7 +16,7 @@ a photo wired into every slot.
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 121 neighborhood pages across 9 cities |
+| `neighborhood-pages/` | 124 neighborhood pages across 9 cities |
 | `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
 | `sierra-export/` | 148 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
@@ -34,21 +34,20 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **148 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **151 published pages** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
-| Neighborhoods with no page | **3** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **0** | of 256 total; 256 filled so far |
+| Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
+| Empty photo slots | **0** | of 259 total; 259 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 121 have a written page.
+124 neighborhoods are mapped; 124 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
-| San Mateo | 25 | 28 | 3 |
 | Belmont | 9 | 9 | — |
 | Burlingame | 13 | 13 | — |
 | Foster City | 10 | 10 | — |
@@ -57,7 +56,8 @@ Market data is complete: all **148 published pages** carry verified Compass figu
 | Redwood City | 13 | 13 | — |
 | San Bruno | 17 | 17 | — |
 | San Carlos | 6 | 6 | — |
-| **Total** | **121** | **124** | **3** |
+| San Mateo | 28 | 28 | — |
+| **Total** | **124** | **124** | **0** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -104,6 +104,9 @@ Each states its reason on the page rather than borrowing a citywide median.
 | `san-bruno/bayhill` | Not a residential area |
 | `san-bruno/tanforan` | Not a residential area |
 | `san-bruno/golden-gate-national-cemetery` | Not a residential area |
+| `san-mateo/lauriedale` | No sales attributed to it in the MLS |
+| `san-mateo/hillsdale-the-lanes` | No sales attributed to it in the MLS |
+| `san-mateo/san-mateo-terrace-beresford` | No sales attributed to it in the MLS |
 
 <!-- STATUS:END -->
 
@@ -119,11 +122,11 @@ Each carries a market snapshot, a quarterly price chart, neighborhood cards
 and a schools/history block. Market figures come from Compass Market Insights
 — see `data/market/README.md`.
 
-## Neighborhood pages (121)
+## Neighborhood pages (124)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
-| San Mateo | 25 | 28 |
+| San Mateo | 28 | 28 |
 | San Bruno | 17 | 17 |
 | Hillsborough | 15 | 15 |
 | Burlingame | 13 | 13 |
@@ -133,8 +136,7 @@ and a schools/history block. Market figures come from Compass Market Insights
 | Belmont | 9 | 9 |
 | San Carlos | 6 | 6 |
 
-San Mateo is the only city with unwritten entries — 3 of its 28 mapped
-neighborhoods still have no page.
+Every mapped neighborhood has a written page.
 
 `maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
 neighborhood that has no page yet. See [Work remaining](#work-remaining) for
@@ -285,18 +287,18 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 - Foothill Terrace
 - Harbor Town
 - Hayward Park
-- Hillsdale "The Lanes" _(hidden)_
+- Hillsdale "The Lanes"
 - Homestead
 - Lakeshore
 - Laurelwood & sugarloaf
-- Lauriedale _(hidden)_
+- Lauriedale
 - Los Prados
 - North Shoreview
 - Parkside
 - San Mateo Highlands
 - San Mateo Knolls
 - San Mateo Park
-- San Mateo Terrace/Beresford _(hidden)_
+- San Mateo Terrace/Beresford
 - San Mateo Village
 - San Mateo Woods/Bayridge
 - Shoreview
