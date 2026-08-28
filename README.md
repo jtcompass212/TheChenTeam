@@ -7,14 +7,18 @@ Everything here is plain HTML with figures hardcoded at build time — no
 scripts, no runtime data fetching. Paste-ready output lives in
 `sierra-export/`.
 
+**Deployment:** all 148 pages — 121 neighborhood pages and 27 city pages —
+are published live on the Sierra Interactive site as of 2026-08-27, each with
+a photo wired into every slot.
+
 ## Contents
 
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 59 neighborhood pages across 4 cities |
+| `neighborhood-pages/` | 121 neighborhood pages across 9 cities |
 | `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
-| `sierra-export/` | 86 paste-ready files with absolute image URLs |
+| `sierra-export/` | 148 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
 | `data/market/` | Compass market data behind the pages, and how to refresh it |
 | `docs/` | Photo shot list and design specs |
@@ -35,7 +39,7 @@ Market data is complete: all **148 published pages** carry verified Compass figu
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **3** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **2** | of 256 total; 254 filled so far |
+| Empty photo slots | **0** | of 256 total; 256 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -65,10 +69,9 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 
 | Area | Empty slots |
 |---|---:|
-| City Pages | 2 |
-| **Total** | **2** |
+| **Total** | **0** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 2 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 0 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
@@ -116,17 +119,22 @@ Each carries a market snapshot, a quarterly price chart, neighborhood cards
 and a schools/history block. Market figures come from Compass Market Insights
 — see `data/market/README.md`.
 
-## Neighborhood pages (59)
+## Neighborhood pages (121)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
-| San Mateo | 24 | 28 |
+| San Mateo | 25 | 28 |
+| San Bruno | 17 | 17 |
+| Hillsborough | 15 | 15 |
 | Burlingame | 13 | 13 |
 | Millbrae | 13 | 13 |
+| Redwood City | 13 | 13 |
+| Foster City | 10 | 10 |
 | Belmont | 9 | 9 |
+| San Carlos | 6 | 6 |
 
-San Mateo's four gaps are its three hidden entries plus **Los Prados**, the
-only visible neighborhood without a page.
+San Mateo is the only city with unwritten entries — 3 of its 28 mapped
+neighborhoods still have no page.
 
 `maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
 neighborhood that has no page yet. See [Work remaining](#work-remaining) for
