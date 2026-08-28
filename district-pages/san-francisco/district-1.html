@@ -1,0 +1,157 @@
+<!-- Paste everything below into TinyMCE's Source Code view (the "<>" icon in the toolbar), not the WYSIWYG pane. --><!-- NOTE: The interactive district MAP is a separate Shared HTML Widget — add it as a NEW page component
+     positioned AFTER this entire Content Area block. -->
+<style>
+  .sf-d1-page, .sf-d1-page * { box-sizing: border-box; }
+  .sf-d1-page a { color: #a8823d; text-decoration: none; }
+  .sf-d1-page a:hover { color: #8c6930; text-decoration: underline; }
+  .sf-d1-page ::selection { background: #eee6d8; }
+
+  .sf-d1-page .stat-card { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .sf-d1-page .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -8px rgba(22,35,63,0.14); border-color: #a8823d; }
+
+  .sf-d1-page .nb-card-link { transition: transform 220ms ease, box-shadow 220ms ease; }
+  .sf-d1-page .nb-card-link:hover { transform: translateY(-5px); box-shadow: 0 12px 22px -10px rgba(22,35,63,0.16); }
+
+  .sf-d1-page .fade-in { opacity: 0; transform: translateY(16px); animation: sfd1FadeIn 700ms ease forwards; }
+  .sf-d1-page .fade-in.d1 { animation-delay: 80ms; }
+  .sf-d1-page .fade-in.d2 { animation-delay: 160ms; }
+  .sf-d1-page .fade-in.d3 { animation-delay: 240ms; }
+  @keyframes sfd1FadeIn { to { opacity: 1; transform: translateY(0); } }
+
+  .sf-d1-page .scroll-reveal { opacity: 1; }
+  @supports (animation-timeline: view()) {
+    .sf-d1-page .scroll-reveal { opacity: 0; animation: sfd1ScrollReveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes sfd1ScrollReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+<div class="sf-d1-page" style="font-family: 'Inter', system-ui, sans-serif; color: #4b5468; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6;">
+  <!-- 1. EYEBROW + H1 + INTRO -->
+  <section style="max-width: 1180px; margin: 0px auto; padding: 40px 32px 0px;">
+    <p class="fade-in d1" style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 18px;">San Francisco &middot; District 1 &middot; Northwest</p>
+    <h1 class="fade-in d2" style="font-family: Fraunces, serif; font-weight: 500; font-size: 56px; line-height: 1.06; letter-spacing: -0.01em; color: #16233f; margin: 0px 0px 28px; max-width: 16ch; text-wrap: balance;">District 1 Homes &amp; Real Estate</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
+      <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: #4b5468;">
+        <p style="margin: 0px 0px 18px;">District 1 is San Francisco's northwest quarter — the long grid of the Richmond running from Arguello out to Ocean Beach, bounded by the Presidio above and Golden Gate Park below. It is a district of wide, flat avenues and solid pre-war stock: Edwardian flats and marina-style homes on 25-foot lots, giving way to the large detached houses and ocean frontage of Sea Cliff and Lake Street. Below you&rsquo;ll find current homes for sale across District 1, updated throughout the day.</p>
+        <p style="margin: 0px;">If you'd like more information on any of these listings, just reach out &mdash; we're happy to share disclosures, recent sales, and pricing history. Looking beyond District 1? Browse <a href="/san-francisco/">San Francisco real estate</a> or the <a href="#neighborhoods-in-district">neighborhoods within this district</a>.</p>
+      </div>
+      <div style="align-self: stretch; min-height: 280px; border-radius: 4px; overflow: hidden; background: #f0f2f6; display: flex; align-items: center; justify-content: center;"><span style="font-size: 13px; color: #9ba3b5; text-align: center; letter-spacing: 0.04em;">[ HERO IMAGE ]<br>A representative District 1 street or view<br>~900&times;650</span></div>
+    </div>
+  </section>
+  <!-- 2. MARKET SNAPSHOT -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 70px auto 0px; padding: 0px 32px;">
+    <div style="border: 1px solid rgb(221, 225, 233); border-top: 3px solid rgb(168, 130, 61); border-radius: 6px; overflow: hidden; background: #ffffff;">
+      <div style="background: #f0f2f6; padding: 15px 26px; border-bottom: 1px solid rgb(221, 225, 233); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;"><span style="font-family: Fraunces, serif; font-size: 20px; color: #16233f; font-weight: 500;">District 1 &middot; Northwest</span> <span style="font-size: 13px; color: #7d8598;">Market Snapshot &middot; Single-Family Homes, Q2 2026</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <div style="padding: 32px 26px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">$3.02M</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Sold Price</div>
+          <div style="font-size: 13px; color: #3f8a5f; font-weight: 600; margin-top: 6px;">&#9650; 20.8% vs Q2 2025</div>
+        </div>
+        <div style="padding: 32px 26px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">$1,325</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Price / Sq. Ft.</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">81 closed sales</div>
+        </div>
+        <div style="padding: 32px 26px; text-align: center; border-right: 1px solid rgb(237, 239, 243);">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">11</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Median Days to Offer</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">Q2 2026</div>
+        </div>
+        <div style="padding: 32px 26px; text-align: center;">
+          <div style="font-family: Fraunces, serif; font-size: 44px; color: #16233f; line-height: 1;">126%</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 10px; letter-spacing: 0.04em;">Sold / List Price</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 6px;">Q2 2026</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #9ba3b5; margin: 10px 4px 0px;">Source: Compass Market Insights &mdash; single-family homes in San Francisco MLS District 1, Q2 2026 (81 closed sales). District figures are reported quarterly. The year-over-year change compares Q2 2026 against Q2 2025 (64 closed sales); both windows clear the sale-count threshold used across this site. District 1 also contains a condominium market that these single-family figures do not describe. Compass is a real estate broker licensed by the State of California and makes no representation as to the accuracy or completeness of this information. Equal Housing Opportunity.</p>
+  </section>
+  <!-- 3. WHAT DEFINES THIS DISTRICT -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">What Defines It</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">The character of District 1</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/tree.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Parks</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Golden Gate Park</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The district's southern boundary for its full length, with the Presidio to the north</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/building-store.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Shopping</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Clement Street</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">A dense, largely independent retail corridor and one of the city's great food streets</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/train.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Transit</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Geary corridor</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The city's busiest bus corridor, with rapid service downtown</p>
+      </div>
+      <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 22px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #f4ead9; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;"><img style="width: 22px; height: 22px; display: block;" src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/beach.svg" alt=""></div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin-bottom: 8px;">Coast</div>
+        <div style="font-size: 15px; color: #16233f; font-weight: 600; margin-bottom: 4px;">Ocean Beach & Lands End</div>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Four miles of Pacific frontage at the district's western edge</p>
+      </div>
+    </div>
+  </section>
+  <!-- 4. NEIGHBORHOODS IN THIS DISTRICT -->
+  <section id="neighborhoods-in-district" class="scroll-reveal" style="max-width: 1180px; margin: 80px auto 0px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Explore Within</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 24px; letter-spacing: -0.01em;">Neighborhoods in District 1</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;"><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]sea-cliff">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Sea Cliff</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The district's premier address, on the bluffs above China Beach</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]lake-street">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Lake Street</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Wide lots on quiet blocks along the Presidio's southern wall</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]inner-richmond">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Inner Richmond</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The most walkable end, close to the park and the Clement corridor</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]central-richmond">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Central Richmond</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The district's flat, family-scaled middle</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]outer-richmond">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Outer Richmond</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Coastal blocks toward Ocean Beach, foggier and more affordable</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]jordan-park-laurel-heights">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Jordan Park & Laurel Heights</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">A small, established pocket of larger homes east of Arguello</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]lone-mountain">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Lone Mountain</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">Hillside blocks around USF, at the district's southeast corner</p>
+      </a><a class="nb-card-link" style="display: block; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 24px 22px; text-decoration: none;" href="[IDX]lincoln-park">
+        <h3 style="font-family: Fraunces, serif; font-weight: 500; font-size: 19px; color: #16233f; margin: 0px 0px 6px;">Lincoln Park</h3>
+        <p style="font-size: 13.5px; color: #7d8598; margin: 0px;">The northwestern tip, wrapping the Legion of Honor</p>
+      </a></div>
+  </section>
+  <!-- 5. SCHOOLS -->
+  <section class="scroll-reveal" style="background: #f0f2f6; margin-top: 90px; padding: 70px 0px;">
+    <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Schools</p>
+      <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 12px; letter-spacing: -0.01em;">Schools serving District 1</h2>
+      <p style="font-size: 15px; line-height: 1.7; color: #4b5468; margin: 0px 0px 24px; max-width: 78ch;">San Francisco Unified assigns elementary seats through a citywide choice-and-lottery process rather than by home address, so no San Francisco home guarantees enrolment at any particular school. The schools below are those located in and around District 1.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">George Peabody Elementary</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public · K–5, SFUSD · Central Richmond</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">Presidio Middle School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public · 6–8, SFUSD · one of the district's two large middle schools</div>
+        </div>
+        <div class="stat-card" style="background: #ffffff; border: 1px solid rgb(221, 225, 233); border-radius: 8px; padding: 22px 24px;">
+          <div style="font-size: 15px; color: #16233f; font-weight: 600;">George Washington High School</div>
+          <div style="font-size: 13px; color: #7d8598; margin-top: 4px;">Public · 9–12, SFUSD · 32nd Avenue, serving the Richmond</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6. BOUNDARIES (heading only — map widget is the NEXT page component, right after this Content Area) -->
+  <section class="scroll-reveal" style="max-width: 1180px; margin: 90px auto 40px; padding: 0px 32px;">
+    <p style="font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8823d; font-weight: 600; margin: 0px 0px 16px;">Boundaries</p>
+    <h2 style="font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.18; color: #16233f; margin: 0px 0px 0px; letter-spacing: -0.01em;">Where District 1 sits</h2>
+  </section>
+</div>
