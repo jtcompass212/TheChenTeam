@@ -44,7 +44,7 @@ Market data is complete: all **151 published pages** carry verified Compass figu
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 124 have a written page.
+134 neighborhoods are mapped; 124 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
@@ -56,8 +56,9 @@ Market data is complete: all **151 published pages** carry verified Compass figu
 | Redwood City | 13 | 13 | — |
 | San Bruno | 17 | 17 | — |
 | San Carlos | 6 | 6 | — |
+| San Francisco | 0 | 10 | — |
 | San Mateo | 28 | 28 | — |
-| **Total** | **124** | **124** | **0** |
+| **Total** | **124** | **134** | **0** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -104,9 +105,8 @@ Each states its reason on the page rather than borrowing a citywide median.
 | `san-bruno/bayhill` | Not a residential area |
 | `san-bruno/tanforan` | Not a residential area |
 | `san-bruno/golden-gate-national-cemetery` | Not a residential area |
-| `san-mateo/lauriedale` | No sales attributed to it in the MLS |
-| `san-mateo/hillsdale-the-lanes` | No sales attributed to it in the MLS |
-| `san-mateo/san-mateo-terrace-beresford` | No sales attributed to it in the MLS |
+| `san-mateo/lauriedale` | Too few sales a year to support a median |
+| `san-mateo/hillsdale-the-lanes` | No separate Compass reporting area for it |
 
 <!-- STATUS:END -->
 

@@ -200,7 +200,11 @@ def render(d):
               "| Page | Reason |", "|---|---|"]
         reason = {"thin": "Too few sales a year to support a median",
                   "not-residential": "Not a residential area",
-                  "unattributed": "No sales attributed to it in the MLS"}
+                  "unattributed": "No sales attributed to it in the MLS",
+                  # Distinct from "unattributed": Compass has no reporting area
+                  # under this name at all, which is not evidence about whether
+                  # sales happened on these streets. See data/market/README.md.
+                  "unresolved": "No separate Compass reporting area for it"}
         for city, slug, r in d["no_figures"]:
             L.append(f"| `{city}/{slug}` | {reason.get(r, r)} |")
         L.append("")
