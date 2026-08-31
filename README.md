@@ -7,22 +7,29 @@ Everything here is plain HTML with figures hardcoded at build time — no
 scripts, no runtime data fetching. Paste-ready output lives in
 `sierra-export/`.
 
-**Deployment:** all 148 pages — 121 neighborhood pages and 27 city pages —
-are published live on the Sierra Interactive site as of 2026-08-27, each with
-a photo wired into every slot.
+**Deployment:** publication is a manual paste, one page at a time, into
+Sierra's TinyMCE source view — see `sierra-export/README.md`. Nothing in this
+repo pushes to the site or reads back from it, so **what is actually live is
+not recorded here.** Do not infer it from this file. Counts below describe
+what the repo contains, not what has been published.
 
 ## Contents
+
+<!-- CONTENTS:BEGIN -->
 
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
 | `neighborhood-pages/` | 124 neighborhood pages across 9 cities |
+| `district-pages/` | 10 San Francisco MLS district pages |
 | `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
-| `sierra-export/` | 148 paste-ready files with absolute image URLs |
+| `sierra-export/` | 151 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
 | `data/market/` | Compass market data behind the pages, and how to refresh it |
 | `docs/` | Photo shot list and design specs |
 | `scripts/` | Build and refresh tooling |
+
+<!-- CONTENTS:END -->
 
 Two further neighborhood maps sit at the repo root in a different format,
 generated from a wider dataset rather than hand-drawn:
@@ -34,17 +41,17 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **151 published pages** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **161 pages in this repo** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **0** | of 259 total; 259 filled so far |
+| Empty photo slots | **10** | of 269 total; 259 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-134 neighborhoods are mapped; 124 have a written page.
+124 neighborhoods are mapped; 124 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
@@ -56,9 +63,8 @@ Market data is complete: all **151 published pages** carry verified Compass figu
 | Redwood City | 13 | 13 | — |
 | San Bruno | 17 | 17 | — |
 | San Carlos | 6 | 6 | — |
-| San Francisco | 0 | 10 | — |
 | San Mateo | 28 | 28 | — |
-| **Total** | **124** | **134** | **0** |
+| **Total** | **124** | **124** | **0** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -70,9 +76,10 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 
 | Area | Empty slots |
 |---|---:|
-| **Total** | **0** |
+| SF Districts | 10 |
+| **Total** | **10** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 0 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 10 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Calls that need you
 
@@ -84,7 +91,8 @@ None of these block anything. Each is a judgment about the business or the marke
 | **Shoreview's +38.6%** | 1 page | Clears the 8-sale threshold honestly on 13 sales, but it is the largest swing published anywhere on the site. |
 | **"Highlands" identity** | 1 page | Compass lists it separately from San Mateo Highlands so the match to Millbrae Highlands is probable, but the API cannot confirm which city a neighborhood belongs to. |
 | **Mills Estates, twice** | 2 pages | One Compass neighborhood straddling the Millbrae–Burlingame line, so both pages publish identical figures. Correct, but deliberate. |
-| **Image hosting** | 51 images | Served via jsDelivr off this public repo. Rebuild with `--image-base` against Sierra's media library to drop the GitHub dependency. |
+| **Image hosting** | 288 images | Served via jsDelivr off this public repo, pinned to `@main` — so the repo must stay public and the live site follows whatever main holds. Rebuild with `--image-base` against Sierra's media library to drop the GitHub dependency. |
+| **Icon hosting** | 496 icon URLs | Tabler icons load from jsDelivr at `@latest`, an unpinned version this repo does not control. They are absolute URLs in the page source, so `--image-base` cannot move them. |
 | **Hillsborough boundary feature** | 1 geojson | A 95-vertex polygon named `Hillsborough` sits in the neighborhood layer, larger than any real neighborhood — almost certainly a city outline that got mixed in. |
 
 ### Pages that publish no market figures — on purpose

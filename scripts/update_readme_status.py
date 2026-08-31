@@ -23,11 +23,39 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 BEGIN, END = "<!-- STATUS:BEGIN -->", "<!-- STATUS:END -->"
+CBEGIN, CEND = "<!-- CONTENTS:BEGIN -->", "<!-- CONTENTS:END -->"
+
+
+def render_contents(d):
+    """The Contents table. Generated for the same reason the status block is:
+    its counts were hand-typed and three of them had gone stale."""
+    cities = len(d["written"])
+    return "\n".join([
+        CBEGIN, "",
+        "| Directory | What's in it |",
+        "|---|---|",
+        f"| `city-pages/` | {d['city_pages']} city pages |",
+        f"| `neighborhood-pages/` | {d['nbhd_pages']} neighborhood pages across {cities} cities |",
+        f"| `district-pages/` | {d['district_pages']} San Francisco MLS district pages |",
+        f"| `maps/` | Leaflet map widgets for {cities} cities, plus unwritten page scaffolds |",
+        f"| `sierra-export/` | {d['exported']} paste-ready files with absolute image URLs |",
+        "| `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |",
+        "| `data/market/` | Compass market data behind the pages, and how to refresh it |",
+        "| `docs/` | Photo shot list and design specs |",
+        "| `scripts/` | Build and refresh tooling |",
+        "", CEND,
+    ])
 
 # Judgment calls that need a human, not a count. Kept here so regenerating the
 # section never drops them.
+#
+# The scope column may be a literal string, or a callable taking the computed
+# counts dict. Anything that is a count MUST be a callable — the whole reason
+# this script exists is that hand-typed numbers in the README went stale, and a
+# hardcoded number here is the same bug one layer down. "51 images" sat in this
+# list while the real figure grew to 288.
 DECISIONS = [
-    ("Team production stats", "27 city pages",
+    ("Team production stats", lambda d: f"{d['chen_stats']} city pages",
      "`$48M+` / `100% of list` / `12 days` / `5.0★` are sample figures and have never been "
      "touched. They need your verified numbers."),
     ("Shoreview's +38.6%", "1 page",
@@ -39,9 +67,13 @@ DECISIONS = [
     ("Mills Estates, twice", "2 pages",
      "One Compass neighborhood straddling the Millbrae–Burlingame line, so both pages publish "
      "identical figures. Correct, but deliberate."),
-    ("Image hosting", "51 images",
-     "Served via jsDelivr off this public repo. Rebuild with `--image-base` against Sierra's "
-     "media library to drop the GitHub dependency."),
+    ("Image hosting", lambda d: f"{d['image_files']} images",
+     "Served via jsDelivr off this public repo, pinned to `@main` — so the repo must stay "
+     "public and the live site follows whatever main holds. Rebuild with `--image-base` "
+     "against Sierra's media library to drop the GitHub dependency."),
+    ("Icon hosting", lambda d: f"{d['icon_urls']} icon URLs",
+     "Tabler icons load from jsDelivr at `@latest`, an unpinned version this repo does not "
+     "control. They are absolute URLs in the page source, so `--image-base` cannot move them."),
     ("Hillsborough boundary feature", "1 geojson",
      "A 95-vertex polygon named `Hillsborough` sits in the neighborhood layer, larger than any "
      "real neighborhood — almost certainly a city outline that got mixed in."),
@@ -59,10 +91,17 @@ def collect():
     for p in ROOT.glob("neighborhood-pages/*/*.html"):
         written[p.parent.name] = written.get(p.parent.name, 0) + 1
 
-    mapped, scaffolds = {}, {}
+    mapped, scaffolds, districts = {}, {}, {}
     for gj in sorted(ROOT.glob("maps/*/map/*.geojson")):
         city = gj.parts[-3]
         feats = json.loads(gj.read_text())["features"]
+        # San Francisco's layer holds the 10 MLS districts, not neighborhoods.
+        # Counting them as mapped neighborhoods put "San Francisco 0/10" in the
+        # neighborhood coverage table and inflated the total to 134.
+        if all(re.fullmatch(r"District \d+", f["properties"].get("name") or "")
+               for f in feats):
+            districts[city] = len(feats)
+            continue
         mapped[city] = sum(
             1 for f in feats
             if not (city == "hillsborough" and f["properties"].get("name") == "Hillsborough"))
@@ -71,8 +110,14 @@ def collect():
             scaffolds[p.parent.name] = scaffolds.get(p.parent.name, 0) + 1
 
     photos = {}
-    for p in list(ROOT.glob("neighborhood-pages/*/*.html")) + list(ROOT.glob("city-pages/*.html")):
-        key = "City pages" if p.parent.name == "city-pages" else p.parent.name
+    for p in (list(ROOT.glob("neighborhood-pages/*/*.html"))
+              + list(ROOT.glob("city-pages/*.html"))
+              # District pages carry hero slots too. Leaving them out reported
+              # "0 empty photo slots" while all 10 district heroes were empty.
+              + list(ROOT.glob("district-pages/*/*.html"))):
+        key = ("City pages" if p.parent.name == "city-pages"
+               else "SF districts" if p.parts[-3] == "district-pages"
+               else p.parent.name)
         t = p.read_text()
         photos[key] = photos.get(key, 0) + len(re.findall(r"\[ (?:HERO )?IMAGE \]", t))
 
@@ -90,6 +135,13 @@ def collect():
                                if p.is_file() and p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])),
         chen_stats=sum(1 for p in ROOT.glob("city-pages/*.html")
                        if "Replace with your verified production figures" in p.read_text()),
+        district_pages=len(list(ROOT.glob("district-pages/*/*.html"))),
+        # Every image file the repo actually carries, both trees, top level
+        # included — this is the jsDelivr exposure, not the filled-slot count.
+        image_files=len([p for p in ROOT.glob("*-images/**/*")
+                         if p.is_file() and p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")]),
+        icon_urls=sum(p.read_text().count("cdn.jsdelivr.net/npm/@tabler")
+                      for p in ROOT.glob("sierra-export/**/*.html")),
     )
     d["no_figures"] = [
         ((r.get("city") or "san-mateo"), r["slug"], r.get("noData") or "unattributed")
@@ -118,7 +170,9 @@ def collect():
 
 
 def title(city):
-    return city.replace("-", " ").title()
+    # .title() would render "SF districts" as "Sf Districts".
+    return " ".join(w if w.isupper() else w.capitalize()
+                    for w in city.replace("-", " ").split())
 
 
 def render(d):
@@ -126,8 +180,10 @@ def render(d):
     total_scaffold = sum(d["scaffolds"].values())
     total_photos = sum(d["photos"].values())
     L = [BEGIN, "", "## Work remaining", "",
-         f"Market data is complete: all **{d['city_pages'] + d['nbhd_pages']} published pages** "
-         f"carry verified Compass figures. What is left falls into three piles.", "",
+         # Not "published" — the repo does not know what is live on Sierra.
+         f"Market data is complete: all **{d['city_pages'] + d['nbhd_pages'] + d['district_pages']} "
+         f"pages in this repo** carry verified Compass figures. What is left falls into three "
+         f"piles.", "",
          f"| | Count | |", "|---|---:|---|",
          f"| Neighborhoods with no page | **{total_scaffold}** | blank scaffolds in `maps/`, prose included |",
          f"| Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} "
@@ -191,7 +247,7 @@ def render(d):
           "None of these block anything. Each is a judgment about the business or the market.", "",
           "| Item | Scope | What's needed |", "|---|---|---|"]
     for name, scope, why in DECISIONS:
-        L.append(f"| **{name}** | {scope} | {why} |")
+        L.append(f"| **{name}** | {scope(d) if callable(scope) else scope} | {why} |")
     L.append("")
 
     if d["no_figures"]:
@@ -219,13 +275,19 @@ def main():
     args = ap.parse_args()
 
     text = README.read_text()
-    block = render(collect())
+    d = collect()
+    block = render(d)
 
     if BEGIN in text and END in text:
         new = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END), lambda _m: block, text, flags=re.S)
     else:  # first run — insert after the Contents section
         anchor = "\n## City pages"
         new = text.replace(anchor, "\n" + block + "\n" + anchor, 1)
+
+    if CBEGIN in new and CEND in new:
+        contents = render_contents(d)
+        new = re.sub(re.escape(CBEGIN) + r".*?" + re.escape(CEND),
+                     lambda _m: contents, new, flags=re.S)
 
     if args.check:
         print("README status block is STALE — run scripts/update_readme_status.py"

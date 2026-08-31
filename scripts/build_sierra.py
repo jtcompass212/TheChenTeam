@@ -2,9 +2,9 @@
 """Generate paste-ready files for Sierra Interactive.
 
 The source pages already hardcode every figure — there is no runtime data
-dependency, no <script>, nothing fetched. What they are NOT is portable: 51
-images are referenced with repo-relative paths like `../city-images/foo.jpg`,
-which resolve locally and 404 the moment the markup is pasted into Sierra.
+dependency, no <script>, nothing fetched. What they are NOT is portable: every
+image is referenced with a repo-relative path like `../city-images/foo.jpg`,
+which resolves locally and 404s the moment the markup is pasted into Sierra.
 
 This rewrites those to absolute URLs and drops the editor-facing comment, so
 each file in sierra-export/ can be pasted straight into TinyMCE's Source Code
