@@ -36,7 +36,6 @@ def render_contents(d):
         "|---|---|",
         f"| `city-pages/` | {d['city_pages']} city pages |",
         f"| `neighborhood-pages/` | {d['nbhd_pages']} neighborhood pages across {cities} cities |",
-        f"| `district-pages/` | {d['district_pages']} San Francisco MLS district pages |",
         f"| `maps/` | Leaflet map widgets for {cities} cities, plus unwritten page scaffolds |",
         f"| `sierra-export/` | {d['exported']} paste-ready files with absolute image URLs |",
         "| `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |",
@@ -118,13 +117,8 @@ def collect():
 
     photos = {}
     for p in (list(ROOT.glob("neighborhood-pages/*/*.html"))
-              + list(ROOT.glob("city-pages/*.html"))
-              # District pages carry hero slots too. Leaving them out reported
-              # "0 empty photo slots" while all 10 district heroes were empty.
-              + list(ROOT.glob("district-pages/*/*.html"))):
-        key = ("City pages" if p.parent.name == "city-pages"
-               else "SF districts" if p.parts[-3] == "district-pages"
-               else p.parent.name)
+              + list(ROOT.glob("city-pages/*.html"))):
+        key = "City pages" if p.parent.name == "city-pages" else p.parent.name
         t = p.read_text()
         photos[key] = photos.get(key, 0) + len(re.findall(r"\[ (?:HERO )?IMAGE \]", t))
 
@@ -142,7 +136,6 @@ def collect():
                                if p.is_file() and p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])),
         chen_stats=sum(1 for p in ROOT.glob("city-pages/*.html")
                        if "Replace with your verified production figures" in p.read_text()),
-        district_pages=len(list(ROOT.glob("district-pages/*/*.html"))),
         # Every image file the repo actually carries, both trees, top level
         # included — this is the jsDelivr exposure, not the filled-slot count.
         image_files=len([p for p in ROOT.glob("*-images/**/*")
@@ -188,7 +181,7 @@ def render(d):
     total_photos = sum(d["photos"].values())
     L = [BEGIN, "", "## Work remaining", "",
          # Not "published" — the repo does not know what is live on Sierra.
-         f"Market data is complete: all **{d['city_pages'] + d['nbhd_pages'] + d['district_pages']} "
+         f"Market data is complete: all **{d['city_pages'] + d['nbhd_pages']} "
          f"pages in this repo** carry verified Compass figures. What is left falls into three "
          f"piles.", "",
          f"| | Count | |", "|---|---:|---|",

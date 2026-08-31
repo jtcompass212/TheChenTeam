@@ -50,7 +50,7 @@ REASON = {
              "records only a handful of closed sales a year &mdash; too few in any recent "
              "quarter to support a median that would mean anything"),
     "not-residential": ("Not a residential area",
-                        "is parkland or civic ground rather than a residential neighbourhood, "
+                        "is parkland or civic ground rather than a residential neighborhood, "
                         "and no meaningful volume of homes trades here"),
     "unattributed": ("No separately reported sales",
                      "has no sales attributed to it in the MLS data behind Compass Market "
@@ -201,7 +201,7 @@ def build(n, r, d, by_slug):
     <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-bottom: 24px;">
       <div class="fade-in d3" style="font-size: 17px; line-height: 1.75; color: {BODY};">
         <p style="margin: 0px 0px 18px;">{n['intro']} Below you&rsquo;ll find current homes for sale in {name}, updated throughout the day.</p>
-        <p style="margin: 0px;">If you'd like more information on any of these listings, just reach out &mdash; we're happy to share disclosures, recent sales, and pricing history. Looking beyond {name}? Browse <a href="/san-francisco/district-{num}/">District {num}</a>, <a href="/san-francisco/">San Francisco real estate</a>, or <a href="#similar-neighborhoods">nearby neighborhoods</a>.</p>
+        <p style="margin: 0px;">If you'd like more information on any of these listings, just reach out &mdash; we're happy to share disclosures, recent sales, and pricing history. Looking beyond {name}? Browse <a href="/san-francisco/">San Francisco real estate</a> or <a href="#similar-neighborhoods">nearby neighborhoods</a>.</p>
       </div>
       <div style="align-self: stretch; min-height: 280px; border-radius: 4px; overflow: hidden; background: {PANEL}; display: flex; align-items: center; justify-content: center;"><span style="font-size: 13px; color: {FAINT}; text-align: center; letter-spacing: 0.04em;">[ HERO IMAGE ]<br>A representative {name} street or view<br>~900&times;650</span></div>
     </div>
@@ -233,7 +233,7 @@ def build(n, r, d, by_slug):
     <div style="max-width: 1180px; margin: 0px auto; padding: 0px 32px;">
       {eyebrow('Schools')}
       {h2(f'Schools serving {name}', mb=12)}
-      <p style="font-size: 15px; line-height: 1.7; color: {BODY}; margin: 0px 0px 24px; max-width: 78ch;">San Francisco Unified assigns elementary seats through a citywide choice-and-lottery process rather than by home address, so no San Francisco home guarantees enrolment at any particular school. The schools below are those located in and around District {num}.</p>
+      <p style="font-size: 15px; line-height: 1.7; color: {BODY}; margin: 0px 0px 24px; max-width: 78ch;">San Francisco Unified assigns elementary seats through a citywide choice-and-lottery process rather than by home address, so no San Francisco home guarantees enrollment at any particular school. The schools below are those located in and around District {num}.</p>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
 {schools}
       </div>

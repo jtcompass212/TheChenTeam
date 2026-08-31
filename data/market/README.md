@@ -141,19 +141,21 @@ The ten SF MLS districts resolve as `neighborhoods:["District N"]` against
 `counties:["San Francisco County"]`. Unlike neighborhood-scale queries, DOM and sold/list are
 populated and usable here — sale counts run 18–145 a quarter, close to city scale.
 
-Figures live in `scripts/build_district_pages.py` rather than a CSV, because the query shape
-differs from every other row in this directory. Two districts are condominium markets where
-single-family barely trades: D6 (7–19 sales) and D8 (5–18). Their year-over-year is suppressed —
-D8's raw YoY reads **+179.7%** off a 5-sale base quarter.
+There are no district pages any more — they were removed, and with them the script that held
+these figures. The geo shape is kept here because the neighborhood pages still take their
+district name and school list from `sf-districts-content.json`, and because the districts remain
+the right query when a district-scale figure is ever needed again. Two of them are condominium
+markets where single-family barely trades: D6 (7–19 sales) and D8 (5–18), so a district-scale
+year-over-year needs suppressing — D8's raw YoY reads **+179.7%** off a 5-sale base quarter.
 
 ## San Francisco neighborhoods
 
-`pending-san-francisco-2026-08-31.csv` holds all 95 SF neighborhoods, pulled 2026-08-31.
+`market-data-san-francisco-2026-08-31.csv` holds all 95 SF neighborhoods, pulled 2026-08-31.
 
-It is deliberately **not** named `market-data-*.csv`. All three scripts glob that pattern, and
-`verify_repo.py` errors on a data row with no page — so committing 95 rows before the pages
-exist would fail the pre-push hook 95 times. As each district's pages land, move those rows
-into a real `market-data-san-francisco-*.csv`.
+It was staged as `pending-san-francisco-*.csv` while the pages were being written: all three
+scripts glob `market-data-*.csv`, and `verify_repo.py` errors on a data row with no page, so
+committing 95 rows up front would have failed the pre-push hook 95 times. All 95 pages now
+exist, so the rows live under the real name.
 
 | | Count |
 |---|---:|

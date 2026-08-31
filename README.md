@@ -21,7 +21,6 @@ what the repo contains, not what has been published.
 |---|---|
 | `city-pages/` | 27 city pages |
 | `neighborhood-pages/` | 219 neighborhood pages across 10 cities |
-| `district-pages/` | 10 San Francisco MLS district pages |
 | `maps/` | Leaflet map widgets for 10 cities, plus unwritten page scaffolds |
 | `sierra-export/` | 246 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
@@ -41,12 +40,12 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **256 pages in this repo** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **246 pages in this repo** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **105** | of 364 total; 259 filled so far |
+| Empty photo slots | **95** | of 354 total; 259 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
@@ -78,10 +77,9 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 | Area | Empty slots |
 |---|---:|
 | San Francisco | 95 |
-| SF Districts | 10 |
-| **Total** | **105** |
+| **Total** | **95** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 105 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 95 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
 ### Neighborhood hero images still needed (95)
 
