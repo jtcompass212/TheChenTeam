@@ -1,0 +1,96 @@
+slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData,noDataDetail
+pinelake-park,san-francisco,Pinelake Park,SF,quarter,2026-Q2,5,2130000,1092,,,,,,
+inner-sunset,san-francisco,Inner Sunset,SF,quarter,2026-Q2,12,2155000,1343,,,,,,
+corona-heights,san-francisco,Corona Heights,SF,quarter,2026-Q2,7,2600000,1519,,,,,,
+hayes-valley,san-francisco,Hayes Valley,SF,quarter,2026-Q2,3,968888,999,,,,,,
+alamo-square,san-francisco,Alamo Square,SF,quarter,2026-Q2,4,7500000,1359,,,,,,
+ingleside-heights,san-francisco,Ingleside Heights,SF,quarter,2026-Q2,3,1360000,1045,,,,,,
+noe-valley,san-francisco,Noe Valley,SF,quarter,2026-Q2,47,3400000,1890,,,,,,
+pacific-heights,san-francisco,Pacific Heights,SF,quarter,2026-Q2,20,8000000,1950,,,,,,
+bayview,san-francisco,Bayview,SF,quarter,2026-Q2,17,995000,807,,,,,,
+excelsior,san-francisco,Excelsior,SF,quarter,2026-Q2,33,1300000,901,,,,,,
+outer-sunset,san-francisco,Outer Sunset,SF,quarter,2026-Q2,21,2000000,1223,,,,,,
+sea-cliff,san-francisco,Sea Cliff,SF,quarter,2026-Q2,10,5850000,1993,,,,,,
+glen-park,san-francisco,Glen Park,SF,quarter,2026-Q2,25,2150000,1429,,,,,,
+bernal-heights,san-francisco,Bernal Heights,SF,quarter,2026-Q2,44,1950000,1339,,,,,,
+potrero-hill,san-francisco,Potrero Hill,SF,quarter,2026-Q2,16,2553525,1506,,,,,,
+marina-district,san-francisco,Marina District,SF,quarter,2026-Q2,5,4915000,1731,,,,,,
+balboa-terrace,san-francisco,Balboa Terrace,SF,quarter,2026-Q2,4,2900000,1169,,,,,,
+buena-vista,san-francisco,Buena Vista,SF,quarter,2026-Q2,9,3350000,1864,,,,,,
+central-richmond,san-francisco,Central Richmond,SF,quarter,2026-Q2,18,2620000,1219,,,,,,
+central-sunset,san-francisco,Central Sunset,SF,quarter,2026-Q2,34,2003888,1185,,,,,,
+cole-valley-parnassus-heights,san-francisco,Cole Valley/Parnassus Heights,SF,quarter,2026-Q2,4,5500000,2275,,,,,"Compass geo is 'Cole Valley-Parnassus Heights' - the slash form silently falls back to a regional aggregate"
+cow-hollow,san-francisco,Cow Hollow,SF,quarter,2026-Q2,5,9050000,2275,,,,,,
+crocker-amazon,san-francisco,Crocker Amazon,SF,quarter,2026-Q2,19,1263000,866,,,,,,
+diamond-heights,san-francisco,Diamond Heights,SF,quarter,2026-Q2,3,3050000,1238,,,,,,
+eureka-valley-dolores-heights,san-francisco,Eureka Valley-Dolores Heights,SF,quarter,2026-Q2,27,4163000,1726,,,,,,
+forest-hill,san-francisco,Forest Hill,SF,quarter,2026-Q2,10,3355000,1383,,,,,,
+forest-hill-extension,san-francisco,Forest Hill Extension,SF,quarter,2026-Q2,6,3300000,1125,,,,,,
+golden-gate-heights,san-francisco,Golden Gate Heights,SF,quarter,2026-Q2,8,2815000,1396,,,,,,
+ingleside,san-francisco,Ingleside,SF,quarter,2026-Q2,15,1330000,847,,,,,,
+ingleside-terraces,san-francisco,Ingleside Terraces,SF,quarter,2026-Q2,6,2809000,1080,,,,,,
+inner-parkside,san-francisco,Inner Parkside,SF,quarter,2026-Q2,8,2150000,1268,,,,,,
+inner-richmond,san-francisco,Inner Richmond,SF,quarter,2026-Q2,10,4085000,1365,,,,,,
+jordan-park-laurel-heights,san-francisco,Jordan Park-Laurel Heights,SF,quarter,2026-Q2,5,3420000,1498,,,,,,
+lake-street,san-francisco,Lake Street,SF,quarter,2026-Q2,9,5350000,1772,,,,,,
+lakeshore,san-francisco,Lakeshore,SF,quarter,2026-Q2,3,1878000,1319,,,,,,
+lakeside,san-francisco,Lakeside,SF,quarter,2026-Q2,6,3180000,1112,,,,,,
+lone-mountain,san-francisco,Lone Mountain,SF,quarter,2026-Q2,4,3950000,1733,,,,,,
+lower-pacific-heights,san-francisco,Lower Pacific Heights,SF,quarter,2026-Q2,12,4090000,1355,,,,,,
+merced-heights,san-francisco,Merced Heights,SF,quarter,2026-Q2,9,1580000,885,,,,,,
+midtown-terrace,san-francisco,Midtown Terrace,SF,quarter,2026-Q2,10,1725000,1343,,,,,,
+miraloma-park,san-francisco,Miraloma Park,SF,quarter,2026-Q2,17,2050000,1222,,,,,,
+mission-district,san-francisco,Mission District,SF,quarter,2026-Q2,15,2770000,1203,,,,,,
+mission-terrace,san-francisco,Mission Terrace,SF,quarter,2026-Q2,11,1415000,969,,,,,,
+monterey-heights,san-francisco,Monterey Heights,SF,quarter,2026-Q2,7,3300000,1162,,,,,,
+mount-davidson-manor,san-francisco,Mount Davidson Manor,SF,quarter,2026-Q2,7,2550000,1028,,,,,,
+nob-hill,san-francisco,Nob Hill,SF,quarter,2026-Q2,3,1700000,1334,,,,,,
+oceanview,san-francisco,Oceanview,SF,quarter,2026-Q2,4,1050000,771,,,,,,
+outer-mission,san-francisco,Outer Mission,SF,quarter,2026-Q2,7,1300000,680,,,,,,
+outer-parkside,san-francisco,Outer Parkside,SF,quarter,2026-Q2,23,1775000,1188,,,,,,
+outer-richmond,san-francisco,Outer Richmond,SF,quarter,2026-Q2,25,2128000,1105,,,,,,
+parkside,san-francisco,Parkside,SF,quarter,2026-Q2,32,1910000,1174,,,,,,
+portola,san-francisco,Portola,SF,quarter,2026-Q2,33,1330000,938,,,,,,
+presidio-heights,san-francisco,Presidio Heights,SF,quarter,2026-Q2,6,8200000,1984,,,,,,
+russian-hill,san-francisco,Russian Hill,SF,quarter,2026-Q2,8,9001000,2176,,,,,,
+saint-francis-wood,san-francisco,Saint Francis Wood,SF,quarter,2026-Q2,6,4380000,1296,,,,,,
+silver-terrace,san-francisco,Silver Terrace,SF,quarter,2026-Q2,8,1050000,891,,,,,,
+sunnyside,san-francisco,Sunnyside,SF,quarter,2026-Q2,21,1715000,1286,,,,,,
+telegraph-hill,san-francisco,Telegraph Hill,SF,quarter,2026-Q2,7,4999000,2000,,,,,,
+twin-peaks,san-francisco,Twin Peaks,SF,quarter,2026-Q2,6,2000000,1161,,,,,,
+visitacion-valley,san-francisco,Visitacion Valley,SF,quarter,2026-Q2,15,1137000,770,,,,,,
+west-portal,san-francisco,West Portal,SF,quarter,2026-Q2,6,2925000,1230,,,,,,
+westwood-park,san-francisco,Westwood Park,SF,quarter,2026-Q2,3,2860000,1289,,,,,,
+financial-district-barbary-coast,san-francisco,Financial District-Barbary Coast,ALL,quarter,2026-Q2,6,2100000,1495,,,,,,"no single-family sales; condo/townhouse market"
+north-waterfront,san-francisco,North Waterfront,ALL,quarter,2026-Q2,7,1115000,911,,,,,,"no single-family sales; condo/townhouse market"
+mission-dolores,san-francisco,Mission Dolores,ALL,quarter,2026-Q2,11,1190000,1125,,,,,,"no single-family sales; condo/townhouse market"
+central-waterfront-dogpatch,san-francisco,Central Waterfront-Dogpatch,ALL,quarter,2026-Q2,16,1255000,1155,,,,,,"no single-family sales; condo/townhouse market"
+candlestick-point,san-francisco,Candlestick Point,ALL,quarter,2026-Q2,6,725000,656,,,,,,"no single-family sales; condo/townhouse market"
+civic-center,san-francisco,Civic Center,ALL,quarter,2026-Q2,3,980000,1274,,,,,,"no single-family sales; condo/townhouse market"
+north-panhandle,san-francisco,North Panhandle,ALL,quarter,2026-Q2,18,2050000,1298,,,,,,"no single-family sales; condo/townhouse market"
+panhandle,san-francisco,Panhandle,ALL,quarter,2026-Q2,11,2050000,1317,,,,,,"no single-family sales; condo/townhouse market"
+mission-bay,san-francisco,Mission Bay,ALL,quarter,2026-Q2,32,1250000,,,,,,,"condo market; medSqft NOT YET PULLED"
+south-beach,san-francisco,South Beach,ALL,quarter,2026-Q2,92,1225000,,,,,,,"condo market; medSqft NOT YET PULLED"
+north-beach,san-francisco,North Beach,ALL,quarter,2026-Q2,6,1350000,,,,,,,"condo market; medSqft NOT YET PULLED"
+western-addition,san-francisco,Western Addition,ALL,quarter,2026-Q2,11,1060000,,,,,,,"condo market; medSqft NOT YET PULLED"
+tenderloin,san-francisco,Tenderloin,ALL,quarter,2026-Q2,11,506600,,,,,,,"condo market; medSqft NOT YET PULLED"
+duboce-triangle,san-francisco,Duboce Triangle,ALL,quarter,2026-Q2,4,1950000,,,,,,,"condo market; medSqft NOT YET PULLED"
+hunters-point,san-francisco,Hunters Point,ALL,quarter,2026-Q2,7,798800,,,,,,,"condo market; medSqft NOT YET PULLED"
+yerba-buena,san-francisco,Yerba Buena,ALL,quarter,2026-Q2,30,1200000,,,,,,,"condo market; medSqft NOT YET PULLED"
+forest-knolls,san-francisco,Forest Knolls,SF,none,2026-Q2,2,,,,,,,thin,"2 closed sales in 2026-Q2"
+merced-manor,san-francisco,Merced Manor,SF,none,2026-Q2,1,,,,,,,thin,"1 closed sale in 2026-Q2"
+clarendon-heights,san-francisco,Clarendon Heights,SF,none,2026-Q2,1,,,,,,,thin,"1 closed sale in 2026-Q2"
+haight-ashbury,san-francisco,Haight Ashbury,SF,none,2026-Q2,2,,,,,,,thin,"2 closed sales in 2026-Q2"
+little-hollywood,san-francisco,Little Hollywood,SF,none,2026-Q2,2,,,,,,,thin,"2 closed sales in 2026-Q2"
+south-of-market,san-francisco,South of Market,SF,none,2026-Q2,1,,,,,,,thin,"1 closed sale in 2026-Q2"
+westwood-highlands,san-francisco,Westwood Highlands,SF,none,2026-Q2,2,,,,,,,thin,"2 closed sales in 2026-Q2"
+anza-vista,san-francisco,Anza Vista,ALL,none,2026-Q2,2,,,,,,,thin,"2 sales all property types"
+stonestown,san-francisco,Stonestown,ALL,none,2026-Q2,1,,,,,,,thin,"1 sale all property types"
+lake-merced-park,san-francisco,Lake Merced Park,ALL,none,2026-Q2,2,,,,,,,thin,"parkland; 2 sales all property types"
+presidio,san-francisco,Presidio,SF,none,2026-Q2,1,,,,,,,not-residential,"national parkland; 1 sale on record"
+golden-gate-park,san-francisco,Golden Gate Park,ALL,none,2026-Q2,0,,,,,,,not-residential,"parkland; zero sales under any property type"
+lincoln-park,san-francisco,Lincoln Park,ALL,none,2026-Q2,0,,,,,,,not-residential,"parkland; zero sales under any property type"
+union-square,san-francisco,Union Square,ALL,none,2026-Q2,0,,,,,,,not-residential,"retail core; zero sales under any property type"
+bayview-heights,san-francisco,Bayview Heights,ALL,none,2026-Q2,0,,,,,,,unattributed,"zero sales under any property type"
+sherwood-forest,san-francisco,Sherwood Forest,ALL,none,2026-Q2,0,,,,,,,unattributed,"zero sales under any property type"
+lower-nob-hill,san-francisco,Lower Nob Hill,SF,none,2026-Q2,0,,,,,,,unattributed,"zero single-family sales; all-property-types NOT YET PULLED"

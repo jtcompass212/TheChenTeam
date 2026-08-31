@@ -145,3 +145,37 @@ Figures live in `scripts/build_district_pages.py` rather than a CSV, because the
 differs from every other row in this directory. Two districts are condominium markets where
 single-family barely trades: D6 (7–19 sales) and D8 (5–18). Their year-over-year is suppressed —
 D8's raw YoY reads **+179.7%** off a 5-sale base quarter.
+
+## San Francisco neighborhoods
+
+`pending-san-francisco-2026-08-31.csv` holds all 95 SF neighborhoods, pulled 2026-08-31.
+
+It is deliberately **not** named `market-data-*.csv`. All three scripts glob that pattern, and
+`verify_repo.py` errors on a data row with no page — so committing 95 rows before the pages
+exist would fail the pre-push hook 95 times. As each district's pages land, move those rows
+into a real `market-data-san-francisco-*.csv`.
+
+| | Count |
+|---|---:|
+| Publishes a median | **78** (62 single-family, 16 all-types) |
+| Too thin to publish | 10 |
+| Not residential | 4 |
+| No sales attributed | 3 |
+
+**Sixteen neighborhoods have no single-family market at all** and are labeled `ALL`, the same
+treatment as `harbor-town`. South Beach returns 92 sales all-types and zero single-family;
+Mission Bay 32, Yerba Buena 30, North Panhandle 18. Their pages must say which property types
+the figure covers.
+
+**Four are not residential** — Golden Gate Park, Lincoln Park, Union Square and the Presidio all
+return zero under every property type. They are features in the neighborhood geojson, not places
+anyone buys a house. Treat them like `foster-city/vintage-park`.
+
+**One name hits the fallback bug.** The geojson calls it `Cole Valley/Parnassus Heights`; that
+string returns the regional aggregate (807969.78 on 22,052 sales). The Compass geo is
+`Cole Valley-Parnassus Heights` with a hyphen, which returns $5.5M on 4 sales. It is the only
+slash-containing name in the 95 — the four hyphenated names all resolve correctly.
+
+**Still outstanding:** `medSqft` for the eight all-types rows added last (Mission Bay, South
+Beach, North Beach, Western Addition, Tenderloin, Duboce Triangle, Hunters Point, Yerba Buena),
+and an all-property-types check on Lower Nob Hill, which returned zero single-family.
