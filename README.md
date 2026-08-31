@@ -20,10 +20,10 @@ what the repo contains, not what has been published.
 | Directory | What's in it |
 |---|---|
 | `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 124 neighborhood pages across 9 cities |
+| `neighborhood-pages/` | 219 neighborhood pages across 10 cities |
 | `district-pages/` | 10 San Francisco MLS district pages |
-| `maps/` | Leaflet map widgets for 9 cities, plus unwritten page scaffolds |
-| `sierra-export/` | 151 paste-ready files with absolute image URLs |
+| `maps/` | Leaflet map widgets for 10 cities, plus unwritten page scaffolds |
+| `sierra-export/` | 246 paste-ready files with absolute image URLs |
 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
 | `data/market/` | Compass market data behind the pages, and how to refresh it |
 | `docs/` | Photo shot list and design specs |
@@ -41,17 +41,17 @@ generated from a wider dataset rather than hand-drawn:
 
 ## Work remaining
 
-Market data is complete: all **161 pages in this repo** carry verified Compass figures. What is left falls into three piles.
+Market data is complete: all **256 pages in this repo** carry verified Compass figures. What is left falls into three piles.
 
 | | Count | |
 |---|---:|---|
 | Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **10** | of 269 total; 259 filled so far |
+| Empty photo slots | **105** | of 364 total; 259 filled so far |
 | Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
-124 neighborhoods are mapped; 124 have a written page.
+219 neighborhoods are mapped; 219 have a written page.
 
 | City | Written | Mapped | Remaining |
 |---|---:|---:|---:|
@@ -63,8 +63,9 @@ Market data is complete: all **161 pages in this repo** carry verified Compass f
 | Redwood City | 13 | 13 | — |
 | San Bruno | 17 | 17 | — |
 | San Carlos | 6 | 6 | — |
+| San Francisco | 95 | 95 | — |
 | San Mateo | 28 | 28 | — |
-| **Total** | **124** | **124** | **0** |
+| **Total** | **219** | **219** | **0** |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
@@ -76,10 +77,17 @@ Every written page renders a placeholder where a photo belongs. Named residentia
 
 | Area | Empty slots |
 |---|---:|
+| San Francisco | 95 |
 | SF Districts | 10 |
-| **Total** | **10** |
+| **Total** | **105** |
 
-> **The shot list is out of date.** It briefs 135 slots against an actual 10 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+> **The shot list is out of date.** It briefs 135 slots against an actual 105 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
+
+### Neighborhood hero images still needed (95)
+
+One hero slot per neighborhood page; these still render `[ HERO IMAGE ]` instead of a photo.
+
+- **San Francisco** (95): [Alamo Square](neighborhood-pages/san-francisco/alamo-square.html), [Anza Vista](neighborhood-pages/san-francisco/anza-vista.html), [Balboa Terrace](neighborhood-pages/san-francisco/balboa-terrace.html), [Bayview](neighborhood-pages/san-francisco/bayview.html), [Bayview Heights](neighborhood-pages/san-francisco/bayview-heights.html), [Bernal Heights](neighborhood-pages/san-francisco/bernal-heights.html), [Buena Vista](neighborhood-pages/san-francisco/buena-vista.html), [Candlestick Point](neighborhood-pages/san-francisco/candlestick-point.html), [Central Richmond](neighborhood-pages/san-francisco/central-richmond.html), [Central Sunset](neighborhood-pages/san-francisco/central-sunset.html), [Central Waterfront & Dogpatch](neighborhood-pages/san-francisco/central-waterfront-dogpatch.html), [Civic Center](neighborhood-pages/san-francisco/civic-center.html), [Clarendon Heights](neighborhood-pages/san-francisco/clarendon-heights.html), [Cole Valley & Parnassus Heights](neighborhood-pages/san-francisco/cole-valley-parnassus-heights.html), [Corona Heights](neighborhood-pages/san-francisco/corona-heights.html), [Cow Hollow](neighborhood-pages/san-francisco/cow-hollow.html), [Crocker Amazon](neighborhood-pages/san-francisco/crocker-amazon.html), [Diamond Heights](neighborhood-pages/san-francisco/diamond-heights.html), [Duboce Triangle](neighborhood-pages/san-francisco/duboce-triangle.html), [Eureka Valley & Dolores Heights](neighborhood-pages/san-francisco/eureka-valley-dolores-heights.html), [Excelsior](neighborhood-pages/san-francisco/excelsior.html), [Financial District & Barbary Coast](neighborhood-pages/san-francisco/financial-district-barbary-coast.html), [Forest Hill](neighborhood-pages/san-francisco/forest-hill.html), [Forest Hill Extension](neighborhood-pages/san-francisco/forest-hill-extension.html), [Forest Knolls](neighborhood-pages/san-francisco/forest-knolls.html), [Glen Park](neighborhood-pages/san-francisco/glen-park.html), [Golden Gate Heights](neighborhood-pages/san-francisco/golden-gate-heights.html), [Golden Gate Park](neighborhood-pages/san-francisco/golden-gate-park.html), [Haight Ashbury](neighborhood-pages/san-francisco/haight-ashbury.html), [Hayes Valley](neighborhood-pages/san-francisco/hayes-valley.html), [Hunters Point](neighborhood-pages/san-francisco/hunters-point.html), [Ingleside](neighborhood-pages/san-francisco/ingleside.html), [Ingleside Heights](neighborhood-pages/san-francisco/ingleside-heights.html), [Ingleside Terraces](neighborhood-pages/san-francisco/ingleside-terraces.html), [Inner Parkside](neighborhood-pages/san-francisco/inner-parkside.html), [Inner Richmond](neighborhood-pages/san-francisco/inner-richmond.html), [Inner Sunset](neighborhood-pages/san-francisco/inner-sunset.html), [Jordan Park & Laurel Heights](neighborhood-pages/san-francisco/jordan-park-laurel-heights.html), [Lake Merced Park](neighborhood-pages/san-francisco/lake-merced-park.html), [Lake Street](neighborhood-pages/san-francisco/lake-street.html), [Lakeshore](neighborhood-pages/san-francisco/lakeshore.html), [Lakeside](neighborhood-pages/san-francisco/lakeside.html), [Lincoln Park](neighborhood-pages/san-francisco/lincoln-park.html), [Little Hollywood](neighborhood-pages/san-francisco/little-hollywood.html), [Lone Mountain](neighborhood-pages/san-francisco/lone-mountain.html), [Lower Nob Hill](neighborhood-pages/san-francisco/lower-nob-hill.html), [Lower Pacific Heights](neighborhood-pages/san-francisco/lower-pacific-heights.html), [Marina District](neighborhood-pages/san-francisco/marina-district.html), [Merced Heights](neighborhood-pages/san-francisco/merced-heights.html), [Merced Manor](neighborhood-pages/san-francisco/merced-manor.html), [Midtown Terrace](neighborhood-pages/san-francisco/midtown-terrace.html), [Miraloma Park](neighborhood-pages/san-francisco/miraloma-park.html), [Mission Bay](neighborhood-pages/san-francisco/mission-bay.html), [Mission District](neighborhood-pages/san-francisco/mission-district.html), [Mission Dolores](neighborhood-pages/san-francisco/mission-dolores.html), [Mission Terrace](neighborhood-pages/san-francisco/mission-terrace.html), [Monterey Heights](neighborhood-pages/san-francisco/monterey-heights.html), [Mount Davidson Manor](neighborhood-pages/san-francisco/mount-davidson-manor.html), [Nob Hill](neighborhood-pages/san-francisco/nob-hill.html), [Noe Valley](neighborhood-pages/san-francisco/noe-valley.html), [North Beach](neighborhood-pages/san-francisco/north-beach.html), [North Panhandle](neighborhood-pages/san-francisco/north-panhandle.html), [North Waterfront](neighborhood-pages/san-francisco/north-waterfront.html), [Oceanview](neighborhood-pages/san-francisco/oceanview.html), [Outer Mission](neighborhood-pages/san-francisco/outer-mission.html), [Outer Parkside](neighborhood-pages/san-francisco/outer-parkside.html), [Outer Richmond](neighborhood-pages/san-francisco/outer-richmond.html), [Outer Sunset](neighborhood-pages/san-francisco/outer-sunset.html), [Pacific Heights](neighborhood-pages/san-francisco/pacific-heights.html), [Panhandle](neighborhood-pages/san-francisco/panhandle.html), [Parkside](neighborhood-pages/san-francisco/parkside.html), [Pinelake Park](neighborhood-pages/san-francisco/pinelake-park.html), [Portola](neighborhood-pages/san-francisco/portola.html), [Potrero Hill](neighborhood-pages/san-francisco/potrero-hill.html), [Presidio](neighborhood-pages/san-francisco/presidio.html), [Presidio Heights](neighborhood-pages/san-francisco/presidio-heights.html), [Russian Hill](neighborhood-pages/san-francisco/russian-hill.html), [Saint Francis Wood](neighborhood-pages/san-francisco/saint-francis-wood.html), [Sea Cliff](neighborhood-pages/san-francisco/sea-cliff.html), [Sherwood Forest](neighborhood-pages/san-francisco/sherwood-forest.html), [Silver Terrace](neighborhood-pages/san-francisco/silver-terrace.html), [South Beach](neighborhood-pages/san-francisco/south-beach.html), [South of Market](neighborhood-pages/san-francisco/south-of-market.html), [Stonestown](neighborhood-pages/san-francisco/stonestown.html), [Sunnyside](neighborhood-pages/san-francisco/sunnyside.html), [Telegraph Hill](neighborhood-pages/san-francisco/telegraph-hill.html), [Tenderloin](neighborhood-pages/san-francisco/tenderloin.html), [Twin Peaks](neighborhood-pages/san-francisco/twin-peaks.html), [Union Square](neighborhood-pages/san-francisco/union-square.html), [Visitacion Valley](neighborhood-pages/san-francisco/visitacion-valley.html), [West Portal](neighborhood-pages/san-francisco/west-portal.html), [Western Addition](neighborhood-pages/san-francisco/western-addition.html), [Westwood Highlands](neighborhood-pages/san-francisco/westwood-highlands.html), [Westwood Park](neighborhood-pages/san-francisco/westwood-park.html), [Yerba Buena](neighborhood-pages/san-francisco/yerba-buena.html)
 
 ### Calls that need you
 
@@ -92,7 +100,7 @@ None of these block anything. Each is a judgment about the business or the marke
 | **"Highlands" identity** | 1 page | Compass lists it separately from San Mateo Highlands so the match to Millbrae Highlands is probable, but the API cannot confirm which city a neighborhood belongs to. |
 | **Mills Estates, twice** | 2 pages | One Compass neighborhood straddling the Millbrae–Burlingame line, so both pages publish identical figures. Correct, but deliberate. |
 | **Image hosting** | 288 images | Served via jsDelivr off this public repo, pinned to `@main` — so the repo must stay public and the live site follows whatever main holds. Rebuild with `--image-base` against Sierra's media library to drop the GitHub dependency. |
-| **Icon hosting** | 496 icon URLs | Tabler icons load from jsDelivr at `@latest`, an unpinned version this repo does not control. They are absolute URLs in the page source, so `--image-base` cannot move them. |
+| **Icon hosting** | 781 icon URLs | Tabler icons load from jsDelivr at `@latest`, an unpinned version this repo does not control. They are absolute URLs in the page source, so `--image-base` cannot move them. |
 | **Hillsborough boundary feature** | 1 geojson | A 95-vertex polygon named `Hillsborough` sits in the neighborhood layer, larger than any real neighborhood — almost certainly a city outline that got mixed in. |
 
 ### Pages that publish no market figures — on purpose
@@ -113,6 +121,23 @@ Each states its reason on the page rather than borrowing a citywide median.
 | `san-bruno/bayhill` | Not a residential area |
 | `san-bruno/tanforan` | Not a residential area |
 | `san-bruno/golden-gate-national-cemetery` | Not a residential area |
+| `san-francisco/forest-knolls` | Too few sales a year to support a median |
+| `san-francisco/merced-manor` | Too few sales a year to support a median |
+| `san-francisco/clarendon-heights` | Too few sales a year to support a median |
+| `san-francisco/haight-ashbury` | Too few sales a year to support a median |
+| `san-francisco/little-hollywood` | Too few sales a year to support a median |
+| `san-francisco/south-of-market` | Too few sales a year to support a median |
+| `san-francisco/westwood-highlands` | Too few sales a year to support a median |
+| `san-francisco/anza-vista` | Too few sales a year to support a median |
+| `san-francisco/stonestown` | Too few sales a year to support a median |
+| `san-francisco/lake-merced-park` | Too few sales a year to support a median |
+| `san-francisco/presidio` | Not a residential area |
+| `san-francisco/golden-gate-park` | Not a residential area |
+| `san-francisco/lincoln-park` | Not a residential area |
+| `san-francisco/union-square` | Not a residential area |
+| `san-francisco/bayview-heights` | No sales attributed to it in the MLS |
+| `san-francisco/sherwood-forest` | No sales attributed to it in the MLS |
+| `san-francisco/lower-nob-hill` | No sales attributed to it in the MLS |
 | `san-mateo/lauriedale` | Too few sales a year to support a median |
 | `san-mateo/hillsdale-the-lanes` | No separate Compass reporting area for it |
 

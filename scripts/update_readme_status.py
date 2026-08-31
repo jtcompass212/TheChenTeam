@@ -105,6 +105,13 @@ def collect():
         mapped[city] = sum(
             1 for f in feats
             if not (city == "hillsborough" and f["properties"].get("name") == "Hillsborough"))
+
+    # San Francisco's neighborhood layer is the root-level geojson, not a file
+    # under maps/*/map/ — maps/san-francisco/ holds the 10 MLS districts. Without
+    # this, its 95 written pages counted toward the total with no Mapped column.
+    sf = ROOT / "san-francisco-neighborhoods.geojson"
+    if sf.exists():
+        mapped["san-francisco"] = len(json.loads(sf.read_text())["features"])
     for p in ROOT.glob("maps/*/*.html"):
         if not p.stem.endswith("-map"):
             scaffolds[p.parent.name] = scaffolds.get(p.parent.name, 0) + 1

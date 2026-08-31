@@ -56,8 +56,12 @@ def check_figures():
         h = p.read_text()
         if r["basis"] == "none":
             continue
-        for want in (money(r["medPrice"]), f"${int(r['medSqft']):,}",
-                     f"{r['sales']} closed sale"):
+        # A blank medSqft is a gap in the pull, not a broken page — check the
+        # figures that exist rather than crashing on the ones that do not.
+        wanted = [money(r["medPrice"]), f"{r['sales']} closed sale"]
+        if r["medSqft"]:
+            wanted.append(f"${int(r['medSqft']):,}")
+        for want in wanted:
             n += 1
             if want not in h:
                 out.append(f"{city}/{slug}: {want!r} not on the page")
