@@ -1,4 +1,4 @@
 slug,city,name,types,basis,period,sales,medPrice,medSqft,medDom,spLp,yoyPeriod,yoyPct,noData,noDataDetail
-lauriedale,san-mateo,Lauriedale,SF,none,,,,,,,,,unattributed,
-hillsdale-the-lanes,san-mateo,"Hillsdale ""The Lanes""",SF,none,,,,,,,,,unattributed,
-san-mateo-terrace-beresford,san-mateo,San Mateo Terrace/Beresford,SF,none,,,,,,,,,unattributed,
+lauriedale,san-mateo,Lauriedale,SF,none,,,,,,,,,thin,"resolves in Compass; 7 closed sales across the 4 quarters to 2026-Q2 (2/0/4/1) - below the publish threshold"
+hillsdale-the-lanes,san-mateo,"Hillsdale ""The Lanes""",SF,none,,,,,,,,,unresolved,"no Compass geo by this name; bare 'Hillsdale' resolves but is the whole district, not this pocket"
+san-mateo-terrace-beresford,san-mateo,San Mateo Terrace/Beresford,SF,quarter,2026-Q2,11,2400000,1343,,,,,,"pulled as Compass geo 'San Mateo Terrace'; combined 'San Mateo Terrace/Beresford' string does not resolve"
