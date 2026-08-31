@@ -34,7 +34,7 @@
       "intro": "District 2 is the Sunset and Parkside — the largest contiguous residential district in San Francisco and, by volume, its busiest single-family market. The stock is remarkably consistent: rows of 1930s and 1940s tunnel-entrance houses on a regular grid, most with garages below and level entries, running from Golden Gate Park south to Sloat and west to the ocean.",
       "cards": [
         ["tree", "Parks", "Golden Gate Park", "The district's northern boundary, with Stern Grove to the south"],
-        ["building-store", "Shopping", "Irving & Noriega Streets", "Neighbourhood retail corridors serving the Inner and Central Sunset"],
+        ["building-store", "Shopping", "Irving & Noriega Streets", "Neighborhood retail corridors serving the Inner and Central Sunset"],
         ["train", "Transit", "N-Judah & L-Taraval", "Two Muni Metro lines running the length of the district to downtown"],
         ["beach", "Coast", "Ocean Beach", "The full western edge, with the Great Highway beyond"]
       ],
@@ -60,7 +60,7 @@
       "intro": "District 3 is the city's southwest corner — Lakeside, Ingleside, Oceanview and the blocks around Lake Merced and San Francisco State. It is among the most attainable single-family markets in San Francisco, with a mix of 1920s bungalows, post-war tract housing and larger lots than the districts to the north.",
       "cards": [
         ["tree", "Parks", "Lake Merced", "A freshwater lake with a four-mile loop, at the district's western edge"],
-        ["building-store", "Shopping", "Stonestown Galleria", "The city's major west-side shopping centre, beside SF State"],
+        ["building-store", "Shopping", "Stonestown Galleria", "The city's major west-side shopping center, beside SF State"],
         ["train", "Transit", "M-Ocean View & Daly City BART", "Muni Metro through the district, with BART at its southern edge"],
         ["school", "Education", "San Francisco State University", "A 140-acre campus anchoring the district's northwest"]
       ],
@@ -69,7 +69,7 @@
         ["Lakeshore", "lakeshore", "The blocks between Lake Merced and the ocean"],
         ["Merced Manor", "merced-manor", "A compact pocket of consistent 1930s stock"],
         ["Merced Heights", "merced-heights", "Elevated blocks with views south"],
-        ["Ingleside", "ingleside", "The district's largest and most attainable neighbourhood"],
+        ["Ingleside", "ingleside", "The district's largest and most attainable neighborhood"],
         ["Ingleside Heights", "ingleside-heights", "The southern slope toward Daly City"],
         ["Oceanview", "oceanview", "Modest homes on a flat grid at the district's southeast"],
         ["Stonestown", "stonestown", "The blocks around the galleria and SF State"]
@@ -85,7 +85,7 @@
       "name": "Twin Peaks West",
       "intro": "District 4 is the arc of planned residence parks on the western slope of Twin Peaks — St Francis Wood, Forest Hill, Balboa Terrace, Westwood Park and their neighbours. Laid out in the 1910s and 1920s with curving streets, mature street trees and design covenants, these are the closest thing San Francisco has to garden suburbs, and the stock is correspondingly large.",
       "cards": [
-        ["tree", "Parks", "Mount Davidson", "The city's highest point, forested, at the district's centre"],
+        ["tree", "Parks", "Mount Davidson", "The city's highest point, forested, at the district's center"],
         ["building-store", "Shopping", "West Portal Avenue", "A village-scaled main street serving the whole district"],
         ["train", "Transit", "West Portal Station", "Four Muni Metro lines converge here before the Twin Peaks Tunnel"],
         ["home", "Architecture", "Planned residence parks", "Curving streets and period covenants from the 1910s and 1920s"]
@@ -112,13 +112,13 @@
       "name": "Central",
       "intro": "District 5 is the geographic and, for many buyers, the emotional center of San Francisco — the belt of hillside neighborhoods running from Haight Ashbury and Cole Valley east through the Castro and Mission Dolores, then south into Noe Valley and Glen Park. It is a district of Victorians and Edwardians on steep streets, of view lots on Corona Heights and Clarendon Heights, and of the flatter, family-scaled blocks below Noe Valley's 24th Street corridor.",
       "cards": [
-        ["tree", "Parks", "Mission Dolores Park", "The district's front lawn, with the skyline view that defines the neighbourhood"],
+        ["tree", "Parks", "Mission Dolores Park", "The district's front lawn, with the skyline view that defines the neighborhood"],
         ["building-store", "Shopping", "24th Street, Noe Valley", "A walkable independent retail corridor anchoring the district's southern half"],
         ["train", "Transit", "Castro Muni Station", "Muni Metro under Market Street, with the J-Church serving Noe Valley and Glen Park"],
         ["mountain", "Views", "Corona Heights & Twin Peaks", "The high ground that gives the district's hillside blocks their premium"]
       ],
       "roster": [
-        ["Noe Valley", "noe-valley", "The district's family centre, sunny and flat-ish, built around the 24th Street corridor"],
+        ["Noe Valley", "noe-valley", "The district's family center, sunny and flat-ish, built around the 24th Street corridor"],
         ["Eureka Valley & Dolores Heights", "eureka-valley-dolores-heights", "The Castro and the steep view blocks above it, the district's most recognisable address"],
         ["Cole Valley & Parnassus Heights", "cole-valley-parnassus-heights", "A compact, village-scaled pocket below Sutro, close to UCSF"],
         ["Glen Park", "glen-park", "The district's southern edge, with its own BART station and canyon parkland"],
@@ -145,10 +145,10 @@
         ["building-community", "Culture", "Civic Center performing arts", "The symphony, opera and ballet houses at the district's eastern edge"]
       ],
       "roster": [
-        ["Hayes Valley", "hayes-valley", "The district's retail and restaurant centre, dense and highly walkable"],
+        ["Hayes Valley", "hayes-valley", "The district's retail and restaurant center, dense and highly walkable"],
         ["Alamo Square", "alamo-square", "Large Victorians facing the park, the district's grandest stock"],
         ["North Panhandle", "north-panhandle", "Consistent Edwardian blocks north of the Panhandle strip"],
-        ["Western Addition", "western-addition", "A broad, mixed neighbourhood at the district's core"],
+        ["Western Addition", "western-addition", "A broad, mixed neighborhood at the district's core"],
         ["Anza Vista", "anza-vista", "A small post-war pocket on the hill near Kaiser"],
         ["Lower Pacific Heights", "lower-pacific-heights", "The blocks below California Street, more attainable than the crest"]
       ],
@@ -215,12 +215,12 @@
         ["tree", "Parks", "Bernal Heights Park", "A grassland summit with 360-degree views over the district"],
         ["building-store", "Shopping", "Valencia & 24th Streets", "Two of the city's densest independent retail corridors"],
         ["train", "Transit", "16th & 24th Street BART", "Two BART stations plus Caltrain at 4th & King"],
-        ["building-community", "Waterfront", "Mission Bay & Dogpatch", "New waterfront neighbourhoods around UCSF and the ballpark"]
+        ["building-community", "Waterfront", "Mission Bay & Dogpatch", "New waterfront neighborhoods around UCSF and the ballpark"]
       ],
       "roster": [
         ["Mission District", "mission-district", "The district's dense, walkable core, sunny and highly connected"],
         ["Potrero Hill", "potrero-hill", "South-facing slopes with sun, views and quieter streets"],
-        ["Bernal Heights", "bernal-heights", "Cottages on a hill, the district's most family-scaled neighbourhood"],
+        ["Bernal Heights", "bernal-heights", "Cottages on a hill, the district's most family-scaled neighborhood"],
         ["Central Waterfront & Dogpatch", "central-waterfront-dogpatch", "Converted industrial blocks by the bay, heavily redeveloped"],
         ["South of Market", "south-of-market", "Lofts and towers on the downtown fringe"],
         ["Mission Bay", "mission-bay", "Wholly new construction around UCSF and the ballpark"],
@@ -238,13 +238,13 @@
       "name": "Southeast",
       "intro": "District 10 is the southeast quarter — Bayview, Hunters Point, the Excelsior, Portola and Visitacion Valley. It is the most attainable single-family district in San Francisco and, by sale count, one of the busiest: the stock is overwhelmingly detached houses on standard lots, much of it built between the 1920s and the 1950s, on some of the sunniest ground in the city.",
       "cards": [
-        ["tree", "Parks", "McLaren Park", "The city's second-largest park, at the district's centre"],
+        ["tree", "Parks", "McLaren Park", "The city's second-largest park, at the district's center"],
         ["building-store", "Shopping", "Mission Street, Excelsior", "The district's principal retail corridor"],
         ["train", "Transit", "T-Third & Bayshore Caltrain", "Muni Metro along Third Street plus Caltrain at the southern edge"],
         ["home", "Housing", "Detached single-family stock", "Standard lots and garages, the city's most attainable house market"]
       ],
       "roster": [
-        ["Bayview", "bayview", "The district's largest neighbourhood, sunny and predominantly detached homes"],
+        ["Bayview", "bayview", "The district's largest neighborhood, sunny and predominantly detached homes"],
         ["Hunters Point", "hunters-point", "The eastern waterfront, with substantial redevelopment underway"],
         ["Excelsior", "excelsior", "A dense grid of family homes around Mission Street"],
         ["Portola", "portola", "Quiet blocks and long southern views, once the city's nursery district"],
