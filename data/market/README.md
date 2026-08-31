@@ -98,3 +98,50 @@ its actual period and must be rendered with that period visible, never as "curre
 are 5-sale quarters, not market moves. Sale counts are published alongside every figure so a
 reader can weigh them. Quarter-over-quarter was rejected outright for neighborhoods — it swung
 +37% / −32% on the same data.
+
+**The API silently returns a regional aggregate for any unrecognized geo.** This is the most
+dangerous behaviour in the endpoint. Pass a `neighborhoods` value Compass does not know and it
+does not error and does not return empty — it drops the filter and answers with a large regional
+aggregate that looks like a plausible neighborhood median.
+
+Confirmed 2026-08-28. These four names all returned byte-identical series:
+
+    Hillsdale"The Lanes"          759260.604653896  (20152 sales)
+    San Mateo Terrace/Beresford   759260.604653896  (20152 sales)
+    Beresford                     759260.604653896  (20152 sales)
+    Zzzz Not A Real District       745533.320229796  (control — nonsense string)
+
+Two tells, and both must be checked on every new geo before its figures are used:
+
+| Signal | Real neighborhood | Fallback |
+|---|---|---|
+| Median | round (`2550000`, `3450000`) | fractional to 12+ decimals |
+| Sale count | 1–150 | ~15,000–22,000 (Bay Area scale) |
+
+A third check: query two different names that should differ. Identical results mean both fell back.
+
+Had this gone unnoticed, Hillsdale "The Lanes" would have published a **$759K median** — a Bay
+Area aggregate wearing a neighborhood's name.
+
+**Names that do and do not resolve**, as of 2026-08-28:
+
+| Query | Resolves? |
+|---|---|
+| `Hillsdale "The Lanes"`, any spelling | no — Compass has no entry |
+| `Hillsdale` | yes, but it is the whole district, not the pocket |
+| `Lauriedale` | yes — max 4 sales/quarter, too thin to publish |
+| `San Mateo Terrace` | yes — 11 sales in 2026-Q2 |
+| `San Mateo Terrace/Beresford`, `Beresford` | no |
+| `District 1` … `District 10` (SF county) | **yes** — the SF MLS districts are valid geos |
+| `SF District 5`, `San Francisco District 5` | no — the bare `District N` form is required |
+
+## San Francisco MLS districts
+
+The ten SF MLS districts resolve as `neighborhoods:["District N"]` against
+`counties:["San Francisco County"]`. Unlike neighborhood-scale queries, DOM and sold/list are
+populated and usable here — sale counts run 18–145 a quarter, close to city scale.
+
+Figures live in `scripts/build_district_pages.py` rather than a CSV, because the query shape
+differs from every other row in this directory. Two districts are condominium markets where
+single-family barely trades: D6 (7–19 sales) and D8 (5–18). Their year-over-year is suppressed —
+D8's raw YoY reads **+179.7%** off a 5-sale base quarter.
