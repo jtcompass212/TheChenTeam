@@ -115,6 +115,10 @@ TEMPLATE = """<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage 
   var map = L.map('sf-overview-map', {{ scrollWheelZoom: false, zoomControl: true }});
 
   // CARTO Voyager — colorful, labeled basemap (matches the per-neighborhood mini-maps).
+  // HEADS UP: as of Aug 2026 CARTO requires a free API key for this raster endpoint.
+  // Without one every tile is stamped "API KEY REQUIRED" — verified on the live site.
+  // Append ?key=YOUR_KEY below once you have one. This affects all 144 map files,
+  // not just this one, so whatever is decided here should be applied across maps/.
   L.tileLayer('https://{{s}}.basemaps.cartocdn.com/rastertiles/voyager/{{z}}/{{x}}/{{y}}{{r}}.png', {{
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
     maxZoom: 19
