@@ -36,6 +36,7 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "san-francisco-neighborhoods.geojson"
 DEST = ROOT / "maps" / "san-francisco" / "map" / "san-francisco-overview-map.html"
+KEY_FILE = ROOT / "data" / "carto-basemap-key.txt"
 
 # Pages live at /san-francisco/<slug>/ — the section is "san-francisco" and each
 # page's filename is the slug. Anything else here produces a map full of 404s.
@@ -115,11 +116,11 @@ TEMPLATE = """<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage 
   var map = L.map('sf-overview-map', {{ scrollWheelZoom: false, zoomControl: true }});
 
   // CARTO Voyager — colorful, labeled basemap (matches the per-neighborhood mini-maps).
-  // HEADS UP: as of Aug 2026 CARTO requires a free API key for this raster endpoint.
-  // Without one every tile is stamped "API KEY REQUIRED" — verified on the live site.
-  // Append ?key=YOUR_KEY below once you have one. This affects all 144 map files,
-  // not just this one, so whatever is decided here should be applied across maps/.
-  L.tileLayer('https://{{s}}.basemaps.cartocdn.com/rastertiles/voyager/{{z}}/{{x}}/{{y}}{{r}}.png', {{
+  // The ?key= is required: CARTO began gating this raster endpoint in Aug 2026 and
+  // stamps "API KEY REQUIRED" across every tile without one. The key comes from
+  // data/carto-basemap-key.txt — change it there, not here, then run
+  // scripts/set_carto_key.py to restamp all of maps/.
+  L.tileLayer('https://{{s}}.basemaps.cartocdn.com/rastertiles/voyager/{{z}}/{{x}}/{{y}}{{r}}.png?key={carto_key}', {{
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
     maxZoom: 19
   }}).addTo(map);
@@ -232,6 +233,7 @@ def main():
     gj = build_geojson()
     html = TEMPLATE.format(
         base_path=BASE_PATH,
+        carto_key=KEY_FILE.read_text().strip(),
         geojson=json.dumps(gj, separators=(",", ":")),
     )
     DEST.write_text(html)
