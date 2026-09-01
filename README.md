@@ -13,6 +13,10 @@ repo pushes to the site or reads back from it, so **what is actually live is
 not recorded here.** Do not infer it from this file. Counts below describe
 what the repo contains, not what has been published.
 
+The one exception is [Sierra: what is configured in the CMS](#sierra-what-is-configured-in-the-cms),
+a hand-written, dated snapshot of settings that exist only in the admin. It is
+not generated and not checked, and it goes stale on its own.
+
 ## Contents
 
 <!-- CONTENTS:BEGIN -->
@@ -30,11 +34,17 @@ what the repo contains, not what has been published.
 
 <!-- CONTENTS:END -->
 
-Two further neighborhood maps sit at the repo root in a different format,
-generated from a wider dataset rather than hand-drawn:
+Two further neighborhood datasets sit at the repo root in a different format,
+covering a wider area than the hand-drawn city maps:
 
 - `san-francisco-neighborhoods.{geojson,html}` — 95 neighborhoods
 - `south-san-francisco-neighborhoods.{geojson,html}` — 16 neighborhoods
+
+The San Francisco `.geojson` is the source of truth for that city — see
+[San Francisco](#san-francisco). The `.html` beside it is the original upload
+and is **not the widget used on the site**: it is a standalone viewer with no
+links out of it, keyed on Compass `seo_id` names rather than page slugs, and it
+loads Leaflet from unpkg. The generated overview map is what gets published.
 
 <!-- STATUS:BEGIN -->
 
@@ -71,7 +81,7 @@ Two of the remaining entries are not residential neighborhoods — **Golden Gate
 
 ### Photography
 
-Every written page renders a placeholder where a photo belongs. Named residential tracts have no archive coverage, so these need original photography — `docs/photo-shot-list.md` briefs them.
+Every image slot is filled — 354 of them, none still rendering a placeholder. See [Photos](#photos) for where they came from.
 
 | Area | Empty slots |
 |---|---:|
@@ -144,10 +154,16 @@ Each carries a market snapshot, a quarterly price chart, neighborhood cards
 and a schools/history block. Market figures come from Compass Market Insights
 — see `data/market/README.md`.
 
-## Neighborhood pages (124)
+City pages no longer carry a team-production stat block. It shipped with sample
+figures and a `// Replace with your verified production figures` comment still
+in the source, so it was removed from all 27 rather than published unverified.
+Anything replacing it needs real numbers first.
+
+## Neighborhood pages (219)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
+| San Francisco | 95 | 95 |
 | San Mateo | 28 | 28 |
 | San Bruno | 17 | 17 |
 | Hillsborough | 15 | 15 |
@@ -160,12 +176,67 @@ and a schools/history block. Market figures come from Compass Market Insights
 
 Every mapped neighborhood has a written page.
 
+San Francisco is built by its own scripts from a citywide GeoJSON rather than
+hand-drawn per neighborhood — see [San Francisco](#san-francisco).
+
 `maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
 neighborhood that has no page yet. See [Work remaining](#work-remaining) for
 the current counts, which cities are outstanding, and which pages deliberately
 publish no market figures.
 
-## Maps: neighborhoods by city (124 total)
+## San Francisco
+
+San Francisco arrived after the Peninsula cities and is built differently. The
+other nine cities have hand-drawn geometry per neighborhood; San Francisco is
+generated end to end from one citywide dataset.
+
+`san-francisco-neighborhoods.geojson` at the repo root — 95 features — is the
+source of truth for names, boundaries and slugs. Three scripts read it:
+
+```
+python3 scripts/build_sf_neighborhood_pages.py   # neighborhood-pages/san-francisco/
+python3 scripts/build_sf_overview_map.py         # the clickable citywide map
+python3 scripts/build_sf_neighborhood_maps.py    # one zoomed map per neighborhood
+```
+
+All three slugify names the same way, so every polygon links to a page that
+exists, at `/san-francisco/<slug>/`. Change the slug rule in one script and you
+must change it in all three.
+
+**The overview map** is written to
+`maps/san-francisco/map/san-francisco-overview-map.html`: 95 polygons, each
+linking to its own page.
+
+**Per-neighborhood maps** are written to `maps/san-francisco/<slug>-map.html`,
+95 of them — the neighborhood filled and outlined in gold, its neighbors grey
+and clickable. Neighbours are computed rather than curated: two neighborhoods
+are neighbors when their outlines come within 30 m of each other. Exact shared
+vertices alone are not enough, because the source is not a clean tessellation.
+The primary feature is written **last** so Leaflet paints it on top, which keeps
+its border unbroken along every shared edge.
+
+`maps/san-francisco/map/san-francisco-district-map.html` is a leftover from the
+removed district pages. Nothing references it.
+
+### The CARTO basemap key
+
+Every map in this repo draws CARTO Voyager tiles, which have required an API key
+since August 2026 — without one, each tile renders the words "API KEY REQUIRED".
+
+The key lives in `data/carto-basemap-key.txt` and is stamped into the map files
+rather than typed into each one:
+
+```
+python3 scripts/set_carto_key.py           # stamp it across maps/
+python3 scripts/set_carto_key.py --check   # verify none are missing or stale
+```
+
+239 map files currently carry it. It is a client-side basemap key — it ships in
+the page source by design, which is why it is committed here. That also means
+it should be **domain-restricted in the CARTO dashboard**, which has not been
+done yet.
+
+## Maps: neighborhoods by city (219 total)
 
 Alphabetized per city; names match what each map renders. Entries marked
 _(hidden)_ carry `"hidden": true` and render dimmed.
@@ -296,6 +367,104 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 - El Sereno Corte
 - Howard Park
 
+### San Francisco (95)
+
+- Alamo Square
+- Anza Vista
+- Balboa Terrace
+- Bayview
+- Bayview Heights
+- Bernal Heights
+- Buena Vista
+- Candlestick Point
+- Central Richmond
+- Central Sunset
+- Central Waterfront-Dogpatch
+- Civic Center
+- Clarendon Heights
+- Cole Valley/Parnassus Heights
+- Corona Heights
+- Cow Hollow
+- Crocker Amazon
+- Diamond Heights
+- Duboce Triangle
+- Eureka Valley-Dolores Heights
+- Excelsior
+- Financial District-Barbary Coast
+- Forest Hill
+- Forest Hill Extension
+- Forest Knolls
+- Glen Park
+- Golden Gate Heights
+- Golden Gate Park
+- Haight Ashbury
+- Hayes Valley
+- Hunters Point
+- Ingleside
+- Ingleside Heights
+- Ingleside Terraces
+- Inner Parkside
+- Inner Richmond
+- Inner Sunset
+- Jordan Park-Laurel Heights
+- Lake Merced Park
+- Lake Street
+- Lakeshore
+- Lakeside
+- Lincoln Park
+- Little Hollywood
+- Lone Mountain
+- Lower Nob Hill
+- Lower Pacific Heights
+- Marina District
+- Merced Heights
+- Merced Manor
+- Midtown Terrace
+- Miraloma Park
+- Mission Bay
+- Mission District
+- Mission Dolores
+- Mission Terrace
+- Monterey Heights
+- Mount Davidson Manor
+- Nob Hill
+- Noe Valley
+- North Beach
+- North Panhandle
+- North Waterfront
+- Oceanview
+- Outer Mission
+- Outer Parkside
+- Outer Richmond
+- Outer Sunset
+- Pacific Heights
+- Panhandle
+- Parkside
+- Pinelake Park
+- Portola
+- Potrero Hill
+- Presidio
+- Presidio Heights
+- Russian Hill
+- Saint Francis Wood
+- Sea Cliff
+- Sherwood Forest
+- Silver Terrace
+- South Beach
+- South of Market
+- Stonestown
+- Sunnyside
+- Telegraph Hill
+- Tenderloin
+- Twin Peaks
+- Union Square
+- Visitacion Valley
+- West Portal
+- Western Addition
+- Westwood Highlands
+- Westwood Park
+- Yerba Buena
+
 ### San Mateo (28)
 
 - Aragon
@@ -326,6 +495,52 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 - Shoreview
 - Sunnybrae
 - Westwood Knolls
+
+## Sierra: what is configured in the CMS
+
+> **A dated snapshot, not a live mirror.** Everything else in this file is read
+> from the working tree; this section is not, and nothing regenerates or checks
+> it. It records Sierra-side configuration that does not exist anywhere in this
+> repo — page components, saved searches, URL structure — because otherwise it
+> is only discoverable by clicking through the admin. **Last verified 2026-08-31.**
+> Treat it as a starting point and confirm in the admin before relying on it.
+
+**URLs are exactly two levels.** A Sierra content page lives at
+`/{section}/{page}/` and nothing deeper is possible, so
+`/san-francisco/{district}/{neighborhood}` cannot be built. San Francisco pages
+are therefore flat: `/san-francisco/<neighborhood>/`. Page filenames accept only
+`a-z`, `0-9` and `-`; a slash typed into the field is silently stripped rather
+than rejected, which fails quietly.
+
+**Maps must be Shared HTML Widgets.** The inline TinyMCE page editor strips
+`<script>` tags, so pasting a map into the page body loses the Leaflet code and
+leaves a dead container. Add maps under Content → Manage Shared HTML Widgets and
+attach them as a page component instead. 230 of the 239 files in `maps/` carry a
+comment saying so at the top; the nine that do not are the older per-city
+overview maps under `maps/<city>/map/`, which predate the note.
+
+**San Francisco page components.** All 95 pages carry their neighborhood map.
+58 of them also carry a "Listings from Saved Search" component below the map,
+titled `Homes for Sale in <Name>`, backed by a saved search named
+`<Name> (San Francisco)` — property type All Types, filtered to that
+neighborhood's exact MLS Subdivision token.
+
+The other 37 have no saved search because the MLS has no Subdivision token for
+them; a prefix or district match would pull in the wrong listings, so nothing
+was attached rather than something inaccurate.
+
+Four of the 58 render "No Matching Listings" rather than a title, because their
+saved search returns zero active listings today — **Balboa Terrace, Monterey
+Heights, Presidio Heights, Westwood Park**. They are correctly configured and
+will populate on their own when inventory appears. This is also why a live page
+is not a reliable test of whether the widget is attached: check the admin.
+
+**Page IDs are sequential by creation order**, which was alphabetical:
+`id = 345998 + alphabetical_index` across the 95 neighborhoods, with Noe Valley
+displaced out of sequence (it was created first) and everything after it shifted
+by one. That reproduced all 30 IDs confirmed by hand and is how the rest were
+derived — but it is an observation, not a guarantee. Verify the page title after
+loading an ID before writing to it.
 
 ## Refreshing market data
 
@@ -382,6 +597,27 @@ thresholds that decide when a year-over-year change is withheld.
 
 ## Photos
 
-24 of 159 image slots are filled from freely-licensed sources, each credited
-on its page. The rest need original photography; `docs/photo-shot-list.md`
-briefs every remaining slot.
+All 354 image slots are filled — no page still renders `[ HERO IMAGE ]`. They
+come from two trees:
+
+| Tree | Files | What they are |
+|---|---:|---|
+| `city-images/sourced/` | 135 | Freely-licensed city photos, credited on the page |
+| `neighborhood-images/` | 219 | One hero per neighborhood page |
+
+The 95 San Francisco heroes were sourced in bulk by
+`scripts/build_sf_hero_images.py` and `scripts/finalize_sf_hero_images.py`, and
+what each one ended up being is recorded in `data/sf-hero-image-final-log.json`:
+**51 from Wikimedia Commons, 44 satellite imagery**. The satellite ones are a
+deliberate fallback for neighborhoods with no usable archive photo — they are
+stand-ins, not photography, and are the obvious candidates if original shots are
+ever commissioned.
+
+`docs/photo-shot-list.md` is stale: it still briefs 135 empty slots against an
+actual 0. Regenerate it with `python3 scripts/write_shot_list.py`.
+
+> **Image containers must set `height`, not `min-height`.** A percentage height
+> on a child resolves against the parent's *specified* `height`; `min-height`
+> leaves that as `auto`, the child collapses, and `object-fit: cover` letterboxes
+> the photo instead of filling the frame. This had letterboxed images on all 246
+> pages. If a hero renders with bars around it, check that rule first.
