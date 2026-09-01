@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .hunters-point-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .hunters-point-map-wrap #hunters-point-map { width: 100%; height: 100%; }
+  .hunters-point-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .hunters-point-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .hunters-point-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .hunters-point-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="hunters-point-map-wrap">
+  <div id="hunters-point-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Hunters Point</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayview","slug":"bayview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38751,37.75027],[-122.40378,37.74943],[-122.40518,37.74498],[-122.40776,37.74125],[-122.40822,37.73761],[-122.40665,37.7352],[-122.40243,37.73723],[-122.39965,37.73988],[-122.39221,37.73566],[-122.39573,37.73191],[-122.39506,37.73105],[-122.39538,37.72965],[-122.39739,37.72994],[-122.39862,37.72856],[-122.39927,37.72678],[-122.4003,37.72701],[-122.40221,37.7281],[-122.40298,37.72779],[-122.40144,37.72377],[-122.39554,37.72241],[-122.39187,37.72035],[-122.39326,37.71881],[-122.39028,37.71717],[-122.38859,37.71484],[-122.388,37.71548],[-122.38813,37.7163],[-122.38685,37.71751],[-122.38626,37.71718],[-122.38187,37.7222],[-122.38217,37.72225],[-122.37783,37.72656],[-122.38343,37.72974],[-122.38227,37.73062],[-122.37978,37.7308],[-122.37935,37.73154],[-122.3796,37.73246],[-122.38098,37.73264],[-122.38236,37.73371],[-122.38429,37.73776],[-122.38869,37.74028],[-122.38702,37.745],[-122.38751,37.75027]]]]}},{"type":"Feature","properties":{"name":"Central Waterfront-Dogpatch","slug":"central-waterfront-dogpatch","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38784,37.7644],[-122.39297,37.76408],[-122.39262,37.76158],[-122.39225,37.75631],[-122.39128,37.75263],[-122.39136,37.75134],[-122.39176,37.7501],[-122.37597,37.75096],[-122.37609,37.75225],[-122.37996,37.75203],[-122.38003,37.75269],[-122.37988,37.75289],[-122.38149,37.75286],[-122.38197,37.75319],[-122.38282,37.75333],[-122.38298,37.75503],[-122.38132,37.75507],[-122.38072,37.75534],[-122.38076,37.75555],[-122.38103,37.75574],[-122.38094,37.7558],[-122.38124,37.75588],[-122.38126,37.7563],[-122.38141,37.75646],[-122.38132,37.75712],[-122.38145,37.75711],[-122.38148,37.75751],[-122.3812,37.75826],[-122.3813,37.75931],[-122.38145,37.7593],[-122.38147,37.75957],[-122.38126,37.75958],[-122.38127,37.76003],[-122.38187,37.76],[-122.38201,37.76081],[-122.38343,37.7623],[-122.38468,37.76211],[-122.3851,37.76232],[-122.38518,37.76337],[-122.38528,37.76324],[-122.38621,37.76332],[-122.38631,37.7631],[-122.3866,37.76319],[-122.3865,37.76339],[-122.38689,37.76348],[-122.38692,37.76367],[-122.38661,37.7639],[-122.38674,37.76402],[-122.38657,37.76425],[-122.38741,37.76423],[-122.38784,37.7644]]]]}},{"type":"Feature","properties":{"name":"Hunters Point","slug":"hunters-point","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38052,37.74719],[-122.38683,37.74707],[-122.38689,37.74755],[-122.38618,37.74809],[-122.37578,37.74875],[-122.37597,37.75096],[-122.38751,37.7503],[-122.38702,37.745],[-122.38869,37.74028],[-122.38429,37.73776],[-122.38236,37.73371],[-122.38098,37.73264],[-122.3796,37.73246],[-122.37935,37.73184],[-122.37999,37.73066],[-122.38227,37.73062],[-122.38343,37.72974],[-122.37783,37.72656],[-122.38217,37.72225],[-122.38066,37.72177],[-122.37912,37.72361],[-122.37708,37.72424],[-122.37594,37.72268],[-122.37556,37.72045],[-122.374,37.71891],[-122.37039,37.71869],[-122.36948,37.71783],[-122.36777,37.71767],[-122.36546,37.71597],[-122.36475,37.71648],[-122.36426,37.71629],[-122.36248,37.7182],[-122.36366,37.71905],[-122.36271,37.72007],[-122.35983,37.71851],[-122.35919,37.7194],[-122.36381,37.7221],[-122.363,37.72298],[-122.36024,37.72136],[-122.35998,37.72163],[-122.36275,37.72326],[-122.36237,37.72368],[-122.36532,37.72554],[-122.36491,37.7257],[-122.36152,37.72378],[-122.35784,37.72462],[-122.35796,37.72494],[-122.36126,37.72416],[-122.36164,37.72522],[-122.35801,37.72604],[-122.35697,37.72871],[-122.3604,37.72819],[-122.35788,37.72895],[-122.35773,37.72944],[-122.36218,37.72848],[-122.35879,37.72978],[-122.35992,37.73033],[-122.36088,37.72991],[-122.36191,37.73009],[-122.36521,37.73212],[-122.36565,37.73163],[-122.36678,37.7323],[-122.3692,37.73199],[-122.37194,37.73421],[-122.37418,37.73259],[-122.37557,37.73272],[-122.37488,37.73498],[-122.37532,37.73539],[-122.37587,37.73505],[-122.37597,37.73582],[-122.37524,37.73622],[-122.37488,37.7373],[-122.37635,37.73837],[-122.37352,37.73717],[-122.37122,37.73708],[-122.3674,37.73826],[-122.37277,37.73831],[-122.374,37.73953],[-122.36763,37.74013],[-122.37276,37.74551],[-122.37414,37.74499],[-122.37552,37.74704],[-122.38052,37.74719]]]]}}]};
+
+  var map = L.map('hunters-point-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

@@ -54,9 +54,6 @@ def render_contents(d):
 # hardcoded number here is the same bug one layer down. "51 images" sat in this
 # list while the real figure grew to 288.
 DECISIONS = [
-    ("Team production stats", lambda d: f"{d['chen_stats']} city pages",
-     "`$48M+` / `100% of list` / `12 days` / `5.0★` are sample figures and have never been "
-     "touched. They need your verified numbers."),
     ("Shoreview's +38.6%", "1 page",
      "Clears the 8-sale threshold honestly on 13 sales, but it is the largest swing published "
      "anywhere on the site."),
@@ -134,8 +131,6 @@ def collect():
         sourced_images=(len(list(ROOT.glob("city-images/sourced/*")))
                         + len([p for p in ROOT.glob("neighborhood-images/**/*")
                                if p.is_file() and p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])),
-        chen_stats=sum(1 for p in ROOT.glob("city-pages/*.html")
-                       if "Replace with your verified production figures" in p.read_text()),
         # Every image file the repo actually carries, both trees, top level
         # included — this is the jsDelivr exposure, not the filled-slot count.
         image_files=len([p for p in ROOT.glob("*-images/**/*")
@@ -188,7 +183,7 @@ def render(d):
          f"| Neighborhoods with no page | **{total_scaffold}** | blank scaffolds in `maps/`, prose included |",
          f"| Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} "
          f"total; {d['sourced_images']} filled so far |",
-         f"| Team stat blocks | **{d['chen_stats']}** | still showing sample figures |", ""]
+         ""]
 
     # coverage
     L += ["### Neighborhood page coverage", "",

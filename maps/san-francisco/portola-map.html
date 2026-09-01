@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .portola-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .portola-map-wrap #portola-map { width: 100%; height: 100%; }
+  .portola-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .portola-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .portola-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .portola-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="portola-map-wrap">
+  <div id="portola-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Portola</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayview","slug":"bayview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38751,37.75027],[-122.40378,37.74943],[-122.40518,37.74498],[-122.40776,37.74125],[-122.40822,37.73761],[-122.40665,37.7352],[-122.40243,37.73723],[-122.39965,37.73988],[-122.39221,37.73566],[-122.39573,37.73191],[-122.39506,37.73105],[-122.39538,37.72965],[-122.39739,37.72994],[-122.39862,37.72856],[-122.39927,37.72678],[-122.4003,37.72701],[-122.40221,37.7281],[-122.40298,37.72779],[-122.40144,37.72377],[-122.39554,37.72241],[-122.39187,37.72035],[-122.39326,37.71881],[-122.39028,37.71717],[-122.38859,37.71484],[-122.388,37.71548],[-122.38813,37.7163],[-122.38685,37.71751],[-122.38626,37.71718],[-122.38187,37.7222],[-122.38217,37.72225],[-122.37783,37.72656],[-122.38343,37.72974],[-122.38227,37.73062],[-122.37978,37.7308],[-122.37935,37.73154],[-122.3796,37.73246],[-122.38098,37.73264],[-122.38236,37.73371],[-122.38429,37.73776],[-122.38869,37.74028],[-122.38702,37.745],[-122.38751,37.75027]]]]}},{"type":"Feature","properties":{"name":"Bernal Heights","slug":"bernal-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42385,37.74065],[-122.42439,37.73883],[-122.42544,37.73721],[-122.42844,37.73495],[-122.43398,37.7322],[-122.43394,37.73197],[-122.43368,37.73185],[-122.4313,37.73233],[-122.42957,37.73229],[-122.42611,37.73165],[-122.42455,37.73155],[-122.41967,37.73201],[-122.41665,37.73201],[-122.41439,37.73242],[-122.4095,37.73505],[-122.40849,37.73629],[-122.40822,37.73761],[-122.40775,37.74125],[-122.40518,37.74498],[-122.40378,37.74943],[-122.40816,37.74836],[-122.42245,37.74801],[-122.42217,37.74518],[-122.42322,37.7423],[-122.42268,37.74233],[-122.42348,37.74075],[-122.42385,37.74065]]]]}},{"type":"Feature","properties":{"name":"Excelsior","slug":"excelsior","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41937,37.71897],[-122.42171,37.72424],[-122.42185,37.7242],[-122.42374,37.72876],[-122.41986,37.729],[-122.41969,37.732],[-122.42455,37.73155],[-122.4261,37.73165],[-122.42804,37.73202],[-122.43281,37.72731],[-122.441,37.71649],[-122.4339,37.71325],[-122.42881,37.71213],[-122.42551,37.71079],[-122.4248,37.71036],[-122.42058,37.71891],[-122.41937,37.71897]]]]}},{"type":"Feature","properties":{"name":"Silver Terrace","slug":"silver-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39961,37.72686],[-122.39927,37.72678],[-122.39862,37.72856],[-122.39739,37.72994],[-122.39538,37.72965],[-122.39506,37.73105],[-122.39573,37.73191],[-122.39221,37.73566],[-122.39965,37.73988],[-122.40243,37.73723],[-122.40665,37.7352],[-122.40464,37.7315],[-122.40297,37.7278],[-122.40221,37.7281],[-122.40031,37.72702],[-122.39961,37.72686]]]]}},{"type":"Feature","properties":{"name":"Visitacion Valley","slug":"visitacion-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39865,37.71591],[-122.39899,37.71659],[-122.40059,37.72184],[-122.41421,37.7182],[-122.41572,37.71827],[-122.41958,37.719],[-122.42058,37.71891],[-122.4248,37.71036],[-122.42333,37.70931],[-122.42389,37.70824],[-122.40558,37.70823],[-122.40482,37.70975],[-122.40328,37.71182],[-122.40279,37.71217],[-122.40161,37.71251],[-122.40097,37.71287],[-122.39937,37.7146],[-122.39865,37.71591]]]]}},{"type":"Feature","properties":{"name":"Portola","slug":"portola","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40664,37.73518],[-122.40822,37.73761],[-122.40849,37.73629],[-122.4095,37.73504],[-122.41439,37.73242],[-122.41666,37.73201],[-122.41969,37.73201],[-122.41986,37.729],[-122.42374,37.72876],[-122.42185,37.7242],[-122.42171,37.72424],[-122.41937,37.71897],[-122.41572,37.71827],[-122.41421,37.7182],[-122.40059,37.72184],[-122.40297,37.7278],[-122.40464,37.7315],[-122.40664,37.73518]]]]}}]};
+
+  var map = L.map('portola-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

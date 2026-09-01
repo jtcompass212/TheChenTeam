@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .buena-vista-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .buena-vista-map-wrap #buena-vista-map { width: 100%; height: 100%; }
+  .buena-vista-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .buena-vista-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .buena-vista-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .buena-vista-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="buena-vista-map-wrap">
+  <div id="buena-vista-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Buena Vista</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Cole Valley/Parnassus Heights","slug":"cole-valley-parnassus-heights","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.45947,37.75916],[-122.45937,37.75874],[-122.46063,37.75841],[-122.46084,37.7582],[-122.45981,37.75722],[-122.4595,37.75563],[-122.45914,37.75532],[-122.45839,37.7551],[-122.45783,37.75562],[-122.45733,37.75577],[-122.45728,37.75619],[-122.45745,37.75651],[-122.4573,37.7568],[-122.4557,37.75668],[-122.4541,37.75691],[-122.45388,37.75736],[-122.4523,37.75829],[-122.45211,37.75939],[-122.44873,37.75965],[-122.4489,37.76084],[-122.44644,37.76103],[-122.447,37.76288],[-122.44587,37.76462],[-122.44639,37.7672],[-122.44908,37.76688],[-122.44945,37.76872],[-122.45337,37.76825],[-122.45305,37.76664],[-122.45297,37.76635],[-122.45686,37.7659],[-122.45781,37.76603],[-122.45781,37.76602],[-122.45779,37.76602],[-122.45754,37.76357],[-122.45787,37.76218],[-122.45852,37.761],[-122.46029,37.76044],[-122.45992,37.75943],[-122.46011,37.75912],[-122.45947,37.75916]]]}},{"type":"Feature","properties":{"name":"Corona Heights","slug":"corona-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43559,37.76693],[-122.43563,37.76733],[-122.43822,37.76719],[-122.4382,37.76677],[-122.43955,37.76658],[-122.44126,37.7653],[-122.44233,37.76508],[-122.44199,37.76327],[-122.44157,37.76323],[-122.44151,37.76306],[-122.443,37.76257],[-122.44329,37.76232],[-122.44333,37.76206],[-122.44557,37.76186],[-122.44666,37.76176],[-122.44644,37.76103],[-122.44639,37.75886],[-122.4459,37.75872],[-122.4449,37.75832],[-122.44437,37.75841],[-122.44472,37.75865],[-122.44488,37.75957],[-122.44279,37.76104],[-122.44023,37.76114],[-122.439,37.76161],[-122.43651,37.76208],[-122.43519,37.76268],[-122.43559,37.76693]]]]}},{"type":"Feature","properties":{"name":"Duboce Triangle","slug":"duboce-triangle","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42894,37.76737],[-122.42611,37.76963],[-122.43025,37.76939],[-122.43357,37.76918],[-122.43579,37.76906],[-122.43519,37.76267],[-122.43481,37.76286],[-122.42894,37.76737]]]]}},{"type":"Feature","properties":{"name":"Haight Ashbury","slug":"haight-ashbury","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43871,37.77106],[-122.43709,37.77126],[-122.43756,37.7736],[-122.454,37.77152],[-122.45335,37.76825],[-122.45321,37.76825],[-122.44945,37.76873],[-122.44907,37.76687],[-122.44473,37.76743],[-122.44535,37.77021],[-122.43871,37.77106]]]]}},{"type":"Feature","properties":{"name":"Hayes Valley","slug":"hayes-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43756,37.7736],[-122.43689,37.77029],[-122.4364,37.76995],[-122.43579,37.76906],[-122.42611,37.76963],[-122.42071,37.77408],[-122.42189,37.77989],[-122.43012,37.77884],[-122.42927,37.77465],[-122.43756,37.7736]]]]}},{"type":"Feature","properties":{"name":"Buena Vista","slug":"buena-vista","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43686,37.77031],[-122.43709,37.77126],[-122.44535,37.77021],[-122.44473,37.76743],[-122.44638,37.76722],[-122.44587,37.76462],[-122.447,37.76288],[-122.44666,37.76176],[-122.44333,37.76206],[-122.44329,37.76232],[-122.44301,37.76257],[-122.44151,37.76306],[-122.44157,37.76323],[-122.44199,37.76327],[-122.44233,37.76508],[-122.44126,37.7653],[-122.43954,37.76658],[-122.4382,37.76677],[-122.43822,37.76719],[-122.43563,37.76733],[-122.43591,37.7692],[-122.43634,37.76991],[-122.43686,37.77031]]]]}}]};
+
+  var map = L.map('buena-vista-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .little-hollywood-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .little-hollywood-map-wrap #little-hollywood-map { width: 100%; height: 100%; }
+  .little-hollywood-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .little-hollywood-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .little-hollywood-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .little-hollywood-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="little-hollywood-map-wrap">
+  <div id="little-hollywood-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Little Hollywood</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayview Heights","slug":"bayview-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39326,37.71881],[-122.39187,37.72035],[-122.39554,37.72241],[-122.40136,37.72375],[-122.40022,37.72081],[-122.39899,37.71659],[-122.39827,37.71515],[-122.398,37.71549],[-122.39529,37.71682],[-122.39326,37.71881]]]]}},{"type":"Feature","properties":{"name":"Candlestick Point","slug":"candlestick-point","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38331,37.72036],[-122.38626,37.71718],[-122.38685,37.71751],[-122.38813,37.7163],[-122.388,37.71548],[-122.38859,37.71484],[-122.39028,37.71717],[-122.39326,37.71881],[-122.39529,37.71682],[-122.398,37.71549],[-122.39827,37.71515],[-122.39596,37.71184],[-122.39511,37.70834],[-122.39323,37.70828],[-122.39148,37.7097],[-122.39062,37.7092],[-122.38972,37.70962],[-122.38806,37.70867],[-122.38598,37.71],[-122.38451,37.70929],[-122.3794,37.70842],[-122.37443,37.70863],[-122.37602,37.70969],[-122.37794,37.70861],[-122.38004,37.71061],[-122.38008,37.71142],[-122.37613,37.71609],[-122.38331,37.72036]]]]}},{"type":"Feature","properties":{"name":"Visitacion Valley","slug":"visitacion-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39865,37.71591],[-122.39899,37.71659],[-122.40059,37.72184],[-122.41421,37.7182],[-122.41572,37.71827],[-122.41958,37.719],[-122.42058,37.71891],[-122.4248,37.71036],[-122.42333,37.70931],[-122.42389,37.70824],[-122.40558,37.70823],[-122.40482,37.70975],[-122.40328,37.71182],[-122.40279,37.71217],[-122.40161,37.71251],[-122.40097,37.71287],[-122.39937,37.7146],[-122.39865,37.71591]]]]}},{"type":"Feature","properties":{"name":"Little Hollywood","slug":"little-hollywood","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39827,37.71515],[-122.39865,37.71591],[-122.39937,37.7146],[-122.40097,37.71287],[-122.40311,37.712],[-122.40482,37.70975],[-122.40558,37.70823],[-122.39511,37.70834],[-122.39581,37.71138],[-122.3962,37.7124],[-122.39827,37.71515]]]]}}]};
+
+  var map = L.map('little-hollywood-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

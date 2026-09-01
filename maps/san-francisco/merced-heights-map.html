@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .merced-heights-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .merced-heights-map-wrap #merced-heights-map { width: 100%; height: 100%; }
+  .merced-heights-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .merced-heights-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .merced-heights-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .merced-heights-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="merced-heights-map-wrap">
+  <div id="merced-heights-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Merced Heights</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Ingleside","slug":"ingleside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46038,37.72481],[-122.46226,37.72521],[-122.46224,37.71794],[-122.45423,37.71804],[-122.45455,37.71767],[-122.45451,37.71749],[-122.45351,37.7158],[-122.45233,37.71721],[-122.44963,37.71574],[-122.44921,37.71631],[-122.44869,37.7176],[-122.44788,37.72301],[-122.4516,37.72303],[-122.4531,37.72321],[-122.46038,37.72481]]]]}},{"type":"Feature","properties":{"name":"Ingleside Heights","slug":"ingleside-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46214,37.71057],[-122.46224,37.71794],[-122.47264,37.71793],[-122.47263,37.71691],[-122.47134,37.71269],[-122.47122,37.70894],[-122.47132,37.70831],[-122.46894,37.70823],[-122.46772,37.70928],[-122.46599,37.71015],[-122.46418,37.71055],[-122.46214,37.71057]]]]}},{"type":"Feature","properties":{"name":"Ingleside Terraces","slug":"ingleside-terraces","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46556,37.72167],[-122.46227,37.72175],[-122.4622,37.72529],[-122.46591,37.72675],[-122.4674,37.72792],[-122.46848,37.72958],[-122.47194,37.7311],[-122.47244,37.7216],[-122.46556,37.72167]]]]}},{"type":"Feature","properties":{"name":"Oceanview","slug":"oceanview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4537,37.71611],[-122.45451,37.71749],[-122.45455,37.71767],[-122.45423,37.71804],[-122.46224,37.71794],[-122.46214,37.71057],[-122.45831,37.7106],[-122.45731,37.71065],[-122.45634,37.71083],[-122.45562,37.71107],[-122.45503,37.71132],[-122.45387,37.71204],[-122.45295,37.71277],[-122.45228,37.71334],[-122.45163,37.71394],[-122.45024,37.71513],[-122.44963,37.71574],[-122.45038,37.71617],[-122.45233,37.71721],[-122.45351,37.7158],[-122.4537,37.71611]]]]}},{"type":"Feature","properties":{"name":"Merced Heights","slug":"merced-heights","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46227,37.72169],[-122.46227,37.72175],[-122.46233,37.72171],[-122.46239,37.72169],[-122.47167,37.72163],[-122.47176,37.72167],[-122.47198,37.72166],[-122.47244,37.7216],[-122.47264,37.71793],[-122.47244,37.71793],[-122.47244,37.71787],[-122.46224,37.71794],[-122.46227,37.72169]]]]}}]};
+
+  var map = L.map('merced-heights-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

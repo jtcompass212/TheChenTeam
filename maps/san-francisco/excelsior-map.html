@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .excelsior-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .excelsior-map-wrap #excelsior-map { width: 100%; height: 100%; }
+  .excelsior-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .excelsior-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .excelsior-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .excelsior-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="excelsior-map-wrap">
+  <div id="excelsior-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Excelsior</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bernal Heights","slug":"bernal-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42385,37.74065],[-122.42439,37.73883],[-122.42544,37.73721],[-122.42844,37.73495],[-122.43398,37.7322],[-122.43394,37.73197],[-122.43368,37.73185],[-122.4313,37.73233],[-122.42957,37.73229],[-122.42611,37.73165],[-122.42455,37.73155],[-122.41967,37.73201],[-122.41665,37.73201],[-122.41439,37.73242],[-122.4095,37.73505],[-122.40849,37.73629],[-122.40822,37.73761],[-122.40775,37.74125],[-122.40518,37.74498],[-122.40378,37.74943],[-122.40816,37.74836],[-122.42245,37.74801],[-122.42217,37.74518],[-122.42322,37.7423],[-122.42268,37.74233],[-122.42348,37.74075],[-122.42385,37.74065]]]]}},{"type":"Feature","properties":{"name":"Crocker Amazon","slug":"crocker-amazon","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4248,37.71036],[-122.42551,37.71079],[-122.42881,37.71213],[-122.4339,37.71325],[-122.441,37.71649],[-122.4419,37.71531],[-122.44553,37.71189],[-122.44893,37.71007],[-122.45436,37.70823],[-122.45218,37.70813],[-122.44448,37.70833],[-122.44054,37.70822],[-122.44046,37.70834],[-122.43398,37.70813],[-122.42808,37.70843],[-122.42389,37.70824],[-122.42333,37.70931],[-122.4248,37.71036]]]]}},{"type":"Feature","properties":{"name":"Mission Terrace","slug":"mission-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42804,37.73202],[-122.42957,37.73229],[-122.4313,37.73233],[-122.43369,37.73185],[-122.43624,37.73116],[-122.43655,37.73129],[-122.43956,37.73019],[-122.43948,37.73011],[-122.44307,37.72863],[-122.44504,37.72729],[-122.44686,37.72521],[-122.44759,37.72388],[-122.4482,37.72141],[-122.44498,37.72006],[-122.44147,37.7172],[-122.441,37.71649],[-122.43281,37.72731],[-122.42804,37.73202]]]]}},{"type":"Feature","properties":{"name":"Outer Mission","slug":"outer-mission","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.45428,37.70826],[-122.44893,37.71007],[-122.44553,37.71189],[-122.4419,37.71531],[-122.441,37.71649],[-122.44134,37.71704],[-122.44498,37.72006],[-122.4482,37.72141],[-122.44869,37.7176],[-122.44921,37.71631],[-122.45037,37.71502],[-122.45295,37.71277],[-122.4545,37.71163],[-122.45562,37.71107],[-122.45731,37.71065],[-122.46477,37.71048],[-122.46599,37.71015],[-122.46716,37.70963],[-122.46894,37.70823],[-122.46538,37.70813],[-122.46358,37.70833],[-122.45428,37.70826]]]]}},{"type":"Feature","properties":{"name":"Portola","slug":"portola","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40664,37.73518],[-122.40822,37.73761],[-122.40849,37.73629],[-122.4095,37.73504],[-122.41439,37.73242],[-122.41666,37.73201],[-122.41969,37.73201],[-122.41986,37.729],[-122.42374,37.72876],[-122.42185,37.7242],[-122.42171,37.72424],[-122.41937,37.71897],[-122.41572,37.71827],[-122.41421,37.7182],[-122.40059,37.72184],[-122.40297,37.7278],[-122.40464,37.7315],[-122.40664,37.73518]]]]}},{"type":"Feature","properties":{"name":"Visitacion Valley","slug":"visitacion-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39865,37.71591],[-122.39899,37.71659],[-122.40059,37.72184],[-122.41421,37.7182],[-122.41572,37.71827],[-122.41958,37.719],[-122.42058,37.71891],[-122.4248,37.71036],[-122.42333,37.70931],[-122.42389,37.70824],[-122.40558,37.70823],[-122.40482,37.70975],[-122.40328,37.71182],[-122.40279,37.71217],[-122.40161,37.71251],[-122.40097,37.71287],[-122.39937,37.7146],[-122.39865,37.71591]]]]}},{"type":"Feature","properties":{"name":"Excelsior","slug":"excelsior","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41937,37.71897],[-122.42171,37.72424],[-122.42185,37.7242],[-122.42374,37.72876],[-122.41986,37.729],[-122.41969,37.732],[-122.42455,37.73155],[-122.4261,37.73165],[-122.42804,37.73202],[-122.43281,37.72731],[-122.441,37.71649],[-122.4339,37.71325],[-122.42881,37.71213],[-122.42551,37.71079],[-122.4248,37.71036],[-122.42058,37.71891],[-122.41937,37.71897]]]]}}]};
+
+  var map = L.map('excelsior-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

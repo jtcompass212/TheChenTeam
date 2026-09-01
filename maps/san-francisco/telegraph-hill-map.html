@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .telegraph-hill-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .telegraph-hill-map-wrap #telegraph-hill-map { width: 100%; height: 100%; }
+  .telegraph-hill-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .telegraph-hill-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .telegraph-hill-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .telegraph-hill-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="telegraph-hill-map-wrap">
+  <div id="telegraph-hill-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Telegraph Hill</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Financial District-Barbary Coast","slug":"financial-district-barbary-coast","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39425,37.80007],[-122.39444,37.80018],[-122.39658,37.79883],[-122.39674,37.79883],[-122.39725,37.7994],[-122.3969,37.79963],[-122.3983,37.79894],[-122.40862,37.79763],[-122.40692,37.78944],[-122.40384,37.78983],[-122.4034,37.78781],[-122.39308,37.79573],[-122.39413,37.79686],[-122.39309,37.79743],[-122.39317,37.79751],[-122.39468,37.79658],[-122.3948,37.79671],[-122.39293,37.79794],[-122.39318,37.79825],[-122.39502,37.79712],[-122.3952,37.79715],[-122.395,37.79734],[-122.39513,37.79749],[-122.39549,37.79747],[-122.39356,37.79863],[-122.39381,37.79894],[-122.39586,37.79787],[-122.39657,37.79865],[-122.39425,37.80007]]]]}},{"type":"Feature","properties":{"name":"Nob Hill","slug":"nob-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40856,37.79733],[-122.40862,37.79763],[-122.40969,37.79749],[-122.41025,37.79736],[-122.411,37.79731],[-122.41115,37.79733],[-122.41299,37.79712],[-122.41519,37.7968],[-122.41684,37.7966],[-122.41875,37.79639],[-122.41993,37.79623],[-122.42012,37.79616],[-122.42088,37.79603],[-122.42177,37.79595],[-122.42348,37.79574],[-122.42328,37.79481],[-122.42313,37.79383],[-122.4223,37.78988],[-122.40746,37.79179],[-122.40856,37.79733]]]]}},{"type":"Feature","properties":{"name":"North Beach","slug":"north-beach","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40901,37.79949],[-122.40937,37.80137],[-122.41031,37.80603],[-122.41723,37.80517],[-122.41291,37.80218],[-122.41191,37.79724],[-122.41115,37.79733],[-122.411,37.79731],[-122.41025,37.79736],[-122.40969,37.79749],[-122.40862,37.79763],[-122.40881,37.79857],[-122.40901,37.79949]]]]}},{"type":"Feature","properties":{"name":"North Waterfront","slug":"north-waterfront","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41935,37.81148],[-122.4206,37.81127],[-122.41823,37.80971],[-122.42086,37.8088],[-122.4212,37.80908],[-122.42148,37.80812],[-122.41723,37.80517],[-122.40715,37.80643],[-122.4066,37.80371],[-122.40476,37.80378],[-122.40435,37.80317],[-122.40317,37.80311],[-122.40223,37.79843],[-122.39812,37.79899],[-122.3973,37.79949],[-122.39754,37.79996],[-122.39544,37.80114],[-122.39576,37.80148],[-122.39799,37.80023],[-122.39838,37.80067],[-122.39614,37.80195],[-122.39711,37.80302],[-122.39919,37.80187],[-122.39972,37.80218],[-122.39751,37.80347],[-122.39781,37.80381],[-122.3996,37.80281],[-122.39997,37.80322],[-122.39822,37.80426],[-122.39851,37.8046],[-122.40096,37.80356],[-122.4004,37.80726],[-122.40094,37.80764],[-122.4028,37.80602],[-122.40342,37.80647],[-122.40235,37.80784],[-122.40276,37.80802],[-122.40396,37.80658],[-122.40472,37.80697],[-122.40391,37.80871],[-122.40438,37.80887],[-122.40532,37.80687],[-122.4059,37.80716],[-122.40618,37.81007],[-122.40682,37.81],[-122.40664,37.80782],[-122.40939,37.80872],[-122.41018,37.8101],[-122.4102,37.81133],[-122.41132,37.81094],[-122.41047,37.8088],[-122.41125,37.80892],[-122.41272,37.8106],[-122.4119,37.80939],[-122.41262,37.80908],[-122.41403,37.81014],[-122.41428,37.80995],[-122.41342,37.80924],[-122.41529,37.80984],[-122.41478,37.80928],[-122.41535,37.80916],[-122.41935,37.81148]]]]}},{"type":"Feature","properties":{"name":"Telegraph Hill","slug":"telegraph-hill","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40223,37.79843],[-122.40317,37.80311],[-122.40435,37.80317],[-122.40476,37.80378],[-122.4066,37.80371],[-122.40715,37.80643],[-122.41031,37.80603],[-122.40862,37.79763],[-122.40223,37.79843]]]]}}]};
+
+  var map = L.map('telegraph-hill-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

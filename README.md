@@ -46,7 +46,6 @@ Market data is complete: all **246 pages in this repo** carry verified Compass f
 |---|---:|---|
 | Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
 | Empty photo slots | **0** | of 354 total; 354 filled so far |
-| Team stat blocks | **27** | still showing sample figures |
 
 ### Neighborhood page coverage
 
@@ -86,7 +85,6 @@ None of these block anything. Each is a judgment about the business or the marke
 
 | Item | Scope | What's needed |
 |---|---|---|
-| **Team production stats** | 27 city pages | `$48M+` / `100% of list` / `12 days` / `5.0★` are sample figures and have never been touched. They need your verified numbers. |
 | **Shoreview's +38.6%** | 1 page | Clears the 8-sale threshold honestly on 13 sales, but it is the largest swing published anywhere on the site. |
 | **"Highlands" identity** | 1 page | Compass lists it separately from San Mateo Highlands so the match to Millbrae Highlands is probable, but the API cannot confirm which city a neighborhood belongs to. |
 | **Mills Estates, twice** | 2 pages | One Compass neighborhood straddling the Millbrae–Burlingame line, so both pages publish identical figures. Correct, but deliberate. |
