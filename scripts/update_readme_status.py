@@ -207,11 +207,17 @@ def render(d):
               f"anyone writes them.", ""]
 
     # photos
-    L += ["### Photography", "",
-          "Every written page renders a placeholder where a photo belongs. Named residential "
-          "tracts have no archive coverage, so these need original photography — "
-          "`docs/photo-shot-list.md` briefs them.", "",
-          "| Area | Empty slots |", "|---|---:|"]
+    # The prose has to follow the count: saying every page renders a placeholder
+    # reads as a live warning, and it stopped being true once the slots filled.
+    L += ["### Photography", ""]
+    if total_photos:
+        L += ["Pages with an empty slot render a placeholder where a photo belongs. Named "
+              "residential tracts have no archive coverage, so these need original "
+              "photography — `docs/photo-shot-list.md` briefs them.", ""]
+    else:
+        L += [f"Every image slot is filled — {d['sourced_images']} of them, none still "
+              f"rendering a placeholder. See [Photos](#photos) for where they came from.", ""]
+    L += ["| Area | Empty slots |", "|---|---:|"]
     for k in sorted(d["photos"], key=lambda k: -d["photos"][k]):
         if d["photos"][k]:
             L.append(f"| {title(k)} | {d['photos'][k]} |")
