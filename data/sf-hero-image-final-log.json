@@ -1,0 +1,667 @@
+[
+ {
+  "slug": "alamo-square",
+  "name": "Alamo Square",
+  "source": "commons",
+  "kb": 587,
+  "wired": true
+ },
+ {
+  "slug": "anza-vista",
+  "name": "Anza Vista",
+  "source": "satellite",
+  "kb": 250,
+  "wired": true
+ },
+ {
+  "slug": "balboa-terrace",
+  "name": "Balboa Terrace",
+  "source": "satellite",
+  "kb": 236,
+  "wired": true
+ },
+ {
+  "slug": "bayview",
+  "name": "Bayview",
+  "source": "commons",
+  "kb": 289,
+  "wired": true
+ },
+ {
+  "slug": "bayview-heights",
+  "name": "Bayview Heights",
+  "source": "satellite",
+  "kb": 289,
+  "wired": true
+ },
+ {
+  "slug": "bernal-heights",
+  "name": "Bernal Heights",
+  "source": "commons",
+  "kb": 1178,
+  "wired": true
+ },
+ {
+  "slug": "buena-vista",
+  "name": "Buena Vista",
+  "source": "commons",
+  "kb": 648,
+  "wired": true
+ },
+ {
+  "slug": "candlestick-point",
+  "name": "Candlestick Point",
+  "source": "satellite",
+  "kb": 221,
+  "wired": true
+ },
+ {
+  "slug": "central-richmond",
+  "name": "Central Richmond",
+  "source": "satellite",
+  "kb": 292,
+  "wired": true
+ },
+ {
+  "slug": "central-sunset",
+  "name": "Central Sunset",
+  "source": "satellite",
+  "kb": 295,
+  "wired": true
+ },
+ {
+  "slug": "central-waterfront-dogpatch",
+  "name": "Central Waterfront & Dogpatch",
+  "source": "commons",
+  "kb": 718,
+  "wired": true
+ },
+ {
+  "slug": "civic-center",
+  "name": "Civic Center",
+  "source": "commons",
+  "kb": 464,
+  "wired": true
+ },
+ {
+  "slug": "clarendon-heights",
+  "name": "Clarendon Heights",
+  "source": "satellite",
+  "kb": 225,
+  "wired": true
+ },
+ {
+  "slug": "cole-valley-parnassus-heights",
+  "name": "Cole Valley & Parnassus Heights",
+  "source": "satellite",
+  "kb": 267,
+  "wired": true
+ },
+ {
+  "slug": "corona-heights",
+  "name": "Corona Heights",
+  "source": "commons",
+  "kb": 775,
+  "wired": true
+ },
+ {
+  "slug": "cow-hollow",
+  "name": "Cow Hollow",
+  "source": "commons",
+  "kb": 307,
+  "wired": true
+ },
+ {
+  "slug": "crocker-amazon",
+  "name": "Crocker Amazon",
+  "source": "satellite",
+  "kb": 270,
+  "wired": true
+ },
+ {
+  "slug": "diamond-heights",
+  "name": "Diamond Heights",
+  "source": "commons",
+  "kb": 608,
+  "wired": true
+ },
+ {
+  "slug": "duboce-triangle",
+  "name": "Duboce Triangle",
+  "source": "satellite",
+  "kb": 262,
+  "wired": true
+ },
+ {
+  "slug": "eureka-valley-dolores-heights",
+  "name": "Eureka Valley & Dolores Heights",
+  "source": "commons",
+  "kb": 263,
+  "wired": true
+ },
+ {
+  "slug": "excelsior",
+  "name": "Excelsior",
+  "source": "commons",
+  "kb": 27519,
+  "wired": true
+ },
+ {
+  "slug": "financial-district-barbary-coast",
+  "name": "Financial District & Barbary Coast",
+  "source": "commons",
+  "kb": 559,
+  "wired": true
+ },
+ {
+  "slug": "forest-hill",
+  "name": "Forest Hill",
+  "source": "commons",
+  "kb": 361,
+  "wired": true
+ },
+ {
+  "slug": "forest-hill-extension",
+  "name": "Forest Hill Extension",
+  "source": "satellite",
+  "kb": 274,
+  "wired": true
+ },
+ {
+  "slug": "forest-knolls",
+  "name": "Forest Knolls",
+  "source": "satellite",
+  "kb": 202,
+  "wired": true
+ },
+ {
+  "slug": "glen-park",
+  "name": "Glen Park",
+  "source": "commons",
+  "kb": 685,
+  "wired": true
+ },
+ {
+  "slug": "golden-gate-heights",
+  "name": "Golden Gate Heights",
+  "source": "commons",
+  "kb": 1213,
+  "wired": true
+ },
+ {
+  "slug": "golden-gate-park",
+  "name": "Golden Gate Park",
+  "source": "commons",
+  "kb": 867,
+  "wired": true
+ },
+ {
+  "slug": "haight-ashbury",
+  "name": "Haight Ashbury",
+  "source": "commons",
+  "kb": 2030,
+  "wired": true
+ },
+ {
+  "slug": "hayes-valley",
+  "name": "Hayes Valley",
+  "source": "commons",
+  "kb": 1424,
+  "wired": true
+ },
+ {
+  "slug": "hunters-point",
+  "name": "Hunters Point",
+  "source": "commons",
+  "kb": 802,
+  "wired": true
+ },
+ {
+  "slug": "ingleside",
+  "name": "Ingleside",
+  "source": "satellite",
+  "kb": 249,
+  "wired": true
+ },
+ {
+  "slug": "ingleside-heights",
+  "name": "Ingleside Heights",
+  "source": "satellite",
+  "kb": 236,
+  "wired": true
+ },
+ {
+  "slug": "ingleside-terraces",
+  "name": "Ingleside Terraces",
+  "source": "satellite",
+  "kb": 238,
+  "wired": true
+ },
+ {
+  "slug": "inner-parkside",
+  "name": "Inner Parkside",
+  "source": "satellite",
+  "kb": 289,
+  "wired": true
+ },
+ {
+  "slug": "inner-richmond",
+  "name": "Inner Richmond",
+  "source": "commons",
+  "kb": 583,
+  "wired": true
+ },
+ {
+  "slug": "inner-sunset",
+  "name": "Inner Sunset",
+  "source": "commons",
+  "kb": 819,
+  "wired": true
+ },
+ {
+  "slug": "jordan-park-laurel-heights",
+  "name": "Jordan Park & Laurel Heights",
+  "source": "satellite",
+  "kb": 241,
+  "wired": true
+ },
+ {
+  "slug": "lake-merced-park",
+  "name": "Lake Merced Park",
+  "source": "commons",
+  "kb": 311,
+  "wired": true
+ },
+ {
+  "slug": "lake-street",
+  "name": "Lake Street",
+  "source": "satellite",
+  "kb": 239,
+  "wired": true
+ },
+ {
+  "slug": "lakeshore",
+  "name": "Lakeshore",
+  "source": "satellite",
+  "kb": 282,
+  "wired": true
+ },
+ {
+  "slug": "lakeside",
+  "name": "Lakeside",
+  "source": "satellite",
+  "kb": 231,
+  "wired": true
+ },
+ {
+  "slug": "lincoln-park",
+  "name": "Lincoln Park",
+  "source": "commons",
+  "kb": 1034,
+  "wired": true
+ },
+ {
+  "slug": "little-hollywood",
+  "name": "Little Hollywood",
+  "source": "commons",
+  "kb": 1226,
+  "wired": true
+ },
+ {
+  "slug": "lone-mountain",
+  "name": "Lone Mountain",
+  "source": "commons",
+  "kb": 600,
+  "wired": true
+ },
+ {
+  "slug": "lower-nob-hill",
+  "name": "Lower Nob Hill",
+  "source": "commons",
+  "kb": 911,
+  "wired": true
+ },
+ {
+  "slug": "lower-pacific-heights",
+  "name": "Lower Pacific Heights",
+  "source": "satellite",
+  "kb": 317,
+  "wired": true
+ },
+ {
+  "slug": "marina-district",
+  "name": "Marina District",
+  "source": "commons",
+  "kb": 442,
+  "wired": true
+ },
+ {
+  "slug": "merced-heights",
+  "name": "Merced Heights",
+  "source": "satellite",
+  "kb": 279,
+  "wired": true
+ },
+ {
+  "slug": "merced-manor",
+  "name": "Merced Manor",
+  "source": "satellite",
+  "kb": 216,
+  "wired": true
+ },
+ {
+  "slug": "midtown-terrace",
+  "name": "Midtown Terrace",
+  "source": "satellite",
+  "kb": 247,
+  "wired": true
+ },
+ {
+  "slug": "miraloma-park",
+  "name": "Miraloma Park",
+  "source": "satellite",
+  "kb": 262,
+  "wired": true
+ },
+ {
+  "slug": "mission-bay",
+  "name": "Mission Bay",
+  "source": "commons",
+  "kb": 568,
+  "wired": true
+ },
+ {
+  "slug": "mission-district",
+  "name": "Mission District",
+  "source": "commons",
+  "kb": 780,
+  "wired": true
+ },
+ {
+  "slug": "mission-dolores",
+  "name": "Mission Dolores",
+  "source": "commons",
+  "kb": 806,
+  "wired": true
+ },
+ {
+  "slug": "mission-terrace",
+  "name": "Mission Terrace",
+  "source": "satellite",
+  "kb": 311,
+  "wired": true
+ },
+ {
+  "slug": "monterey-heights",
+  "name": "Monterey Heights",
+  "source": "satellite",
+  "kb": 239,
+  "wired": true
+ },
+ {
+  "slug": "mount-davidson-manor",
+  "name": "Mount Davidson Manor",
+  "source": "satellite",
+  "kb": 266,
+  "wired": true
+ },
+ {
+  "slug": "nob-hill",
+  "name": "Nob Hill",
+  "source": "commons",
+  "kb": 1035,
+  "wired": true
+ },
+ {
+  "slug": "noe-valley",
+  "name": "Noe Valley",
+  "source": "commons",
+  "kb": 609,
+  "wired": true
+ },
+ {
+  "slug": "north-beach",
+  "name": "North Beach",
+  "source": "commons",
+  "kb": 774,
+  "wired": true
+ },
+ {
+  "slug": "north-panhandle",
+  "name": "North Panhandle",
+  "source": "satellite",
+  "kb": 249,
+  "wired": true
+ },
+ {
+  "slug": "north-waterfront",
+  "name": "North Waterfront",
+  "source": "commons",
+  "kb": 647,
+  "wired": true
+ },
+ {
+  "slug": "oceanview",
+  "name": "Oceanview",
+  "source": "satellite",
+  "kb": 244,
+  "wired": true
+ },
+ {
+  "slug": "outer-mission",
+  "name": "Outer Mission",
+  "source": "satellite",
+  "kb": 271,
+  "wired": true
+ },
+ {
+  "slug": "outer-parkside",
+  "name": "Outer Parkside",
+  "source": "satellite",
+  "kb": 201,
+  "wired": true
+ },
+ {
+  "slug": "outer-richmond",
+  "name": "Outer Richmond",
+  "source": "commons",
+  "kb": 243,
+  "wired": true
+ },
+ {
+  "slug": "outer-sunset",
+  "name": "Outer Sunset",
+  "source": "commons",
+  "kb": 792,
+  "wired": true
+ },
+ {
+  "slug": "pacific-heights",
+  "name": "Pacific Heights",
+  "source": "commons",
+  "kb": 675,
+  "wired": true
+ },
+ {
+  "slug": "panhandle",
+  "name": "Panhandle",
+  "source": "satellite",
+  "kb": 268,
+  "wired": true
+ },
+ {
+  "slug": "parkside",
+  "name": "Parkside",
+  "source": "satellite",
+  "kb": 301,
+  "wired": true
+ },
+ {
+  "slug": "pinelake-park",
+  "name": "Pinelake Park",
+  "source": "satellite",
+  "kb": 276,
+  "wired": true
+ },
+ {
+  "slug": "portola",
+  "name": "Portola",
+  "source": "satellite",
+  "kb": 265,
+  "wired": true
+ },
+ {
+  "slug": "potrero-hill",
+  "name": "Potrero Hill",
+  "source": "commons",
+  "kb": 718,
+  "wired": true
+ },
+ {
+  "slug": "presidio",
+  "name": "Presidio",
+  "source": "commons",
+  "kb": 456,
+  "wired": true
+ },
+ {
+  "slug": "presidio-heights",
+  "name": "Presidio Heights",
+  "source": "commons",
+  "kb": 347,
+  "wired": true
+ },
+ {
+  "slug": "russian-hill",
+  "name": "Russian Hill",
+  "source": "commons",
+  "kb": 457,
+  "wired": true
+ },
+ {
+  "slug": "saint-francis-wood",
+  "name": "Saint Francis Wood",
+  "source": "satellite",
+  "kb": 229,
+  "wired": true
+ },
+ {
+  "slug": "sea-cliff",
+  "name": "Sea Cliff",
+  "source": "commons",
+  "kb": 607,
+  "wired": true
+ },
+ {
+  "slug": "sherwood-forest",
+  "name": "Sherwood Forest",
+  "source": "satellite",
+  "kb": 212,
+  "wired": true
+ },
+ {
+  "slug": "silver-terrace",
+  "name": "Silver Terrace",
+  "source": "satellite",
+  "kb": 289,
+  "wired": true
+ },
+ {
+  "slug": "south-beach",
+  "name": "South Beach",
+  "source": "commons",
+  "kb": 1709,
+  "wired": true
+ },
+ {
+  "slug": "south-of-market",
+  "name": "South of Market",
+  "source": "commons",
+  "kb": 697,
+  "wired": true
+ },
+ {
+  "slug": "stonestown",
+  "name": "Stonestown",
+  "source": "satellite",
+  "kb": 225,
+  "wired": true
+ },
+ {
+  "slug": "sunnyside",
+  "name": "Sunnyside",
+  "source": "satellite",
+  "kb": 271,
+  "wired": true
+ },
+ {
+  "slug": "telegraph-hill",
+  "name": "Telegraph Hill",
+  "source": "commons",
+  "kb": 322,
+  "wired": true
+ },
+ {
+  "slug": "tenderloin",
+  "name": "Tenderloin",
+  "source": "commons",
+  "kb": 573,
+  "wired": true
+ },
+ {
+  "slug": "twin-peaks",
+  "name": "Twin Peaks",
+  "source": "commons",
+  "kb": 525,
+  "wired": true
+ },
+ {
+  "slug": "union-square",
+  "name": "Union Square",
+  "source": "commons",
+  "kb": 580,
+  "wired": true
+ },
+ {
+  "slug": "visitacion-valley",
+  "name": "Visitacion Valley",
+  "source": "commons",
+  "kb": 774,
+  "wired": true
+ },
+ {
+  "slug": "west-portal",
+  "name": "West Portal",
+  "source": "satellite",
+  "kb": 256,
+  "wired": true
+ },
+ {
+  "slug": "western-addition",
+  "name": "Western Addition",
+  "source": "commons",
+  "kb": 318,
+  "wired": true
+ },
+ {
+  "slug": "westwood-highlands",
+  "name": "Westwood Highlands",
+  "source": "satellite",
+  "kb": 250,
+  "wired": true
+ },
+ {
+  "slug": "westwood-park",
+  "name": "Westwood Park",
+  "source": "satellite",
+  "kb": 268,
+  "wired": true
+ },
+ {
+  "slug": "yerba-buena",
+  "name": "Yerba Buena",
+  "source": "commons",
+  "kb": 386,
+  "wired": true
+ }
+]

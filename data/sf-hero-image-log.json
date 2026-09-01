@@ -1,0 +1,1199 @@
+[
+ {
+  "slug": "alamo-square",
+  "name": "Alamo Square",
+  "source": "commons",
+  "pick": {
+   "title": "File:Alamo Square, San Francisco.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Bernard Gagnon",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Alamo_Square,_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Alamo_Square%2C_San_Francisco.jpg/1920px-Alamo_Square%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2574,
+   "height": 1672,
+   "score": 5,
+   "why": "names San Francisco; names alamo square",
+   "query": "Alamo Square San Francisco California"
+  }
+ },
+ {
+  "slug": "anza-vista",
+  "name": "Anza Vista",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "balboa-terrace",
+  "name": "Balboa Terrace",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "bayview",
+  "name": "Bayview",
+  "source": "commons",
+  "pick": {
+   "title": "File:View south to 101 freeway from Bayview Park in San Francisco.png",
+   "license": "CC BY 3.0",
+   "artist": "Tim Adams",
+   "descurl": "https://commons.wikimedia.org/wiki/File:View_south_to_101_freeway_from_Bayview_Park_in_San_Francisco.png",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/View_south_to_101_freeway_from_Bayview_Park_in_San_Francisco.png/1920px-View_south_to_101_freeway_from_Bayview_Park_in_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2525,
+   "height": 3788,
+   "score": 5,
+   "why": "names San Francisco; names bayview",
+   "query": "Bayview San Francisco California"
+  }
+ },
+ {
+  "slug": "bayview-heights",
+  "name": "Bayview Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "bernal-heights",
+  "name": "Bernal Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Esmeralda Slide Park, Bernal Heights, San Francisco (77554).jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Rhododendrites",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Esmeralda_Slide_Park,_Bernal_Heights,_San_Francisco_(77554).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Esmeralda_Slide_Park%2C_Bernal_Heights%2C_San_Francisco_%2877554%29.jpg/1920px-Esmeralda_Slide_Park%2C_Bernal_Heights%2C_San_Francisco_%2877554%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4608,
+   "height": 3456,
+   "score": 5,
+   "why": "names San Francisco; names bernal heights",
+   "query": "Bernal Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "buena-vista",
+  "name": "Buena Vista",
+  "source": "commons",
+  "pick": {
+   "title": "File:Buena Vista Park - San Francisco, CA - 1.jpg",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Buena_Vista_Park_-_San_Francisco,_CA_-_1.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Buena_Vista_Park_-_San_Francisco%2C_CA_-_1.jpg/1920px-Buena_Vista_Park_-_San_Francisco%2C_CA_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2268,
+   "height": 4032,
+   "score": 5,
+   "why": "names San Francisco; names buena vista",
+   "query": "Buena Vista San Francisco California"
+  }
+ },
+ {
+  "slug": "candlestick-point",
+  "name": "Candlestick Point",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "central-richmond",
+  "name": "Central Richmond",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "central-sunset",
+  "name": "Central Sunset",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "central-waterfront-dogpatch",
+  "name": "Central Waterfront & Dogpatch",
+  "source": "commons",
+  "pick": {
+   "title": "File:Dogpatch and the bay seen from Potrero Hill, San Francisco, California, US.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Clyde Charles Brown",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Dogpatch_and_the_bay_seen_from_Potrero_Hill,_San_Francisco,_California,_US.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Dogpatch_and_the_bay_seen_from_Potrero_Hill%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Dogpatch_and_the_bay_seen_from_Potrero_Hill%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 2688,
+   "score": 5,
+   "why": "names San Francisco; names dogpatch",
+   "query": "Dogpatch San Francisco street"
+  }
+ },
+ {
+  "slug": "civic-center",
+  "name": "Civic Center",
+  "source": "commons",
+  "pick": {
+   "title": "File:CIVIC AUDITORIUM, CORNER VIEW - San Francisco Civic Center, Civic Auditorium, Civic Center, San Francisco, San Francisco County, CA HABS CAL,38-SANFRA,71-C-1.tif",
+   "license": "Public domain",
+   "artist": "",
+   "descurl": "https://commons.wikimedia.org/wiki/File:CIVIC_AUDITORIUM,_CORNER_VIEW_-_San_Francisco_Civic_Center,_Civic_Auditorium,_Civic_Center,_San_Francisco,_San_Francisco_County,_CA_HABS_CAL,38-SANFRA,71-C-1.tif",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/CIVIC_AUDITORIUM%2C_CORNER_VIEW_-_San_Francisco_Civic_Center%2C_Civic_Auditorium%2C_Civic_Center%2C_San_Francisco%2C_San_Francisco_County%2C_CA_HABS_CAL%2C38-SANFRA%2C71-C-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4998,
+   "height": 4000,
+   "score": 5,
+   "why": "names San Francisco; names civic center",
+   "query": "Civic Center San Francisco California"
+  }
+ },
+ {
+  "slug": "clarendon-heights",
+  "name": "Clarendon Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "cole-valley-parnassus-heights",
+  "name": "Cole Valley & Parnassus Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "corona-heights",
+  "name": "Corona Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Corona Heights - San Francisco, CA.jpg",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Corona_Heights_-_San_Francisco,_CA.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Corona_Heights_-_San_Francisco%2C_CA.jpg/1920px-Corona_Heights_-_San_Francisco%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 2268,
+   "score": 5,
+   "why": "names San Francisco; names corona heights",
+   "query": "Corona Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "cow-hollow",
+  "name": "Cow Hollow",
+  "source": "commons",
+  "pick": {
+   "title": "File:Foggy Cow Hollow, San Francisco neighborhood (19690826088).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Tony Webster from San Francisco, California",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Foggy_Cow_Hollow,_San_Francisco_neighborhood_(19690826088).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Foggy_Cow_Hollow%2C_San_Francisco_neighborhood_%2819690826088%29.jpg/1920px-Foggy_Cow_Hollow%2C_San_Francisco_neighborhood_%2819690826088%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3962,
+   "height": 2185,
+   "score": 5,
+   "why": "names San Francisco; names cow hollow",
+   "query": "Cow Hollow San Francisco California"
+  }
+ },
+ {
+  "slug": "crocker-amazon",
+  "name": "Crocker Amazon",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "diamond-heights",
+  "name": "Diamond Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Diamond Heights, San Francisco - panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Scott Thompson",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Diamond_Heights,_San_Francisco_-_panoramio.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Diamond_Heights%2C_San_Francisco_-_panoramio.jpg/1920px-Diamond_Heights%2C_San_Francisco_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3943,
+   "height": 2579,
+   "score": 5,
+   "why": "names San Francisco; names diamond heights",
+   "query": "Diamond Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "duboce-triangle",
+  "name": "Duboce Triangle",
+  "source": "commons",
+  "pick": {
+   "title": "File:Nice coffee machine - Duboce Triangle, San Francisco, California.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "jm3 on Flickr",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Nice_coffee_machine_-_Duboce_Triangle,_San_Francisco,_California.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Nice_coffee_machine_-_Duboce_Triangle%2C_San_Francisco%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1600,
+   "height": 1200,
+   "score": 5,
+   "why": "names San Francisco; names duboce triangle",
+   "query": "Duboce Triangle San Francisco California"
+  }
+ },
+ {
+  "slug": "eureka-valley-dolores-heights",
+  "name": "Eureka Valley & Dolores Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Dolores Heights, San Francisco, CA 94114, USA - panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "VincentValdez4",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Dolores_Heights,_San_Francisco,_CA_94114,_USA_-_panoramio.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/57/Dolores_Heights%2C_San_Francisco%2C_CA_94114%2C_USA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1024,
+   "height": 840,
+   "score": 5,
+   "why": "names San Francisco; names dolores heights",
+   "query": "Dolores Heights San Francisco"
+  }
+ },
+ {
+  "slug": "excelsior",
+  "name": "Excelsior",
+  "source": "commons",
+  "pick": {
+   "title": "File:Row houses in Excelsior district of San Francisco.png",
+   "license": "CC BY 3.0",
+   "artist": "Tim Adams",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Row_houses_in_Excelsior_district_of_San_Francisco.png",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Row_houses_in_Excelsior_district_of_San_Francisco.png/1920px-Row_houses_in_Excelsior_district_of_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2650,
+   "height": 3975,
+   "score": 5,
+   "why": "names San Francisco; names excelsior",
+   "query": "Excelsior San Francisco California"
+  }
+ },
+ {
+  "slug": "financial-district-barbary-coast",
+  "name": "Financial District & Barbary Coast",
+  "source": "commons",
+  "pick": {
+   "title": "File:San Francisco Financial District Skyline - panoramio.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Noah_Loverbear",
+   "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_Financial_District_Skyline_-_panoramio.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/San_Francisco_Financial_District_Skyline_-_panoramio.jpg/1920px-San_Francisco_Financial_District_Skyline_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4320,
+   "height": 3240,
+   "score": 5,
+   "why": "names San Francisco; names financial district",
+   "query": "Financial District San Francisco skyline"
+  }
+ },
+ {
+  "slug": "forest-hill",
+  "name": "Forest Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:San Francisco-Forest Hill stairway.jpg",
+   "license": "CC BY-SA 2.5",
+   "artist": "Octoferret at English Wikipedia",
+   "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco-Forest_Hill_stairway.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/San_Francisco-Forest_Hill_stairway.jpg/1920px-San_Francisco-Forest_Hill_stairway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 1930,
+   "height": 993,
+   "score": 5,
+   "why": "names San Francisco; names forest hill",
+   "query": "Forest Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "forest-hill-extension",
+  "name": "Forest Hill Extension",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "forest-knolls",
+  "name": "Forest Knolls",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "glen-park",
+  "name": "Glen Park",
+  "source": "commons",
+  "pick": {
+   "title": "File:Glen Park, San Francisco.jpg",
+   "license": "CC0",
+   "artist": "Mx. Granger",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Glen_Park,_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Glen_Park%2C_San_Francisco.jpg/1920px-Glen_Park%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3793,
+   "height": 2602,
+   "score": 5,
+   "why": "names San Francisco; names glen park",
+   "query": "Glen Park San Francisco California"
+  }
+ },
+ {
+  "slug": "golden-gate-heights",
+  "name": "Golden Gate Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Golden Gate Heights, San Francisco, CA, USA - panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Mickey L\u00f8gitmark",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Heights,_San_Francisco,_CA,_USA_-_panoramio.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Golden_Gate_Heights%2C_San_Francisco%2C_CA%2C_USA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1153,
+   "height": 2048,
+   "score": 5,
+   "why": "names San Francisco; names golden gate heights",
+   "query": "Golden Gate Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "golden-gate-park",
+  "name": "Golden Gate Park",
+  "source": "commons",
+  "pick": {
+   "title": "File:Golden Gate Park San Francisco December 2016 006.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "King of Hearts",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Park_San_Francisco_December_2016_006.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Golden_Gate_Park_San_Francisco_December_2016_006.jpg/1920px-Golden_Gate_Park_San_Francisco_December_2016_006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5850,
+   "height": 3900,
+   "score": 5,
+   "why": "names San Francisco; names golden gate park",
+   "query": "Golden Gate Park San Francisco California"
+  }
+ },
+ {
+  "slug": "haight-ashbury",
+  "name": "Haight Ashbury",
+  "source": "commons",
+  "pick": {
+   "title": "File:Haight Ashbury Street San Francisco.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Chris McEwen",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Haight_Ashbury_Street_San_Francisco.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Haight_Ashbury_Street_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1037,
+   "height": 1565,
+   "score": 5,
+   "why": "names San Francisco; names haight ashbury",
+   "query": "Haight Ashbury San Francisco California"
+  }
+ },
+ {
+  "slug": "hayes-valley",
+  "name": "Hayes Valley",
+  "source": "commons",
+  "pick": {
+   "title": "File:Go-Getters Market - Gough Street, Hayes Valley, San Francisco (24919340383).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Tony Webster from San Francisco, California",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Go-Getters_Market_-_Gough_Street,_Hayes_Valley,_San_Francisco_(24919340383).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Go-Getters_Market_-_Gough_Street%2C_Hayes_Valley%2C_San_Francisco_%2824919340383%29.jpg/1920px-Go-Getters_Market_-_Gough_Street%2C_Hayes_Valley%2C_San_Francisco_%2824919340383%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5184,
+   "height": 3456,
+   "score": 5,
+   "why": "names San Francisco; names hayes valley",
+   "query": "Hayes Valley San Francisco California"
+  }
+ },
+ {
+  "slug": "hunters-point",
+  "name": "Hunters Point",
+  "source": "commons",
+  "pick": {
+   "title": "File:Aerial view of the Hunters Point Naval Shipyard, San Francisco, California (USA), on 5 January 1949 (80-G-401192).jpg",
+   "license": "Public domain",
+   "artist": "U.S. Navy photo 80-G-401192",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Hunters_Point_Naval_Shipyard,_San_Francisco,_California_(USA),_on_5_January_1949_(80-G-401192).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/39/Aerial_view_of_the_Hunters_Point_Naval_Shipyard%2C_San_Francisco%2C_California_%28USA%29%2C_on_5_January_1949_%2880-G-401192%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1903,
+   "height": 1975,
+   "score": 5,
+   "why": "names San Francisco; names hunters point",
+   "query": "Hunters Point San Francisco California"
+  }
+ },
+ {
+  "slug": "ingleside",
+  "name": "Ingleside",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "ingleside-heights",
+  "name": "Ingleside Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "ingleside-terraces",
+  "name": "Ingleside Terraces",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "inner-parkside",
+  "name": "Inner Parkside",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "inner-richmond",
+  "name": "Inner Richmond",
+  "source": "commons",
+  "pick": {
+   "title": "File:Antiquated electrical infrastructure in San Francisco\u2019s Inner Richmond District-9029.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Frank Schulenburg",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Antiquated_electrical_infrastructure_in_San_Francisco%E2%80%99s_Inner_Richmond_District-9029.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Antiquated_electrical_infrastructure_in_San_Francisco%E2%80%99s_Inner_Richmond_District-9029.jpg/1920px-Antiquated_electrical_infrastructure_in_San_Francisco%E2%80%99s_Inner_Richmond_District-9029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4446,
+   "height": 2779,
+   "score": 5,
+   "why": "names San Francisco; names inner richmond",
+   "query": "Inner Richmond San Francisco California"
+  }
+ },
+ {
+  "slug": "inner-sunset",
+  "name": "Inner Sunset",
+  "source": "commons",
+  "pick": {
+   "title": "File:Inner Sunset, San Francisco, CA, USA - panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Mickey L\u00f8gitmark",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Inner_Sunset,_San_Francisco,_CA,_USA_-_panoramio.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Inner_Sunset%2C_San_Francisco%2C_CA%2C_USA_-_panoramio.jpg/1920px-Inner_Sunset%2C_San_Francisco%2C_CA%2C_USA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2048,
+   "height": 1153,
+   "score": 5,
+   "why": "names San Francisco; names inner sunset",
+   "query": "Inner Sunset San Francisco California"
+  }
+ },
+ {
+  "slug": "jordan-park-laurel-heights",
+  "name": "Jordan Park & Laurel Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "lake-merced-park",
+  "name": "Lake Merced Park",
+  "source": "commons",
+  "pick": {
+   "title": "File:2024 Aerial of San Francisco Lake Merced Park With Boundary.jpg",
+   "license": "CC0",
+   "artist": "SFHistoryNerd",
+   "descurl": "https://commons.wikimedia.org/wiki/File:2024_Aerial_of_San_Francisco_Lake_Merced_Park_With_Boundary.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/2024_Aerial_of_San_Francisco_Lake_Merced_Park_With_Boundary.jpg/1920px-2024_Aerial_of_San_Francisco_Lake_Merced_Park_With_Boundary.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2362,
+   "height": 1574,
+   "score": 5,
+   "why": "names San Francisco; names lake merced park",
+   "query": "Lake Merced Park San Francisco California"
+  }
+ },
+ {
+  "slug": "lake-street",
+  "name": "Lake Street",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "lakeshore",
+  "name": "Lakeshore",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "lakeside",
+  "name": "Lakeside",
+  "source": "commons",
+  "pick": {
+   "title": "File:Lakeside Medical Center - San Francisco.jpg",
+   "license": "CC BY 2.0",
+   "artist": "Clinton Steeds from Los Angeles, USA",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Lakeside_Medical_Center_-_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Lakeside_Medical_Center_-_San_Francisco.jpg/1920px-Lakeside_Medical_Center_-_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2160,
+   "height": 1440,
+   "score": 5,
+   "why": "names San Francisco; names lakeside",
+   "query": "Lakeside San Francisco California"
+  }
+ },
+ {
+  "slug": "lincoln-park",
+  "name": "Lincoln Park",
+  "source": "commons",
+  "pick": {
+   "title": "File:Former Chinese grave, Lincoln Park, San Francisco.png",
+   "license": "CC BY-SA 4.0",
+   "artist": "PigeonChickenFish",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Former_Chinese_grave,_Lincoln_Park,_San_Francisco.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Former_Chinese_grave%2C_Lincoln_Park%2C_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 994,
+   "height": 928,
+   "score": 5,
+   "why": "names San Francisco; names lincoln park",
+   "query": "Lincoln Park San Francisco California"
+  }
+ },
+ {
+  "slug": "little-hollywood",
+  "name": "Little Hollywood",
+  "source": "commons",
+  "pick": {
+   "title": "File:Peninsula Ave., Little Hollywood, San Francisco.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "SagansTurtleneck",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Peninsula_Ave.,_Little_Hollywood,_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Peninsula_Ave.%2C_Little_Hollywood%2C_San_Francisco.jpg/1920px-Peninsula_Ave.%2C_Little_Hollywood%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3024,
+   "height": 4032,
+   "score": 5,
+   "why": "names San Francisco; names little hollywood",
+   "query": "Little Hollywood San Francisco California"
+  }
+ },
+ {
+  "slug": "lone-mountain",
+  "name": "Lone Mountain",
+  "source": "commons",
+  "pick": {
+   "title": "File:Broderick Monument, Lone Mountain Cemetery, San Francisco - Close-up view LCCN2002723026.jpg",
+   "license": "Public domain",
+   "artist": "Lawrence &amp; Houseworth, publisher",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Broderick_Monument,_Lone_Mountain_Cemetery,_San_Francisco_-_Close-up_view_LCCN2002723026.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/87/Broderick_Monument%2C_Lone_Mountain_Cemetery%2C_San_Francisco_-_Close-up_view_LCCN2002723026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1536,
+   "height": 1447,
+   "score": 5,
+   "why": "names San Francisco; names lone mountain",
+   "query": "Lone Mountain San Francisco California"
+  }
+ },
+ {
+  "slug": "lower-nob-hill",
+  "name": "Lower Nob Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:740, 736, 730 & 724 Leavenworth St., Lower Nob Hill Apartment Hotel District, San Francisco, CA 9-3-2012 4-03-29 PM.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "Sanfranman59",
+   "descurl": "https://commons.wikimedia.org/wiki/File:740,_736,_730_%26_724_Leavenworth_St.,_Lower_Nob_Hill_Apartment_Hotel_District,_San_Francisco,_CA_9-3-2012_4-03-29_PM.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/740%2C_736%2C_730_%26_724_Leavenworth_St.%2C_Lower_Nob_Hill_Apartment_Hotel_District%2C_San_Francisco%2C_CA_9-3-2012_4-03-29_PM.JPG/1920px-740%2C_736%2C_730_%26_724_Leavenworth_St.%2C_Lower_Nob_Hill_Apartment_Hotel_District%2C_San_Francisco%2C_CA_9-3-2012_4-03-29_PM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3072,
+   "height": 2304,
+   "score": 5,
+   "why": "names San Francisco; names lower nob hill",
+   "query": "Lower Nob Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "lower-pacific-heights",
+  "name": "Lower Pacific Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "marina-district",
+  "name": "Marina District",
+  "source": "commons",
+  "pick": {
+   "title": "File:Presidio Theatre - Marina District, San Francisco, CA - DSC02404.jpg",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Presidio_Theatre_-_Marina_District,_San_Francisco,_CA_-_DSC02404.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Presidio_Theatre_-_Marina_District%2C_San_Francisco%2C_CA_-_DSC02404.jpg/1920px-Presidio_Theatre_-_Marina_District%2C_San_Francisco%2C_CA_-_DSC02404.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5356,
+   "height": 3425,
+   "score": 5,
+   "why": "names San Francisco; names marina district",
+   "query": "Marina District San Francisco California"
+  }
+ },
+ {
+  "slug": "merced-heights",
+  "name": "Merced Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "merced-manor",
+  "name": "Merced Manor",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "midtown-terrace",
+  "name": "Midtown Terrace",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "miraloma-park",
+  "name": "Miraloma Park",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "mission-bay",
+  "name": "Mission Bay",
+  "source": "commons",
+  "pick": {
+   "title": "File:Interstate 280, Sixth Street exit, Mission Bay, San Francisco (34732798).jpg",
+   "license": "CC BY 3.0",
+   "artist": "Aythami Perez",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Interstate_280,_Sixth_Street_exit,_Mission_Bay,_San_Francisco_(34732798).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Interstate_280%2C_Sixth_Street_exit%2C_Mission_Bay%2C_San_Francisco_%2834732798%29.jpg/1920px-Interstate_280%2C_Sixth_Street_exit%2C_Mission_Bay%2C_San_Francisco_%2834732798%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2048,
+   "height": 1260,
+   "score": 5,
+   "why": "names San Francisco; names mission bay",
+   "query": "Mission Bay San Francisco California"
+  }
+ },
+ {
+  "slug": "mission-district",
+  "name": "Mission District",
+  "source": "commons",
+  "pick": {
+   "title": "File:\"Eat the Rich\" Graffiti in Mission District, San Francisco.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Natecation",
+   "descurl": "https://commons.wikimedia.org/wiki/File:%22Eat_the_Rich%22_Graffiti_in_Mission_District,_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/%22Eat_the_Rich%22_Graffiti_in_Mission_District%2C_San_Francisco.jpg/1920px-%22Eat_the_Rich%22_Graffiti_in_Mission_District%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2268,
+   "height": 4032,
+   "score": 5,
+   "why": "names San Francisco; names mission district",
+   "query": "Mission District San Francisco California"
+  }
+ },
+ {
+  "slug": "mission-dolores",
+  "name": "Mission Dolores",
+  "source": "commons",
+  "pick": {
+   "title": "File:Dolores Park, Mission District, San Francisco, with Mission High School.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Guerinf",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Dolores_Park,_Mission_District,_San_Francisco,_with_Mission_High_School.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Dolores_Park%2C_Mission_District%2C_San_Francisco%2C_with_Mission_High_School.jpg/1920px-Dolores_Park%2C_Mission_District%2C_San_Francisco%2C_with_Mission_High_School.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4000,
+   "height": 3000,
+   "score": 5,
+   "why": "names San Francisco; names mission dolores",
+   "query": "Mission Dolores San Francisco California"
+  }
+ },
+ {
+  "slug": "mission-terrace",
+  "name": "Mission Terrace",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "monterey-heights",
+  "name": "Monterey Heights",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "mount-davidson-manor",
+  "name": "Mount Davidson Manor",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "nob-hill",
+  "name": "Nob Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:Bently Nob Hill, San Francisco, California, US.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Clyde Charles Brown",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Bently_Nob_Hill,_San_Francisco,_California,_US.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Bently_Nob_Hill%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Bently_Nob_Hill%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2688,
+   "height": 4032,
+   "score": 5,
+   "why": "names San Francisco; names nob hill",
+   "query": "Nob Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "noe-valley",
+  "name": "Noe Valley",
+  "source": "commons",
+  "pick": {
+   "title": "File:Noe Valley San Francisco 4.jpg",
+   "license": "CC BY 2.0",
+   "artist": "Susan from Alameda, CA, USA",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Noe_Valley_San_Francisco_4.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/91/Noe_Valley_San_Francisco_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1024,
+   "height": 768,
+   "score": 5,
+   "why": "names San Francisco; names noe valley",
+   "query": "Noe Valley San Francisco California"
+  }
+ },
+ {
+  "slug": "north-beach",
+  "name": "North Beach",
+  "source": "commons",
+  "pick": {
+   "title": "File:North Beach, San Francisco, California April 2022 - Walled off parking meter.jpg",
+   "license": "CC BY 2.0",
+   "artist": "Sharon Hahn Darlin",
+   "descurl": "https://commons.wikimedia.org/wiki/File:North_Beach,_San_Francisco,_California_April_2022_-_Walled_off_parking_meter.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/North_Beach%2C_San_Francisco%2C_California_April_2022_-_Walled_off_parking_meter.jpg/1920px-North_Beach%2C_San_Francisco%2C_California_April_2022_-_Walled_off_parking_meter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 3024,
+   "score": 5,
+   "why": "names San Francisco; names north beach",
+   "query": "North Beach San Francisco California"
+  }
+ },
+ {
+  "slug": "north-panhandle",
+  "name": "North Panhandle",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "north-waterfront",
+  "name": "North Waterfront",
+  "source": "commons",
+  "pick": {
+   "title": "File:Frank Deras Jr., Photographer June 1998 CONTEXTUAL AERIAL VIEW OF SAN FRANCISCO APPROACH FROM SECOND STREET TO WATERFRONT, SOUTH SIDE, FACING NORTH. - San Francisco Oakland HAER CAL,38-SANFRA,141-63.tif",
+   "license": "Public domain",
+   "artist": "Related names:\n\nPurcell, C H; California Toll Bridge Authority; California Division of Highways; O'Shaughnessy, Michael ",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Frank_Deras_Jr.,_Photographer_June_1998_CONTEXTUAL_AERIAL_VIEW_OF_SAN_FRANCISCO_APPROACH_FROM_SECOND_STREET_TO_WATERFRONT,_SOUTH_SIDE,_FACING_NORTH._-_San_Francisco_Oakland_HAER_CAL,38-SANFRA,141-63.tif",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Frank_Deras_Jr.%2C_Photographer_June_1998_CONTEXTUAL_AERIAL_VIEW_OF_SAN_FRANCISCO_APPROACH_FROM_SECOND_STREET_TO_WATERFRONT%2C_SOUTH_SIDE%2C_FACING_NORTH._-_San_Francisco_Oakland_HAER_CAL%2C38-SANFRA%2C141-63.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5027,
+   "height": 4027,
+   "score": 5,
+   "why": "names San Francisco; names north waterfront",
+   "query": "North Waterfront San Francisco California"
+  }
+ },
+ {
+  "slug": "oceanview",
+  "name": "Oceanview",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "outer-mission",
+  "name": "Outer Mission",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "outer-parkside",
+  "name": "Outer Parkside",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "outer-richmond",
+  "name": "Outer Richmond",
+  "source": "commons",
+  "pick": {
+   "title": "File:Cone Resting - Outer Richmond, San Francisco.jpg",
+   "license": "CC BY 2.0",
+   "artist": "eekim",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Cone_Resting_-_Outer_Richmond,_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Cone_Resting_-_Outer_Richmond%2C_San_Francisco.jpg/1920px-Cone_Resting_-_Outer_Richmond%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4386,
+   "height": 3289,
+   "score": 5,
+   "why": "names San Francisco; names outer richmond",
+   "query": "Outer Richmond San Francisco California"
+  }
+ },
+ {
+  "slug": "outer-sunset",
+  "name": "Outer Sunset",
+  "source": "commons",
+  "pick": {
+   "title": "File:San Francisco's Outer Sunset district (left-center), Golden Gate Park, and the Outer Richmond district (right) seen from Grand View Park (7174970090).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Akos Kokai",
+   "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco%27s_Outer_Sunset_district_(left-center),_Golden_Gate_Park,_and_the_Outer_Richmond_district_(right)_seen_from_Grand_View_Park_(7174970090).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/San_Francisco%27s_Outer_Sunset_district_%28left-center%29%2C_Golden_Gate_Park%2C_and_the_Outer_Richmond_district_%28right%29_seen_from_Grand_View_Park_%287174970090%29.jpg/1920px-San_Francisco%27s_Outer_Sunset_district_%28left-center%29%2C_Golden_Gate_Park%2C_and_the_Outer_Richmond_district_%28right%29_seen_from_Grand_View_Park_%287174970090%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4000,
+   "height": 3000,
+   "score": 5,
+   "why": "names San Francisco; names outer sunset",
+   "query": "Outer Sunset San Francisco"
+  }
+ },
+ {
+  "slug": "pacific-heights",
+  "name": "Pacific Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Long stairway in Pacific Heights, San Francisco, California, US.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Clyde Charles Brown",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Long_stairway_in_Pacific_Heights,_San_Francisco,_California,_US.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Long_stairway_in_Pacific_Heights%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4000,
+   "height": 3000,
+   "score": 5,
+   "why": "names San Francisco; names pacific heights",
+   "query": "Pacific Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "panhandle",
+  "name": "Panhandle",
+  "source": "commons",
+  "pick": {
+   "title": "File:Make believe in Panhandle park - San Francisco, CA - DSC02676.JPG",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Make_believe_in_Panhandle_park_-_San_Francisco,_CA_-_DSC02676.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Make_believe_in_Panhandle_park_-_San_Francisco%2C_CA_-_DSC02676.JPG/1920px-Make_believe_in_Panhandle_park_-_San_Francisco%2C_CA_-_DSC02676.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5472,
+   "height": 3648,
+   "score": 5,
+   "why": "names San Francisco; names panhandle",
+   "query": "Panhandle San Francisco California"
+  }
+ },
+ {
+  "slug": "parkside",
+  "name": "Parkside",
+  "source": "commons",
+  "pick": {
+   "title": "File:Beach Chalet parkside - San Francisco, CA.jpg",
+   "license": "CC0",
+   "artist": "Daderot",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Beach_Chalet_parkside_-_San_Francisco,_CA.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Beach_Chalet_parkside_-_San_Francisco%2C_CA.jpg/1920px-Beach_Chalet_parkside_-_San_Francisco%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4022,
+   "height": 2262,
+   "score": 5,
+   "why": "names San Francisco; names parkside",
+   "query": "Parkside San Francisco California"
+  }
+ },
+ {
+  "slug": "pinelake-park",
+  "name": "Pinelake Park",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "portola",
+  "name": "Portola",
+  "source": "commons",
+  "pick": {
+   "title": "File:Chesa Boudin, Chinese-American community, Portola, San Francisco (March 2020).jpg",
+   "license": "Public domain",
+   "artist": "en:San Francisco District Attorney's Office",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Chesa_Boudin,_Chinese-American_community,_Portola,_San_Francisco_(March_2020).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Chesa_Boudin%2C_Chinese-American_community%2C_Portola%2C_San_Francisco_%28March_2020%29.jpg/1920px-Chesa_Boudin%2C_Chinese-American_community%2C_Portola%2C_San_Francisco_%28March_2020%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 3024,
+   "score": 5,
+   "why": "names San Francisco; names portola",
+   "query": "Portola San Francisco California"
+  }
+ },
+ {
+  "slug": "potrero-hill",
+  "name": "Potrero Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:Dogpatch and the bay seen from Potrero Hill, San Francisco, California, US.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Clyde Charles Brown",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Dogpatch_and_the_bay_seen_from_Potrero_Hill,_San_Francisco,_California,_US.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Dogpatch_and_the_bay_seen_from_Potrero_Hill%2C_San_Francisco%2C_California%2C_US.jpg/1920px-Dogpatch_and_the_bay_seen_from_Potrero_Hill%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4032,
+   "height": 2688,
+   "score": 5,
+   "why": "names San Francisco; names potrero hill",
+   "query": "Potrero Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "presidio",
+  "name": "Presidio",
+  "source": "commons",
+  "pick": {
+   "title": "File:Chevy Bel Air in the Presidio of San Francisco.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Frank Schulenburg",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg/1920px-Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 6005,
+   "height": 4460,
+   "score": 5,
+   "why": "names San Francisco; names presidio",
+   "query": "Presidio San Francisco California"
+  }
+ },
+ {
+  "slug": "presidio-heights",
+  "name": "Presidio Heights",
+  "source": "commons",
+  "pick": {
+   "title": "File:Presidio Heights, San Francisco, California (28859567461).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Tony Webster from Minneapolis, Minnesota",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Presidio_Heights,_San_Francisco,_California_(28859567461).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Presidio_Heights%2C_San_Francisco%2C_California_%2828859567461%29.jpg/1920px-Presidio_Heights%2C_San_Francisco%2C_California_%2828859567461%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4449,
+   "height": 2848,
+   "score": 5,
+   "why": "names San Francisco; names presidio heights",
+   "query": "Presidio Heights San Francisco California"
+  }
+ },
+ {
+  "slug": "russian-hill",
+  "name": "Russian Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:Russian Hill, San Francisco, CA.JPG",
+   "license": "CC BY-SA 4.0",
+   "artist": "Basil D Soufi",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Russian_Hill,_San_Francisco,_CA.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Russian_Hill%2C_San_Francisco%2C_CA.JPG/1920px-Russian_Hill%2C_San_Francisco%2C_CA.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5320,
+   "height": 2993,
+   "score": 5,
+   "why": "names San Francisco; names russian hill",
+   "query": "Russian Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "saint-francis-wood",
+  "name": "Saint Francis Wood",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "sea-cliff",
+  "name": "Sea Cliff",
+  "source": "commons",
+  "pick": {
+   "title": "File:Sea Cliff, San Francisco, CA 94121, USA - panoramio (2).jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Roman Eugeniusz",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Sea_Cliff,_San_Francisco,_CA_94121,_USA_-_panoramio_(2).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Sea_Cliff%2C_San_Francisco%2C_CA_94121%2C_USA_-_panoramio_%282%29.jpg/1920px-Sea_Cliff%2C_San_Francisco%2C_CA_94121%2C_USA_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4928,
+   "height": 3264,
+   "score": 5,
+   "why": "names San Francisco; names sea cliff",
+   "query": "Sea Cliff San Francisco California"
+  }
+ },
+ {
+  "slug": "sherwood-forest",
+  "name": "Sherwood Forest",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "silver-terrace",
+  "name": "Silver Terrace",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "south-beach",
+  "name": "South Beach",
+  "source": "commons",
+  "pick": {
+   "title": "File:South Beach Park, San Francisco 1 2023-11-14.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "FASTILY",
+   "descurl": "https://commons.wikimedia.org/wiki/File:South_Beach_Park,_San_Francisco_1_2023-11-14.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/South_Beach_Park%2C_San_Francisco_1_2023-11-14.jpg/1920px-South_Beach_Park%2C_San_Francisco_1_2023-11-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3024,
+   "height": 4032,
+   "score": 5,
+   "why": "names San Francisco; names south beach",
+   "query": "South Beach San Francisco California"
+  }
+ },
+ {
+  "slug": "south-of-market",
+  "name": "South of Market",
+  "source": "commons",
+  "pick": {
+   "title": "File:Mural by Mars-1 located at Jessie Street and 6th Street, South of Market, San Francisco, California LCCN2013631847.tif",
+   "license": "Public domain",
+   "artist": "Carol M. Highsmith",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Mural_by_Mars-1_located_at_Jessie_Street_and_6th_Street,_South_of_Market,_San_Francisco,_California_LCCN2013631847.tif",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Mural_by_Mars-1_located_at_Jessie_Street_and_6th_Street%2C_South_of_Market%2C_San_Francisco%2C_California_LCCN2013631847.tif/lossy-page1-1920px-Mural_by_Mars-1_located_at_Jessie_Street_and_6th_Street%2C_South_of_Market%2C_San_Francisco%2C_California_LCCN2013631847.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4096,
+   "height": 6144,
+   "score": 5,
+   "why": "names San Francisco; names south market",
+   "query": "South of Market San Francisco California"
+  }
+ },
+ {
+  "slug": "stonestown",
+  "name": "Stonestown",
+  "source": "commons",
+  "pick": {
+   "title": "File:Stonestown Galleria San Francisco.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "mliu92",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Stonestown_Galleria_San_Francisco.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Stonestown_Galleria_San_Francisco.jpg/1920px-Stonestown_Galleria_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3036,
+   "height": 4048,
+   "score": 5,
+   "why": "names San Francisco; names stonestown",
+   "query": "Stonestown Galleria San Francisco"
+  }
+ },
+ {
+  "slug": "sunnyside",
+  "name": "Sunnyside",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "telegraph-hill",
+  "name": "Telegraph Hill",
+  "source": "commons",
+  "pick": {
+   "title": "File:Telegraph Hill, San Francisco, CA, USA - panoramio (27).jpg",
+   "license": "CC BY 3.0",
+   "artist": "Almondox",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Telegraph_Hill,_San_Francisco,_CA,_USA_-_panoramio_(27).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Telegraph_Hill%2C_San_Francisco%2C_CA%2C_USA_-_panoramio_%2827%29.jpg/1920px-Telegraph_Hill%2C_San_Francisco%2C_CA%2C_USA_-_panoramio_%2827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 2864,
+   "height": 856,
+   "score": 5,
+   "why": "names San Francisco; names telegraph hill",
+   "query": "Telegraph Hill San Francisco California"
+  }
+ },
+ {
+  "slug": "tenderloin",
+  "name": "Tenderloin",
+  "source": "commons",
+  "pick": {
+   "title": "File:Tenderloin, San Francisco, CA, USA - panoramio (1).jpg",
+   "license": "CC BY 3.0",
+   "artist": "Scorewith German",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Tenderloin,_San_Francisco,_CA,_USA_-_panoramio_(1).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/65/Tenderloin%2C_San_Francisco%2C_CA%2C_USA_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1000,
+   "height": 1333,
+   "score": 5,
+   "why": "names San Francisco; names tenderloin",
+   "query": "Tenderloin San Francisco California"
+  }
+ },
+ {
+  "slug": "twin-peaks",
+  "name": "Twin Peaks",
+  "source": "commons",
+  "pick": {
+   "title": "File:Pano of Golden Gate Bridge and San Francisco from Twin Peaks 1.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Brocken Inaglory",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Pano_of_Golden_Gate_Bridge_and_San_Francisco_from_Twin_Peaks_1.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Pano_of_Golden_Gate_Bridge_and_San_Francisco_from_Twin_Peaks_1.jpg/1920px-Pano_of_Golden_Gate_Bridge_and_San_Francisco_from_Twin_Peaks_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 10734,
+   "height": 3552,
+   "score": 5,
+   "why": "names San Francisco; names twin peaks",
+   "query": "Twin Peaks San Francisco California"
+  }
+ },
+ {
+  "slug": "union-square",
+  "name": "Union Square",
+  "source": "commons",
+  "pick": {
+   "title": "File:San Francisco (CA, USA), Union Square, Dewey Monument -- 2022 -- 2915.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Dietmar Rabich",
+   "descurl": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Union_Square,_Dewey_Monument_--_2022_--_2915.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/San_Francisco_%28CA%2C_USA%29%2C_Union_Square%2C_Dewey_Monument_--_2022_--_2915.jpg/1920px-San_Francisco_%28CA%2C_USA%29%2C_Union_Square%2C_Dewey_Monument_--_2022_--_2915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5925,
+   "height": 4444,
+   "score": 5,
+   "why": "names San Francisco; names union square",
+   "query": "Union Square San Francisco California"
+  }
+ },
+ {
+  "slug": "visitacion-valley",
+  "name": "Visitacion Valley",
+  "source": "commons",
+  "pick": {
+   "title": "File:Houses on Bayshore Boulevard, Visitacion Valley, San Francisco (July 2014).jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "anonymouse1",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Houses_on_Bayshore_Boulevard,_Visitacion_Valley,_San_Francisco_(July_2014).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Houses_on_Bayshore_Boulevard%2C_Visitacion_Valley%2C_San_Francisco_%28July_2014%29.jpg/1920px-Houses_on_Bayshore_Boulevard%2C_Visitacion_Valley%2C_San_Francisco_%28July_2014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 3492,
+   "height": 2328,
+   "score": 5,
+   "why": "names San Francisco; names visitacion valley",
+   "query": "Visitacion Valley San Francisco California"
+  }
+ },
+ {
+  "slug": "west-portal",
+  "name": "West Portal",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "western-addition",
+  "name": "Western Addition",
+  "source": "commons",
+  "pick": {
+   "title": "File:Western Addition neighborhood, San Francisco, California LCCN2013630354.tif",
+   "license": "Public domain",
+   "artist": "Carol M. Highsmith",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Western_Addition_neighborhood,_San_Francisco,_California_LCCN2013630354.tif",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Western_Addition_neighborhood%2C_San_Francisco%2C_California_LCCN2013630354.tif/lossy-page1-1920px-Western_Addition_neighborhood%2C_San_Francisco%2C_California_LCCN2013630354.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 7360,
+   "height": 4912,
+   "score": 5,
+   "why": "names San Francisco; names western addition",
+   "query": "Western Addition San Francisco California"
+  }
+ },
+ {
+  "slug": "westwood-highlands",
+  "name": "Westwood Highlands",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "westwood-park",
+  "name": "Westwood Park",
+  "source": "satellite",
+  "pick": null
+ },
+ {
+  "slug": "yerba-buena",
+  "name": "Yerba Buena",
+  "source": "commons",
+  "pick": {
+   "title": "File:Western Span of the San Francisco-Oakland Bay Bridge at dusk, seen from Yerba Buena Island.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Dllu",
+   "descurl": "https://commons.wikimedia.org/wiki/File:Western_Span_of_the_San_Francisco-Oakland_Bay_Bridge_at_dusk,_seen_from_Yerba_Buena_Island.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Western_Span_of_the_San_Francisco-Oakland_Bay_Bridge_at_dusk%2C_seen_from_Yerba_Buena_Island.jpg/1920px-Western_Span_of_the_San_Francisco-Oakland_Bay_Bridge_at_dusk%2C_seen_from_Yerba_Buena_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 7137,
+   "height": 4767,
+   "score": 5,
+   "why": "names San Francisco; names yerba buena",
+   "query": "Yerba Buena San Francisco California"
+  }
+ }
+]
