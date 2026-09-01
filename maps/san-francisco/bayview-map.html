@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .bayview-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .bayview-map-wrap #bayview-map { width: 100%; height: 100%; }
+  .bayview-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .bayview-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .bayview-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .bayview-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="bayview-map-wrap">
+  <div id="bayview-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Bayview</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayview Heights","slug":"bayview-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39326,37.71881],[-122.39187,37.72035],[-122.39554,37.72241],[-122.40136,37.72375],[-122.40022,37.72081],[-122.39899,37.71659],[-122.39827,37.71515],[-122.398,37.71549],[-122.39529,37.71682],[-122.39326,37.71881]]]]}},{"type":"Feature","properties":{"name":"Bernal Heights","slug":"bernal-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42385,37.74065],[-122.42439,37.73883],[-122.42544,37.73721],[-122.42844,37.73495],[-122.43398,37.7322],[-122.43394,37.73197],[-122.43368,37.73185],[-122.4313,37.73233],[-122.42957,37.73229],[-122.42611,37.73165],[-122.42455,37.73155],[-122.41967,37.73201],[-122.41665,37.73201],[-122.41439,37.73242],[-122.4095,37.73505],[-122.40849,37.73629],[-122.40822,37.73761],[-122.40775,37.74125],[-122.40518,37.74498],[-122.40378,37.74943],[-122.40816,37.74836],[-122.42245,37.74801],[-122.42217,37.74518],[-122.42322,37.7423],[-122.42268,37.74233],[-122.42348,37.74075],[-122.42385,37.74065]]]]}},{"type":"Feature","properties":{"name":"Candlestick Point","slug":"candlestick-point","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38331,37.72036],[-122.38626,37.71718],[-122.38685,37.71751],[-122.38813,37.7163],[-122.388,37.71548],[-122.38859,37.71484],[-122.39028,37.71717],[-122.39326,37.71881],[-122.39529,37.71682],[-122.398,37.71549],[-122.39827,37.71515],[-122.39596,37.71184],[-122.39511,37.70834],[-122.39323,37.70828],[-122.39148,37.7097],[-122.39062,37.7092],[-122.38972,37.70962],[-122.38806,37.70867],[-122.38598,37.71],[-122.38451,37.70929],[-122.3794,37.70842],[-122.37443,37.70863],[-122.37602,37.70969],[-122.37794,37.70861],[-122.38004,37.71061],[-122.38008,37.71142],[-122.37613,37.71609],[-122.38331,37.72036]]]]}},{"type":"Feature","properties":{"name":"Hunters Point","slug":"hunters-point","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38052,37.74719],[-122.38683,37.74707],[-122.38689,37.74755],[-122.38618,37.74809],[-122.37578,37.74875],[-122.37597,37.75096],[-122.38751,37.7503],[-122.38702,37.745],[-122.38869,37.74028],[-122.38429,37.73776],[-122.38236,37.73371],[-122.38098,37.73264],[-122.3796,37.73246],[-122.37935,37.73184],[-122.37999,37.73066],[-122.38227,37.73062],[-122.38343,37.72974],[-122.37783,37.72656],[-122.38217,37.72225],[-122.38066,37.72177],[-122.37912,37.72361],[-122.37708,37.72424],[-122.37594,37.72268],[-122.37556,37.72045],[-122.374,37.71891],[-122.37039,37.71869],[-122.36948,37.71783],[-122.36777,37.71767],[-122.36546,37.71597],[-122.36475,37.71648],[-122.36426,37.71629],[-122.36248,37.7182],[-122.36366,37.71905],[-122.36271,37.72007],[-122.35983,37.71851],[-122.35919,37.7194],[-122.36381,37.7221],[-122.363,37.72298],[-122.36024,37.72136],[-122.35998,37.72163],[-122.36275,37.72326],[-122.36237,37.72368],[-122.36532,37.72554],[-122.36491,37.7257],[-122.36152,37.72378],[-122.35784,37.72462],[-122.35796,37.72494],[-122.36126,37.72416],[-122.36164,37.72522],[-122.35801,37.72604],[-122.35697,37.72871],[-122.3604,37.72819],[-122.35788,37.72895],[-122.35773,37.72944],[-122.36218,37.72848],[-122.35879,37.72978],[-122.35992,37.73033],[-122.36088,37.72991],[-122.36191,37.73009],[-122.36521,37.73212],[-122.36565,37.73163],[-122.36678,37.7323],[-122.3692,37.73199],[-122.37194,37.73421],[-122.37418,37.73259],[-122.37557,37.73272],[-122.37488,37.73498],[-122.37532,37.73539],[-122.37587,37.73505],[-122.37597,37.73582],[-122.37524,37.73622],[-122.37488,37.7373],[-122.37635,37.73837],[-122.37352,37.73717],[-122.37122,37.73708],[-122.3674,37.73826],[-122.37277,37.73831],[-122.374,37.73953],[-122.36763,37.74013],[-122.37276,37.74551],[-122.37414,37.74499],[-122.37552,37.74704],[-122.38052,37.74719]]]]}},{"type":"Feature","properties":{"name":"Mission District","slug":"mission-district","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42246,37.74802],[-122.40816,37.74836],[-122.40377,37.74944],[-122.40286,37.75268],[-122.40328,37.75609],[-122.40378,37.75713],[-122.40574,37.75875],[-122.40635,37.75967],[-122.40788,37.76894],[-122.41133,37.76944],[-122.41788,37.76976],[-122.42119,37.77018],[-122.42224,37.77054],[-122.42245,37.77072],[-122.42099,37.75532],[-122.42145,37.75528],[-122.4216,37.75206],[-122.42128,37.74884],[-122.42252,37.74879],[-122.42246,37.74802]]]]}},{"type":"Feature","properties":{"name":"Portola","slug":"portola","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40664,37.73518],[-122.40822,37.73761],[-122.40849,37.73629],[-122.4095,37.73504],[-122.41439,37.73242],[-122.41666,37.73201],[-122.41969,37.73201],[-122.41986,37.729],[-122.42374,37.72876],[-122.42185,37.7242],[-122.42171,37.72424],[-122.41937,37.71897],[-122.41572,37.71827],[-122.41421,37.7182],[-122.40059,37.72184],[-122.40297,37.7278],[-122.40464,37.7315],[-122.40664,37.73518]]]]}},{"type":"Feature","properties":{"name":"Potrero Hill","slug":"potrero-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3946,37.76638],[-122.40166,37.77182],[-122.40439,37.76975],[-122.40584,37.76967],[-122.40606,37.76922],[-122.40664,37.76896],[-122.40787,37.76899],[-122.40635,37.75967],[-122.40573,37.75874],[-122.40377,37.75714],[-122.40331,37.75617],[-122.40286,37.75269],[-122.40378,37.74943],[-122.39177,37.75005],[-122.39136,37.75134],[-122.39128,37.75263],[-122.39225,37.75631],[-122.39262,37.76158],[-122.39297,37.7641],[-122.39318,37.76461],[-122.39388,37.76572],[-122.3946,37.76638]]]]}},{"type":"Feature","properties":{"name":"Silver Terrace","slug":"silver-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39961,37.72686],[-122.39927,37.72678],[-122.39862,37.72856],[-122.39739,37.72994],[-122.39538,37.72965],[-122.39506,37.73105],[-122.39573,37.73191],[-122.39221,37.73566],[-122.39965,37.73988],[-122.40243,37.73723],[-122.40665,37.7352],[-122.40464,37.7315],[-122.40297,37.7278],[-122.40221,37.7281],[-122.40031,37.72702],[-122.39961,37.72686]]]]}},{"type":"Feature","properties":{"name":"Bayview","slug":"bayview","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38751,37.75027],[-122.40378,37.74943],[-122.40518,37.74498],[-122.40776,37.74125],[-122.40822,37.73761],[-122.40665,37.7352],[-122.40243,37.73723],[-122.39965,37.73988],[-122.39221,37.73566],[-122.39573,37.73191],[-122.39506,37.73105],[-122.39538,37.72965],[-122.39739,37.72994],[-122.39862,37.72856],[-122.39927,37.72678],[-122.4003,37.72701],[-122.40221,37.7281],[-122.40298,37.72779],[-122.40144,37.72377],[-122.39554,37.72241],[-122.39187,37.72035],[-122.39326,37.71881],[-122.39028,37.71717],[-122.38859,37.71484],[-122.388,37.71548],[-122.38813,37.7163],[-122.38685,37.71751],[-122.38626,37.71718],[-122.38187,37.7222],[-122.38217,37.72225],[-122.37783,37.72656],[-122.38343,37.72974],[-122.38227,37.73062],[-122.37978,37.7308],[-122.37935,37.73154],[-122.3796,37.73246],[-122.38098,37.73264],[-122.38236,37.73371],[-122.38429,37.73776],[-122.38869,37.74028],[-122.38702,37.745],[-122.38751,37.75027]]]]}}]};
+
+  var map = L.map('bayview-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

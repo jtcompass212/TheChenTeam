@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .duboce-triangle-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .duboce-triangle-map-wrap #duboce-triangle-map { width: 100%; height: 100%; }
+  .duboce-triangle-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .duboce-triangle-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .duboce-triangle-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .duboce-triangle-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="duboce-triangle-map-wrap">
+  <div id="duboce-triangle-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Duboce Triangle</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Buena Vista","slug":"buena-vista","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43686,37.77031],[-122.43709,37.77126],[-122.44535,37.77021],[-122.44473,37.76743],[-122.44638,37.76722],[-122.44587,37.76462],[-122.447,37.76288],[-122.44666,37.76176],[-122.44333,37.76206],[-122.44329,37.76232],[-122.44301,37.76257],[-122.44151,37.76306],[-122.44157,37.76323],[-122.44199,37.76327],[-122.44233,37.76508],[-122.44126,37.7653],[-122.43954,37.76658],[-122.4382,37.76677],[-122.43822,37.76719],[-122.43563,37.76733],[-122.43591,37.7692],[-122.43634,37.76991],[-122.43686,37.77031]]]]}},{"type":"Feature","properties":{"name":"Corona Heights","slug":"corona-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43559,37.76693],[-122.43563,37.76733],[-122.43822,37.76719],[-122.4382,37.76677],[-122.43955,37.76658],[-122.44126,37.7653],[-122.44233,37.76508],[-122.44199,37.76327],[-122.44157,37.76323],[-122.44151,37.76306],[-122.443,37.76257],[-122.44329,37.76232],[-122.44333,37.76206],[-122.44557,37.76186],[-122.44666,37.76176],[-122.44644,37.76103],[-122.44639,37.75886],[-122.4459,37.75872],[-122.4449,37.75832],[-122.44437,37.75841],[-122.44472,37.75865],[-122.44488,37.75957],[-122.44279,37.76104],[-122.44023,37.76114],[-122.439,37.76161],[-122.43651,37.76208],[-122.43519,37.76268],[-122.43559,37.76693]]]]}},{"type":"Feature","properties":{"name":"Eureka Valley-Dolores Heights","slug":"eureka-valley-dolores-heights","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.44488,37.75957],[-122.44471,37.75865],[-122.44437,37.75841],[-122.44333,37.75796],[-122.44236,37.75678],[-122.44118,37.75636],[-122.44106,37.75597],[-122.44179,37.75471],[-122.44169,37.75469],[-122.44175,37.7546],[-122.44112,37.75421],[-122.44116,37.75415],[-122.44102,37.75416],[-122.44093,37.7541],[-122.42096,37.75529],[-122.42127,37.7585],[-122.42805,37.75809],[-122.42851,37.76289],[-122.42894,37.76737],[-122.43481,37.76286],[-122.43519,37.76267],[-122.43653,37.76207],[-122.439,37.76162],[-122.44021,37.76114],[-122.44278,37.76105],[-122.44488,37.75957]]]}},{"type":"Feature","properties":{"name":"Hayes Valley","slug":"hayes-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43756,37.7736],[-122.43689,37.77029],[-122.4364,37.76995],[-122.43579,37.76906],[-122.42611,37.76963],[-122.42071,37.77408],[-122.42189,37.77989],[-122.43012,37.77884],[-122.42927,37.77465],[-122.43756,37.7736]]]]}},{"type":"Feature","properties":{"name":"Mission Dolores","slug":"mission-dolores","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42244,37.77072],[-122.42296,37.77124],[-122.42327,37.77197],[-122.42611,37.76963],[-122.42894,37.76737],[-122.42805,37.75809],[-122.42127,37.7585],[-122.42244,37.77072]]]]}},{"type":"Feature","properties":{"name":"Duboce Triangle","slug":"duboce-triangle","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42894,37.76737],[-122.42611,37.76963],[-122.43025,37.76939],[-122.43357,37.76918],[-122.43579,37.76906],[-122.43519,37.76267],[-122.43481,37.76286],[-122.42894,37.76737]]]]}}]};
+
+  var map = L.map('duboce-triangle-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

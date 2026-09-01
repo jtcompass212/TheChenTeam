@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .eureka-valley-dolores-heights-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .eureka-valley-dolores-heights-map-wrap #eureka-valley-dolores-heights-map { width: 100%; height: 100%; }
+  .eureka-valley-dolores-heights-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .eureka-valley-dolores-heights-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .eureka-valley-dolores-heights-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .eureka-valley-dolores-heights-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="eureka-valley-dolores-heights-map-wrap">
+  <div id="eureka-valley-dolores-heights-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Eureka Valley-Dolores Heights</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Corona Heights","slug":"corona-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43559,37.76693],[-122.43563,37.76733],[-122.43822,37.76719],[-122.4382,37.76677],[-122.43955,37.76658],[-122.44126,37.7653],[-122.44233,37.76508],[-122.44199,37.76327],[-122.44157,37.76323],[-122.44151,37.76306],[-122.443,37.76257],[-122.44329,37.76232],[-122.44333,37.76206],[-122.44557,37.76186],[-122.44666,37.76176],[-122.44644,37.76103],[-122.44639,37.75886],[-122.4459,37.75872],[-122.4449,37.75832],[-122.44437,37.75841],[-122.44472,37.75865],[-122.44488,37.75957],[-122.44279,37.76104],[-122.44023,37.76114],[-122.439,37.76161],[-122.43651,37.76208],[-122.43519,37.76268],[-122.43559,37.76693]]]]}},{"type":"Feature","properties":{"name":"Duboce Triangle","slug":"duboce-triangle","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42894,37.76737],[-122.42611,37.76963],[-122.43025,37.76939],[-122.43357,37.76918],[-122.43579,37.76906],[-122.43519,37.76267],[-122.43481,37.76286],[-122.42894,37.76737]]]]}},{"type":"Feature","properties":{"name":"Mission District","slug":"mission-district","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42246,37.74802],[-122.40816,37.74836],[-122.40377,37.74944],[-122.40286,37.75268],[-122.40328,37.75609],[-122.40378,37.75713],[-122.40574,37.75875],[-122.40635,37.75967],[-122.40788,37.76894],[-122.41133,37.76944],[-122.41788,37.76976],[-122.42119,37.77018],[-122.42224,37.77054],[-122.42245,37.77072],[-122.42099,37.75532],[-122.42145,37.75528],[-122.4216,37.75206],[-122.42128,37.74884],[-122.42252,37.74879],[-122.42246,37.74802]]]]}},{"type":"Feature","properties":{"name":"Mission Dolores","slug":"mission-dolores","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42244,37.77072],[-122.42296,37.77124],[-122.42327,37.77197],[-122.42611,37.76963],[-122.42894,37.76737],[-122.42805,37.75809],[-122.42127,37.7585],[-122.42244,37.77072]]]]}},{"type":"Feature","properties":{"name":"Noe Valley","slug":"noe-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42148,37.75447],[-122.42144,37.75527],[-122.44093,37.7541],[-122.44175,37.7546],[-122.44243,37.75358],[-122.44344,37.74942],[-122.44411,37.74836],[-122.44402,37.74753],[-122.44433,37.74708],[-122.44484,37.74692],[-122.4446,37.74668],[-122.44396,37.74677],[-122.44341,37.74659],[-122.44126,37.74724],[-122.44043,37.74708],[-122.44009,37.74654],[-122.44016,37.74569],[-122.43991,37.74511],[-122.43647,37.74289],[-122.4358,37.74211],[-122.43556,37.74155],[-122.43539,37.74192],[-122.43488,37.74223],[-122.43416,37.74174],[-122.42322,37.7423],[-122.42215,37.74531],[-122.42253,37.7488],[-122.42128,37.74885],[-122.4216,37.75213],[-122.42148,37.75447]]]]}},{"type":"Feature","properties":{"name":"Twin Peaks","slug":"twin-peaks","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44437,37.75841],[-122.44491,37.75833],[-122.44592,37.75872],[-122.446,37.75803],[-122.44581,37.75726],[-122.44606,37.75686],[-122.44666,37.75694],[-122.4471,37.75736],[-122.44769,37.75763],[-122.44769,37.75733],[-122.44712,37.75688],[-122.44634,37.75591],[-122.44613,37.7558],[-122.44546,37.75598],[-122.44522,37.75574],[-122.44656,37.75535],[-122.447,37.75544],[-122.44768,37.75587],[-122.44796,37.75567],[-122.44738,37.75422],[-122.44687,37.75376],[-122.44672,37.75339],[-122.44774,37.75229],[-122.44835,37.75193],[-122.44873,37.7509],[-122.44942,37.75041],[-122.44972,37.74954],[-122.44954,37.74918],[-122.44925,37.74911],[-122.44813,37.75025],[-122.44692,37.74996],[-122.4458,37.7493],[-122.44566,37.74914],[-122.4457,37.74885],[-122.44502,37.74837],[-122.44484,37.74692],[-122.44433,37.74708],[-122.44402,37.74753],[-122.44411,37.74836],[-122.44344,37.74942],[-122.44243,37.75358],[-122.441,37.75586],[-122.44097,37.75612],[-122.44123,37.75649],[-122.44237,37.75685],[-122.44334,37.75796],[-122.44437,37.75841]]]]}},{"type":"Feature","properties":{"name":"Eureka Valley-Dolores Heights","slug":"eureka-valley-dolores-heights","primary":true},"geometry":{"type":"Polygon","coordinates":[[[-122.44488,37.75957],[-122.44471,37.75865],[-122.44437,37.75841],[-122.44333,37.75796],[-122.44236,37.75678],[-122.44118,37.75636],[-122.44106,37.75597],[-122.44179,37.75471],[-122.44169,37.75469],[-122.44175,37.7546],[-122.44112,37.75421],[-122.44116,37.75415],[-122.44102,37.75416],[-122.44093,37.7541],[-122.42096,37.75529],[-122.42127,37.7585],[-122.42805,37.75809],[-122.42851,37.76289],[-122.42894,37.76737],[-122.43481,37.76286],[-122.43519,37.76267],[-122.43653,37.76207],[-122.439,37.76162],[-122.44021,37.76114],[-122.44278,37.76105],[-122.44488,37.75957]]]}}]};
+
+  var map = L.map('eureka-valley-dolores-heights-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

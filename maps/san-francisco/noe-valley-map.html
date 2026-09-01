@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .noe-valley-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .noe-valley-map-wrap #noe-valley-map { width: 100%; height: 100%; }
+  .noe-valley-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .noe-valley-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .noe-valley-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .noe-valley-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="noe-valley-map-wrap">
+  <div id="noe-valley-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Noe Valley</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bernal Heights","slug":"bernal-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42385,37.74065],[-122.42439,37.73883],[-122.42544,37.73721],[-122.42844,37.73495],[-122.43398,37.7322],[-122.43394,37.73197],[-122.43368,37.73185],[-122.4313,37.73233],[-122.42957,37.73229],[-122.42611,37.73165],[-122.42455,37.73155],[-122.41967,37.73201],[-122.41665,37.73201],[-122.41439,37.73242],[-122.4095,37.73505],[-122.40849,37.73629],[-122.40822,37.73761],[-122.40775,37.74125],[-122.40518,37.74498],[-122.40378,37.74943],[-122.40816,37.74836],[-122.42245,37.74801],[-122.42217,37.74518],[-122.42322,37.7423],[-122.42268,37.74233],[-122.42348,37.74075],[-122.42385,37.74065]]]]}},{"type":"Feature","properties":{"name":"Diamond Heights","slug":"diamond-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44013,37.74669],[-122.44043,37.74708],[-122.44093,37.74726],[-122.44341,37.74659],[-122.44396,37.74677],[-122.4446,37.74668],[-122.44486,37.74703],[-122.45058,37.74596],[-122.45169,37.74563],[-122.44958,37.74307],[-122.44882,37.74275],[-122.44666,37.74244],[-122.44626,37.74207],[-122.4461,37.74136],[-122.4459,37.74112],[-122.44468,37.74079],[-122.44392,37.74009],[-122.44272,37.73968],[-122.4425,37.73924],[-122.44263,37.73847],[-122.43989,37.73873],[-122.43728,37.73835],[-122.43673,37.73877],[-122.43573,37.74047],[-122.43555,37.74093],[-122.43569,37.7415],[-122.43556,37.74155],[-122.4358,37.74211],[-122.43647,37.74289],[-122.43991,37.74511],[-122.44016,37.74569],[-122.44013,37.74669]]]]}},{"type":"Feature","properties":{"name":"Eureka Valley-Dolores Heights","slug":"eureka-valley-dolores-heights","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.44488,37.75957],[-122.44471,37.75865],[-122.44437,37.75841],[-122.44333,37.75796],[-122.44236,37.75678],[-122.44118,37.75636],[-122.44106,37.75597],[-122.44179,37.75471],[-122.44169,37.75469],[-122.44175,37.7546],[-122.44112,37.75421],[-122.44116,37.75415],[-122.44102,37.75416],[-122.44093,37.7541],[-122.42096,37.75529],[-122.42127,37.7585],[-122.42805,37.75809],[-122.42851,37.76289],[-122.42894,37.76737],[-122.43481,37.76286],[-122.43519,37.76267],[-122.43653,37.76207],[-122.439,37.76162],[-122.44021,37.76114],[-122.44278,37.76105],[-122.44488,37.75957]]]}},{"type":"Feature","properties":{"name":"Glen Park","slug":"glen-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42268,37.74233],[-122.43416,37.74174],[-122.43488,37.74223],[-122.43539,37.74192],[-122.43542,37.74169],[-122.43569,37.7415],[-122.43555,37.74106],[-122.43562,37.74068],[-122.43666,37.73886],[-122.43712,37.73842],[-122.43755,37.73833],[-122.43989,37.73873],[-122.44263,37.73847],[-122.44372,37.73771],[-122.44485,37.7375],[-122.4453,37.73694],[-122.44554,37.73529],[-122.44527,37.73455],[-122.44525,37.73348],[-122.442,37.73349],[-122.442,37.7331],[-122.43788,37.73309],[-122.43747,37.73291],[-122.43746,37.73167],[-122.43676,37.73163],[-122.43655,37.73129],[-122.43624,37.73116],[-122.43368,37.73185],[-122.43394,37.73197],[-122.43398,37.7322],[-122.42844,37.73495],[-122.42544,37.73721],[-122.42439,37.73883],[-122.42385,37.74065],[-122.42348,37.74075],[-122.42268,37.74233]]]]}},{"type":"Feature","properties":{"name":"Midtown Terrace","slug":"midtown-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.45214,37.75692],[-122.45237,37.75707],[-122.45317,37.75669],[-122.45357,37.75688],[-122.45417,37.75651],[-122.45505,37.75512],[-122.45517,37.75434],[-122.45603,37.75289],[-122.45609,37.7518],[-122.45645,37.75148],[-122.45703,37.7514],[-122.45898,37.75195],[-122.46067,37.75181],[-122.46147,37.75152],[-122.46035,37.74978],[-122.45866,37.74804],[-122.45871,37.74761],[-122.45917,37.74729],[-122.45874,37.74688],[-122.45622,37.74656],[-122.45481,37.74622],[-122.45383,37.74572],[-122.45169,37.74563],[-122.45058,37.74596],[-122.44486,37.74703],[-122.44502,37.74837],[-122.4457,37.74885],[-122.44566,37.74914],[-122.4458,37.7493],[-122.44692,37.74996],[-122.44813,37.75025],[-122.44925,37.74911],[-122.44954,37.74918],[-122.44972,37.74954],[-122.44942,37.75041],[-122.44873,37.7509],[-122.44835,37.75193],[-122.44774,37.75229],[-122.44672,37.75339],[-122.44687,37.75376],[-122.44738,37.75422],[-122.44796,37.75567],[-122.44768,37.75587],[-122.447,37.75544],[-122.44656,37.75535],[-122.44535,37.75562],[-122.44527,37.75592],[-122.44613,37.7558],[-122.44695,37.75655],[-122.44832,37.75686],[-122.45213,37.75666],[-122.45214,37.75692]]]]}},{"type":"Feature","properties":{"name":"Mission District","slug":"mission-district","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42246,37.74802],[-122.40816,37.74836],[-122.40377,37.74944],[-122.40286,37.75268],[-122.40328,37.75609],[-122.40378,37.75713],[-122.40574,37.75875],[-122.40635,37.75967],[-122.40788,37.76894],[-122.41133,37.76944],[-122.41788,37.76976],[-122.42119,37.77018],[-122.42224,37.77054],[-122.42245,37.77072],[-122.42099,37.75532],[-122.42145,37.75528],[-122.4216,37.75206],[-122.42128,37.74884],[-122.42252,37.74879],[-122.42246,37.74802]]]]}},{"type":"Feature","properties":{"name":"Twin Peaks","slug":"twin-peaks","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44437,37.75841],[-122.44491,37.75833],[-122.44592,37.75872],[-122.446,37.75803],[-122.44581,37.75726],[-122.44606,37.75686],[-122.44666,37.75694],[-122.4471,37.75736],[-122.44769,37.75763],[-122.44769,37.75733],[-122.44712,37.75688],[-122.44634,37.75591],[-122.44613,37.7558],[-122.44546,37.75598],[-122.44522,37.75574],[-122.44656,37.75535],[-122.447,37.75544],[-122.44768,37.75587],[-122.44796,37.75567],[-122.44738,37.75422],[-122.44687,37.75376],[-122.44672,37.75339],[-122.44774,37.75229],[-122.44835,37.75193],[-122.44873,37.7509],[-122.44942,37.75041],[-122.44972,37.74954],[-122.44954,37.74918],[-122.44925,37.74911],[-122.44813,37.75025],[-122.44692,37.74996],[-122.4458,37.7493],[-122.44566,37.74914],[-122.4457,37.74885],[-122.44502,37.74837],[-122.44484,37.74692],[-122.44433,37.74708],[-122.44402,37.74753],[-122.44411,37.74836],[-122.44344,37.74942],[-122.44243,37.75358],[-122.441,37.75586],[-122.44097,37.75612],[-122.44123,37.75649],[-122.44237,37.75685],[-122.44334,37.75796],[-122.44437,37.75841]]]]}},{"type":"Feature","properties":{"name":"Noe Valley","slug":"noe-valley","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42148,37.75447],[-122.42144,37.75527],[-122.44093,37.7541],[-122.44175,37.7546],[-122.44243,37.75358],[-122.44344,37.74942],[-122.44411,37.74836],[-122.44402,37.74753],[-122.44433,37.74708],[-122.44484,37.74692],[-122.4446,37.74668],[-122.44396,37.74677],[-122.44341,37.74659],[-122.44126,37.74724],[-122.44043,37.74708],[-122.44009,37.74654],[-122.44016,37.74569],[-122.43991,37.74511],[-122.43647,37.74289],[-122.4358,37.74211],[-122.43556,37.74155],[-122.43539,37.74192],[-122.43488,37.74223],[-122.43416,37.74174],[-122.42322,37.7423],[-122.42215,37.74531],[-122.42253,37.7488],[-122.42128,37.74885],[-122.4216,37.75213],[-122.42148,37.75447]]]]}}]};
+
+  var map = L.map('noe-valley-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

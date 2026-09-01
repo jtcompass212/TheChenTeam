@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .lakeside-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .lakeside-map-wrap #lakeside-map { width: 100%; height: 100%; }
+  .lakeside-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .lakeside-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .lakeside-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .lakeside-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="lakeside-map-wrap">
+  <div id="lakeside-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Lakeside</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Balboa Terrace","slug":"balboa-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47042,37.73325],[-122.47116,37.73327],[-122.47132,37.73324],[-122.47132,37.73325],[-122.4718,37.73322],[-122.47194,37.7311],[-122.47167,37.73098],[-122.47145,37.73095],[-122.47009,37.73034],[-122.46906,37.72991],[-122.46872,37.72974],[-122.46848,37.72958],[-122.46832,37.72944],[-122.46817,37.72924],[-122.46759,37.72819],[-122.46615,37.73025],[-122.46519,37.73016],[-122.46503,37.7311],[-122.46523,37.7316],[-122.46454,37.73228],[-122.46566,37.73315],[-122.46581,37.7332],[-122.46632,37.73314],[-122.46668,37.73313],[-122.47042,37.73325]]]]}},{"type":"Feature","properties":{"name":"Ingleside Terraces","slug":"ingleside-terraces","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46556,37.72167],[-122.46227,37.72175],[-122.4622,37.72529],[-122.46591,37.72675],[-122.4674,37.72792],[-122.46848,37.72958],[-122.47194,37.7311],[-122.47244,37.7216],[-122.46556,37.72167]]]]}},{"type":"Feature","properties":{"name":"Merced Manor","slug":"merced-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47517,37.73456],[-122.47519,37.73476],[-122.47865,37.73459],[-122.48202,37.73444],[-122.48179,37.73117],[-122.47593,37.7311],[-122.47497,37.73107],[-122.47517,37.73456]]]]}},{"type":"Feature","properties":{"name":"Pinelake Park","slug":"pinelake-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.49396,37.73395],[-122.47865,37.73459],[-122.47519,37.73475],[-122.47537,37.73745],[-122.48172,37.73716],[-122.48244,37.73747],[-122.48507,37.73744],[-122.48603,37.73725],[-122.48753,37.73734],[-122.4875,37.73699],[-122.48827,37.73703],[-122.4883,37.73759],[-122.48752,37.73764],[-122.48752,37.73814],[-122.48723,37.7388],[-122.49044,37.73866],[-122.49042,37.73831],[-122.49153,37.73825],[-122.49155,37.73861],[-122.49363,37.73853],[-122.49351,37.73672],[-122.49416,37.73663],[-122.49396,37.73395]]]]}},{"type":"Feature","properties":{"name":"Saint Francis Wood","slug":"saint-francis-wood","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46001,37.73928],[-122.4601,37.74],[-122.45912,37.74014],[-122.45886,37.74033],[-122.45892,37.7406],[-122.46403,37.74002],[-122.46524,37.73977],[-122.46599,37.73943],[-122.47157,37.73471],[-122.47169,37.73457],[-122.4718,37.73322],[-122.46581,37.7332],[-122.46448,37.73224],[-122.46339,37.73338],[-122.4635,37.73464],[-122.46322,37.735],[-122.4629,37.73508],[-122.46293,37.73548],[-122.46267,37.73568],[-122.46244,37.73554],[-122.46214,37.73573],[-122.46177,37.7357],[-122.46107,37.73611],[-122.46152,37.73887],[-122.46115,37.73917],[-122.46025,37.73915],[-122.46001,37.73928]]]]}},{"type":"Feature","properties":{"name":"Stonestown","slug":"stonestown","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47267,37.71725],[-122.4749,37.71945],[-122.47537,37.72028],[-122.47486,37.72901],[-122.47491,37.73041],[-122.47978,37.73012],[-122.48327,37.72968],[-122.48541,37.72902],[-122.48405,37.72741],[-122.48395,37.72702],[-122.48513,37.72395],[-122.48528,37.71482],[-122.47662,37.71457],[-122.47591,37.7144],[-122.47258,37.71293],[-122.47136,37.7128],[-122.47267,37.71725]]]]}},{"type":"Feature","properties":{"name":"West Portal","slug":"west-portal","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46204,37.743],[-122.46369,37.74375],[-122.47086,37.74326],[-122.47051,37.73809],[-122.47082,37.73765],[-122.47539,37.73745],[-122.47519,37.73476],[-122.47176,37.73482],[-122.47157,37.73471],[-122.46599,37.73943],[-122.46524,37.73977],[-122.46403,37.74002],[-122.45939,37.74057],[-122.46123,37.74258],[-122.46204,37.743]]]]}},{"type":"Feature","properties":{"name":"Lakeside","slug":"lakeside","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47169,37.73457],[-122.47157,37.73471],[-122.47176,37.73482],[-122.47519,37.73476],[-122.47486,37.72901],[-122.47537,37.72028],[-122.4749,37.71945],[-122.47267,37.71725],[-122.47194,37.7311],[-122.47169,37.73457]]]]}}]};
+
+  var map = L.map('lakeside-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

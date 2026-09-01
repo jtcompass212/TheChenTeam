@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .central-sunset-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .central-sunset-map-wrap #central-sunset-map { width: 100%; height: 100%; }
+  .central-sunset-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .central-sunset-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .central-sunset-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .central-sunset-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="central-sunset-map-wrap">
+  <div id="central-sunset-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Central Sunset</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Inner Parkside","slug":"inner-parkside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47287,37.74879],[-122.47313,37.75252],[-122.47635,37.75238],[-122.47622,37.75051],[-122.47613,37.74864],[-122.47601,37.74678],[-122.47585,37.74491],[-122.47573,37.74305],[-122.47562,37.74118],[-122.47549,37.73932],[-122.47539,37.73745],[-122.47423,37.73748],[-122.47328,37.73752],[-122.47316,37.73755],[-122.47082,37.73765],[-122.47051,37.73809],[-122.47086,37.74326],[-122.47024,37.74329],[-122.47049,37.7469],[-122.47051,37.74702],[-122.47062,37.74877],[-122.4706,37.74887],[-122.47074,37.74884],[-122.47159,37.74881],[-122.47175,37.74884],[-122.47287,37.74879]]]]}},{"type":"Feature","properties":{"name":"Inner Sunset","slug":"inner-sunset","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4584,37.76616],[-122.4611,37.76621],[-122.4643,37.76596],[-122.47726,37.76549],[-122.47676,37.75984],[-122.47687,37.75983],[-122.47635,37.75238],[-122.47313,37.75252],[-122.47334,37.75555],[-122.47368,37.75624],[-122.47281,37.75783],[-122.47272,37.75831],[-122.47297,37.75859],[-122.47285,37.75895],[-122.47229,37.75911],[-122.47166,37.75894],[-122.47079,37.75831],[-122.4702,37.75826],[-122.47001,37.75543],[-122.46856,37.75511],[-122.4678,37.75463],[-122.46764,37.75276],[-122.465,37.75288],[-122.46336,37.75304],[-122.46377,37.75382],[-122.46355,37.7553],[-122.46391,37.76039],[-122.46115,37.75904],[-122.46011,37.75912],[-122.45992,37.75943],[-122.46029,37.76044],[-122.45852,37.761],[-122.45787,37.76218],[-122.45754,37.76357],[-122.45779,37.76602],[-122.4584,37.76616]]]]}},{"type":"Feature","properties":{"name":"Outer Parkside","slug":"outer-parkside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.49396,37.73395],[-122.49517,37.75154],[-122.51004,37.75083],[-122.50971,37.74908],[-122.50854,37.7354],[-122.5068,37.73556],[-122.5068,37.73538],[-122.50525,37.73538],[-122.50526,37.73557],[-122.50203,37.73551],[-122.5009,37.73525],[-122.49861,37.73419],[-122.49651,37.73385],[-122.49396,37.73395]]]]}},{"type":"Feature","properties":{"name":"Outer Sunset","slug":"outer-sunset","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.49517,37.75154],[-122.49608,37.76467],[-122.5103,37.76407],[-122.51242,37.76359],[-122.51004,37.75083],[-122.49517,37.75154]]]]}},{"type":"Feature","properties":{"name":"Parkside","slug":"parkside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47539,37.73745],[-122.47635,37.75238],[-122.49517,37.75154],[-122.49413,37.73663],[-122.49352,37.73671],[-122.49363,37.73853],[-122.49155,37.73862],[-122.49153,37.73825],[-122.49042,37.73831],[-122.49044,37.73866],[-122.48723,37.7388],[-122.48753,37.73814],[-122.48753,37.73764],[-122.48831,37.73759],[-122.48827,37.73702],[-122.4875,37.73699],[-122.48753,37.73735],[-122.48603,37.73725],[-122.48507,37.73744],[-122.48324,37.73746],[-122.48238,37.73746],[-122.48173,37.73717],[-122.47539,37.73745]]]]}},{"type":"Feature","properties":{"name":"Central Sunset","slug":"central-sunset","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47726,37.76549],[-122.49608,37.76467],[-122.49517,37.75154],[-122.47635,37.75238],[-122.47687,37.75983],[-122.47676,37.75984],[-122.47726,37.76549]]]]}}]};
+
+  var map = L.map('central-sunset-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

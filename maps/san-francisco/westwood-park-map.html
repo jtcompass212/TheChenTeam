@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .westwood-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .westwood-park-map-wrap #westwood-park-map { width: 100%; height: 100%; }
+  .westwood-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .westwood-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .westwood-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .westwood-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="westwood-park-map-wrap">
+  <div id="westwood-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Westwood Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Ingleside","slug":"ingleside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46038,37.72481],[-122.46226,37.72521],[-122.46224,37.71794],[-122.45423,37.71804],[-122.45455,37.71767],[-122.45451,37.71749],[-122.45351,37.7158],[-122.45233,37.71721],[-122.44963,37.71574],[-122.44921,37.71631],[-122.44869,37.7176],[-122.44788,37.72301],[-122.4516,37.72303],[-122.4531,37.72321],[-122.46038,37.72481]]]]}},{"type":"Feature","properties":{"name":"Monterey Heights","slug":"monterey-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46095,37.7358],[-122.46107,37.73611],[-122.46177,37.7357],[-122.46214,37.73573],[-122.46244,37.73554],[-122.46267,37.73568],[-122.46293,37.73548],[-122.4629,37.73508],[-122.46322,37.735],[-122.4635,37.73464],[-122.46339,37.73338],[-122.46448,37.73224],[-122.4638,37.73162],[-122.46338,37.73073],[-122.46244,37.73014],[-122.46194,37.73001],[-122.46117,37.73013],[-122.45988,37.73076],[-122.4587,37.73084],[-122.45853,37.73129],[-122.45861,37.73254],[-122.45906,37.73365],[-122.46095,37.7358]]]]}},{"type":"Feature","properties":{"name":"Mount Davidson Manor","slug":"mount-davidson-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46266,37.73029],[-122.46338,37.73073],[-122.46407,37.73198],[-122.46454,37.73228],[-122.46523,37.7316],[-122.46503,37.7311],[-122.46519,37.73016],[-122.46615,37.73025],[-122.46759,37.72819],[-122.46665,37.72726],[-122.46571,37.72664],[-122.4622,37.72529],[-122.46038,37.72481],[-122.46046,37.73],[-122.45991,37.73075],[-122.46173,37.72999],[-122.46266,37.73029]]]]}},{"type":"Feature","properties":{"name":"Sunnyside","slug":"sunnyside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44526,37.7338],[-122.45251,37.7338],[-122.45341,37.73327],[-122.45339,37.72984],[-122.45245,37.72983],[-122.45234,37.72318],[-122.4516,37.72303],[-122.44788,37.72301],[-122.44753,37.724],[-122.44686,37.72521],[-122.44572,37.72661],[-122.44442,37.7278],[-122.44197,37.72914],[-122.43655,37.73129],[-122.43676,37.73163],[-122.43746,37.73167],[-122.43747,37.73291],[-122.43788,37.73309],[-122.442,37.7331],[-122.442,37.73349],[-122.44525,37.73348],[-122.44526,37.7338]]]]}},{"type":"Feature","properties":{"name":"Westwood Highlands","slug":"westwood-highlands","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.45854,37.73605],[-122.45929,37.73634],[-122.45988,37.73699],[-122.46028,37.73786],[-122.46038,37.73777],[-122.46038,37.73676],[-122.45947,37.73515],[-122.45937,37.73474],[-122.4595,37.73429],[-122.45889,37.73331],[-122.45861,37.73254],[-122.4585,37.73163],[-122.4587,37.73084],[-122.45577,37.7314],[-122.45341,37.73157],[-122.45341,37.73327],[-122.45251,37.7338],[-122.45309,37.7351],[-122.45383,37.73591],[-122.45383,37.73667],[-122.45406,37.73664],[-122.45448,37.73623],[-122.45515,37.73608],[-122.45766,37.73618],[-122.45854,37.73605]]]]}},{"type":"Feature","properties":{"name":"Westwood Park","slug":"westwood-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46046,37.73],[-122.46038,37.72481],[-122.45412,37.7234],[-122.45234,37.72318],[-122.45245,37.72983],[-122.45339,37.72984],[-122.45341,37.73157],[-122.45483,37.73152],[-122.45842,37.73085],[-122.45988,37.73076],[-122.46046,37.73]]]]}}]};
+
+  var map = L.map('westwood-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .cow-hollow-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .cow-hollow-map-wrap #cow-hollow-map { width: 100%; height: 100%; }
+  .cow-hollow-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .cow-hollow-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .cow-hollow-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .cow-hollow-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="cow-hollow-map-wrap">
+  <div id="cow-hollow-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Cow Hollow</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Marina District","slug":"marina-district","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42656,37.80794],[-122.42672,37.80817],[-122.427,37.80811],[-122.42824,37.80841],[-122.42926,37.8079],[-122.42983,37.80783],[-122.43011,37.80922],[-122.43062,37.80917],[-122.4303,37.80746],[-122.43092,37.80732],[-122.43134,37.80906],[-122.43173,37.80902],[-122.43139,37.80731],[-122.43208,37.80722],[-122.43234,37.80852],[-122.43257,37.80851],[-122.43216,37.8061],[-122.43272,37.80572],[-122.43355,37.80559],[-122.43385,37.80572],[-122.43416,37.80697],[-122.43553,37.80687],[-122.43577,37.80757],[-122.4401,37.80702],[-122.44028,37.80822],[-122.43993,37.80878],[-122.44003,37.80883],[-122.44055,37.80835],[-122.44095,37.8082],[-122.44369,37.80772],[-122.44718,37.80748],[-122.44813,37.8069],[-122.44815,37.80635],[-122.44849,37.80609],[-122.44824,37.80448],[-122.44881,37.80423],[-122.44939,37.80371],[-122.44957,37.80279],[-122.44918,37.80207],[-122.4488,37.80177],[-122.44836,37.80159],[-122.44782,37.80163],[-122.44769,37.80083],[-122.44535,37.79922],[-122.44449,37.79885],[-122.42461,37.8013],[-122.42549,37.80601],[-122.42578,37.80671],[-122.42626,37.80718],[-122.42656,37.80794]]]]}},{"type":"Feature","properties":{"name":"Pacific Heights","slug":"pacific-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42348,37.79574],[-122.42389,37.7976],[-122.44673,37.79471],[-122.4463,37.79188],[-122.44769,37.79177],[-122.44679,37.78726],[-122.4224,37.79035],[-122.42348,37.79574]]]]}},{"type":"Feature","properties":{"name":"Cow Hollow","slug":"cow-hollow","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42461,37.8013],[-122.44449,37.79885],[-122.44535,37.79922],[-122.44769,37.80083],[-122.44673,37.79471],[-122.42389,37.7976],[-122.42461,37.8013]]]]}}]};
+
+  var map = L.map('cow-hollow-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

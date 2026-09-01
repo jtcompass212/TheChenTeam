@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .lower-nob-hill-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .lower-nob-hill-map-wrap #lower-nob-hill-map { width: 100%; height: 100%; }
+  .lower-nob-hill-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .lower-nob-hill-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .lower-nob-hill-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .lower-nob-hill-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="lower-nob-hill-map-wrap">
+  <div id="lower-nob-hill-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Lower Nob Hill</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Civic Center","slug":"civic-center","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41858,37.78026],[-122.41958,37.78495],[-122.42118,37.78475],[-122.4224,37.79036],[-122.42398,37.79015],[-122.42338,37.78734],[-122.42502,37.78713],[-122.42354,37.77968],[-122.42189,37.77989],[-122.4207,37.77409],[-122.41157,37.78128],[-122.41858,37.78026]]]]}},{"type":"Feature","properties":{"name":"Nob Hill","slug":"nob-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40856,37.79733],[-122.40862,37.79763],[-122.40969,37.79749],[-122.41025,37.79736],[-122.411,37.79731],[-122.41115,37.79733],[-122.41299,37.79712],[-122.41519,37.7968],[-122.41684,37.7966],[-122.41875,37.79639],[-122.41993,37.79623],[-122.42012,37.79616],[-122.42088,37.79603],[-122.42177,37.79595],[-122.42348,37.79574],[-122.42328,37.79481],[-122.42313,37.79383],[-122.4223,37.78988],[-122.40746,37.79179],[-122.40856,37.79733]]]]}},{"type":"Feature","properties":{"name":"Tenderloin","slug":"tenderloin","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40898,37.78331],[-122.40913,37.78342],[-122.4097,37.7862],[-122.41133,37.786],[-122.41958,37.78496],[-122.41881,37.78124],[-122.4186,37.78026],[-122.41695,37.78047],[-122.41158,37.78128],[-122.40898,37.78331]]]]}},{"type":"Feature","properties":{"name":"Union Square","slug":"union-square","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40898,37.78331],[-122.4081,37.78402],[-122.40745,37.7846],[-122.40629,37.78551],[-122.40606,37.78576],[-122.4034,37.78781],[-122.40366,37.78888],[-122.40384,37.78983],[-122.40389,37.78982],[-122.40389,37.78985],[-122.40525,37.78965],[-122.40692,37.78944],[-122.40741,37.7918],[-122.41073,37.79138],[-122.40913,37.78342],[-122.40898,37.78331]]]]}},{"type":"Feature","properties":{"name":"Lower Nob Hill","slug":"lower-nob-hill","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42118,37.78475],[-122.4097,37.7862],[-122.41074,37.79136],[-122.4223,37.78988],[-122.42118,37.78475]]]]}}]};
+
+  var map = L.map('lower-nob-hill-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

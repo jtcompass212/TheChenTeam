@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .ingleside-terraces-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .ingleside-terraces-map-wrap #ingleside-terraces-map { width: 100%; height: 100%; }
+  .ingleside-terraces-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .ingleside-terraces-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .ingleside-terraces-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ingleside-terraces-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="ingleside-terraces-map-wrap">
+  <div id="ingleside-terraces-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Ingleside Terraces</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Balboa Terrace","slug":"balboa-terrace","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47042,37.73325],[-122.47116,37.73327],[-122.47132,37.73324],[-122.47132,37.73325],[-122.4718,37.73322],[-122.47194,37.7311],[-122.47167,37.73098],[-122.47145,37.73095],[-122.47009,37.73034],[-122.46906,37.72991],[-122.46872,37.72974],[-122.46848,37.72958],[-122.46832,37.72944],[-122.46817,37.72924],[-122.46759,37.72819],[-122.46615,37.73025],[-122.46519,37.73016],[-122.46503,37.7311],[-122.46523,37.7316],[-122.46454,37.73228],[-122.46566,37.73315],[-122.46581,37.7332],[-122.46632,37.73314],[-122.46668,37.73313],[-122.47042,37.73325]]]]}},{"type":"Feature","properties":{"name":"Ingleside","slug":"ingleside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46038,37.72481],[-122.46226,37.72521],[-122.46224,37.71794],[-122.45423,37.71804],[-122.45455,37.71767],[-122.45451,37.71749],[-122.45351,37.7158],[-122.45233,37.71721],[-122.44963,37.71574],[-122.44921,37.71631],[-122.44869,37.7176],[-122.44788,37.72301],[-122.4516,37.72303],[-122.4531,37.72321],[-122.46038,37.72481]]]]}},{"type":"Feature","properties":{"name":"Lakeside","slug":"lakeside","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47169,37.73457],[-122.47157,37.73471],[-122.47176,37.73482],[-122.47519,37.73476],[-122.47486,37.72901],[-122.47537,37.72028],[-122.4749,37.71945],[-122.47267,37.71725],[-122.47194,37.7311],[-122.47169,37.73457]]]]}},{"type":"Feature","properties":{"name":"Merced Heights","slug":"merced-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46227,37.72169],[-122.46227,37.72175],[-122.46233,37.72171],[-122.46239,37.72169],[-122.47167,37.72163],[-122.47176,37.72167],[-122.47198,37.72166],[-122.47244,37.7216],[-122.47264,37.71793],[-122.47244,37.71793],[-122.47244,37.71787],[-122.46224,37.71794],[-122.46227,37.72169]]]]}},{"type":"Feature","properties":{"name":"Mount Davidson Manor","slug":"mount-davidson-manor","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46266,37.73029],[-122.46338,37.73073],[-122.46407,37.73198],[-122.46454,37.73228],[-122.46523,37.7316],[-122.46503,37.7311],[-122.46519,37.73016],[-122.46615,37.73025],[-122.46759,37.72819],[-122.46665,37.72726],[-122.46571,37.72664],[-122.4622,37.72529],[-122.46038,37.72481],[-122.46046,37.73],[-122.45991,37.73075],[-122.46173,37.72999],[-122.46266,37.73029]]]]}},{"type":"Feature","properties":{"name":"Ingleside Terraces","slug":"ingleside-terraces","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.46556,37.72167],[-122.46227,37.72175],[-122.4622,37.72529],[-122.46591,37.72675],[-122.4674,37.72792],[-122.46848,37.72958],[-122.47194,37.7311],[-122.47244,37.7216],[-122.46556,37.72167]]]]}}]};
+
+  var map = L.map('ingleside-terraces-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

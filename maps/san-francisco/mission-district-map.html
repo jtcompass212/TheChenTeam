@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .mission-district-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .mission-district-map-wrap #mission-district-map { width: 100%; height: 100%; }
+  .mission-district-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .mission-district-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .mission-district-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .mission-district-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="mission-district-map-wrap">
+  <div id="mission-district-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Mission District</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Bayview","slug":"bayview","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.38751,37.75027],[-122.40378,37.74943],[-122.40518,37.74498],[-122.40776,37.74125],[-122.40822,37.73761],[-122.40665,37.7352],[-122.40243,37.73723],[-122.39965,37.73988],[-122.39221,37.73566],[-122.39573,37.73191],[-122.39506,37.73105],[-122.39538,37.72965],[-122.39739,37.72994],[-122.39862,37.72856],[-122.39927,37.72678],[-122.4003,37.72701],[-122.40221,37.7281],[-122.40298,37.72779],[-122.40144,37.72377],[-122.39554,37.72241],[-122.39187,37.72035],[-122.39326,37.71881],[-122.39028,37.71717],[-122.38859,37.71484],[-122.388,37.71548],[-122.38813,37.7163],[-122.38685,37.71751],[-122.38626,37.71718],[-122.38187,37.7222],[-122.38217,37.72225],[-122.37783,37.72656],[-122.38343,37.72974],[-122.38227,37.73062],[-122.37978,37.7308],[-122.37935,37.73154],[-122.3796,37.73246],[-122.38098,37.73264],[-122.38236,37.73371],[-122.38429,37.73776],[-122.38869,37.74028],[-122.38702,37.745],[-122.38751,37.75027]]]]}},{"type":"Feature","properties":{"name":"Bernal Heights","slug":"bernal-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42385,37.74065],[-122.42439,37.73883],[-122.42544,37.73721],[-122.42844,37.73495],[-122.43398,37.7322],[-122.43394,37.73197],[-122.43368,37.73185],[-122.4313,37.73233],[-122.42957,37.73229],[-122.42611,37.73165],[-122.42455,37.73155],[-122.41967,37.73201],[-122.41665,37.73201],[-122.41439,37.73242],[-122.4095,37.73505],[-122.40849,37.73629],[-122.40822,37.73761],[-122.40775,37.74125],[-122.40518,37.74498],[-122.40378,37.74943],[-122.40816,37.74836],[-122.42245,37.74801],[-122.42217,37.74518],[-122.42322,37.7423],[-122.42268,37.74233],[-122.42348,37.74075],[-122.42385,37.74065]]]]}},{"type":"Feature","properties":{"name":"Eureka Valley-Dolores Heights","slug":"eureka-valley-dolores-heights","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.44488,37.75957],[-122.44471,37.75865],[-122.44437,37.75841],[-122.44333,37.75796],[-122.44236,37.75678],[-122.44118,37.75636],[-122.44106,37.75597],[-122.44179,37.75471],[-122.44169,37.75469],[-122.44175,37.7546],[-122.44112,37.75421],[-122.44116,37.75415],[-122.44102,37.75416],[-122.44093,37.7541],[-122.42096,37.75529],[-122.42127,37.7585],[-122.42805,37.75809],[-122.42851,37.76289],[-122.42894,37.76737],[-122.43481,37.76286],[-122.43519,37.76267],[-122.43653,37.76207],[-122.439,37.76162],[-122.44021,37.76114],[-122.44278,37.76105],[-122.44488,37.75957]]]}},{"type":"Feature","properties":{"name":"Mission Dolores","slug":"mission-dolores","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42244,37.77072],[-122.42296,37.77124],[-122.42327,37.77197],[-122.42611,37.76963],[-122.42894,37.76737],[-122.42805,37.75809],[-122.42127,37.7585],[-122.42244,37.77072]]]]}},{"type":"Feature","properties":{"name":"Noe Valley","slug":"noe-valley","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42148,37.75447],[-122.42144,37.75527],[-122.44093,37.7541],[-122.44175,37.7546],[-122.44243,37.75358],[-122.44344,37.74942],[-122.44411,37.74836],[-122.44402,37.74753],[-122.44433,37.74708],[-122.44484,37.74692],[-122.4446,37.74668],[-122.44396,37.74677],[-122.44341,37.74659],[-122.44126,37.74724],[-122.44043,37.74708],[-122.44009,37.74654],[-122.44016,37.74569],[-122.43991,37.74511],[-122.43647,37.74289],[-122.4358,37.74211],[-122.43556,37.74155],[-122.43539,37.74192],[-122.43488,37.74223],[-122.43416,37.74174],[-122.42322,37.7423],[-122.42215,37.74531],[-122.42253,37.7488],[-122.42128,37.74885],[-122.4216,37.75213],[-122.42148,37.75447]]]]}},{"type":"Feature","properties":{"name":"Potrero Hill","slug":"potrero-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.3946,37.76638],[-122.40166,37.77182],[-122.40439,37.76975],[-122.40584,37.76967],[-122.40606,37.76922],[-122.40664,37.76896],[-122.40787,37.76899],[-122.40635,37.75967],[-122.40573,37.75874],[-122.40377,37.75714],[-122.40331,37.75617],[-122.40286,37.75269],[-122.40378,37.74943],[-122.39177,37.75005],[-122.39136,37.75134],[-122.39128,37.75263],[-122.39225,37.75631],[-122.39262,37.76158],[-122.39297,37.7641],[-122.39318,37.76461],[-122.39388,37.76572],[-122.3946,37.76638]]]]}},{"type":"Feature","properties":{"name":"South of Market","slug":"south-of-market","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.39498,37.77709],[-122.39887,37.78019],[-122.40111,37.77845],[-122.4081,37.78402],[-122.40898,37.78331],[-122.41158,37.78127],[-122.4207,37.77408],[-122.42327,37.77197],[-122.42296,37.77124],[-122.42244,37.77071],[-122.42226,37.77056],[-122.42123,37.7702],[-122.4179,37.76977],[-122.41084,37.76942],[-122.40897,37.7691],[-122.40664,37.76896],[-122.40606,37.76922],[-122.40584,37.76967],[-122.40439,37.76975],[-122.40166,37.77181],[-122.39498,37.77709]]]]}},{"type":"Feature","properties":{"name":"Mission District","slug":"mission-district","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42246,37.74802],[-122.40816,37.74836],[-122.40377,37.74944],[-122.40286,37.75268],[-122.40328,37.75609],[-122.40378,37.75713],[-122.40574,37.75875],[-122.40635,37.75967],[-122.40788,37.76894],[-122.41133,37.76944],[-122.41788,37.76976],[-122.42119,37.77018],[-122.42224,37.77054],[-122.42245,37.77072],[-122.42099,37.75532],[-122.42145,37.75528],[-122.4216,37.75206],[-122.42128,37.74884],[-122.42252,37.74879],[-122.42246,37.74802]]]]}}]};
+
+  var map = L.map('mission-district-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

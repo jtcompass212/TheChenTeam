@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .pacific-heights-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .pacific-heights-map-wrap #pacific-heights-map { width: 100%; height: 100%; }
+  .pacific-heights-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .pacific-heights-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .pacific-heights-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .pacific-heights-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="pacific-heights-map-wrap">
+  <div id="pacific-heights-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Pacific Heights</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Civic Center","slug":"civic-center","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41858,37.78026],[-122.41958,37.78495],[-122.42118,37.78475],[-122.4224,37.79036],[-122.42398,37.79015],[-122.42338,37.78734],[-122.42502,37.78713],[-122.42354,37.77968],[-122.42189,37.77989],[-122.4207,37.77409],[-122.41157,37.78128],[-122.41858,37.78026]]]]}},{"type":"Feature","properties":{"name":"Cow Hollow","slug":"cow-hollow","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42461,37.8013],[-122.44449,37.79885],[-122.44535,37.79922],[-122.44769,37.80083],[-122.44673,37.79471],[-122.42389,37.7976],[-122.42461,37.8013]]]]}},{"type":"Feature","properties":{"name":"Jordan Park-Laurel Heights","slug":"jordan-park-laurel-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44642,37.78537],[-122.44679,37.78726],[-122.45918,37.78568],[-122.45888,37.78133],[-122.45776,37.7814],[-122.45584,37.78147],[-122.45529,37.78153],[-122.45419,37.78165],[-122.45206,37.78195],[-122.44908,37.78231],[-122.44899,37.78236],[-122.44806,37.78248],[-122.44737,37.78256],[-122.4473,37.78239],[-122.44678,37.78246],[-122.44583,37.78251],[-122.44603,37.78351],[-122.44625,37.78444],[-122.44642,37.78537]]]]}},{"type":"Feature","properties":{"name":"Lower Pacific Heights","slug":"lower-pacific-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4458,37.78251],[-122.43953,37.78331],[-122.439,37.78339],[-122.43778,37.78371],[-122.43456,37.78415],[-122.43112,37.78458],[-122.42469,37.78536],[-122.42505,37.78713],[-122.4234,37.78734],[-122.42397,37.79016],[-122.44679,37.78726],[-122.44625,37.78444],[-122.44603,37.78351],[-122.44583,37.78251],[-122.4458,37.78251]]]]}},{"type":"Feature","properties":{"name":"Nob Hill","slug":"nob-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.40856,37.79733],[-122.40862,37.79763],[-122.40969,37.79749],[-122.41025,37.79736],[-122.411,37.79731],[-122.41115,37.79733],[-122.41299,37.79712],[-122.41519,37.7968],[-122.41684,37.7966],[-122.41875,37.79639],[-122.41993,37.79623],[-122.42012,37.79616],[-122.42088,37.79603],[-122.42177,37.79595],[-122.42348,37.79574],[-122.42328,37.79481],[-122.42313,37.79383],[-122.4223,37.78988],[-122.40746,37.79179],[-122.40856,37.79733]]]]}},{"type":"Feature","properties":{"name":"Presidio","slug":"presidio","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44813,37.8069],[-122.45244,37.80627],[-122.45448,37.80647],[-122.46358,37.80488],[-122.4672,37.80601],[-122.47066,37.80861],[-122.47554,37.80939],[-122.47647,37.81084],[-122.47774,37.81094],[-122.4779,37.80845],[-122.4802,37.80142],[-122.48208,37.79847],[-122.48359,37.79404],[-122.48603,37.79076],[-122.48389,37.78915],[-122.48455,37.78765],[-122.48068,37.78699],[-122.47091,37.78722],[-122.44943,37.79164],[-122.4463,37.79188],[-122.44782,37.80163],[-122.4488,37.80177],[-122.44957,37.80279],[-122.44939,37.80371],[-122.44824,37.80448],[-122.44849,37.80609],[-122.44813,37.8069]]]]}},{"type":"Feature","properties":{"name":"Presidio Heights","slug":"presidio-heights","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.45922,37.78568],[-122.44679,37.78726],[-122.44769,37.79177],[-122.44943,37.79164],[-122.46376,37.78868],[-122.46362,37.78672],[-122.45928,37.78691],[-122.45922,37.78619],[-122.45922,37.78568]]]]}},{"type":"Feature","properties":{"name":"Russian Hill","slug":"russian-hill","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.41958,37.80678],[-122.42148,37.80812],[-122.42281,37.80712],[-122.42408,37.80661],[-122.42553,37.80695],[-122.4261,37.80733],[-122.42656,37.80794],[-122.42626,37.80718],[-122.42578,37.80671],[-122.42549,37.80601],[-122.42348,37.79574],[-122.41191,37.79724],[-122.41291,37.80218],[-122.41958,37.80678]]]]}},{"type":"Feature","properties":{"name":"Pacific Heights","slug":"pacific-heights","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.42348,37.79574],[-122.42389,37.7976],[-122.44673,37.79471],[-122.4463,37.79188],[-122.44769,37.79177],[-122.44679,37.78726],[-122.4224,37.79035],[-122.42348,37.79574]]]]}}]};
+
+  var map = L.map('pacific-heights-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>

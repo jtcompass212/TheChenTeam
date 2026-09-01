@@ -1,0 +1,66 @@
+<!-- NOTE: Paste this into a Shared HTML Widget (Content > Manage Shared HTML Widgets), NOT the inline TinyMCE page editor. TinyMCE strips <script> tags; Shared HTML Widgets don't. -->
+<style>
+  .golden-gate-park-map-wrap { position: relative; width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid #dde1e9; font-family: 'Inter', system-ui, sans-serif; }
+  .golden-gate-park-map-wrap #golden-gate-park-map { width: 100%; height: 100%; }
+  .golden-gate-park-map-wrap .pk-label { background: transparent; border: none; box-shadow: none; font-weight: 600; font-size: 12px; color: #16233f; text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 -1px 2px rgba(255,255,255,0.9); white-space: nowrap; }
+  .golden-gate-park-map-wrap .pk-legend { position: absolute; bottom: 14px; left: 14px; background: #ffffff; border: 1px solid #dde1e9; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #4b5468; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+  .golden-gate-park-map-wrap .pk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .golden-gate-park-map-wrap .pk-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+</style>
+<div class="golden-gate-park-map-wrap">
+  <div id="golden-gate-park-map"></div>
+  <div class="pk-legend">
+    <span><span class="pk-swatch" style="background:#a8823d;"></span> Golden Gate Park</span>
+    <span><span class="pk-swatch" style="background:#c7cedb;"></span> Neighboring areas (click to explore)</span>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function() {
+  var BASE_PATH = "/san-francisco/";
+
+  // The primary neighborhood is listed LAST on purpose: Leaflet draws each feature's SVG path in array
+  // order, so whatever comes last is drawn on top. This guarantees the primary border wins along every
+  // shared edge — no separate "bring to front" call needed.
+  var neighborhoodData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Central Richmond","slug":"central-richmond","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.47171,37.77314],[-122.47252,37.78445],[-122.49265,37.78354],[-122.49237,37.78168],[-122.49169,37.77223],[-122.47171,37.77314]]]]}},{"type":"Feature","properties":{"name":"Cole Valley/Parnassus Heights","slug":"cole-valley-parnassus-heights","primary":false},"geometry":{"type":"Polygon","coordinates":[[[-122.45947,37.75916],[-122.45937,37.75874],[-122.46063,37.75841],[-122.46084,37.7582],[-122.45981,37.75722],[-122.4595,37.75563],[-122.45914,37.75532],[-122.45839,37.7551],[-122.45783,37.75562],[-122.45733,37.75577],[-122.45728,37.75619],[-122.45745,37.75651],[-122.4573,37.7568],[-122.4557,37.75668],[-122.4541,37.75691],[-122.45388,37.75736],[-122.4523,37.75829],[-122.45211,37.75939],[-122.44873,37.75965],[-122.4489,37.76084],[-122.44644,37.76103],[-122.447,37.76288],[-122.44587,37.76462],[-122.44639,37.7672],[-122.44908,37.76688],[-122.44945,37.76872],[-122.45337,37.76825],[-122.45305,37.76664],[-122.45297,37.76635],[-122.45686,37.7659],[-122.45781,37.76603],[-122.45781,37.76602],[-122.45779,37.76602],[-122.45754,37.76357],[-122.45787,37.76218],[-122.45852,37.761],[-122.46029,37.76044],[-122.45992,37.75943],[-122.46011,37.75912],[-122.45947,37.75916]]]}},{"type":"Feature","properties":{"name":"Haight Ashbury","slug":"haight-ashbury","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.43871,37.77106],[-122.43709,37.77126],[-122.43756,37.7736],[-122.454,37.77152],[-122.45335,37.76825],[-122.45321,37.76825],[-122.44945,37.76873],[-122.44907,37.76687],[-122.44473,37.76743],[-122.44535,37.77021],[-122.43871,37.77106]]]]}},{"type":"Feature","properties":{"name":"Inner Richmond","slug":"inner-richmond","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.45888,37.78133],[-122.45918,37.78568],[-122.46669,37.78472],[-122.47252,37.78445],[-122.47171,37.77314],[-122.46533,37.77342],[-122.45837,37.77431],[-122.45888,37.78133]]]]}},{"type":"Feature","properties":{"name":"Inner Sunset","slug":"inner-sunset","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.4584,37.76616],[-122.4611,37.76621],[-122.4643,37.76596],[-122.47726,37.76549],[-122.47676,37.75984],[-122.47687,37.75983],[-122.47635,37.75238],[-122.47313,37.75252],[-122.47334,37.75555],[-122.47368,37.75624],[-122.47281,37.75783],[-122.47272,37.75831],[-122.47297,37.75859],[-122.47285,37.75895],[-122.47229,37.75911],[-122.47166,37.75894],[-122.47079,37.75831],[-122.4702,37.75826],[-122.47001,37.75543],[-122.46856,37.75511],[-122.4678,37.75463],[-122.46764,37.75276],[-122.465,37.75288],[-122.46336,37.75304],[-122.46377,37.75382],[-122.46355,37.7553],[-122.46391,37.76039],[-122.46115,37.75904],[-122.46011,37.75912],[-122.45992,37.75943],[-122.46029,37.76044],[-122.45852,37.761],[-122.45787,37.76218],[-122.45754,37.76357],[-122.45779,37.76602],[-122.4584,37.76616]]]]}},{"type":"Feature","properties":{"name":"Lincoln Park","slug":"lincoln-park","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.50503,37.78816],[-122.50605,37.78819],[-122.50981,37.78482],[-122.51198,37.78429],[-122.51211,37.78379],[-122.51268,37.78412],[-122.51247,37.78374],[-122.5135,37.7827],[-122.51376,37.78148],[-122.51472,37.78113],[-122.51312,37.77599],[-122.51311,37.77077],[-122.51112,37.77132],[-122.51147,37.77589],[-122.51203,37.77701],[-122.51089,37.77699],[-122.51086,37.77631],[-122.50929,37.77629],[-122.50943,37.77985],[-122.50988,37.78063],[-122.49237,37.78168],[-122.49326,37.78768],[-122.49478,37.78786],[-122.49655,37.78729],[-122.49762,37.78794],[-122.50503,37.78816]]]]}},{"type":"Feature","properties":{"name":"Outer Richmond","slug":"outer-richmond","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.51112,37.77132],[-122.49169,37.77223],[-122.49237,37.78168],[-122.50988,37.78063],[-122.50943,37.77985],[-122.50929,37.77629],[-122.51086,37.77631],[-122.51089,37.77699],[-122.51207,37.77695],[-122.51147,37.77589],[-122.51112,37.77132]]]]}},{"type":"Feature","properties":{"name":"Outer Sunset","slug":"outer-sunset","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.49517,37.75154],[-122.49608,37.76467],[-122.5103,37.76407],[-122.51242,37.76359],[-122.51004,37.75083],[-122.49517,37.75154]]]]}},{"type":"Feature","properties":{"name":"Panhandle","slug":"panhandle","primary":false},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.44646,37.7758],[-122.45468,37.77475],[-122.454,37.77152],[-122.43756,37.7736],[-122.43821,37.77687],[-122.44646,37.7758]]]]}},{"type":"Feature","properties":{"name":"Golden Gate Park","slug":"golden-gate-park","primary":true},"geometry":{"type":"MultiPolygon","coordinates":[[[[-122.454,37.77152],[-122.45468,37.77475],[-122.46533,37.77342],[-122.49165,37.77223],[-122.51095,37.77134],[-122.51311,37.77077],[-122.51311,37.76724],[-122.51237,37.76359],[-122.5103,37.76407],[-122.46644,37.76597],[-122.4643,37.76596],[-122.4611,37.76621],[-122.45885,37.76623],[-122.45691,37.76587],[-122.45295,37.76637],[-122.454,37.77152]]]]}}]};
+
+  var map = L.map('golden-gate-park-map', { scrollWheelZoom: false, zoomControl: true });
+
+  // CARTO Voyager — same basemap as the citywide map. The ?key= is required; without
+  // it every tile is stamped "API KEY REQUIRED". Key lives in data/carto-basemap-key.txt.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2ol7_1_49978b63b592d647f2dac9c7', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  var primaryLayer = null;
+
+  var geoLayer = L.geoJSON(neighborhoodData, {
+    style: function(feature) {
+      var primary = feature.properties.primary;
+      return {
+        color: primary ? '#8c6930' : '#9aa3b8',
+        weight: primary ? 2.5 : 1.5,
+        opacity: 1,
+        fillColor: primary ? '#a8823d' : '#c7cedb',
+        fillOpacity: primary ? 0.45 : 0.28
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindTooltip(feature.properties.name, { permanent: true, direction: 'center', className: 'pk-label' });
+      if (feature.properties.primary) {
+        primaryLayer = layer;
+      } else {
+        layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.45 }); });
+        layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.28 }); });
+        layer.on('click', function() { window.location.href = BASE_PATH + feature.properties.slug + "/"; });
+        if (layer.getElement()) layer.getElement().style.cursor = 'pointer';
+      }
+    }
+  }).addTo(map);
+
+  // Fit the neighborhood itself, not the whole cluster — the neighbors are context.
+  map.fitBounds((primaryLayer || geoLayer).getBounds(), { padding: [28, 28] });
+})();
+</script>
