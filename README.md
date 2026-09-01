@@ -547,7 +547,7 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 > from the working tree; this section is not, and nothing regenerates or checks
 > it. It records Sierra-side configuration that does not exist anywhere in this
 > repo — page components, saved searches, URL structure — because otherwise it
-> is only discoverable by clicking through the admin. **Last verified 2026-08-31.**
+> is only discoverable by clicking through the admin. **Last verified 2026-09-01.**
 > Treat it as a starting point and confirm in the admin before relying on it.
 
 **URLs are exactly two levels.** A Sierra content page lives at
@@ -565,32 +565,68 @@ comment saying so at the top; the nine that do not are the older per-city
 overview maps under `maps/<city>/map/`, which predate the note.
 
 **San Francisco page components.** All 95 pages carry their neighborhood map.
-58 of them also carry a "Listings from Saved Search" component below the map,
+78 of them also carry a "Listings from Saved Search" component below the map,
 titled `Homes for Sale in <Name>`, backed by a saved search named
 `<Name> (San Francisco)` — property type All Types, filtered to that
 neighborhood's exact MLS Subdivision token.
 
 ```mermaid
 pie showData title Saved-search widgets across the 95 SF pages
-    "✅ Attached, showing listings" : 54
-    "🕓 Attached, no listings today" : 4
-    "➖ No MLS subdivision token" : 37
+    "✅ Attached, showing listings" : 67
+    "🕓 Attached, no listings today" : 11
+    "➖ No MLS subdivision token" : 17
 ```
 
 | | Count | |
 |:-:|---:|---|
 | 🗺️ | **95 / 95** | pages carry their neighborhood map |
-| ✅ | **58 / 95** | pages carry a saved-search widget |
-| ➖ | **37** | have no MLS Subdivision token, so nothing was attached |
+| ✅ | **78 / 95** | pages carry a saved-search widget |
+| ➖ | **17** | have no MLS Subdivision token, so nothing was attached |
 
-The 37 are not an oversight. The MLS has no Subdivision token for them, and a
-prefix or district match would pull in the wrong listings — so nothing was
-attached rather than something inaccurate.
+### 🔍 The location autocomplete needs the whole token
 
-🕓 Four of the 58 render "No Matching Listings" rather than a title, because
+This is the trap that cost 20 pages. Sierra's location search matches on the
+**full** token, not a prefix: `Golden Gate` returns nothing, while
+`Golden Gate Heights` returns a token. A first pass that queries each
+neighborhood once, under the name this repo uses, and treats a miss as "the MLS
+has no token" will silently under-cover — that is exactly what happened.
+
+Re-querying the misses under other names found tokens for 20 of the 37. Five
+were real naming differences; the rest simply needed the full string:
+
+| Page | MLS Subdivision token |
+|---|---|
+| Marina District | `Marina` |
+| Mission District | `Inner Mission` |
+| Ingleside Terraces | `Ingleside Terrace` (singular) |
+| Saint Francis Wood | `St. Francis Wood` (abbreviated, with the period) |
+| Lakeshore | `Lake Shore` (two words) |
+
+⚠️ **A token is not proof of the right city.** Subdivision names are not unique
+across the Bay Area MLS, and the picker offers City matches beside Subdivision
+ones — selecting `Marina` picked *Marina, CA* in Monterey County before the
+Subdivision entry. Every one of the 20 was confirmed to return San Francisco
+listings before use. For tokens with no active listings, widening Property
+Status to include Sold and Pending is the way to see the city; set it back to
+Active before saving, or the widget will advertise sold homes.
+
+The remaining 17 have nothing under any name tried — including Dogpatch,
+Castro, Barbary Coast, Jackson Square, Parnassus, Laurel Heights, Van Ness,
+Buena Vista Park, Pine Lake and Presidio Terrace. For four of them — Golden
+Gate Park, Lincoln Park, Presidio, Union Square — that is the right answer,
+since they are not residential areas.
+
+One token was found and deliberately **not** used: `Downtown` returns 32 San
+Francisco listings but does not map cleanly onto one page, since it spans
+Financial District, Union Square and Civic Center. Assigning it is a judgment
+call, not a lookup.
+
+🕓 Eleven of the 78 render "No Matching Listings" rather than a title, because
 their saved search returns zero active listings today — **Balboa Terrace,
-Monterey Heights, Presidio Heights, Westwood Park**. They are correctly
-configured and will populate on their own when inventory appears.
+Diamond Heights, Ingleside Terraces, Lakeside, Merced Heights, Merced Manor,
+Monterey Heights, Presidio Heights, Stonestown, Westwood Highlands, Westwood
+Park**. They are correctly configured and will populate on their own when
+inventory appears.
 
 > ⚠️ **A live page is therefore not a reliable test of whether the widget is
 > attached.** An empty saved search looks identical to a missing component.
