@@ -1,4 +1,14 @@
-# The Chen Team — Peninsula & Bay Area Pages
+# 🏡 The Chen Team — Peninsula & Bay Area Pages
+
+<!-- BADGES:BEGIN -->
+
+[![project status](https://github.com/jtcompass212/TheChenTeam/actions/workflows/project-status.yml/badge.svg)](https://github.com/jtcompass212/TheChenTeam/actions/workflows/project-status.yml)
+![pages](https://img.shields.io/badge/pages-246-blue)
+![neighborhoods](https://img.shields.io/badge/neighborhoods-219-blue)
+![market data](https://img.shields.io/badge/market%20data-verified-brightgreen)
+![photo slots](https://img.shields.io/badge/photo%20slots-354%2F354-brightgreen)
+
+<!-- BADGES:END -->
 
 Static HTML for The Chen Team's Sierra Interactive site: city pages,
 neighborhood pages, and interactive Leaflet neighborhood maps.
@@ -7,30 +17,45 @@ Everything here is plain HTML with figures hardcoded at build time — no
 scripts, no runtime data fetching. Paste-ready output lives in
 `sierra-export/`.
 
-**Deployment:** publication is a manual paste, one page at a time, into
-Sierra's TinyMCE source view — see `sierra-export/README.md`. Nothing in this
-repo pushes to the site or reads back from it, so **what is actually live is
-not recorded here.** Do not infer it from this file. Counts below describe
-what the repo contains, not what has been published.
+### 🚚 How a page reaches the site
 
-The one exception is [Sierra: what is configured in the CMS](#sierra-what-is-configured-in-the-cms),
+```mermaid
+flowchart LR
+    A[📊 Compass<br/>market data] --> B[🔧 build scripts]
+    G[🗺️ GeoJSON<br/>boundaries] --> B
+    B --> C[🏘️ neighborhood-pages/<br/>🏙️ city-pages/]
+    C --> D[📤 sierra-export/<br/>absolute image URLs]
+    D -.->|✋ manual paste| E[⚙️ Sierra CMS]
+    B --> F[🗺️ maps/]
+    F -.->|✋ manual paste| E
+    E --> H[🌐 live site]
+```
+
+Every solid arrow is automated and checked. **The two dotted arrows are hand
+work** — publication is a manual paste, one page at a time, into Sierra's
+TinyMCE source view (see `sierra-export/README.md`). Nothing in this repo
+pushes to the site or reads back from it, so **what is actually live is not
+recorded here.** Do not infer it from this file. Counts below describe what the
+repo contains, not what has been published.
+
+The one exception is [Sierra: what is configured in the CMS](#sierra-cms),
 a hand-written, dated snapshot of settings that exist only in the admin. It is
 not generated and not checked, and it goes stale on its own.
 
-## Contents
+## 📁 Contents
 
 <!-- CONTENTS:BEGIN -->
 
-| Directory | What's in it |
-|---|---|
-| `city-pages/` | 27 city pages |
-| `neighborhood-pages/` | 219 neighborhood pages across 10 cities |
-| `maps/` | Leaflet map widgets for 10 cities, plus unwritten page scaffolds |
-| `sierra-export/` | 246 paste-ready files with absolute image URLs |
-| `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
-| `data/market/` | Compass market data behind the pages, and how to refresh it |
-| `docs/` | Photo shot list and design specs |
-| `scripts/` | Build and refresh tooling |
+| | Directory | What's in it |
+|:-:|---|---|
+| 🏙️ | `city-pages/` | 27 city pages |
+| 🏘️ | `neighborhood-pages/` | 219 neighborhood pages across 10 cities |
+| 🗺️ | `maps/` | Leaflet map widgets for 10 cities, plus unwritten page scaffolds |
+| 📤 | `sierra-export/` | 246 paste-ready files with absolute image URLs |
+| 📸 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |
+| 📊 | `data/market/` | Compass market data behind the pages, and how to refresh it |
+| 📝 | `docs/` | Photo shot list and design specs |
+| 🔧 | `scripts/` | Build and refresh tooling |
 
 <!-- CONTENTS:END -->
 
@@ -41,45 +66,47 @@ covering a wider area than the hand-drawn city maps:
 - `south-san-francisco-neighborhoods.{geojson,html}` — 16 neighborhoods
 
 The San Francisco `.geojson` is the source of truth for that city — see
-[San Francisco](#san-francisco). The `.html` beside it is the original upload
+[🌉 San Francisco](#san-francisco). The `.html` beside it is the original upload
 and is **not the widget used on the site**: it is a standalone viewer with no
 links out of it, keyed on Compass `seo_id` names rather than page slugs, and it
 loads Leaflet from unpkg. The generated overview map is what gets published.
 
 <!-- STATUS:BEGIN -->
 
-## Work remaining
+<a id="work-remaining"></a>
+
+## 🚧 Work remaining
 
 Market data is complete: all **246 pages in this repo** carry verified Compass figures. What is left falls into three piles.
 
-| | Count | |
-|---|---:|---|
-| Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
-| Empty photo slots | **0** | of 354 total; 354 filled so far |
+| | | Count | |
+|:-:|---|---:|---|
+| ✅ | Neighborhoods with no page | **0** | blank scaffolds in `maps/`, prose included |
+| ✅ | Empty photo slots | **0** | of 354 total; 354 filled so far |
 
-### Neighborhood page coverage
+### 🗺️ Neighborhood page coverage
 
 219 neighborhoods are mapped; 219 have a written page.
 
-| City | Written | Mapped | Remaining |
-|---|---:|---:|---:|
-| Belmont | 9 | 9 | — |
-| Burlingame | 13 | 13 | — |
-| Foster City | 10 | 10 | — |
-| Hillsborough | 15 | 15 | — |
-| Millbrae | 13 | 13 | — |
-| Redwood City | 13 | 13 | — |
-| San Bruno | 17 | 17 | — |
-| San Carlos | 6 | 6 | — |
-| San Francisco | 95 | 95 | — |
-| San Mateo | 28 | 28 | — |
-| **Total** | **219** | **219** | **0** |
+| City | Written | Mapped | Remaining | Share of the repo |
+|---|---:|---:|---:|---|
+| Belmont | 9 | 9 | — | `█▉` |
+| Burlingame | 13 | 13 | — | `██▊` |
+| Foster City | 10 | 10 | — | `██▏` |
+| Hillsborough | 15 | 15 | — | `███▏` |
+| Millbrae | 13 | 13 | — | `██▊` |
+| Redwood City | 13 | 13 | — | `██▊` |
+| San Bruno | 17 | 17 | — | `███▋` |
+| San Carlos | 6 | 6 | — | `█▎` |
+| San Francisco | 95 | 95 | — | `████████████████████` |
+| San Mateo | 28 | 28 | — | `█████▉` |
+| **Total** | **219** | **219** | **0** | |
 
 Scaffolds are templates, not publishable pages — every slot still reads `[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never from `maps/`.**
 
 Two of the remaining entries are not residential neighborhoods — **Golden Gate National Cemetery** (San Bruno) and **Tanforan** (San Bruno). Green Hills Country Club was the same case and is handled by saying so on the page rather than inventing a median; these deserve the same decision before anyone writes them.
 
-### Photography
+### 📸 Photography
 
 Every image slot is filled — 354 of them, none still rendering a placeholder. See [Photos](#photos) for where they came from.
 
@@ -89,7 +116,7 @@ Every image slot is filled — 354 of them, none still rendering a placeholder. 
 
 > **The shot list is out of date.** It briefs 135 slots against an actual 0 — it predates the newer city directories. Regenerate with `python3 scripts/write_shot_list.py`.
 
-### Calls that need you
+### 🤔 Calls that need you
 
 None of these block anything. Each is a judgment about the business or the market.
 
@@ -102,7 +129,7 @@ None of these block anything. Each is a judgment about the business or the marke
 | **Icon hosting** | 781 icon URLs | Tabler icons load from jsDelivr at `@latest`, an unpinned version this repo does not control. They are absolute URLs in the page source, so `--image-base` cannot move them. |
 | **Hillsborough boundary feature** | 1 geojson | A 95-vertex polygon named `Hillsborough` sits in the neighborhood layer, larger than any real neighborhood — almost certainly a city outline that got mixed in. |
 
-### Pages that publish no market figures — on purpose
+### 🚫 Pages that publish no market figures — on purpose
 
 Each states its reason on the page rather than borrowing a citywide median.
 
@@ -142,7 +169,7 @@ Each states its reason on the page rather than borrowing a citywide median.
 
 <!-- STATUS:END -->
 
-## City pages (27)
+## 🏙️ City pages (27)
 
 aptos · atherton · belmont · brisbane · burlingame · cupertino · foster-city ·
 fremont · gilroy · hillsborough · mill-valley · millbrae · mountain-view ·
@@ -159,7 +186,7 @@ figures and a `// Replace with your verified production figures` comment still
 in the source, so it was removed from all 27 rather than published unverified.
 Anything replacing it needs real numbers first.
 
-## Neighborhood pages (219)
+## 🏘️ Neighborhood pages (219)
 
 | City | Pages | Mapped neighborhoods |
 |---|---|---|
@@ -177,14 +204,16 @@ Anything replacing it needs real numbers first.
 Every mapped neighborhood has a written page.
 
 San Francisco is built by its own scripts from a citywide GeoJSON rather than
-hand-drawn per neighborhood — see [San Francisco](#san-francisco).
+hand-drawn per neighborhood — see [🌉 San Francisco](#san-francisco).
 
 `maps/<city>/<neighborhood>.html` holds an unwritten scaffold for every
 neighborhood that has no page yet. See [Work remaining](#work-remaining) for
 the current counts, which cities are outstanding, and which pages deliberately
 publish no market figures.
 
-## San Francisco
+<a id="san-francisco"></a>
+
+## 🌉 San Francisco
 
 San Francisco arrived after the Peninsula cities and is built differently. The
 other nine cities have hand-drawn geometry per neighborhood; San Francisco is
@@ -193,15 +222,29 @@ generated end to end from one citywide dataset.
 `san-francisco-neighborhoods.geojson` at the repo root — 95 features — is the
 source of truth for names, boundaries and slugs. Three scripts read it:
 
+```mermaid
+flowchart LR
+    SRC[["🗺️ san-francisco-neighborhoods.geojson<br/>95 features"]]
+    SRC --> PAGES[🔧 build_sf_neighborhood_pages.py]
+    SRC --> OVER[🔧 build_sf_overview_map.py]
+    SRC --> NBHD[🔧 build_sf_neighborhood_maps.py]
+    PAGES --> PAGES_OUT[🏘️ 95 pages]
+    OVER --> OVER_OUT[🗺️ 1 citywide map]
+    NBHD --> NBHD_OUT[🗺️ 95 zoomed maps]
+    PAGES_OUT -.->|"same slug rule"| LINK{{"/san-francisco/&lt;slug&gt;/"}}
+    OVER_OUT -.->|"same slug rule"| LINK
+    NBHD_OUT -.->|"same slug rule"| LINK
+```
+
 ```
 python3 scripts/build_sf_neighborhood_pages.py   # neighborhood-pages/san-francisco/
 python3 scripts/build_sf_overview_map.py         # the clickable citywide map
 python3 scripts/build_sf_neighborhood_maps.py    # one zoomed map per neighborhood
 ```
 
-All three slugify names the same way, so every polygon links to a page that
-exists, at `/san-francisco/<slug>/`. Change the slug rule in one script and you
-must change it in all three.
+⚠️ All three slugify names the same way, so every polygon links to a page that
+exists, at `/san-francisco/<slug>/`. **Change the slug rule in one script and you
+must change it in all three** — otherwise the maps point at pages that 404.
 
 **The overview map** is written to
 `maps/san-francisco/map/san-francisco-overview-map.html`: 95 polygons, each
@@ -218,7 +261,7 @@ its border unbroken along every shared edge.
 `maps/san-francisco/map/san-francisco-district-map.html` is a leftover from the
 removed district pages. Nothing references it.
 
-### The CARTO basemap key
+### 🔑 The CARTO basemap key
 
 Every map in this repo draws CARTO Voyager tiles, which have required an API key
 since August 2026 — without one, each tile renders the words "API KEY REQUIRED".
@@ -236,7 +279,7 @@ the page source by design, which is why it is committed here. That also means
 it should be **domain-restricted in the CARTO dashboard**, which has not been
 done yet.
 
-## Maps: neighborhoods by city (219 total)
+## 🗺️ Maps: neighborhoods by city (219 total)
 
 Alphabetized per city; names match what each map renders. Entries marked
 _(hidden)_ carry `"hidden": true` and render dimmed.
@@ -496,7 +539,9 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 - Sunnybrae
 - Westwood Knolls
 
-## Sierra: what is configured in the CMS
+<a id="sierra-cms"></a>
+
+## ⚙️ Sierra: what is configured in the CMS
 
 > **A dated snapshot, not a live mirror.** Everything else in this file is read
 > from the working tree; this section is not, and nothing regenerates or checks
@@ -525,15 +570,31 @@ titled `Homes for Sale in <Name>`, backed by a saved search named
 `<Name> (San Francisco)` — property type All Types, filtered to that
 neighborhood's exact MLS Subdivision token.
 
-The other 37 have no saved search because the MLS has no Subdivision token for
-them; a prefix or district match would pull in the wrong listings, so nothing
-was attached rather than something inaccurate.
+```mermaid
+pie showData title Saved-search widgets across the 95 SF pages
+    "✅ Attached, showing listings" : 54
+    "🕓 Attached, no listings today" : 4
+    "➖ No MLS subdivision token" : 37
+```
 
-Four of the 58 render "No Matching Listings" rather than a title, because their
-saved search returns zero active listings today — **Balboa Terrace, Monterey
-Heights, Presidio Heights, Westwood Park**. They are correctly configured and
-will populate on their own when inventory appears. This is also why a live page
-is not a reliable test of whether the widget is attached: check the admin.
+| | Count | |
+|:-:|---:|---|
+| 🗺️ | **95 / 95** | pages carry their neighborhood map |
+| ✅ | **58 / 95** | pages carry a saved-search widget |
+| ➖ | **37** | have no MLS Subdivision token, so nothing was attached |
+
+The 37 are not an oversight. The MLS has no Subdivision token for them, and a
+prefix or district match would pull in the wrong listings — so nothing was
+attached rather than something inaccurate.
+
+🕓 Four of the 58 render "No Matching Listings" rather than a title, because
+their saved search returns zero active listings today — **Balboa Terrace,
+Monterey Heights, Presidio Heights, Westwood Park**. They are correctly
+configured and will populate on their own when inventory appears.
+
+> ⚠️ **A live page is therefore not a reliable test of whether the widget is
+> attached.** An empty saved search looks identical to a missing component.
+> Check the admin, not the site.
 
 **Page IDs are sequential by creation order**, which was alphabetical:
 `id = 345998 + alphabetical_index` across the 95 neighborhoods, with Noe Valley
@@ -542,7 +603,7 @@ by one. That reproduced all 30 IDs confirmed by hand and is how the rest were
 derived — but it is an observation, not a guarantee. Verify the page title after
 loading an ID before writing to it.
 
-## Refreshing market data
+## 🔄 Refreshing market data
 
 Figures are pulled from Compass Market Insights and written into the pages by
 script, so an update is a re-scrape plus a re-run rather than hand-editing
@@ -559,7 +620,7 @@ Run the last one after anything that changes page counts. Every number in the
 [Work remaining](#work-remaining) section is read from the working tree, so it
 cannot drift the way hand-typed counts did.
 
-## Keeping the project status honest
+## ✅ Keeping the project status honest
 
 Two things guard it, so nobody has to remember.
 
@@ -595,23 +656,31 @@ and 404 on paste.
 and the rules governing which figures publish — including the sale-count
 thresholds that decide when a year-over-year change is withheld.
 
-## Photos
+<a id="photos"></a>
 
-All 354 image slots are filled — no page still renders `[ HERO IMAGE ]`. They
+## 📸 Photos
+
+✅ All 354 image slots are filled — no page still renders `[ HERO IMAGE ]`. They
 come from two trees:
 
-| Tree | Files | What they are |
-|---|---:|---|
-| `city-images/sourced/` | 135 | Freely-licensed city photos, credited on the page |
-| `neighborhood-images/` | 219 | One hero per neighborhood page |
+| | Tree | Files | What they are |
+|:-:|---|---:|---|
+| 🏙️ | `city-images/sourced/` | 135 | Freely-licensed city photos, credited on the page |
+| 🏘️ | `neighborhood-images/` | 219 | One hero per neighborhood page |
 
 The 95 San Francisco heroes were sourced in bulk by
 `scripts/build_sf_hero_images.py` and `scripts/finalize_sf_hero_images.py`, and
 what each one ended up being is recorded in `data/sf-hero-image-final-log.json`:
-**51 from Wikimedia Commons, 44 satellite imagery**. The satellite ones are a
-deliberate fallback for neighborhoods with no usable archive photo — they are
-stand-ins, not photography, and are the obvious candidates if original shots are
-ever commissioned.
+
+```mermaid
+pie showData title San Francisco hero images, by source
+    "📷 Wikimedia Commons" : 51
+    "🛰️ Satellite imagery" : 44
+```
+
+⚠️ The satellite ones are a deliberate fallback for neighborhoods with no usable
+archive photo — they are stand-ins, not photography, and are the obvious
+candidates if original shots are ever commissioned.
 
 `docs/photo-shot-list.md` is stale: it still briefs 135 empty slots against an
 actual 0. Regenerate it with `python3 scripts/write_shot_list.py`.

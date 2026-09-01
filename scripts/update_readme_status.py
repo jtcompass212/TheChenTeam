@@ -24,6 +24,28 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 BEGIN, END = "<!-- STATUS:BEGIN -->", "<!-- STATUS:END -->"
 CBEGIN, CEND = "<!-- CONTENTS:BEGIN -->", "<!-- CONTENTS:END -->"
+BBEGIN, BEND = "<!-- BADGES:BEGIN -->", "<!-- BADGES:END -->"
+
+REPO = "jtcompass212/TheChenTeam"
+
+
+def render_badges(d):
+    """The header badges. Generated for the same reason as everything else
+    here: three of these are counts, and a count typed by hand goes stale."""
+    filled = d["sourced_images"]
+    total = filled + sum(d["photos"].values())
+    return "\n".join([
+        BBEGIN, "",
+        f"[![project status](https://github.com/{REPO}/actions/workflows/"
+        f"project-status.yml/badge.svg)]"
+        f"(https://github.com/{REPO}/actions/workflows/project-status.yml)",
+        f"![pages](https://img.shields.io/badge/pages-{d['city_pages'] + d['nbhd_pages']}-blue)",
+        f"![neighborhoods](https://img.shields.io/badge/neighborhoods-{d['nbhd_pages']}-blue)",
+        "![market data](https://img.shields.io/badge/market%20data-verified-brightgreen)",
+        f"![photo slots](https://img.shields.io/badge/photo%20slots-{filled}%2F{total}-"
+        f"{'brightgreen' if filled == total else 'orange'})",
+        "", BEND,
+    ])
 
 
 def render_contents(d):
@@ -32,16 +54,16 @@ def render_contents(d):
     cities = len(d["written"])
     return "\n".join([
         CBEGIN, "",
-        "| Directory | What's in it |",
-        "|---|---|",
-        f"| `city-pages/` | {d['city_pages']} city pages |",
-        f"| `neighborhood-pages/` | {d['nbhd_pages']} neighborhood pages across {cities} cities |",
-        f"| `maps/` | Leaflet map widgets for {cities} cities, plus unwritten page scaffolds |",
-        f"| `sierra-export/` | {d['exported']} paste-ready files with absolute image URLs |",
-        "| `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |",
-        "| `data/market/` | Compass market data behind the pages, and how to refresh it |",
-        "| `docs/` | Photo shot list and design specs |",
-        "| `scripts/` | Build and refresh tooling |",
+        "| | Directory | What's in it |",
+        "|:-:|---|---|",
+        f"| 🏙️ | `city-pages/` | {d['city_pages']} city pages |",
+        f"| 🏘️ | `neighborhood-pages/` | {d['nbhd_pages']} neighborhood pages across {cities} cities |",
+        f"| 🗺️ | `maps/` | Leaflet map widgets for {cities} cities, plus unwritten page scaffolds |",
+        f"| 📤 | `sierra-export/` | {d['exported']} paste-ready files with absolute image URLs |",
+        "| 📸 | `city-images/` | Hero photos, plus `sourced/` for freely-licensed images |",
+        "| 📊 | `data/market/` | Compass market data behind the pages, and how to refresh it |",
+        "| 📝 | `docs/` | Photo shot list and design specs |",
+        "| 🔧 | `scripts/` | Build and refresh tooling |",
         "", CEND,
     ])
 
@@ -174,26 +196,46 @@ def render(d):
     total_mapped = sum(d["mapped"].values())
     total_scaffold = sum(d["scaffolds"].values())
     total_photos = sum(d["photos"].values())
-    L = [BEGIN, "", "## Work remaining", "",
+    # A count of 0 is the finished state for both rows, so the tick is the
+    # normal case and the warning is the exception.
+    def flag(n):
+        return "✅" if not n else "⚠️"
+
+    # Explicit anchor: the heading carries an emoji, and GitHub's slug for an
+    # emoji heading is neither obvious nor stable. Links target this instead.
+    L = [BEGIN, "", '<a id="work-remaining"></a>', "", "## 🚧 Work remaining", "",
          # Not "published" — the repo does not know what is live on Sierra.
          f"Market data is complete: all **{d['city_pages'] + d['nbhd_pages']} "
          f"pages in this repo** carry verified Compass figures. What is left falls into three "
          f"piles.", "",
-         f"| | Count | |", "|---|---:|---|",
-         f"| Neighborhoods with no page | **{total_scaffold}** | blank scaffolds in `maps/`, prose included |",
-         f"| Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} "
+         f"| | | Count | |", "|:-:|---|---:|---|",
+         f"| {flag(total_scaffold)} | Neighborhoods with no page | **{total_scaffold}** | blank scaffolds in `maps/`, prose included |",
+         f"| {flag(total_photos)} | Empty photo slots | **{total_photos}** | of {total_photos + d['sourced_images']} "
          f"total; {d['sourced_images']} filled so far |",
          ""]
 
     # coverage
-    L += ["### Neighborhood page coverage", "",
+    L += ["### 🗺️ Neighborhood page coverage", "",
           f"{total_mapped} neighborhoods are mapped; {d['nbhd_pages']} have a written page.", "",
-          "| City | Written | Mapped | Remaining |", "|---|---:|---:|---:|"]
+          "| City | Written | Mapped | Remaining | Share of the repo |",
+          "|---|---:|---:|---:|---|"]
+    # Bars are scaled to the largest city and drawn in eighth-blocks. San
+    # Francisco is 16x San Carlos, so at whole-block resolution every small
+    # city rounded to the same one or two blocks and the column said nothing.
+    EIGHTHS = "▏▎▍▌▋▊▉"
+    widest = max(d["written"].get(c, 0) for c in d["mapped"]) or 1
+
+    def bar(n, width=20):
+        eighths = round(width * 8 * n / widest)
+        full, rest = divmod(eighths, 8)
+        # Never render a non-zero city as an empty cell.
+        return "█" * full + (EIGHTHS[rest - 1] if rest else "") or (EIGHTHS[0] if n else "")
+
     for city in sorted(d["mapped"], key=lambda c: (-d["scaffolds"].get(c, 0), c)):
         w, m_ = d["written"].get(city, 0), d["mapped"][city]
         rem = d["scaffolds"].get(city, 0)
-        L.append(f"| {title(city)} | {w} | {m_} | {'—' if not rem else rem} |")
-    L.append(f"| **Total** | **{d['nbhd_pages']}** | **{total_mapped}** | **{total_scaffold}** |")
+        L.append(f"| {title(city)} | {w} | {m_} | {'—' if not rem else rem} | `{bar(w)}` |")
+    L.append(f"| **Total** | **{d['nbhd_pages']}** | **{total_mapped}** | **{total_scaffold}** | |")
     L += ["",
           "Scaffolds are templates, not publishable pages — every slot still reads "
           "`[ PLACEHOLDER ]`. **Publish from `neighborhood-pages/` or `sierra-export/`, never "
@@ -209,7 +251,7 @@ def render(d):
     # photos
     # The prose has to follow the count: saying every page renders a placeholder
     # reads as a live warning, and it stopped being true once the slots filled.
-    L += ["### Photography", ""]
+    L += ["### 📸 Photography", ""]
     if total_photos:
         L += ["Pages with an empty slot render a placeholder where a photo belongs. Named "
               "residential tracts have no archive coverage, so these need original "
@@ -233,7 +275,7 @@ def render(d):
         by_city = {}
         for city, slug, name in d["hero_missing"]:
             by_city.setdefault(city, []).append((slug, name))
-        L += [f"### Neighborhood hero images still needed ({len(d['hero_missing'])})", "",
+        L += [f"### 🖼️ Neighborhood hero images still needed ({len(d['hero_missing'])})", "",
               "One hero slot per neighborhood page; these still render "
               "`[ HERO IMAGE ]` instead of a photo.", ""]
         for city in sorted(by_city, key=lambda c: (-len(by_city[c]), c)):
@@ -244,7 +286,7 @@ def render(d):
         L.append("")
 
     # decisions
-    L += ["### Calls that need you", "",
+    L += ["### 🤔 Calls that need you", "",
           "None of these block anything. Each is a judgment about the business or the market.", "",
           "| Item | Scope | What's needed |", "|---|---|---|"]
     for name, scope, why in DECISIONS:
@@ -252,7 +294,7 @@ def render(d):
     L.append("")
 
     if d["no_figures"]:
-        L += ["### Pages that publish no market figures — on purpose", "",
+        L += ["### 🚫 Pages that publish no market figures — on purpose", "",
               "Each states its reason on the page rather than borrowing a citywide median.", "",
               "| Page | Reason |", "|---|---|"]
         reason = {"thin": "Too few sales a year to support a median",
@@ -289,6 +331,11 @@ def main():
         contents = render_contents(d)
         new = re.sub(re.escape(CBEGIN) + r".*?" + re.escape(CEND),
                      lambda _m: contents, new, flags=re.S)
+
+    if BBEGIN in new and BEND in new:
+        badges = render_badges(d)
+        new = re.sub(re.escape(BBEGIN) + r".*?" + re.escape(BEND),
+                     lambda _m: badges, new, flags=re.S)
 
     if args.check:
         print("README status block is STALE — run scripts/update_readme_status.py"
