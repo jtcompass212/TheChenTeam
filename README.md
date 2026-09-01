@@ -252,7 +252,7 @@ linking to its own page.
 
 **Per-neighborhood maps** are written to `maps/san-francisco/<slug>-map.html`,
 95 of them — the neighborhood filled and outlined in gold, its neighbors grey
-and clickable. Neighbours are computed rather than curated: two neighborhoods
+and clickable. Neighbors are computed rather than curated: two neighborhoods
 are neighbors when their outlines come within 30 m of each other. Exact shared
 vertices alone are not enough, because the source is not a clean tessellation.
 The primary feature is written **last** so Leaflet paints it on top, which keeps
@@ -547,7 +547,7 @@ _(hidden)_ carry `"hidden": true` and render dimmed.
 > from the working tree; this section is not, and nothing regenerates or checks
 > it. It records Sierra-side configuration that does not exist anywhere in this
 > repo — page components, saved searches, URL structure — because otherwise it
-> is only discoverable by clicking through the admin. **Last verified 2026-08-31.**
+> is only discoverable by clicking through the admin. **Last verified 2026-09-01.**
 > Treat it as a starting point and confirm in the admin before relying on it.
 
 **URLs are exactly two levels.** A Sierra content page lives at
@@ -565,32 +565,108 @@ comment saying so at the top; the nine that do not are the older per-city
 overview maps under `maps/<city>/map/`, which predate the note.
 
 **San Francisco page components.** All 95 pages carry their neighborhood map.
-58 of them also carry a "Listings from Saved Search" component below the map,
+80 of them also carry a "Listings from Saved Search" component below the map,
 titled `Homes for Sale in <Name>`, backed by a saved search named
 `<Name> (San Francisco)` — property type All Types, filtered to that
 neighborhood's exact MLS Subdivision token.
 
 ```mermaid
 pie showData title Saved-search widgets across the 95 SF pages
-    "✅ Attached, showing listings" : 54
-    "🕓 Attached, no listings today" : 4
-    "➖ No MLS subdivision token" : 37
+    "✅ Attached, showing listings" : 68
+    "🕓 Attached, no listings today" : 12
+    "➖ No MLS subdivision token" : 15
 ```
 
 | | Count | |
 |:-:|---:|---|
 | 🗺️ | **95 / 95** | pages carry their neighborhood map |
-| ✅ | **58 / 95** | pages carry a saved-search widget |
-| ➖ | **37** | have no MLS Subdivision token, so nothing was attached |
+| ✅ | **80 / 95** | pages carry a saved-search widget |
+| ➖ | **15** | have no MLS Subdivision token, so nothing was attached |
 
-The 37 are not an oversight. The MLS has no Subdivision token for them, and a
-prefix or district match would pull in the wrong listings — so nothing was
-attached rather than something inaccurate.
+### 🔍 The location autocomplete needs the whole token
 
-🕓 Four of the 58 render "No Matching Listings" rather than a title, because
+This is the trap that cost 20 pages. Sierra's location search matches on the
+**full** token, not a prefix: `Golden Gate` returns nothing, while
+`Golden Gate Heights` returns a token. A first pass that queries each
+neighborhood once, under the name this repo uses, and treats a miss as "the MLS
+has no token" will silently under-cover — that is exactly what happened.
+
+Re-querying the misses under other names found tokens for 22 of the 37. Seven
+were real naming differences; the rest simply needed the full string:
+
+| Page | MLS Subdivision token |
+|---|---|
+| Marina District | `Marina` |
+| Mission District | `Inner Mission` |
+| Civic Center | `Van Ness/Civic Center` |
+| Pinelake Park | `Pine Lake Park` (three words) |
+| Ingleside Terraces | `Ingleside Terrace` (singular) |
+| Saint Francis Wood | `St. Francis Wood` (abbreviated, with the period) |
+| Lakeshore | `Lake Shore` (two words) |
+
+Matching is close to literal — `St. Francis Wood` resolves, `St Francis Wood`
+does not — so the only method is to guess the exact string, which is why the
+aliases above had to be tried by hand.
+
+⚠️ **A token is not proof of the right city.** Subdivision names are not unique
+across the Bay Area MLS, and the picker offers City matches beside Subdivision
+ones — selecting `Marina` picked *Marina, CA* in Monterey County before the
+Subdivision entry. Every one of the 22 was confirmed to return San Francisco
+listings before use. For tokens with no active listings, widening Property
+Status to include Sold and Pending is the way to see the city; set it back to
+Active before saving, or the widget will advertise sold homes.
+
+**The remaining 15 have no token under any name tried.** All of these were
+attempted and all returned nothing: `Hts` abbreviations with and without a
+period (`Lower Pacific Hts.`, `Jordan Park/Laurel Hts.`,
+`Eureka Valley/Dolores Hts.`, `Ashbury Hts`); `Forest Hill Ext`,
+`Forest Hill Ext.`, `Forest Hills Ext.` and `Forest Hills Extension` — the
+plural the map uses included; both orders of every compound
+(`Cole Valley/Parnassus`, `Parnassus/Cole Valley`, `Eureka Valley/Castro`,
+`Castro/Eureka Valley`, `Laurel Heights/Jordan Park`,
+`Dogpatch/Central Waterfront`, `Civic Center/Van Ness`); and Dogpatch, Central
+Waterfront, Castro, Barbary Coast, Ashbury Heights, Buena Vista Park,
+Parnassus Heights, Laurel Heights, Van Ness, Upper Market, Duboce Park,
+The Panhandle, Lake, Lake Merced and Presidio Terrace.
+
+Neighboring SF names that are *not* pages here were probed too — Showplace
+Square, Japantown, Cathedral Hill, Polk Gulch — and none exist either.
+
+**Checked against the SFAR district map.** Every label on the standard San
+Francisco Association of Realtors district map (districts 1–10) was compared
+with the token set. The tokens are *not* that map: the map says `Lake` where
+the token is `Lake Street`, `St. Francis Woods` where the token is
+`St. Francis Wood`, and `Civic Center/Van Ness` where the token is
+`Van Ness/Civic Center` — the reverse order fails. More decisively, labels that
+stand alone on the map still have no token at all: `Financial District`,
+`Lower Pacific Heights`, `Laurel Heights` and `Buena Vista` all return nothing.
+So the MLS vocabulary is genuinely narrower than the map, and these 15 are
+absent rather than differently spelled.
+
+Nor can it be enumerated. Matching is exact, not prefix and not per-word:
+`Ingle`, `Parksid` and `Golden Gate H` return nothing, and so do the bare words
+`Heights`, `Park` and `Terrace`. There is no query that lists the vocabulary.
+
+For four of the 15 — Golden Gate Park, Lincoln Park, Presidio, Union Square —
+having no token is the right answer, since they are not residential areas.
+
+Two possibilities remain for the other eleven, neither taken here:
+
+- **`Downtown`** exists and returns 32 San Francisco listings, but spans
+  Financial District, Union Square and Civic Center, so it does not map onto
+  one page. Assigning it is a judgment call, not a lookup.
+- **Map Search** (Location → Map Search) supports drawing a polygon and saving
+  it as the search area. That would define these neighborhoods geographically
+  rather than by token, and the boundaries already exist in
+  `san-francisco-neighborhoods.geojson` — but the drawing is mouse work in a
+  Google Map, one neighborhood at a time.
+
+🕓 Twelve of the 80 render "No Matching Listings" rather than a title, because
 their saved search returns zero active listings today — **Balboa Terrace,
-Monterey Heights, Presidio Heights, Westwood Park**. They are correctly
-configured and will populate on their own when inventory appears.
+Diamond Heights, Ingleside Terraces, Lakeside, Merced Heights, Merced Manor,
+Monterey Heights, Pinelake Park, Presidio Heights, Stonestown, Westwood
+Highlands, Westwood Park**. They are correctly configured and will populate on
+their own when inventory appears.
 
 > ⚠️ **A live page is therefore not a reliable test of whether the widget is
 > attached.** An empty saved search looks identical to a missing component.
