@@ -604,33 +604,51 @@ were real naming differences; the rest simply needed the full string:
 | Saint Francis Wood | `St. Francis Wood` (abbreviated, with the period) |
 | Lakeshore | `Lake Shore` (two words) |
 
-Matching is close to literal. `St. Francis Wood` resolves and `St Francis Wood`
-does not; `Ingle`, `Parksid` and `Golden Gate H` all return nothing. There is
-no way to enumerate the vocabulary by typing prefixes, so the only method is to
-guess the exact string — which is why the aliases above had to be tried by hand.
+Matching is close to literal — `St. Francis Wood` resolves, `St Francis Wood`
+does not — so the only method is to guess the exact string, which is why the
+aliases above had to be tried by hand.
 
 ⚠️ **A token is not proof of the right city.** Subdivision names are not unique
 across the Bay Area MLS, and the picker offers City matches beside Subdivision
 ones — selecting `Marina` picked *Marina, CA* in Monterey County before the
-Subdivision entry. Every one of the 20 was confirmed to return San Francisco
+Subdivision entry. Every one of the 22 was confirmed to return San Francisco
 listings before use. For tokens with no active listings, widening Property
 Status to include Sold and Pending is the way to see the city; set it back to
 Active before saving, or the widget will advertise sold homes.
 
-**The remaining 15 have no token under any name tried.** Beyond the plain and
-slash-joined forms, these were all attempted and all returned nothing: `Hts`
-abbreviations with and without a period (`Lower Pacific Hts.`,
-`Jordan Park/Laurel Hts.`, `Eureka Valley/Dolores Hts.`), `Forest Hill Ext`
-and `Forest Hill Ext.`, Dogpatch, Central Waterfront, Castro, Barbary Coast,
-Ashbury Heights, Buena Vista Park, Parnassus Heights, Laurel Heights, Van Ness,
-Upper Market, Duboce Park, The Panhandle, Lake Merced and Presidio Terrace.
+**The remaining 15 have no token under any name tried.** All of these were
+attempted and all returned nothing: `Hts` abbreviations with and without a
+period (`Lower Pacific Hts.`, `Jordan Park/Laurel Hts.`,
+`Eureka Valley/Dolores Hts.`, `Ashbury Hts`); `Forest Hill Ext`,
+`Forest Hill Ext.`, `Forest Hills Ext.` and `Forest Hills Extension` — the
+plural the map uses included; both orders of every compound
+(`Cole Valley/Parnassus`, `Parnassus/Cole Valley`, `Eureka Valley/Castro`,
+`Castro/Eureka Valley`, `Laurel Heights/Jordan Park`,
+`Dogpatch/Central Waterfront`, `Civic Center/Van Ness`); and Dogpatch, Central
+Waterfront, Castro, Barbary Coast, Ashbury Heights, Buena Vista Park,
+Parnassus Heights, Laurel Heights, Van Ness, Upper Market, Duboce Park,
+The Panhandle, Lake, Lake Merced and Presidio Terrace.
 
 Neighboring SF names that are *not* pages here were probed too — Showplace
-Square, Japantown, Cathedral Hill, Polk Gulch — and none exist either. The
-vocabulary appears to be roughly the 80 names already matched, so these 15 are
-genuinely absent rather than differently spelled. For four of them — Golden
-Gate Park, Lincoln Park, Presidio, Union Square — that is the right answer,
-since they are not residential areas.
+Square, Japantown, Cathedral Hill, Polk Gulch — and none exist either.
+
+**Checked against the SFAR district map.** Every label on the standard San
+Francisco Association of Realtors district map (districts 1–10) was compared
+with the token set. The tokens are *not* that map: the map says `Lake` where
+the token is `Lake Street`, `St. Francis Woods` where the token is
+`St. Francis Wood`, and `Civic Center/Van Ness` where the token is
+`Van Ness/Civic Center` — the reverse order fails. More decisively, labels that
+stand alone on the map still have no token at all: `Financial District`,
+`Lower Pacific Heights`, `Laurel Heights` and `Buena Vista` all return nothing.
+So the MLS vocabulary is genuinely narrower than the map, and these 15 are
+absent rather than differently spelled.
+
+Nor can it be enumerated. Matching is exact, not prefix and not per-word:
+`Ingle`, `Parksid` and `Golden Gate H` return nothing, and so do the bare words
+`Heights`, `Park` and `Terrace`. There is no query that lists the vocabulary.
+
+For four of the 15 — Golden Gate Park, Lincoln Park, Presidio, Union Square —
+having no token is the right answer, since they are not residential areas.
 
 Two possibilities remain for the other eleven, neither taken here:
 
